@@ -109,7 +109,10 @@
 		<link rel="stylesheet" type="text/css" href="libs/ion_rangeslider/css/ion.rangeSlider.min.css" />
 		<link href="custom-css.css" rel="stylesheet">
 
+        <link href="themes/gotrip/css/custom.css" rel="stylesheet">
+
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-route.min.js"></script>
         <script src="app.js"></script>
 	</head>
 	<body class="frontend-page header-normal   ">
@@ -120,9 +123,9 @@
 					<div class="row justify-between items-center">
 						<div class="col-auto ">
 							<div class="d-flex items-center gotrip-header-normal">
-								<a href="https://gotrip.bookingcore.org" class=" header-logo mr-20" data-x="header-logo" data-x-toggle="is-logo-dark">
-                                    <img class="logo-light" src="uploads/gotrip/general/logo-light.png" alt="Go Trip">
-                                    <img class="logo-dark" src="uploads/gotrip/general/logo-dark.png" alt="Go Trip">
+								<a href="/" class=" header-logo mr-20" data-x="header-logo" data-x-toggle="is-logo-dark">
+                                    <img class="logo-light" src="{{ logoItems.light }}" alt="{{ SiteTitle }}">
+                                    <img class="logo-dark" src="{{ logoItems.dark }}" alt="{{ SiteTitle }}">
 								</a>
 								<div class="header-menu " data-x="mobile-menu" data-x-toggle="is-menu-active">
 									<div class="mobile-overlay"></div>
@@ -135,7 +138,7 @@
                                                     <a data-barba target href="{{ menuItem.url }}"><span class="mr-10">{{ menuItem.name }}</span><i ng-if="menuItem.submenu" class="icon icon-chevron-sm-down"></i></a>
                                                     <ul ng-if="menuItem.submenu" class="subnav">
                                                         <li ng-repeat="subMenuItem in menuItem.submenu" ng-class="depth-1">
-                                                            <a data-barba target href="{{ subMenuItem.link }}">{{ subMenuItem.name }}</a>
+                                                            <a data-barba target href="{{ subMenuItem.url }}">{{ subMenuItem.name }}</a>
                                                         </li>
                                                     </ul>
                                                 </li>
@@ -144,63 +147,11 @@
 										</div>
 										<div class="mobile-footer px-20 py-10 border-top-light js-mobile-footer">
 											<li class="currency-dropdown menu-item-has-children">
-												<a href="#" class="is_login">
-												<span class="mr-10">USD</span>
-												<i class="icon icon-chevron-sm-down"></i>
-												</a>
-												<ul class="subnav">
-													<li>
-														<a href="hotel?set_currency=eur" class="is_login dropdown-item">
-														EUR
-														</a>
-													</li>
-													<li>
-														<a href="hotel?set_currency=jpy" class="is_login dropdown-item">
-														JPY
-														</a>
-													</li>
-												</ul>
-											</li>
-											<li class="language-dropdown menu-item-has-children">
-												<a href="#" class="is_login">
-												<span class="mr-10">
-												<span class="flag-icon flag-icon-gb"></span>
-												English
-												</span>
-												<i class="icon icon-chevron-sm-down"></i>
-												</a>
-												<ul class="subnav">
-													<li>
-														<a href="hotel?set_lang=ja" class="is_login dropdown-item" style="justify-content: flex-start">
-														<span class="flag-icon flag-icon-jp"></span>
-														Japanese
-														</a>
-													</li>
-													<li>
-														<a href="hotel?set_lang=egy" class="is_login dropdown-item" style="justify-content: flex-start">
-														<span class="flag-icon flag-icon-eg"></span>
-														Egyptian
-														</a>
-													</li>
-													<li>
-														<a href="hotel?set_lang=es_MX" class="is_login dropdown-item" style="justify-content: flex-start">
-														<span class="flag-icon flag-icon-mx"></span>
-														Mexico
-														</a>
-													</li>
-													<li>
-														<a href="hotel?set_lang=tr" class="is_login dropdown-item" style="justify-content: flex-start">
-														<span class="flag-icon flag-icon-tr"></span>
-														Türkçe
-														</a>
-													</li>
-													<li>
-														<a href="hotel?set_lang=he" class="is_login dropdown-item" style="justify-content: flex-start">
-														<span class="flag-icon flag-icon-Israel"></span>
-														Hebrew
-														</a>
-													</li>
-												</ul>
+                                                <select name="currency" ng-model="currency">
+                                                    <option value="INR">INR</option>
+                                                    <option value="EUR">EUR</option>
+                                                    <option value="JPY">JPY</option>
+                                                </select>
 											</li>
 										</div>
 									</div>
@@ -215,66 +166,13 @@
 										<div class="menu js-navList">
 											<ul class="menu__nav text-white -is-active">
 												<li class="currency-dropdown menu-item-has-children">
-													<a href="#" class="is_login">
-													<span class="mr-10">USD</span>
-													<i class="icon icon-chevron-sm-down"></i>
-													</a>
-													<ul class="subnav">
-														<li>
-															<a href="hotel?set_currency=eur" class="is_login dropdown-item">
-															EUR
-															</a>
-														</li>
-														<li>
-															<a href="hotel?set_currency=jpy" class="is_login dropdown-item">
-															JPY
-															</a>
-														</li>
-													</ul>
-												</li>
-												<li class="language-dropdown menu-item-has-children">
-													<a href="#" class="is_login">
-													<span class="mr-10">
-													<span class="flag-icon flag-icon-gb"></span>
-													English
-													</span>
-													<i class="icon icon-chevron-sm-down"></i>
-													</a>
-													<ul class="subnav">
-														<li>
-															<a href="hotel?set_lang=ja" class="is_login dropdown-item" style="justify-content: flex-start">
-															<span class="flag-icon flag-icon-jp"></span>
-															Japanese
-															</a>
-														</li>
-														<li>
-															<a href="hotel?set_lang=egy" class="is_login dropdown-item" style="justify-content: flex-start">
-															<span class="flag-icon flag-icon-eg"></span>
-															Egyptian
-															</a>
-														</li>
-														<li>
-															<a href="hotel?set_lang=es_MX" class="is_login dropdown-item" style="justify-content: flex-start">
-															<span class="flag-icon flag-icon-mx"></span>
-															Mexico
-															</a>
-														</li>
-														<li>
-															<a href="hotel?set_lang=tr" class="is_login dropdown-item" style="justify-content: flex-start">
-															<span class="flag-icon flag-icon-tr"></span>
-															Türkçe
-															</a>
-														</li>
-														<li>
-															<a href="hotel?set_lang=he" class="is_login dropdown-item" style="justify-content: flex-start">
-															<span class="flag-icon flag-icon-Israel"></span>
-															Hebrew
-															</a>
-														</li>
-													</ul>
+                                                    <select name="currency" ng-model="currency" class="text-white mr-10">
+                                                        <option value="INR">INR</option>
+                                                        <option value="EUR">EUR</option>
+                                                        <option value="JPY">JPY</option>
+                                                    </select>    
 												</li>
 												<div class="d-flex items-center ml-20 is-menu-opened-hide md:d-none">
-													<a href="page/become-an-expert" class="-white bg-white text-dark-1 button px-30 fw-400 text-14  h-50">Become An Expert</a>
 													<a data-bs-toggle="modal" href="#login" class="border-white -outline-white text-white button px-30 fw-400 text-14  h-50 ml-20">Sign In / Register</a>
 												</div>
 												<div class="d-none xl:d-flex x-gap-20 items-center pl-30 text-white" data-x="header-mobile-icons" data-x-toggle="text-white">
@@ -289,7 +187,7 @@
 								</div>
 							</div>
 							<div class="d-none xl:d-flex x-gap-20 items-center pl-30 text-white" data-x="header-mobile-icons" data-x-toggle="text-white">
-								<div><a href=" login " class="d-flex items-center icon-user text-inherit text-22"></a></div>
+								<div><a href="login" class="d-flex items-center icon-user text-inherit text-22"></a></div>
 								<div><button class="d-flex items-center icon-menu text-inherit text-20" data-x-click="header, header-logo, header-mobile-icons, mobile-menu"></button></div>
 							</div>
 						</div>

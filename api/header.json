@@ -1,4 +1,9 @@
 {
+    "SiteTitle":"BookingPortal",
+    "logo": {
+      "light":"uploads/gotrip/general/logo-light.png",
+      "dark":"uploads/gotrip/general/logo-dark.png"
+    },
     "menu": [
       {
         "name": "Home",
@@ -51,175 +56,41 @@
         ]
       },
       {
-        "name": "Services",
+        "name": "Hotel",
         "url": "#",
         "submenu": [
           {
+            "url": "/index.html#!/hotel",
+            "name": "Hotel"
+          },
+          {
+            "url": "/hotel",
+            "name": "Hotel List"
+          },
+          {
+            "url": "/hotel?_layout=grid",
+            "name": "Hotel Grid"
+          },
+          {
+            "url": "/hotel?_layout=map",
+            "name": "Hotel Map"
+          },
+          {
+            "url": "/hotel/parian-holiday-villas",
+            "name": "Hotel Detail"
+          }
+        ]
+      },
+      {
+        "name": "Flight",
+        "submenu": [
+          {
             "url": "#",
-            "name": " Services"
+            "name": " Flight"
           },
           {
-            "name": "Hotel",
-            "submenu": [
-              {
-                "url": "#",
-                "name": " Hotel"
-              },
-              {
-                "url": "/hotel",
-                "name": "Hotel List"
-              },
-              {
-                "url": "/hotel?_layout=grid",
-                "name": "Hotel Grid"
-              },
-              {
-                "url": "/hotel?_layout=map",
-                "name": "Hotel Map"
-              },
-              {
-                "url": "/hotel/parian-holiday-villas",
-                "name": "Hotel Detail"
-              }
-            ]
-          },
-          {
-            "name": "Tour",
-            "submenu": [
-              {
-                "url": "#",
-                "name": " Tour"
-              },
-              {
-                "url": "/tour",
-                "name": "Tour List"
-              },
-              {
-                "url": "/tour?_layout=grid",
-                "name": "Tour Grid"
-              },
-              {
-                "url": "/tour?_layout=map",
-                "name": "Tour Map"
-              },
-              {
-                "url": "/tour/paris-vacation-travel",
-                "name": "Tour Detail"
-              }
-            ]
-          },
-          {
-            "name": "Space",
-            "submenu": [
-              {
-                "url": "#",
-                "name": " Space"
-              },
-              {
-                "url": "/space",
-                "name": "Space List"
-              },
-              {
-                "url": "/space?_layout=grid",
-                "name": "Space Gird"
-              },
-              {
-                "url": "/space?_layout=map",
-                "name": "Space Map"
-              },
-              {
-                "url": "/space/stay-greenwich-village",
-                "name": "Space Detail"
-              }
-            ]
-          },
-          {
-            "name": "Car",
-            "submenu": [
-              {
-                "url": "#",
-                "name": " Car"
-              },
-              {
-                "url": "/car",
-                "name": "Car List"
-              },
-              {
-                "url": "/car?_layout=grid",
-                "name": "Car Grid"
-              },
-              {
-                "url": "/car?_layout=map",
-                "name": "Car Map"
-              },
-              {
-                "url": "/car/vinfast-lux-a20-plus",
-                "name": "Car Detail"
-              }
-            ]
-          },
-          {
-            "name": "Event",
-            "submenu": [
-              {
-                "url": "#",
-                "name": " Event"
-              },
-              {
-                "url": "/event",
-                "name": "Event List"
-              },
-              {
-                "url": "/event?_layout=grid",
-                "name": "Event Grid"
-              },
-              {
-                "url": "/event?_layout=map",
-                "name": "Event Map"
-              },
-              {
-                "url": "/event/aspen-glade-weddings-events",
-                "name": "Event Detail"
-              }
-            ]
-          },
-          {
-            "name": "Boat",
-            "submenu": [
-              {
-                "url": "#",
-                "name": " Boat"
-              },
-              {
-                "url": "/boat",
-                "name": "Boat List"
-              },
-              {
-                "url": "/boat?_layout=grid",
-                "name": "Boat Grid"
-              },
-              {
-                "url": "/boat?_layout=map",
-                "name": "Boat Map"
-              },
-              {
-                "url": "/boat/blue-moon-yc-300",
-                "name": "Boat Detail"
-              }
-            ]
-          },
-          {
-            "name": "Flight",
-            "submenu": [
-              {
-                "url": "#",
-                "name": " Flight"
-              },
-              {
-                "url": "/flight",
-                "name": "Flight List"
-              }
-            ]
+            "url": "/flight",
+            "name": "Flight List"
           }
         ]
       },
