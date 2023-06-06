@@ -1,0 +1,275 @@
+{
+    "menu": [
+      {
+        "name": "Home",
+        "url": "#",
+        "submenu": [
+          {
+            "url": "#",
+            "name": " Home"
+          },
+          {
+            "url": "/",
+            "name": "Home 1"
+          },
+          {
+            "url": "/page/home-2",
+            "name": "Home 2"
+          },
+          {
+            "url": "/page/home-3",
+            "name": "Home 3"
+          },
+          {
+            "url": "/page/hotel",
+            "name": "Home Hotel"
+          },
+          {
+            "url": "/page/home-tour",
+            "name": "Home Tour"
+          },
+          {
+            "url": "/page/home-space",
+            "name": "Home Space"
+          },
+          {
+            "url": "/page/home-car",
+            "name": "Home Car"
+          },
+          {
+            "url": "/page/home-boat",
+            "name": "Home Boat"
+          },
+          {
+            "url": "/page/home-event",
+            "name": "Home Event"
+          },
+          {
+            "url": "/page/home-flight",
+            "name": "Home Flight"
+          }
+        ]
+      },
+      {
+        "name": "Services",
+        "url": "#",
+        "submenu": [
+          {
+            "url": "#",
+            "name": " Services"
+          },
+          {
+            "name": "Hotel",
+            "submenu": [
+              {
+                "url": "#",
+                "name": " Hotel"
+              },
+              {
+                "url": "/hotel",
+                "name": "Hotel List"
+              },
+              {
+                "url": "/hotel?_layout=grid",
+                "name": "Hotel Grid"
+              },
+              {
+                "url": "/hotel?_layout=map",
+                "name": "Hotel Map"
+              },
+              {
+                "url": "/hotel/parian-holiday-villas",
+                "name": "Hotel Detail"
+              }
+            ]
+          },
+          {
+            "name": "Tour",
+            "submenu": [
+              {
+                "url": "#",
+                "name": " Tour"
+              },
+              {
+                "url": "/tour",
+                "name": "Tour List"
+              },
+              {
+                "url": "/tour?_layout=grid",
+                "name": "Tour Grid"
+              },
+              {
+                "url": "/tour?_layout=map",
+                "name": "Tour Map"
+              },
+              {
+                "url": "/tour/paris-vacation-travel",
+                "name": "Tour Detail"
+              }
+            ]
+          },
+          {
+            "name": "Space",
+            "submenu": [
+              {
+                "url": "#",
+                "name": " Space"
+              },
+              {
+                "url": "/space",
+                "name": "Space List"
+              },
+              {
+                "url": "/space?_layout=grid",
+                "name": "Space Gird"
+              },
+              {
+                "url": "/space?_layout=map",
+                "name": "Space Map"
+              },
+              {
+                "url": "/space/stay-greenwich-village",
+                "name": "Space Detail"
+              }
+            ]
+          },
+          {
+            "name": "Car",
+            "submenu": [
+              {
+                "url": "#",
+                "name": " Car"
+              },
+              {
+                "url": "/car",
+                "name": "Car List"
+              },
+              {
+                "url": "/car?_layout=grid",
+                "name": "Car Grid"
+              },
+              {
+                "url": "/car?_layout=map",
+                "name": "Car Map"
+              },
+              {
+                "url": "/car/vinfast-lux-a20-plus",
+                "name": "Car Detail"
+              }
+            ]
+          },
+          {
+            "name": "Event",
+            "submenu": [
+              {
+                "url": "#",
+                "name": " Event"
+              },
+              {
+                "url": "/event",
+                "name": "Event List"
+              },
+              {
+                "url": "/event?_layout=grid",
+                "name": "Event Grid"
+              },
+              {
+                "url": "/event?_layout=map",
+                "name": "Event Map"
+              },
+              {
+                "url": "/event/aspen-glade-weddings-events",
+                "name": "Event Detail"
+              }
+            ]
+          },
+          {
+            "name": "Boat",
+            "submenu": [
+              {
+                "url": "#",
+                "name": " Boat"
+              },
+              {
+                "url": "/boat",
+                "name": "Boat List"
+              },
+              {
+                "url": "/boat?_layout=grid",
+                "name": "Boat Grid"
+              },
+              {
+                "url": "/boat?_layout=map",
+                "name": "Boat Map"
+              },
+              {
+                "url": "/boat/blue-moon-yc-300",
+                "name": "Boat Detail"
+              }
+            ]
+          },
+          {
+            "name": "Flight",
+            "submenu": [
+              {
+                "url": "#",
+                "name": " Flight"
+              },
+              {
+                "url": "/flight",
+                "name": "Flight List"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Destinations",
+        "url": "/location/paris"
+      },
+      {
+        "name": "Blog",
+        "url": "#",
+        "submenu": [
+          {
+            "url": "#",
+            "name": " Blog"
+          },
+          {
+            "url": "/news",
+            "name": "Blog List"
+          },
+          {
+            "url": "/news/morning-in-the-northern-sea",
+            "name": "Blog Detail"
+          }
+        ]
+      },
+      {
+        "name": "Pages",
+        "url": "#",
+        "submenu": [
+          {
+            "url": "#",
+            "name": " Pages"
+          },
+          {
+            "url": "/plan",
+            "name": "Plan"
+          },
+          {
+            "url": "/page/become-an-expert",
+            "name": "Become an expert"
+          },
+          {
+            "url": "/page/terms",
+            "name": "Terms"
+          }
+        ]
+      },
+      {
+        "name": "Contact",
+        "url": "/contact"
+      }
+    ]
+  }
