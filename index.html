@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="en" class>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- <link rel="icon" type="image/png" href="uploads/demo/general/favicon.png" /> -->
+		<title>Search for hotel - Go Trip</title>
+		<!-- <meta name="description" content />
+		<meta property="og:url" content="hotel" />
+		<meta property="og:type" content="article" />
+		<meta property="og:title" content="Search for hotel" />
+		<meta property="og:description" content />
+		<meta property="og:image" content />
+		<meta name="twitter:card" content="summary_large_image">
+		<meta name="twitter:title" content="Search for hotel">
+		<meta name="twitter:description" content>
+		<meta name="twitter:image" content>
+		<link rel="canonical" href="hotel" /> -->
+		<link href="themes/gotrip/css/vendors.css" rel="stylesheet">
+		<link href="themes/gotrip/css/main.css" rel="stylesheet">
+		<link href="libs/icofont/icofont.min.css" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="libs/daterange/daterangepicker.css">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="themes/gotrip/dist/frontend/css/app.css?_v=3.2.1">
+		<script>
+			var bookingCore = {
+			    url:'https://gotrip.bookingcore.org',
+			    url_root:'https://gotrip.bookingcore.org',
+			    admin_url:'admin',
+			    booking_decimals:0,
+			    thousand_separator:'.',
+			    decimal_separator:',',
+			    currency_position:'left',
+			    currency_symbol:'$',
+			    currency_rate:'1',
+			    date_format:'MM/DD/YYYY',
+			    map_provider:'osm',
+			    map_gmap_key:'',
+			    map_options:{
+			        map_lat_default:'',
+			        map_lng_default:'',
+			        map_clustering:'on',
+			        map_fit_bounds:'on',
+			    },
+			    routes:{
+			        login:'login',
+			        register:'register',
+			        checkout:'booking/doCheckout'
+			    },
+			    currentUser: 0,
+			    isAdmin : 0,
+			    rtl: false,
+			    markAsRead:'notify/markAsRead',
+			    markAllAsRead:'notify/markAllAsRead',
+			    loadNotify : 'notify/notifications',
+			    pusher_api_key : '',
+			    pusher_cluster : '',
+			    language: 'en',
+			    module:{}
+			};
+			                        bookingCore.module.hotel = 'hotel';
+			                            bookingCore.module.car = 'car';
+			                            bookingCore.module.event = 'event';
+			                            bookingCore.module.tour = 'tour';
+			                            bookingCore.module.flight = 'flight';
+			            var i18n = {
+			    warning:"Warning",
+			    success:"Success",
+			    confirm_delete:"Do you want to delete?",
+			    confirm:"Confirm",
+			    cancel:"Cancel",
+			};
+			var daterangepickerLocale = {
+			    "applyLabel": "Apply",
+			    "cancelLabel": "Cancel",
+			    "fromLabel": "From",
+			    "toLabel": "To",
+			    "customRangeLabel": "Custom",
+			    "weekLabel": "W",
+			    "first_day_of_week": 1,
+			    "daysOfWeek": [
+			        "Su",
+			        "Mo",
+			        "Tu",
+			        "We",
+			        "Th",
+			        "Fr",
+			        "Sa"
+			    ],
+			    "monthNames": [
+			        "January",
+			        "February",
+			        "March",
+			        "April",
+			        "May",
+			        "June",
+			        "July",
+			        "August",
+			        "September",
+			        "October",
+			        "November",
+			        "December"
+			    ],
+			};
+		</script>
+		<link href="themes/gotrip/dist/frontend/module/hotel/css/hotel.css?_ver=3.2.1" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="libs/ion_rangeslider/css/ion.rangeSlider.min.css" />
+		<link href="custom-css" rel="stylesheet">
+	</head>
+	<body class="frontend-page header-normal   ">
+		<div class="bravo_wrap overflow-hidden">
+			<div class="header-margin"></div>
+			<header data-add-bg="bg-dark-1" class="header -fixed bg-dark-3 js-header bravo_header" data-x="header" data-x-toggle="is-menu-opened">
+				<div data-anim="fade" class="header__container px-30 sm:px-20  is-in-view">
+					<div class="row justify-between items-center">
+						<div class="col-auto ">
+							<div class="d-flex items-center gotrip-header-normal">
+								<a href="https://gotrip.bookingcore.org" class=" header-logo mr-20" data-x="header-logo" data-x-toggle="is-logo-dark">
+                                    <img class="logo-light" src="uploads/gotrip/general/logo-light.png" alt="Go Trip">
+                                    <img class="logo-dark" src="uploads/gotrip/general/logo-dark.png" alt="Go Trip">
+								</a>
+								<div class="header-menu " data-x="mobile-menu" data-x-toggle="is-menu-active">
+									<div class="mobile-overlay"></div>
+									<div class="header-menu__content">
+										<div class="mobile-bg js-mobile-bg"></div>
+										<div class="menu js-navList">
+											<ul class="menu__nav text-white -is-active">
+												<li class=" menu-item-has-children depth-0">
+													<a data-barba target href="/"><span class="mr-10">Home</span><i class="icon icon-chevron-sm-down"></i></a>
+													<ul class="subnav">
+														<li class="subnav__backBtn js-nav-list-back">
+															<a href="#"><i class="icon icon-chevron-sm-down"></i> Home</a>
+														</li>
+														<li class=" depth-1"><a data-barba target href="/">Home 1</a></li>
+														<li class=" depth-1"><a data-barba target href="/page/home-2">Home 2</a></li>
+														<li class=" depth-1"><a data-barba target href="/page/home-3">Home 3</a></li>
+														<li class=" depth-1"><a data-barba target href="/page/hotel">Home Hotel</a></li>
+														<li class=" depth-1"><a data-barba target href="/page/home-tour">Home Tour</a></li>
+														<li class=" depth-1"><a data-barba target href="/page/home-space">Home Space</a></li>
+														<li class=" depth-1"><a data-barba target href="/page/home-car">Home Car</a></li>
+														<li class=" depth-1"><a data-barba target href="/page/home-boat">Home Boat</a></li>
+														<li class=" depth-1"><a data-barba target href="/page/home-event">Home Event</a></li>
+														<li class=" depth-1"><a data-barba target href="/page/home-flight">Home Flight</a></li>
+													</ul>
+												</li>
+												<li class=" active  menu-item-has-children -has-mega-menu depth-0">
+													<a data-barba target href="#"><span class="mr-10">Services</span><i class="icon icon-chevron-sm-down"></i></a>
+													<div class="mega mb-menu-none column-4 --has-mega-image">
+														<ul class="subnav">
+															<li class=" active active  menu-item-has-children depth-1">
+																<a data-barba target href="/hotel"><span class="mr-10">Hotel</span><i class="icon icon-chevron-sm-down"></i></a>
+																<ul class="subnav">
+																	<li class="subnav__backBtn js-nav-list-back">
+																		<a href="#"><i class="icon icon-chevron-sm-down"></i> Hotel</a>
+																	</li>
+																	<li class=" active depth-2"><a data-barba target href="/hotel">Hotel List</a></li>
+																	<li class=" depth-2"><a data-barba target href="/hotel?_layout=grid">Hotel Grid</a></li>
+																	<li class=" depth-2"><a data-barba target href="/hotel?_layout=map">Hotel Map</a></li>
+																	<li class=" depth-2"><a data-barba target href="/hotel/parian-holiday-villas">Hotel Detail</a></li>
+																</ul>
+															</li>
+															<li class=" menu-item-has-children depth-1">
+																<a data-barba target href="/tour"><span class="mr-10">Tour</span><i class="icon icon-chevron-sm-down"></i></a>
+																<ul class="subnav">
+																	<li class="subnav__backBtn js-nav-list-back">
+																		<a href="#"><i class="icon icon-chevron-sm-down"></i> Tour</a>
+																	</li>
+																	<li class=" depth-2"><a data-barba target href="/tour">Tour List</a></li>
+																	<li class=" depth-2"><a data-barba target href="/tour?_layout=grid">Tour Grid</a></li>
+																	<li class=" depth-2"><a data-barba target href="/tour?_layout=map">Tour Map</a></li>
+																	<li class=" depth-2"><a data-barba target href="/tour/paris-vacation-travel">Tour Detail</a></li>
+																</ul>
+															</li>
+															<li class=" menu-item-has-children depth-1">
+																<a data-barba target href="/space"><span class="mr-10">Space</span><i class="icon icon-chevron-sm-down"></i></a>
+																<ul class="subnav">
+																	<li class="subnav__backBtn js-nav-list-back">
+																		<a href="#"><i class="icon icon-chevron-sm-down"></i> Space</a>
+																	</li>
+																	<li class=" depth-2"><a data-barba target href="/space">Space List</a></li>
+																	<li class=" depth-2"><a data-barba target href="/space?_layout=grid">Space Gird</a></li>
+																	<li class=" depth-2"><a data-barba target href="/space?_layout=map">Space Map</a></li>
+																	<li class=" depth-2"><a data-barba target href="/space/stay-greenwich-village">Space Detail</a></li>
+																</ul>
+															</li>
+															<li class=" menu-item-has-children depth-1">
+																<a data-barba target href="/car"><span class="mr-10">Car</span><i class="icon icon-chevron-sm-down"></i></a>
+																<ul class="subnav">
+																	<li class="subnav__backBtn js-nav-list-back">
+																		<a href="#"><i class="icon icon-chevron-sm-down"></i> Car</a>
+																	</li>
+																	<li class=" depth-2"><a data-barba target href="/car">Car List</a></li>
+																	<li class=" depth-2"><a data-barba target href="/car?_layout=grid">Car Grid</a></li>
+																	<li class=" depth-2"><a data-barba target href="/car?_layout=map">Car Map</a></li>
+																	<li class=" depth-2"><a data-barba target href="/car/vinfast-lux-a20-plus">Car Detail</a></li>
+																</ul>
+															</li>
+															<li class=" menu-item-has-children depth-1">
+																<a data-barba target href="/event"><span class="mr-10">Event</span><i class="icon icon-chevron-sm-down"></i></a>
+																<ul class="subnav">
+																	<li class="subnav__backBtn js-nav-list-back">
+																		<a href="#"><i class="icon icon-chevron-sm-down"></i> Event</a>
+																	</li>
+																	<li class=" depth-2"><a data-barba target href="/event">Event List</a></li>
+																	<li class=" depth-2"><a data-barba target href="/event?_layout=grid">Event Grid</a></li>
+																	<li class=" depth-2"><a data-barba target href="/event?_layout=map">Event Map</a></li>
+																	<li class=" depth-2"><a data-barba target href="/event/aspen-glade-weddings-events">Event Detail</a></li>
+																</ul>
+															</li>
+															<li class=" menu-item-has-children depth-1">
+																<a data-barba target href="/boat"><span class="mr-10">Boat</span><i class="icon icon-chevron-sm-down"></i></a>
+																<ul class="subnav">
+																	<li class="subnav__backBtn js-nav-list-back">
+																		<a href="#"><i class="icon icon-chevron-sm-down"></i> Boat</a>
+																	</li>
+																	<li class=" depth-2"><a data-barba target href="/boat">Boat List</a></li>
+																	<li class=" depth-2"><a data-barba target href="/boat?_layout=grid">Boat Grid</a></li>
+																	<li class=" depth-2"><a data-barba target href="/boat?_layout=map">Boat Map</a></li>
+																	<li class=" depth-2"><a data-barba target href="/boat/blue-moon-yc-300">Boat Detail</a></li>
+																</ul>
+															</li>
+															<li class=" menu-item-has-children depth-1">
+																<a data-barba target href="/flight"><span class="mr-10">Flight</span><i class="icon icon-chevron-sm-down"></i></a>
+																<ul class="subnav">
+																	<li class="subnav__backBtn js-nav-list-back">
+																		<a href="#"><i class="icon icon-chevron-sm-down"></i> Flight</a>
+																	</li>
+																	<li class=" depth-2"><a data-barba target href="/flight">Flight List</a></li>
+																</ul>
+															</li>
+														</ul>
+														<div class="mega-image"><img src="/uploads/gotrip/general/mega-menu-bg.png" alt="Services"></div>
+													</div>
+													<ul class="subnav mega-mobile pc-menu-none">
+														<li class="subnav__backBtn js-nav-list-back">
+															<a href="#"><i class="icon icon-chevron-sm-down"></i> Services</a>
+														</li>
+														<li class=" active active  menu-item-has-children depth-1">
+															<a data-barba target href="/hotel"><span class="mr-10">Hotel</span><i class="icon icon-chevron-sm-down"></i></a>
+															<ul class="subnav">
+																<li class="subnav__backBtn js-nav-list-back">
+																	<a href="#"><i class="icon icon-chevron-sm-down"></i> Hotel</a>
+																</li>
+																<li class=" active depth-2"><a data-barba target href="/hotel">Hotel List</a></li>
+																<li class=" depth-2"><a data-barba target href="/hotel?_layout=grid">Hotel Grid</a></li>
+																<li class=" depth-2"><a data-barba target href="/hotel?_layout=map">Hotel Map</a></li>
+																<li class=" depth-2"><a data-barba target href="/hotel/parian-holiday-villas">Hotel Detail</a></li>
+															</ul>
+														</li>
+														<li class=" menu-item-has-children depth-1">
+															<a data-barba target href="/tour"><span class="mr-10">Tour</span><i class="icon icon-chevron-sm-down"></i></a>
+															<ul class="subnav">
+																<li class="subnav__backBtn js-nav-list-back">
+																	<a href="#"><i class="icon icon-chevron-sm-down"></i> Tour</a>
+																</li>
+																<li class=" depth-2"><a data-barba target href="/tour">Tour List</a></li>
+																<li class=" depth-2"><a data-barba target href="/tour?_layout=grid">Tour Grid</a></li>
+																<li class=" depth-2"><a data-barba target href="/tour?_layout=map">Tour Map</a></li>
+																<li class=" depth-2"><a data-barba target href="/tour/paris-vacation-travel">Tour Detail</a></li>
+															</ul>
+														</li>
+														<li class=" menu-item-has-children depth-1">
+															<a data-barba target href="/space"><span class="mr-10">Space</span><i class="icon icon-chevron-sm-down"></i></a>
+															<ul class="subnav">
+																<li class="subnav__backBtn js-nav-list-back">
+																	<a href="#"><i class="icon icon-chevron-sm-down"></i> Space</a>
+																</li>
+																<li class=" depth-2"><a data-barba target href="/space">Space List</a></li>
+																<li class=" depth-2"><a data-barba target href="/space?_layout=grid">Space Gird</a></li>
+																<li class=" depth-2"><a data-barba target href="/space?_layout=map">Space Map</a></li>
+																<li class=" depth-2"><a data-barba target href="/space/stay-greenwich-village">Space Detail</a></li>
+															</ul>
+														</li>
+														<li class=" menu-item-has-children depth-1">
+															<a data-barba target href="/car"><span class="mr-10">Car</span><i class="icon icon-chevron-sm-down"></i></a>
+															<ul class="subnav">
+																<li class="subnav__backBtn js-nav-list-back">
+																	<a href="#"><i class="icon icon-chevron-sm-down"></i> Car</a>
+																</li>
+																<li class=" depth-2"><a data-barba target href="/car">Car List</a></li>
+																<li class=" depth-2"><a data-barba target href="/car?_layout=grid">Car Grid</a></li>
+																<li class=" depth-2"><a data-barba target href="/car?_layout=map">Car Map</a></li>
+																<li class=" depth-2"><a data-barba target href="/car/vinfast-lux-a20-plus">Car Detail</a></li>
+															</ul>
+														</li>
+														<li class=" menu-item-has-children depth-1">
+															<a data-barba target href="/event"><span class="mr-10">Event</span><i class="icon icon-chevron-sm-down"></i></a>
+															<ul class="subnav">
+																<li class="subnav__backBtn js-nav-list-back">
+																	<a href="#"><i class="icon icon-chevron-sm-down"></i> Event</a>
+																</li>
+																<li class=" depth-2"><a data-barba target href="/event">Event List</a></li>
+																<li class=" depth-2"><a data-barba target href="/event?_layout=grid">Event Grid</a></li>
+																<li class=" depth-2"><a data-barba target href="/event?_layout=map">Event Map</a></li>
+																<li class=" depth-2"><a data-barba target href="/event/aspen-glade-weddings-events">Event Detail</a></li>
+															</ul>
+														</li>
+														<li class=" menu-item-has-children depth-1">
+															<a data-barba target href="/boat"><span class="mr-10">Boat</span><i class="icon icon-chevron-sm-down"></i></a>
+															<ul class="subnav">
+																<li class="subnav__backBtn js-nav-list-back">
+																	<a href="#"><i class="icon icon-chevron-sm-down"></i> Boat</a>
+																</li>
+																<li class=" depth-2"><a data-barba target href="/boat">Boat List</a></li>
+																<li class=" depth-2"><a data-barba target href="/boat?_layout=grid">Boat Grid</a></li>
+																<li class=" depth-2"><a data-barba target href="/boat?_layout=map">Boat Map</a></li>
+																<li class=" depth-2"><a data-barba target href="/boat/blue-moon-yc-300">Boat Detail</a></li>
+															</ul>
+														</li>
+														<li class=" menu-item-has-children depth-1">
+															<a data-barba target href="/flight"><span class="mr-10">Flight</span><i class="icon icon-chevron-sm-down"></i></a>
+															<ul class="subnav">
+																<li class="subnav__backBtn js-nav-list-back">
+																	<a href="#"><i class="icon icon-chevron-sm-down"></i> Flight</a>
+																</li>
+																<li class=" depth-2"><a data-barba target href="/flight">Flight List</a></li>
+															</ul>
+														</li>
+													</ul>
+												</li>
+												<li class=" depth-0"><a data-barba target href="/location/paris">Destinations</a></li>
+												<li class=" menu-item-has-children depth-0">
+													<a data-barba target href="/news"><span class="mr-10">Blog</span><i class="icon icon-chevron-sm-down"></i></a>
+													<ul class="subnav">
+														<li class="subnav__backBtn js-nav-list-back">
+															<a href="#"><i class="icon icon-chevron-sm-down"></i> Blog</a>
+														</li>
+														<li class=" depth-1"><a data-barba target href="/news">Blog List</a></li>
+														<li class=" depth-1"><a data-barba target href="/news/morning-in-the-northern-sea">Blog Detail</a></li>
+													</ul>
+												</li>
+												<li class=" menu-item-has-children depth-0">
+													<a data-barba target href="#"><span class="mr-10">Pages</span><i class="icon icon-chevron-sm-down"></i></a>
+													<ul class="subnav">
+														<li class="subnav__backBtn js-nav-list-back">
+															<a href="#"><i class="icon icon-chevron-sm-down"></i> Pages</a>
+														</li>
+														<li class=" depth-1"><a data-barba target href="/plan">Plan</a></li>
+														<li class=" depth-1"><a data-barba target href="/page/become-an-expert">Become an expert</a></li>
+														<li class=" depth-1"><a data-barba target href="/page/terms">Terms</a></li>
+													</ul>
+												</li>
+												<li class=" depth-0"><a data-barba target href="/contact">Contact</a></li>
+											</ul>
+										</div>
+										<div class="mobile-footer px-20 py-10 border-top-light js-mobile-footer">
+											<li class="currency-dropdown menu-item-has-children">
+												<a href="#" class="is_login">
+												<span class="mr-10">USD</span>
+												<i class="icon icon-chevron-sm-down"></i>
+												</a>
+												<ul class="subnav">
+													<li>
+														<a href="hotel?set_currency=eur" class="is_login dropdown-item">
+														EUR
+														</a>
+													</li>
+													<li>
+														<a href="hotel?set_currency=jpy" class="is_login dropdown-item">
+														JPY
+														</a>
+													</li>
+												</ul>
+											</li>
+											<li class="language-dropdown menu-item-has-children">
+												<a href="#" class="is_login">
+												<span class="mr-10">
+												<span class="flag-icon flag-icon-gb"></span>
+												English
+												</span>
+												<i class="icon icon-chevron-sm-down"></i>
+												</a>
+												<ul class="subnav">
+													<li>
+														<a href="hotel?set_lang=ja" class="is_login dropdown-item" style="justify-content: flex-start">
+														<span class="flag-icon flag-icon-jp"></span>
+														Japanese
+														</a>
+													</li>
+													<li>
+														<a href="hotel?set_lang=egy" class="is_login dropdown-item" style="justify-content: flex-start">
+														<span class="flag-icon flag-icon-eg"></span>
+														Egyptian
+														</a>
+													</li>
+													<li>
+														<a href="hotel?set_lang=es_MX" class="is_login dropdown-item" style="justify-content: flex-start">
+														<span class="flag-icon flag-icon-mx"></span>
+														Mexico
+														</a>
+													</li>
+													<li>
+														<a href="hotel?set_lang=tr" class="is_login dropdown-item" style="justify-content: flex-start">
+														<span class="flag-icon flag-icon-tr"></span>
+														Türkçe
+														</a>
+													</li>
+													<li>
+														<a href="hotel?set_lang=he" class="is_login dropdown-item" style="justify-content: flex-start">
+														<span class="flag-icon flag-icon-Israel"></span>
+														Hebrew
+														</a>
+													</li>
+												</ul>
+											</li>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-auto">
+							<div class="d-flex items-center">
+								<div class="header-menu menu-right">
+									<div class="mobile-overlay"></div>
+									<div class="header-menu__content">
+										<div class="menu js-navList">
+											<ul class="menu__nav text-white -is-active">
+												<li class="currency-dropdown menu-item-has-children">
+													<a href="#" class="is_login">
+													<span class="mr-10">USD</span>
+													<i class="icon icon-chevron-sm-down"></i>
+													</a>
+													<ul class="subnav">
+														<li>
+															<a href="hotel?set_currency=eur" class="is_login dropdown-item">
+															EUR
+															</a>
+														</li>
+														<li>
+															<a href="hotel?set_currency=jpy" class="is_login dropdown-item">
+															JPY
+															</a>
+														</li>
+													</ul>
+												</li>
+												<li class="language-dropdown menu-item-has-children">
+													<a href="#" class="is_login">
+													<span class="mr-10">
+													<span class="flag-icon flag-icon-gb"></span>
+													English
+													</span>
+													<i class="icon icon-chevron-sm-down"></i>
+													</a>
+													<ul class="subnav">
+														<li>
+															<a href="hotel?set_lang=ja" class="is_login dropdown-item" style="justify-content: flex-start">
+															<span class="flag-icon flag-icon-jp"></span>
+															Japanese
+															</a>
+														</li>
+														<li>
+															<a href="hotel?set_lang=egy" class="is_login dropdown-item" style="justify-content: flex-start">
+															<span class="flag-icon flag-icon-eg"></span>
+															Egyptian
+															</a>
+														</li>
+														<li>
+															<a href="hotel?set_lang=es_MX" class="is_login dropdown-item" style="justify-content: flex-start">
+															<span class="flag-icon flag-icon-mx"></span>
+															Mexico
+															</a>
+														</li>
+														<li>
+															<a href="hotel?set_lang=tr" class="is_login dropdown-item" style="justify-content: flex-start">
+															<span class="flag-icon flag-icon-tr"></span>
+															Türkçe
+															</a>
+														</li>
+														<li>
+															<a href="hotel?set_lang=he" class="is_login dropdown-item" style="justify-content: flex-start">
+															<span class="flag-icon flag-icon-Israel"></span>
+															Hebrew
+															</a>
+														</li>
+													</ul>
+												</li>
+												<div class="d-flex items-center ml-20 is-menu-opened-hide md:d-none">
+													<a href="page/become-an-expert" class="-white bg-white text-dark-1 button px-30 fw-400 text-14  h-50">Become An Expert</a>
+													<a data-bs-toggle="modal" href="#login" class="border-white -outline-white text-white button px-30 fw-400 text-14  h-50 ml-20">Sign In / Register</a>
+												</div>
+												<div class="d-none xl:d-flex x-gap-20 items-center pl-30 text-white" data-x="header-mobile-icons" data-x-toggle="text-white">
+													<div>
+														<a href="login" class="d-flex items-center icon-user text-inherit text-22"></a>
+													</div>
+													<div><button class="d-flex items-center icon-menu text-inherit text-20" data-x-click="header, header-logo, header-mobile-icons, mobile-menu"></button></div>
+												</div>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="d-none xl:d-flex x-gap-20 items-center pl-30 text-white" data-x="header-mobile-icons" data-x-toggle="text-white">
+								<div><a href=" login " class="d-flex items-center icon-user text-inherit text-22"></a></div>
+								<div><button class="d-flex items-center icon-menu text-inherit text-20" data-x-click="header, header-logo, header-mobile-icons, mobile-menu"></button></div>
+							</div>
+						</div>
+					</div>
+					<div class="d-none xl:d-flex x-gap-20 items-center pl-30" data-x="header-mobile-icons" data-x-toggle="text-white"></div>
+				</div>
+			</header>
+			<ng-view></ng-view>
+			<section class="layout-pt-md layout-pb-md mailchimp bg-dark-2 ">
+				<div class="container">
+					<div class="row y-gap-30 justify-between items-center">
+						<div class="col-auto">
+							<div class="row y-gap-20  flex-wrap items-center">
+								<div class="col-auto">
+									<div class="icon-newsletter text-60 sm:text-40 text-white"></div>
+								</div>
+								<div class="col-auto">
+									<h4 class="text-26 text-white fw-600">Your Travel Journey Starts Here</h4>
+									<div class="text-white">Sign up and we&#039;ll send the best deals to you</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-auto">
+							<form action="newsletter/subscribe" class="subcribe-form bravo-subscribe-form bravo-form single-field -w-410 d-flex x-gap-10 y-gap-20">
+								<input type="hidden" name="_token" value="7jzKMer0l4KL2rL68KY9Jvi7cinb2ObKs68N8vpD"> 
+								<div>
+									<input class="bg-white h-60 email-input" type="text" name="email" placeholder="Your Email">
+								</div>
+								<div>
+									<button class="button -md h-60 bg-blue-1 text-white">
+									Subscribe <i class="fa fa-spinner fa-pulse fa-fw"></i>
+									</button>
+								</div>
+								<div class="form-mess"></div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</section>
+			<div class="footer -type-1 normal">
+				<div class="container">
+					<div class="footer_one pt-60 pb-60">
+						<div class="row y-gap-40 justify-between xl:justify-start">
+							<div class="col-xl-2 col-lg-3 col-sm-6">
+								<h5 class="text-16 fw-500 mb-30">Contact Us</h5>
+								<div class="mt-30">
+									<div class="text-14 mt-30">Toll Free Customer Care</div>
+									<a href="#" class="text-18 fw-500 text-blue-1 mt-5">+(1) 123 456 7890</a>
+								</div>
+								<div class="mt-35">
+									<div class="text-14 mt-30">Need live support?</div>
+									<a href="#" class="text-18 fw-500 text-blue-1 mt-5"><span class="__cf_email__" data-cfemail="2d45446d4a42595f445d034e4240">[email&#160;protected]</span></a>
+								</div>
+							</div>
+							<div class="col-xl-2 col-lg-3 col-sm-6">
+								<h5 class="text-16 fw-500 mb-30">Company</h5>
+								<div class="d-flex y-gap-10 flex-column">
+									<a href="#">About Us</a>
+									<a href="#">Careers</a>
+									<a href="#">Blog</a>
+									<a href="#">Press</a>
+									<a href="#">Gift Cards</a>
+									<a href="#">Magazine</a>
+								</div>
+							</div>
+							<div class="col-xl-2 col-lg-3 col-sm-6">
+								<h5 class="text-16 fw-500 mb-30">Support</h5>
+								<div class="d-flex y-gap-10 flex-column">
+									<a href="#">Contact</a>
+									<a href="#">Legal Notice</a>
+									<a href="#">Privacy Policy</a>
+									<a href="#">Terms and Conditions</a>
+									<a href="#">Sitemap</a>
+								</div>
+							</div>
+							<div class="col-xl-2 col-lg-3 col-sm-6">
+								<h5 class="text-16 fw-500 mb-30">Other Services</h5>
+								<div class="d-flex y-gap-10 flex-column">
+									<a href="#">Car hire</a>
+									<a href="#">Activity Finder</a>
+									<a href="#">Tour List</a>
+									<a href="#">Flight finder</a>
+									<a href="#">Cruise Ticket</a>
+									<a href="#">Holiday Rental</a>
+									<a href="#">Travel Agents</a>
+								</div>
+							</div>
+							<div class="col-xl-2 col-lg-3 col-sm-6">
+								<h5 class="text-16 fw-500 mb-30">Mobile</h5>
+								<div class="d-flex items-center px-20 py-10 rounded-4 border-light">
+									<div class="icon-apple text-24"></div>
+									<div class="ml-20">
+										<div class="text-14 text-light-1">Download on the</div>
+										<div class="text-15 lh-1 fw-500">Apple Store</div>
+									</div>
+								</div>
+								<div class="d-flex items-center px-20 py-10 rounded-4 border-light mt-20">
+									<div class="icon-play-market text-24"></div>
+									<div class="ml-20">
+										<div class="text-14 text-light-1">Get in on</div>
+										<div class="text-15 lh-1 fw-500">Google Play</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<section class="footer_middle_area py-20  border-top-light ">
+						<div class="row justify-between items-center y-gap-10">
+							<div class="col-auto">
+								Copyright © 2023 by Go Trip
+							</div>
+							<div class="col-auto">
+								<div class="row y-gap-10 items-center">
+									<div class="col-auto">
+										<div class="d-flex items-center">
+											<div class="menu-footer">
+												<div class="mobile-overlay"></div>
+												<div class="header-menu__content">
+													<div class="menu js-navList">
+														<ul class="menu__nav -is-active">
+															<li class="currency-dropdown menu-item-has-children">
+																<a href="#" class="is_login">
+																<span class="mr-10">USD</span>
+																<i class="icon icon-chevron-sm-down"></i>
+																</a>
+																<ul class="subnav">
+																	<li>
+																		<a href="hotel?set_currency=eur" class="is_login dropdown-item">
+																		EUR
+																		</a>
+																	</li>
+																	<li>
+																		<a href="hotel?set_currency=jpy" class="is_login dropdown-item">
+																		JPY
+																		</a>
+																	</li>
+																</ul>
+															</li>
+															<li class="language-dropdown menu-item-has-children">
+																<a href="#" class="is_login">
+																<span class="mr-10">
+																<span class="flag-icon flag-icon-gb"></span>
+																English
+																</span>
+																<i class="icon icon-chevron-sm-down"></i>
+																</a>
+																<ul class="subnav">
+																	<li>
+																		<a href="hotel?set_lang=ja" class="is_login dropdown-item" style="justify-content: flex-start">
+																		<span class="flag-icon flag-icon-jp"></span>
+																		Japanese
+																		</a>
+																	</li>
+																	<li>
+																		<a href="hotel?set_lang=egy" class="is_login dropdown-item" style="justify-content: flex-start">
+																		<span class="flag-icon flag-icon-eg"></span>
+																		Egyptian
+																		</a>
+																	</li>
+																	<li>
+																		<a href="hotel?set_lang=es_MX" class="is_login dropdown-item" style="justify-content: flex-start">
+																		<span class="flag-icon flag-icon-mx"></span>
+																		Mexico
+																		</a>
+																	</li>
+																	<li>
+																		<a href="hotel?set_lang=tr" class="is_login dropdown-item" style="justify-content: flex-start">
+																		<span class="flag-icon flag-icon-tr"></span>
+																		Türkçe
+																		</a>
+																	</li>
+																	<li>
+																		<a href="hotel?set_lang=he" class="is_login dropdown-item" style="justify-content: flex-start">
+																		<span class="flag-icon flag-icon-Israel"></span>
+																		Hebrew
+																		</a>
+																	</li>
+																</ul>
+															</li>
+														</ul>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="col-auto">
+										Go Trip
+									</div>
+								</div>
+							</div>
+						</div>
+					</section>
+				</div>
+			</div>
+			<div class="modal fade login gotrip-login-modal" id="login" tabindex="-1" role="dialog" aria-hidden="true">
+				<div class="modal-dialog modal-dialog-centered" role="document">
+					<div class="modal-content relative">
+						<div class="modal-header border-dashed">
+							<h4 class="modal-title">Log In</h4>
+							<span class="c-pointer" data-bs-dismiss="modal" aria-label="Close">
+							<i class="input-icon field-icon fa">
+							<img src="images/ico_close.svg" alt="close">
+							</i>
+							</span>
+						</div>
+						<div class="modal-body relative">
+							<form class="bravo-theme-gotrip-login-form y-gap-20" method="POST" action="login">
+								<input type="hidden" name="redirect" value>
+								<input type="hidden" name="_token" value="7jzKMer0l4KL2rL68KY9Jvi7cinb2ObKs68N8vpD"> 
+								<div class="col-12">
+									<h4 class="form-title text-22 fw-500">Welcome back</h4>
+									<p class="mt-10">Don&#039;t have an account yet? <a data-bs-toggle="modal" href="#register" class="text-blue-1">Sign up for free</a></p>
+								</div>
+								<div class="col-12">
+									<div class="form-input">
+										<input type="text" name="email" autocomplete="off">
+										<label class="lh-1 text-14 text-light-1">Email</label>
+									</div>
+								</div>
+								<div class="col-12">
+									<div class="form-input">
+										<input type="password" name="password" autocomplete="off">
+										<label class="lh-1 text-14 text-light-1">Password</label>
+									</div>
+								</div>
+								<div class="col-12 d-flex justify-content-between">
+									<div class="d-flex ">
+										<div class="form-checkbox" style="margin-top: 3px">
+											<input type="checkbox" name="remember" id="remember-me" value="1">
+											<div class="form-checkbox__mark">
+												<div class="form-checkbox__icon icon-check"></div>
+											</div>
+										</div>
+										<div class="text-15 lh-15 text-light-1 ml-10">Remember me</div>
+									</div>
+									<a href="forgot-password">Forgot Password?</a>
+								</div>
+								<div class="error message-error invalid-feedback"></div>
+								<div class="col-12">
+									<button class="button py-20 -dark-1 bg-blue-1 text-white w-100 form-submit" type="submit">
+										Sign In
+										<div class="icon-arrow-top-right ml-15"></div>
+										<span class="spinner-grow spinner-grow-sm icon-loading ml-15 d-none" role="status" aria-hidden="true"></span>
+									</button>
+								</div>
+								<div class="col-12">
+									<div class="text-center px-30">By creating an account, you agree to our Terms of Service and Privacy Statement.</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="modal fade login gotrip-register-modal" id="register" tabindex="-1" role="dialog" aria-hidden="true">
+				<div class="modal-dialog modal-dialog-centered" role="document">
+					<div class="modal-content relative">
+						<div class="modal-header">
+							<h4 class="modal-title">Sign Up</h4>
+							<span class="c-pointer" data-bs-dismiss="modal" aria-label="Close">
+							<i class="input-icon field-icon fa">
+							<img src="images/ico_close.svg" alt="close">
+							</i>
+							</span>
+						</div>
+						<div class="modal-body">
+							<form action="#" class="form bravo-form-register" method="post">
+								<input type="hidden" name="_token" value="7jzKMer0l4KL2rL68KY9Jvi7cinb2ObKs68N8vpD"> 
+								<div class="row y-gap-20">
+									<div class="col-12">
+										<h1 class="text-22 fw-500">Sign in or create an account</h1>
+										<p class="mt-10">Already have an account? <a data-bs-toggle="modal" href="#login" class="text-blue-1">Log in</a></p>
+									</div>
+									<div class="col-12">
+										<div class="form-input">
+											<input type="text" name="first_name" autocomplete="off">
+											<label class="lh-1 text-14 text-light-1">First Name</label>
+										</div>
+										<span class="invalid-feedback error error-first_name"></span>
+									</div>
+									<div class="col-12">
+										<div class="form-input">
+											<input type="text" name="last_name" autocomplete="off">
+											<label class="lh-1 text-14 text-light-1">Last Name</label>
+										</div>
+										<span class="invalid-feedback error error-last_name"></span>
+									</div>
+									<div class="col-12">
+										<div class="form-input">
+											<input type="text" name="phone" autocomplete="off">
+											<label class="lh-1 text-14 text-light-1">Phone</label>
+										</div>
+										<span class="invalid-feedback error error-phone"></span>
+									</div>
+									<div class="col-12">
+										<div class="form-input">
+											<input type="email" name="email" autocomplete="off">
+											<label class="lh-1 text-14 text-light-1">Email address</label>
+										</div>
+										<span class="invalid-feedback error error-email"></span>
+									</div>
+									<div class="col-12">
+										<div class="form-input">
+											<input type="password" name="password" autocomplete="off">
+											<label class="lh-1 text-14 text-light-1">Password</label>
+										</div>
+										<span class="invalid-feedback error error-password"></span>
+									</div>
+									<div class="col-12">
+										<div class="d-flex">
+											<div class="form-checkbox" style="margin-top: 3px">
+												<input type="checkbox" name="term" id="register-term">
+												<div class="form-checkbox__mark">
+													<div class="form-checkbox__icon icon-check"></div>
+												</div>
+											</div>
+											<label class="text-15 lh-15 text-light-1 ml-10" for="register-term">I have read and accept the Terms and Privacy Policy?</label>
+										</div>
+										<span class="invalid-feedback error error-term"></span>
+									</div>
+									<div class="error message-error invalid-feedback"></div>
+									<div class="col-12">
+										<button type="submit" class="button py-20 -dark-1 bg-blue-1 text-white w-100">
+											Sign Up 
+											<div class="icon-arrow-top-right ml-15"></div>
+										</button>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+
+            <script src="libs/jquery-3.6.3.min.js"></script>
+			<script src="libs/vue/vue.min.js"></script>
+			<script type="text/javascript" src="themes/gotrip/libs/bs/js/bootstrap.bundle.min.js"></script>
+			<script src="libs/bootbox/bootbox.min.js"></script>
+			<script src="libs/bootstrap4.0/js/bootstrap.min.js"></script>
+			<script type="text/javascript" src="themes/gotrip/js/vendors.js"></script>
+			<script type="text/javascript" src="themes/gotrip/js/main.js?_ver=3.2.1"></script>
+			<script src="libs/leaflet1.4.0/leaflet.js"></script>
+			<link rel="stylesheet" href="libs/leaflet1.4.0/leaflet.css">
+			<script src="module/core/js/map-engine.js?_ver=3.2.1"></script>
+			<script src="libs/carousel-2/owl.carousel.min.js"></script>
+			<script type="text/javascript" src="libs/daterange/moment.min.js"></script>
+			<script type="text/javascript" src="libs/daterange/daterangepicker.min.js"></script>
+			<script src="libs/select2/js/select2.min.js"></script>
+			<script src="themes/gotrip/dist/frontend/js/gotrip.js?_ver=3.2.1"></script>
+			<script type="text/javascript" src="libs/ion_rangeslider/js/ion.rangeSlider.min.js"></script>
+			<script type="text/javascript" src="module/hotel/js/hotel.js?_ver=3.2.1"></script>
+		</div>
+	</body>
+</html>
