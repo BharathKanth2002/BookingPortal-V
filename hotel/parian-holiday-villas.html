@@ -1,0 +1,1956 @@
+<!DOCTYPE html>
+<html lang="en" class>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="icon" type="image/png" href="/uploads/demo/general/favicon.png" />
+		<title>Parian Holiday Villas - BookingPortal</title>
+		<!-- <meta name="description" content />
+		<meta property="og:url" content="/hotel/parian-holiday-villas" />
+		<meta property="og:type" content="article" />
+		<meta property="og:title" content="Parian Holiday Villas" />
+		<meta property="og:description" content />
+		<meta property="og:image" content="/uploads/gotrip/hotel/6.png" />
+		<meta name="twitter:card" content="summary_large_image">
+		<meta name="twitter:title" content="Parian Holiday Villas">
+		<meta name="twitter:description" content>
+		<meta name="twitter:image" content="/uploads/gotrip/hotel/6.png"> -->
+		<link rel="canonical" href="/hotel/parian-holiday-villas" />
+		<link href="/themes/gotrip/css/vendors.css" rel="stylesheet">
+		<link href="/themes/gotrip/css/main.css" rel="stylesheet">
+		<link href="/libs/icofont/icofont.min.css" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="/libs/daterange/daterangepicker.css">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="/themes/gotrip/dist/frontend/css/app.css?_v=3.2.1">
+		<script>
+			var bookingCore = {
+			    url:'',
+			    url_root:'',
+			    admin_url:'/admin',
+			    booking_decimals:0,
+			    thousand_separator:'.',
+			    decimal_separator:',',
+			    currency_position:'left',
+			    currency_symbol:'$',
+			    currency_rate:'1',
+			    date_format:'MM/DD/YYYY',
+			    map_provider:'osm',
+			    map_gmap_key:'',
+			    map_options:{
+			        map_lat_default:'',
+			        map_lng_default:'',
+			        map_clustering:'on',
+			        map_fit_bounds:'on',
+			    },
+			    routes:{
+			        login:'/login',
+			        register:'/register',
+			        checkout:'/booking/doCheckout'
+			    },
+			    currentUser: 0,
+			    isAdmin : 0,
+			    rtl: false,
+			    markAsRead:'/notify/markAsRead',
+			    markAllAsRead:'/notify/markAllAsRead',
+			    loadNotify : '/notify/notifications',
+			    pusher_api_key : '',
+			    pusher_cluster : '',
+			    language: 'en',
+			    module:{}
+			};
+			                        bookingCore.module.hotel = '/hotel';
+			                            bookingCore.module.car = '/car';
+			                            bookingCore.module.event = '/event';
+			                            bookingCore.module.tour = '/tour';
+			                            bookingCore.module.flight = '/flight';
+			            var i18n = {
+			    warning:"Warning",
+			    success:"Success",
+			    confirm_delete:"Do you want to delete?",
+			    confirm:"Confirm",
+			    cancel:"Cancel",
+			};
+			var daterangepickerLocale = {
+			    "applyLabel": "Apply",
+			    "cancelLabel": "Cancel",
+			    "fromLabel": "From",
+			    "toLabel": "To",
+			    "customRangeLabel": "Custom",
+			    "weekLabel": "W",
+			    "first_day_of_week": 1,
+			    "daysOfWeek": [
+			        "Su",
+			        "Mo",
+			        "Tu",
+			        "We",
+			        "Th",
+			        "Fr",
+			        "Sa"
+			    ],
+			    "monthNames": [
+			        "January",
+			        "February",
+			        "March",
+			        "April",
+			        "May",
+			        "June",
+			        "July",
+			        "August",
+			        "September",
+			        "October",
+			        "November",
+			        "December"
+			    ],
+			};
+		</script>
+		<link href="/themes/gotrip/dist/frontend/module/hotel/css/hotel.css?_ver=3.2.1" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="/libs/fotorama/fotorama.css" />
+		<link href="/custom-css" rel="stylesheet">
+	</head>
+	<body class="frontend-page header-normal is_single  ">
+		<div class="bravo_wrap overflow-hidden">
+			<div class="header-margin"></div>
+			<header data-add-bg="bg-dark-1" class="header -fixed bg-dark-3 js-header bravo_header" data-x="header" data-x-toggle="is-menu-opened">
+				<div data-anim="fade" class="header__container px-30 sm:px-20  is-in-view">
+					<div class="row justify-between items-center">
+						<div class="col-auto ">
+							<div class="d-flex items-center gotrip-header-normal">
+								<a href="/" class=" header-logo mr-20" data-x="header-logo" data-x-toggle="is-logo-dark">
+                                    <img class="logo-light" src="uploads/gotrip/general/logo-light.png" alt="BookingPortal">
+                                    <img class="logo-dark" src="uploads/gotrip/general/logo-dark.png" alt="BookingPortal">
+								</a>
+								<div class="header-menu " data-x="mobile-menu" data-x-toggle="is-menu-active">
+									<div class="mobile-overlay"></div>
+									<div class="header-menu__content">
+										<div class="mobile-bg js-mobile-bg"></div>
+										<div class="menu js-navList">
+											<ul class="menu__nav text-white -is-active">
+												<li class="depth-0">
+													<a target href="/"><span class="mr-10">Home</span></a>
+												</li>
+												<li class="depth-0"><a target href="/hotel">Hotel</a></li>
+												<li class="depth-0"><a target href="/flight">Flight</a></li>
+												<li class="depth-0"><a target href="/bus">Bus</a></li>
+												<li class="depth-0"><a target href="/contact">Contact</a></li>
+											</ul>
+										</div>
+										<div class="mobile-footer px-20 py-10 border-top-light js-mobile-footer">
+											<li class="currency-dropdown menu-item-has-children">
+												<a href="#" class="is_login">
+												<span class="mr-10">INR</span>
+												<i class="icon icon-chevron-sm-down"></i>
+												</a>
+												<ul class="subnav">
+													<li>
+														<a href="?set_currency=eur" class="is_login dropdown-item">EUR</a>
+													</li>
+													<li>
+														<a href="?set_currency=jpy" class="is_login dropdown-item">JPY</a>
+													</li>
+												</ul>
+											</li>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-auto">
+							<div class="d-flex items-center">
+								<div class="header-menu menu-right">
+									<div class="mobile-overlay"></div>
+									<div class="header-menu__content">
+										<div class="menu js-navList">
+											<ul class="menu__nav text-white -is-active">
+												<li class="currency-dropdown menu-item-has-children">
+													<a href="#" class="is_login">
+                                                        <span class="mr-10">INR</span>
+                                                        <i class="icon icon-chevron-sm-down"></i>
+													</a>
+													<ul class="subnav">
+														<li>
+															<a href="?set_currency=eur" class="is_login dropdown-item">EUR</a>
+														</li>
+														<li>
+															<a href="?set_currency=jpy" class="is_login dropdown-item">JPY</a>
+														</li>
+													</ul>
+												</li>
+												<div class="d-none xl:d-flex x-gap-20 items-center pl-30 text-white" data-x="header-mobile-icons" data-x-toggle="text-white">
+													<div>
+														<a href="/login" class="d-flex items-center icon-user text-inherit text-22"></a>
+													</div>
+													<div><button class="d-flex items-center icon-menu text-inherit text-20" data-x-click="header, header-logo, header-mobile-icons, mobile-menu"></button></div>
+												</div>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="d-none xl:d-flex x-gap-20 items-center pl-30 text-white" data-x="header-mobile-icons" data-x-toggle="text-white">
+								<div><a href="/login " class="d-flex items-center icon-user text-inherit text-22"></a></div>
+								<div><button class="d-flex items-center icon-menu text-inherit text-20" data-x-click="header, header-logo, header-mobile-icons, mobile-menu"></button></div>
+							</div>
+						</div>
+					</div>
+					<div class="d-none xl:d-flex x-gap-20 items-center pl-30" data-x="header-mobile-icons" data-x-toggle="text-white"></div>
+				</div>
+			</header>
+			<div class="bravo_detail bravo_hotel_detail">
+				<div class="blog-breadcrumb py-10 bg-light-2">
+					<div class="container">
+						<div class="row y-gap-10 items-center justify-between">
+							<div class="col-auto">
+								<ol class="ul row x-gap-10 y-gap-5 items-center text-14 text-light-1 list-unstyled" itemscope itemtype="https://schema.org/BreadcrumbList">
+									<li class="col-auto" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+										<a href="" itemprop="item"><span itemprop="name">Home</span></a>
+										<meta itemprop="position" content="1" />
+									</li>
+									<li class="col-auto">
+										<div class>></div>
+									</li>
+									<li class="col-auto " itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+										<a href="/hotel" itemscope itemtype="https://schema.org/WebPage" itemprop="item" itemid="/hotel"><span itemprop="name">Hotel</span></a>
+										<meta itemprop="position" content="2" />
+									</li>
+									<li class="col-auto">
+										<div class>></div>
+									</li>
+									<li class="col-auto " itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+										<a href="/location/virginia" itemscope itemtype="https://schema.org/WebPage" itemprop="item" itemid="/location/virginia"><span itemprop="name">Virginia</span></a>
+										<meta itemprop="position" content="3" />
+									</li>
+									<li class="col-auto">
+										<div class>></div>
+									</li>
+									<li class="col-auto active" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+										<span itemprop="name" class="text-dark-1">Parian Holiday Villas</span>
+										<meta itemprop="position" content="4" />
+									</li>
+								</ol>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="bravo_content">
+					<section class="pt-40 g-header">
+						<div class="container">
+							<div class="row y-gap-20 justify-between items-end">
+								<div class="col-auto">
+									<div class="row x-gap-20 items-center">
+										<div class="col-auto">
+											<h1 class="text-30 sm:text-25 fw-600">Parian Holiday Villas</h1>
+										</div>
+										<div class="col-auto">
+											<i class="icon-star text-10 text-yellow-1"></i>
+											<i class="icon-star text-10 text-yellow-1"></i>
+											<i class="icon-star text-10 text-yellow-1"></i>
+											<i class="icon-star text-10 text-yellow-1"></i>
+										</div>
+									</div>
+									<div class="row x-gap-20 y-gap-20 items-center">
+										<div class="col-auto">
+											<div class="d-flex items-center text-15 text-light-1">
+												<i class="icon-location-2 text-16 mr-5"></i>
+												Paris Cinemas Battery
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-auto">
+									<div class="row x-gap-15 y-gap-15 items-center">
+										<div class="col-auto">
+											<div class="text-14">
+												From
+												<div class="d-inline-flex justify-content-end align-baseline mt-5">
+													<div class="text-16 text-red-1 line-through mr-5"></div>
+													<div class="text-22 lh-12 fw-600">$997</div>
+												</div>
+											</div>
+										</div>
+										<div class="col-auto">
+											<a href="#hotel-rooms-form" class="button h-50 px-24 -dark-1 bg-blue-1 text-white">
+												Select Room 
+												<div class="icon-arrow-top-right ml-15"></div>
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</section>
+					<section class="pt-40 g-gallery">
+						<div class="container">
+							<div class="row">
+								<div class="col-12">
+									<div class="galleryGrid -type-1 relative">
+										<div class="galleryGrid__item">
+											<img src="/uploads/gotrip/hotel/g-1.png" alt="Gallery" class="rounded-4">
+										</div>
+										<div class="galleryGrid__item">
+											<img src="/uploads/gotrip/hotel/g-2.png" alt="Gallery" class="rounded-4">
+										</div>
+										<div class="galleryGrid__item">
+											<img src="/uploads/gotrip/hotel/g-3.png" alt="Gallery" class="rounded-4">
+										</div>
+										<div class="galleryGrid__item">
+											<img src="/uploads/gotrip/hotel/g-4.png" alt="Gallery" class="rounded-4">
+										</div>
+										<div class="galleryGrid__item">
+											<img src="/uploads/gotrip/hotel/g-5.png" alt="Gallery" class="rounded-4">
+										</div>
+										<div class="absolute h-full col-12 z-2 px-20 py-20 d-flex justify-end items-end gotrip-banner">
+											<div class="btn-group">
+												<a href="#" class="btn btn-transparent has-icon bravo-video-popup" data-toggle="modal" data-src="https://www.youtube.com/embed/bhOiLfkChPo" data-target="#myModal">
+													<i class="input-icon field-icon fa">
+														<svg height="18px" width="18px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewbox="0 0 24 24" style="enable-background:new 0 0 24 24;" xml:space="preserve">
+															<g fill="#FFFFFF">
+																<path d="M2.25,24C1.009,24,0,22.991,0,21.75V2.25C0,1.009,1.009,0,2.25,0h19.5C22.991,0,24,1.009,24,2.25v19.5
+																	c0,1.241-1.009,2.25-2.25,2.25H2.25z M2.25,1.5C1.836,1.5,1.5,1.836,1.5,2.25v19.5c0,0.414,0.336,0.75,0.75,0.75h19.5
+																	c0.414,0,0.75-0.336,0.75-0.75V2.25c0-0.414-0.336-0.75-0.75-0.75H2.25z"></path>
+																<path d="M9.857,16.5c-0.173,0-0.345-0.028-0.511-0.084C8.94,16.281,8.61,15.994,8.419,15.61c-0.11-0.221-0.169-0.469-0.169-0.716
+																	V9.106C8.25,8.22,8.97,7.5,9.856,7.5c0.247,0,0.495,0.058,0.716,0.169l5.79,2.896c0.792,0.395,1.114,1.361,0.719,2.153
+																	c-0.154,0.309-0.41,0.565-0.719,0.719l-5.788,2.895C10.348,16.443,10.107,16.5,9.857,16.5z M9.856,9C9.798,9,9.75,9.047,9.75,9.106
+																	v5.788c0,0.016,0.004,0.033,0.011,0.047c0.013,0.027,0.034,0.044,0.061,0.054C9.834,14.998,9.845,15,9.856,15
+																	c0.016,0,0.032-0.004,0.047-0.011l5.788-2.895c0.02-0.01,0.038-0.027,0.047-0.047c0.026-0.052,0.005-0.115-0.047-0.141l-5.79-2.895
+																	C9.889,9.004,9.872,9,9.856,9z"></path>
+															</g>
+														</svg>
+													</i>
+													Tour Video
+												</a>
+											</div>
+											<a href="/uploads/gotrip/hotel/g-1.png" class="button -blue-1 px-24 py-15 bg-white text-dark-1 js-gallery" data-gallery="gallery2">
+											See All 12 Photos
+											</a>
+											<a href="/uploads/gotrip/hotel/g-2.png" class="js-gallery" data-gallery="gallery2"></a>
+											<a href="/uploads/gotrip/hotel/g-3.png" class="js-gallery" data-gallery="gallery2"></a>
+											<a href="/uploads/gotrip/hotel/g-4.png" class="js-gallery" data-gallery="gallery2"></a>
+											<a href="/uploads/gotrip/hotel/g-5.png" class="js-gallery" data-gallery="gallery2"></a>
+											<a href="/uploads/gotrip/hotel/g-6.png" class="js-gallery" data-gallery="gallery2"></a>
+											<a href="/uploads/gotrip/hotel/g-7.png" class="js-gallery" data-gallery="gallery2"></a>
+											<a href="/uploads/gotrip/hotel/g-8.png" class="js-gallery" data-gallery="gallery2"></a>
+											<a href="/uploads/gotrip/hotel/g-9.png" class="js-gallery" data-gallery="gallery2"></a>
+											<a href="/uploads/gotrip/hotel/g-10.png" class="js-gallery" data-gallery="gallery2"></a>
+											<a href="/uploads/gotrip/hotel/g-11.png" class="js-gallery" data-gallery="gallery2"></a>
+											<a href="/uploads/gotrip/hotel/g-12.png" class="js-gallery" data-gallery="gallery2"></a>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="container">
+								<div class="video_popup_modal">
+									<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+										<div class="modal-dialog modal-lg" role="document">
+											<div class="modal-content">
+												<div class="modal-body">
+													<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+													<span aria-hidden="true">&times;</span>
+													</button>
+													<div class="embed-responsive embed-responsive-16by9">
+														<iframe class="embed-responsive-item bravo_embed_video" src allowscriptaccess="always" allow="autoplay"></iframe>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</section>
+					<section class="pt-30" id="hotel-rooms">
+						<div class="container">
+							<div class="row y-gap-30">
+								<div class="col-xl-12">
+									<div class="row y-gap-40">
+										<div id="overview" class="col-12 gotrip-overview">
+											<h3 class="text-22 fw-500 pt-20">Overview</h3>
+											<div class="description text-dark-1 text-15 mt-20">
+												<p>Built in 1986, Hotel Stanford is a distinct addition to New York (NY) and a smart choice for travelers. The excitement of the city center is only 0 KM away. No less exceptional is the hotel’s easy access to the city’s myriad attractions and landmarks, such as Toto Music Studio, British Virgin Islands Tourist Board, L’Atelier Du Chocolat. Start and end in San Francisco! With the in-depth cultural tour Northern California Summer 2019, you have a 8 day tour package taking you through San Francisco, USA and 9 other destinations in USA. Northern California Summer 2019 includes accommodation as well as an expert guide, meals, transport and more.</p>
+												<h4>HIGHLIGHTS</h4>
+												<ul>
+													<li>Visit the Museum of Modern Art in Manhattan</li>
+													<li>See amazing works of contemporary art, including Vincent van Gogh's The Starry Night</li>
+													<li>Check out Campbell's Soup Cans by Warhol and The Dance (I) by Matisse</li>
+													<li>Behold masterpieces by Gauguin, Dali, Picasso, and Pollock</li>
+													<li>Enjoy free audio guides available in English, French, German, Italian, Spanish, Portuguese</li>
+												</ul>
+											</div>
+										</div>
+										<div class="col-12">
+											<div class="g-attributes property-type attr-5 pb-30">
+												<h3 class="text-22 fw-500 pt-40 border-top-light mb-20">Property type</h3>
+												<div class="list-attributes d-flex flex-wrap">
+													<div class="item apartments term-32">
+														<i class="icon-check text-blue-1"></i>
+														Apartments
+													</div>
+													<div class="item hotels term-33">
+														<i class="icon-check text-blue-1"></i>
+														Hotels
+													</div>
+													<div class="item boats term-36">
+														<i class="icon-check text-blue-1"></i>
+														Boats
+													</div>
+													<div class="item motels term-37">
+														<i class="icon-check text-blue-1"></i>
+														Motels
+													</div>
+													<div class="item lodges term-39">
+														<i class="icon-check text-blue-1"></i>
+														Lodges
+													</div>
+													<div class="item holiday-homes term-40">
+														<i class="icon-check text-blue-1"></i>
+														Holiday homes
+													</div>
+													<div class="item cruises term-41">
+														<i class="icon-check text-blue-1"></i>
+														Cruises
+													</div>
+												</div>
+											</div>
+											<div class="g-attributes facilities-1 attr-6 pb-30">
+												<h3 class="text-22 fw-500 pt-40 border-top-light mb-20">Facilities</h3>
+												<div class="list-attributes d-flex flex-wrap">
+													<div class="item wake-up-call term-42">
+														<i class="icofont-wall-clock"></i>
+														Wake-up call
+													</div>
+													<div class="item bicycle-hire term-44">
+														<i class="icofont-bicycle-alt-2"></i>
+														Bicycle hire
+													</div>
+													<div class="item flat-tv term-45">
+														<i class="icofont-imac"></i>
+														Flat Tv
+													</div>
+													<div class="item laundry-and-dry-cleaning term-46">
+														<i class="icofont-recycle-alt"></i>
+														Laundry and dry cleaning
+													</div>
+													<div class="item internet-wifi term-47">
+														<i class="icofont-wifi-alt"></i>
+														Internet – Wifi
+													</div>
+													<div class="item coffee-and-tea term-48">
+														<i class="icofont-tea"></i>
+														Coffee and tea
+													</div>
+												</div>
+											</div>
+											<div class="g-attributes hotel-service attr-7 pb-30">
+												<h3 class="text-22 fw-500 pt-40 border-top-light mb-20">Hotel Service</h3>
+												<div class="list-attributes d-flex flex-wrap">
+													<div class="item fiesta-restaurant term-50">
+														<i class="icon-check text-blue-1"></i>
+														Fiesta Restaurant
+													</div>
+													<div class="item hotel-transport-services term-51">
+														<i class="icon-check text-blue-1"></i>
+														Hotel transport services
+													</div>
+													<div class="item laundry-services term-53">
+														<i class="icon-check text-blue-1"></i>
+														Laundry Services
+													</div>
+													<div class="item pets-welcome term-54">
+														<i class="icon-check text-blue-1"></i>
+														Pets welcome
+													</div>
+													<div class="item tickets term-55">
+														<i class="icon-check text-blue-1"></i>
+														Tickets
+													</div>
+												</div>
+											</div>
+											<div class="border-bottom-light"></div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<h3 class="text-22 fw-500 heading-section mb-20 pt-40">Available Rooms</h3>
+							<div id="hotel-rooms-form" class="hotel_rooms_form border-light rounded-4 shadow-4" v-cloak :class="{'d-none':enquiry_type!='book'}">
+								<div class="nav-enquiry d-flex" v-if="is_form_enquiry_and_book">
+									<div class="enquiry-item active">
+										<span>Book</span>
+									</div>
+									<div class="enquiry-item" data-toggle="modal" data-target="#enquiry_form_modal">
+										<span>Enquiry</span>
+									</div>
+								</div>
+								<div class="form-book">
+									<div class="form-search-rooms">
+										<div class="d-flex form-search-row">
+											<div class="col-md-4">
+												<div class="form-group form-date-field form-date-search " @click="openStartDate" data-format="MM/DD/YYYY">
+													<i class="fa fa-angle-down arrow"></i>
+													<input type="text" class="start_date" ref="start_date" style="height: 1px; visibility: hidden">
+													<div class="date-wrapper form-content px-20 py-10">
+														<h4 class="text-15 fw-500 ls-2 lh-16">Select Dates</h4>
+														<div class="render check-in-render text-15 text-light-1 ls-2 lh-16" v-html="start_date_html"></div>
+													</div>
+												</div>
+											</div>
+											<div class="col-md-4">
+												<div class="searchMenu-guests px-20 py-10 rounded-4 js-form-dd form-group" style="height: 100%; cursor: pointer">
+													<i class="fa fa-angle-down arrow"></i>
+													<div data-x-dd-click="searchMenu-guests">
+														<h4 class="text-15 fw-500 ls-2 lh-16">Guest</h4>
+														<div class="text-15 text-light-1 ls-2 lh-16">
+															<span class="js-count-adult">{{ adults }}</span> adults
+															-
+															<span class="js-count-child">{{ children }}</span> children
+														</div>
+													</div>
+													<div class="searchMenu-guests__field shadow-2 mt-1" data-x-dd="searchMenu-guests" data-x-dd-toggle="-is-active">
+														<div class="bg-white px-30 py-30 rounded-4">
+															<div class="row y-gap-10 justify-between items-center form-guest-search">
+																<div class="col-auto">
+																	<div class="text-15 fw-500">Adults</div>
+																</div>
+																<div class="col-auto">
+																	<div class="d-flex items-center js-counter" data-value-change=".js-count-adult">
+																		<button class="button -outline-blue-1 text-blue-1 size-38 rounded-4 js-down" @click="minusPersonType('adults')">
+																		<i class="icon-minus text-12"></i>
+																		</button>
+																		<span class="input"><input type="number" v-model="adults" min="1" /></span>
+																		<button class="button -outline-blue-1 text-blue-1 size-38 rounded-4 js-up" @click="addPersonType('adults')">
+																		<i class="icon-plus text-12"></i>
+																		</button>
+																	</div>
+																</div>
+															</div>
+															<div class="border-top-light mt-24 mb-24"></div>
+															<div class="row y-gap-10 justify-between items-center form-guest-search">
+																<div class="col-auto">
+																	<div class="text-15 lh-12 fw-500">Children</div>
+																</div>
+																<div class="col-auto">
+																	<div class="d-flex items-center js-counter" data-value-change=".js-count-child">
+																		<button class="button -outline-blue-1 text-blue-1 size-38 rounded-4 js-down" @click="minusPersonType('children')">
+																		<i class="icon-minus text-12"></i>
+																		</button>
+																		<span class="input"><input type="number" v-model="children" min="0" /></span>
+																		<button class="button -outline-blue-1 text-blue-1 size-38 rounded-4 js-up" @click="addPersonType('children')">
+																		<i class="icon-plus text-12"></i>
+																		</button>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="col-md-4 col-btn">
+												<div class="g-button-submit bg-blue-1">
+													<button class="btn btn-primary btn-search text-white" @click="checkAvailability" :class="{'loading':onLoadAvailability}" type="submit">
+													Check Availability
+													<i v-show="onLoadAvailability" class="fa fa-spinner fa-spin"></i>
+													</button>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="room-available pt-30 hotel_rooms_form">
+                                <div class="hotel_list_rooms">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="start_room_sticky"></div>
+                                            <div class="room-item border-light rounded-4 px-30 py-30 sm:px-20 sm:py-20">
+                                                <h3 class="text-18 fw-500 mb-15">Room Kerama Islands</h3>
+                                                <div class="roomGrid">
+                                                    <div class="roomGrid__header">
+                                                        <div>Room Type</div>
+                                                        <div>Benefits</div>
+                                                        <div>Select Rooms</div>
+                                                    </div>
+                                                    <div class="roomGrid__grid">
+                                                        <div>
+                                                            <div class="ratio ratio-1:1">
+                                                                <img src="https://gotrip.bookingcore.org/uploads/demo/space/space-5.jpg" alt="image" class="img-ratio rounded-4"> 
+                                                                <div class="count-gallery"><i class="fa fa-picture-o"></i>
+                                                                    12
+                                                                </div>
+                                                            </div>
+                                                            <a href="javascript:void(0)" class="d-block text-15 fw-500 underline text-blue-1 mt-15">Show Room Information</a> 
+                                                            <div id="modal_room_101" tabindex="-1" role="dialog" class="modal">
+                                                                <div role="document" class="modal-dialog modal-lg modal-dialog-centered">
+                                                                    <div class="modal-content">
+                                                                        <div class="modal-header">
+                                                                            <h5 class="modal-title">Room Kerama Islands</h5>
+                                                                            <span data-dismiss="modal" aria-label="Close" class="c-pointer"><i class="input-icon field-icon fa"><img src="https://gotrip.bookingcore.org/images/ico_close.svg" alt="close"></i></span>
+                                                                        </div>
+                                                                        <div class="modal-body">
+                                                                            <div data-nav="thumbs" data-width="100%" data-auto="false" data-allowfullscreen="true" class="fotorama"><a href="https://gotrip.bookingcore.org/uploads/gotrip/hotel/g-1.png"></a><a href="https://gotrip.bookingcore.org/uploads/gotrip/hotel/g-2.png"></a><a href="https://gotrip.bookingcore.org/uploads/gotrip/hotel/g-3.png"></a><a href="https://gotrip.bookingcore.org/uploads/gotrip/hotel/g-4.png"></a><a href="https://gotrip.bookingcore.org/uploads/gotrip/hotel/g-5.png"></a><a href="https://gotrip.bookingcore.org/uploads/gotrip/hotel/g-6.png"></a><a href="https://gotrip.bookingcore.org/uploads/gotrip/hotel/g-7.png"></a><a href="https://gotrip.bookingcore.org/uploads/gotrip/hotel/g-8.png"></a><a href="https://gotrip.bookingcore.org/uploads/gotrip/hotel/g-9.png"></a><a href="https://gotrip.bookingcore.org/uploads/gotrip/hotel/g-10.png"></a><a href="https://gotrip.bookingcore.org/uploads/gotrip/hotel/g-11.png"></a><a href="https://gotrip.bookingcore.org/uploads/gotrip/hotel/g-12.png"></a></div>
+                                                                            <div class="list-attributes">
+                                                                                <div class="attribute-item">
+                                                                                    <h4 class="title">Room Amenities</h4>
+                                                                                    <ul class="d-flex justify-content-between flex-wrap">
+                                                                                        <li><i data-toggle="tooltip" data-placement="top" class="input-icon field-icon icofont-wall-clock" aria-label="Wake-up call" data-bs-original-title="Wake-up call"></i>
+                                                                                            Wake-up call
+                                                                                        </li>
+                                                                                        <li><i data-toggle="tooltip" data-placement="top" class="input-icon field-icon icofont-imac" aria-label="Flat Tv" data-bs-original-title="Flat Tv"></i>
+                                                                                            Flat Tv
+                                                                                        </li>
+                                                                                        <li><i data-toggle="tooltip" data-placement="top" class="input-icon field-icon icofont-recycle-alt" aria-label="Laundry and dry cleaning" data-bs-original-title="Laundry and dry cleaning"></i>
+                                                                                            Laundry and dry cleaning
+                                                                                        </li>
+                                                                                        <li><i data-toggle="tooltip" data-placement="top" class="input-icon field-icon icofont-wifi-alt" aria-label="Internet – Wifi" data-bs-original-title="Internet – Wifi"></i>
+                                                                                            Internet – Wifi
+                                                                                        </li>
+                                                                                    </ul>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div>
+                                                            <div class="roomGrid__content">
+                                                                <div class="room-type-item">
+                                                                    <div class="room-attribute room-meta d-flex">
+                                                                        <div class="item col-auto">
+                                                                            <div class="tooltip -top h-50">
+                                                                                <div class="tooltip__text"><i class="input-icon field-icon icofont-ruler-compass-alt"></i> <span>200 m<sup>2</sup></span></div>
+                                                                                <div class="tooltip__content">Room Footage</div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="item col-auto">
+                                                                            <div class="tooltip -top h-50">
+                                                                                <div class="tooltip__text"><i class="input-icon field-icon icofont-hotel"></i> <span>x5</span></div>
+                                                                                <div class="tooltip__content">No. Beds</div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="item col-auto">
+                                                                            <div class="tooltip -top h-50">
+                                                                                <div class="tooltip__text"><i class="input-icon field-icon icofont-users-alt-4"></i> <span>x9</span></div>
+                                                                                <div class="tooltip__content">No. Adults</div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="item col-auto">
+                                                                            <div class="tooltip -top h-50">
+                                                                                <div class="tooltip__text"><i class="input-icon field-icon fa-child fa"></i> <span>x1</span></div>
+                                                                                <div class="tooltip__content">No. Children</div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="room-attribute mt-10">
+                                                                        <div class="d-flex items-center">
+                                                                            <i class="input-icon field-icon text-20 mr-10 icofont-wall-clock"></i> 
+                                                                            <div class="text-15">Wake-up call</div>
+                                                                        </div>
+                                                                        <div class="d-flex items-center">
+                                                                            <i class="input-icon field-icon text-20 mr-10 icofont-imac"></i> 
+                                                                            <div class="text-15">Flat Tv</div>
+                                                                        </div>
+                                                                        <div class="d-flex items-center">
+                                                                            <i class="input-icon field-icon text-20 mr-10 icofont-recycle-alt"></i> 
+                                                                            <div class="text-15">Laundry and dry cleaning</div>
+                                                                        </div>
+                                                                        <div class="d-flex items-center">
+                                                                            <i class="input-icon field-icon text-20 mr-10 icofont-wifi-alt"></i> 
+                                                                            <div class="text-15">Internet – Wifi</div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div>
+                                                            <div class="text-center"><span class="price">$350<span class="unit">/1 nights</span></span></div>
+                                                            <select class="custom-select form-select rounded-4 border-light px-15 h-50 text-14">
+                                                                <option value="0">0</option>
+                                                                <option value="1">1 room &nbsp;&nbsp; ($350)</option>
+                                                                <option value="2">2 rooms &nbsp;&nbsp; ($700)</option>
+                                                                <option value="3">3 rooms &nbsp;&nbsp; ($1.050)</option>
+                                                                <option value="4">4 rooms &nbsp;&nbsp; ($1.400)</option>
+                                                                <option value="5">5 rooms &nbsp;&nbsp; ($1.750)</option>
+                                                                <option value="6">6 rooms &nbsp;&nbsp; ($2.100)</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="room-item border-light rounded-4 px-30 py-30 sm:px-20 sm:py-20 mt-20">
+                                                <h3 class="text-18 fw-500 mb-15">Room Sheraton Hotel</h3>
+                                                <div class="roomGrid">
+                                                    <div class="roomGrid__header">
+                                                        <div>Room Type</div>
+                                                        <div>Benefits</div>
+                                                        <div>Select Rooms</div>
+                                                    </div>
+                                                    <div class="roomGrid__grid">
+                                                        <div>
+                                                            <div class="ratio ratio-1:1">
+                                                                <img src="https://gotrip.bookingcore.org/uploads/demo/space/space-7.jpg" alt="image" class="img-ratio rounded-4"> 
+                                                                <div class="count-gallery"><i class="fa fa-picture-o"></i>
+                                                                    12
+                                                                </div>
+                                                            </div>
+                                                            <a href="javascript:void(0)" class="d-block text-15 fw-500 underline text-blue-1 mt-15">Show Room Information</a> 
+                                                            <div id="modal_room_102" tabindex="-1" role="dialog" class="modal">
+                                                                <div role="document" class="modal-dialog modal-lg modal-dialog-centered">
+                                                                    <div class="modal-content">
+                                                                        <div class="modal-header">
+                                                                            <h5 class="modal-title">Room Sheraton Hotel</h5>
+                                                                            <span data-dismiss="modal" aria-label="Close" class="c-pointer"><i class="input-icon field-icon fa"><img src="https://gotrip.bookingcore.org/images/ico_close.svg" alt="close"></i></span>
+                                                                        </div>
+                                                                        <div class="modal-body">
+                                                                            <div data-nav="thumbs" data-width="100%" data-auto="false" data-allowfullscreen="true" class="fotorama"><a href="https://gotrip.bookingcore.org/uploads/gotrip/hotel/g-1.png"></a><a href="https://gotrip.bookingcore.org/uploads/gotrip/hotel/g-2.png"></a><a href="https://gotrip.bookingcore.org/uploads/gotrip/hotel/g-3.png"></a><a href="https://gotrip.bookingcore.org/uploads/gotrip/hotel/g-4.png"></a><a href="https://gotrip.bookingcore.org/uploads/gotrip/hotel/g-5.png"></a><a href="https://gotrip.bookingcore.org/uploads/gotrip/hotel/g-6.png"></a><a href="https://gotrip.bookingcore.org/uploads/gotrip/hotel/g-7.png"></a><a href="https://gotrip.bookingcore.org/uploads/gotrip/hotel/g-8.png"></a><a href="https://gotrip.bookingcore.org/uploads/gotrip/hotel/g-9.png"></a><a href="https://gotrip.bookingcore.org/uploads/gotrip/hotel/g-10.png"></a><a href="https://gotrip.bookingcore.org/uploads/gotrip/hotel/g-11.png"></a><a href="https://gotrip.bookingcore.org/uploads/gotrip/hotel/g-12.png"></a></div>
+                                                                            <div class="list-attributes">
+                                                                                <div class="attribute-item">
+                                                                                    <h4 class="title">Room Amenities</h4>
+                                                                                    <ul class="d-flex justify-content-between flex-wrap">
+                                                                                        <li><i data-toggle="tooltip" data-placement="top" class="input-icon field-icon icofont-wall-clock" aria-label="Wake-up call" data-bs-original-title="Wake-up call"></i>
+                                                                                            Wake-up call
+                                                                                        </li>
+                                                                                        <li><i data-toggle="tooltip" data-placement="top" class="input-icon field-icon icofont-imac" aria-label="Flat Tv" data-bs-original-title="Flat Tv"></i>
+                                                                                            Flat Tv
+                                                                                        </li>
+                                                                                        <li><i data-toggle="tooltip" data-placement="top" class="input-icon field-icon icofont-recycle-alt" aria-label="Laundry and dry cleaning" data-bs-original-title="Laundry and dry cleaning"></i>
+                                                                                            Laundry and dry cleaning
+                                                                                        </li>
+                                                                                        <li><i data-toggle="tooltip" data-placement="top" class="input-icon field-icon icofont-wifi-alt" aria-label="Internet – Wifi" data-bs-original-title="Internet – Wifi"></i>
+                                                                                            Internet – Wifi
+                                                                                        </li>
+                                                                                        <li><i data-toggle="tooltip" data-placement="top" class="input-icon field-icon icofont-tea" aria-label="Coffee and tea" data-bs-original-title="Coffee and tea"></i>
+                                                                                            Coffee and tea
+                                                                                        </li>
+                                                                                    </ul>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div>
+                                                            <div class="roomGrid__content">
+                                                                <div class="room-type-item">
+                                                                    <div class="room-attribute room-meta d-flex">
+                                                                        <div class="item col-auto">
+                                                                            <div class="tooltip -top h-50">
+                                                                                <div class="tooltip__text"><i class="input-icon field-icon icofont-ruler-compass-alt"></i> <span>200 m<sup>2</sup></span></div>
+                                                                                <div class="tooltip__content">Room Footage</div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="item col-auto">
+                                                                            <div class="tooltip -top h-50">
+                                                                                <div class="tooltip__text"><i class="input-icon field-icon icofont-hotel"></i> <span>x2</span></div>
+                                                                                <div class="tooltip__content">No. Beds</div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="item col-auto">
+                                                                            <div class="tooltip -top h-50">
+                                                                                <div class="tooltip__text"><i class="input-icon field-icon icofont-users-alt-4"></i> <span>x6</span></div>
+                                                                                <div class="tooltip__content">No. Adults</div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="item col-auto">
+                                                                            <div class="tooltip -top h-50">
+                                                                                <div class="tooltip__text"><i class="input-icon field-icon fa-child fa"></i> <span>x1</span></div>
+                                                                                <div class="tooltip__content">No. Children</div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="room-attribute mt-10">
+                                                                        <div class="d-flex items-center">
+                                                                            <i class="input-icon field-icon text-20 mr-10 icofont-wall-clock"></i> 
+                                                                            <div class="text-15">Wake-up call</div>
+                                                                        </div>
+                                                                        <div class="d-flex items-center">
+                                                                            <i class="input-icon field-icon text-20 mr-10 icofont-imac"></i> 
+                                                                            <div class="text-15">Flat Tv</div>
+                                                                        </div>
+                                                                        <div class="d-flex items-center">
+                                                                            <i class="input-icon field-icon text-20 mr-10 icofont-recycle-alt"></i> 
+                                                                            <div class="text-15">Laundry and dry cleaning</div>
+                                                                        </div>
+                                                                        <div class="d-flex items-center">
+                                                                            <i class="input-icon field-icon text-20 mr-10 icofont-wifi-alt"></i> 
+                                                                            <div class="text-15">Internet – Wifi</div>
+                                                                        </div>
+                                                                        <div class="d-flex items-center">
+                                                                            <i class="input-icon field-icon text-20 mr-10 icofont-tea"></i> 
+                                                                            <div class="text-15">Coffee and tea</div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div>
+                                                            <div class="text-center"><span class="price">$350<span class="unit">/1 nights</span></span></div>
+                                                            <select class="custom-select form-select rounded-4 border-light px-15 h-50 text-14">
+                                                                <option value="0">0</option>
+                                                                <option value="1">1 room &nbsp;&nbsp; ($350)</option>
+                                                                <option value="2">2 rooms &nbsp;&nbsp; ($700)</option>
+                                                                <option value="3">3 rooms &nbsp;&nbsp; ($1.050)</option>
+                                                                <option value="4">4 rooms &nbsp;&nbsp; ($1.400)</option>
+                                                                <option value="5">5 rooms &nbsp;&nbsp; ($1.750)</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="room-item border-light rounded-4 px-30 py-30 sm:px-20 sm:py-20 mt-20">
+                                                <h3 class="text-18 fw-500 mb-15">Double Room With Town View</h3>
+                                                <div class="roomGrid">
+                                                    <div class="roomGrid__header">
+                                                        <div>Room Type</div>
+                                                        <div>Benefits</div>
+                                                        <div>Select Rooms</div>
+                                                    </div>
+                                                    <div class="roomGrid__grid">
+                                                        <div>
+                                                            <div class="ratio ratio-1:1">
+                                                                <img src="https://gotrip.bookingcore.org/uploads/demo/space/space-2.jpg" alt="image" class="img-ratio rounded-4"> 
+                                                                <div class="count-gallery"><i class="fa fa-picture-o"></i>
+                                                                    12
+                                                                </div>
+                                                            </div>
+                                                            <a href="javascript:void(0)" class="d-block text-15 fw-500 underline text-blue-1 mt-15">Show Room Information</a> 
+                                                            <div id="modal_room_103" tabindex="-1" role="dialog" class="modal">
+                                                                <div role="document" class="modal-dialog modal-lg modal-dialog-centered">
+                                                                    <div class="modal-content">
+                                                                        <div class="modal-header">
+                                                                            <h5 class="modal-title">Double Room With Town View</h5>
+                                                                            <span data-dismiss="modal" aria-label="Close" class="c-pointer"><i class="input-icon field-icon fa"><img src="https://gotrip.bookingcore.org/images/ico_close.svg" alt="close"></i></span>
+                                                                        </div>
+                                                                        <div class="modal-body">
+                                                                            <div data-nav="thumbs" data-width="100%" data-auto="false" data-allowfullscreen="true" class="fotorama"><a href="https://gotrip.bookingcore.org/uploads/gotrip/hotel/g-1.png"></a><a href="https://gotrip.bookingcore.org/uploads/gotrip/hotel/g-2.png"></a><a href="https://gotrip.bookingcore.org/uploads/gotrip/hotel/g-3.png"></a><a href="https://gotrip.bookingcore.org/uploads/gotrip/hotel/g-4.png"></a><a href="https://gotrip.bookingcore.org/uploads/gotrip/hotel/g-5.png"></a><a href="https://gotrip.bookingcore.org/uploads/gotrip/hotel/g-6.png"></a><a href="https://gotrip.bookingcore.org/uploads/gotrip/hotel/g-7.png"></a><a href="https://gotrip.bookingcore.org/uploads/gotrip/hotel/g-8.png"></a><a href="https://gotrip.bookingcore.org/uploads/gotrip/hotel/g-9.png"></a><a href="https://gotrip.bookingcore.org/uploads/gotrip/hotel/g-10.png"></a><a href="https://gotrip.bookingcore.org/uploads/gotrip/hotel/g-11.png"></a><a href="https://gotrip.bookingcore.org/uploads/gotrip/hotel/g-12.png"></a></div>
+                                                                            <div class="list-attributes">
+                                                                                <div class="attribute-item">
+                                                                                    <h4 class="title">Room Amenities</h4>
+                                                                                    <ul class="d-flex justify-content-between flex-wrap">
+                                                                                        <li><i data-toggle="tooltip" data-placement="top" class="input-icon field-icon icofont-wall-clock" aria-label="Wake-up call" data-bs-original-title="Wake-up call"></i>
+                                                                                            Wake-up call
+                                                                                        </li>
+                                                                                        <li><i data-toggle="tooltip" data-placement="top" class="input-icon field-icon icofont-imac" aria-label="Flat Tv" data-bs-original-title="Flat Tv"></i>
+                                                                                            Flat Tv
+                                                                                        </li>
+                                                                                        <li><i data-toggle="tooltip" data-placement="top" class="input-icon field-icon icofont-recycle-alt" aria-label="Laundry and dry cleaning" data-bs-original-title="Laundry and dry cleaning"></i>
+                                                                                            Laundry and dry cleaning
+                                                                                        </li>
+                                                                                        <li><i data-toggle="tooltip" data-placement="top" class="input-icon field-icon icofont-wifi-alt" aria-label="Internet – Wifi" data-bs-original-title="Internet – Wifi"></i>
+                                                                                            Internet – Wifi
+                                                                                        </li>
+                                                                                        <li><i data-toggle="tooltip" data-placement="top" class="input-icon field-icon icofont-tea" aria-label="Coffee and tea" data-bs-original-title="Coffee and tea"></i>
+                                                                                            Coffee and tea
+                                                                                        </li>
+                                                                                    </ul>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div>
+                                                            <div class="roomGrid__content">
+                                                                <div class="room-type-item">
+                                                                    <div class="room-attribute room-meta d-flex">
+                                                                        <div class="item col-auto">
+                                                                            <div class="tooltip -top h-50">
+                                                                                <div class="tooltip__text"><i class="input-icon field-icon icofont-ruler-compass-alt"></i> <span>200 m<sup>2</sup></span></div>
+                                                                                <div class="tooltip__content">Room Footage</div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="item col-auto">
+                                                                            <div class="tooltip -top h-50">
+                                                                                <div class="tooltip__text"><i class="input-icon field-icon icofont-hotel"></i> <span>x5</span></div>
+                                                                                <div class="tooltip__content">No. Beds</div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="item col-auto">
+                                                                            <div class="tooltip -top h-50">
+                                                                                <div class="tooltip__text"><i class="input-icon field-icon icofont-users-alt-4"></i> <span>x9</span></div>
+                                                                                <div class="tooltip__content">No. Adults</div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="item col-auto">
+                                                                            <div class="tooltip -top h-50">
+                                                                                <div class="tooltip__text"><i class="input-icon field-icon fa-child fa"></i> <span>x1</span></div>
+                                                                                <div class="tooltip__content">No. Children</div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="room-attribute mt-10">
+                                                                        <div class="d-flex items-center">
+                                                                            <i class="input-icon field-icon text-20 mr-10 icofont-wall-clock"></i> 
+                                                                            <div class="text-15">Wake-up call</div>
+                                                                        </div>
+                                                                        <div class="d-flex items-center">
+                                                                            <i class="input-icon field-icon text-20 mr-10 icofont-imac"></i> 
+                                                                            <div class="text-15">Flat Tv</div>
+                                                                        </div>
+                                                                        <div class="d-flex items-center">
+                                                                            <i class="input-icon field-icon text-20 mr-10 icofont-recycle-alt"></i> 
+                                                                            <div class="text-15">Laundry and dry cleaning</div>
+                                                                        </div>
+                                                                        <div class="d-flex items-center">
+                                                                            <i class="input-icon field-icon text-20 mr-10 icofont-wifi-alt"></i> 
+                                                                            <div class="text-15">Internet – Wifi</div>
+                                                                        </div>
+                                                                        <div class="d-flex items-center">
+                                                                            <i class="input-icon field-icon text-20 mr-10 icofont-tea"></i> 
+                                                                            <div class="text-15">Coffee and tea</div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div>
+                                                            <div class="text-center"><span class="price">$350<span class="unit">/1 nights</span></span></div>
+                                                            <select class="custom-select form-select rounded-4 border-light px-15 h-50 text-14">
+                                                                <option value="0">0</option>
+                                                                <option value="1">1 room &nbsp;&nbsp; ($350)</option>
+                                                                <option value="2">2 rooms &nbsp;&nbsp; ($700)</option>
+                                                                <option value="3">3 rooms &nbsp;&nbsp; ($1.050)</option>
+                                                                <option value="4">4 rooms &nbsp;&nbsp; ($1.400)</option>
+                                                                <option value="5">5 rooms &nbsp;&nbsp; ($1.750)</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="room-item border-light rounded-4 px-30 py-30 sm:px-20 sm:py-20 mt-20">
+                                                <h3 class="text-18 fw-500 mb-15">Standard Double Room</h3>
+                                                <div class="roomGrid">
+                                                    <div class="roomGrid__header">
+                                                        <div>Room Type</div>
+                                                        <div>Benefits</div>
+                                                        <div>Select Rooms</div>
+                                                    </div>
+                                                    <div class="roomGrid__grid">
+                                                        <div>
+                                                            <div class="ratio ratio-1:1">
+                                                                <img src="https://gotrip.bookingcore.org/uploads/demo/space/space-1.jpg" alt="image" class="img-ratio rounded-4"> 
+                                                                <div class="count-gallery"><i class="fa fa-picture-o"></i>
+                                                                    12
+                                                                </div>
+                                                            </div>
+                                                            <a href="javascript:void(0)" class="d-block text-15 fw-500 underline text-blue-1 mt-15">Show Room Information</a> 
+                                                            <div id="modal_room_104" tabindex="-1" role="dialog" class="modal">
+                                                                <div role="document" class="modal-dialog modal-lg modal-dialog-centered">
+                                                                    <div class="modal-content">
+                                                                        <div class="modal-header">
+                                                                            <h5 class="modal-title">Standard Double Room</h5>
+                                                                            <span data-dismiss="modal" aria-label="Close" class="c-pointer"><i class="input-icon field-icon fa"><img src="https://gotrip.bookingcore.org/images/ico_close.svg" alt="close"></i></span>
+                                                                        </div>
+                                                                        <div class="modal-body">
+                                                                            <div data-nav="thumbs" data-width="100%" data-auto="false" data-allowfullscreen="true" class="fotorama"><a href="https://gotrip.bookingcore.org/uploads/gotrip/hotel/g-1.png"></a><a href="https://gotrip.bookingcore.org/uploads/gotrip/hotel/g-2.png"></a><a href="https://gotrip.bookingcore.org/uploads/gotrip/hotel/g-3.png"></a><a href="https://gotrip.bookingcore.org/uploads/gotrip/hotel/g-4.png"></a><a href="https://gotrip.bookingcore.org/uploads/gotrip/hotel/g-5.png"></a><a href="https://gotrip.bookingcore.org/uploads/gotrip/hotel/g-6.png"></a><a href="https://gotrip.bookingcore.org/uploads/gotrip/hotel/g-7.png"></a><a href="https://gotrip.bookingcore.org/uploads/gotrip/hotel/g-8.png"></a><a href="https://gotrip.bookingcore.org/uploads/gotrip/hotel/g-9.png"></a><a href="https://gotrip.bookingcore.org/uploads/gotrip/hotel/g-10.png"></a><a href="https://gotrip.bookingcore.org/uploads/gotrip/hotel/g-11.png"></a><a href="https://gotrip.bookingcore.org/uploads/gotrip/hotel/g-12.png"></a></div>
+                                                                            <div class="list-attributes">
+                                                                                <div class="attribute-item">
+                                                                                    <h4 class="title">Room Amenities</h4>
+                                                                                    <ul class="d-flex justify-content-between flex-wrap">
+                                                                                        <li><i data-toggle="tooltip" data-placement="top" class="input-icon field-icon icofont-wall-clock" aria-label="Wake-up call" data-bs-original-title="Wake-up call"></i>
+                                                                                            Wake-up call
+                                                                                        </li>
+                                                                                        <li><i data-toggle="tooltip" data-placement="top" class="input-icon field-icon icofont-imac" aria-label="Flat Tv" data-bs-original-title="Flat Tv"></i>
+                                                                                            Flat Tv
+                                                                                        </li>
+                                                                                        <li><i data-toggle="tooltip" data-placement="top" class="input-icon field-icon icofont-recycle-alt" aria-label="Laundry and dry cleaning" data-bs-original-title="Laundry and dry cleaning"></i>
+                                                                                            Laundry and dry cleaning
+                                                                                        </li>
+                                                                                        <li><i data-toggle="tooltip" data-placement="top" class="input-icon field-icon icofont-tea" aria-label="Coffee and tea" data-bs-original-title="Coffee and tea"></i>
+                                                                                            Coffee and tea
+                                                                                        </li>
+                                                                                    </ul>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div>
+                                                            <div class="roomGrid__content">
+                                                                <div class="room-type-item">
+                                                                    <div class="room-attribute room-meta d-flex">
+                                                                        <div class="item col-auto">
+                                                                            <div class="tooltip -top h-50">
+                                                                                <div class="tooltip__text"><i class="input-icon field-icon icofont-ruler-compass-alt"></i> <span>200 m<sup>2</sup></span></div>
+                                                                                <div class="tooltip__content">Room Footage</div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="item col-auto">
+                                                                            <div class="tooltip -top h-50">
+                                                                                <div class="tooltip__text"><i class="input-icon field-icon icofont-hotel"></i> <span>x5</span></div>
+                                                                                <div class="tooltip__content">No. Beds</div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="item col-auto">
+                                                                            <div class="tooltip -top h-50">
+                                                                                <div class="tooltip__text"><i class="input-icon field-icon icofont-users-alt-4"></i> <span>x8</span></div>
+                                                                                <div class="tooltip__content">No. Adults</div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="item col-auto">
+                                                                            <div class="tooltip -top h-50">
+                                                                                <div class="tooltip__text"><i class="input-icon field-icon fa-child fa"></i> <span>x5</span></div>
+                                                                                <div class="tooltip__content">No. Children</div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="room-attribute mt-10">
+                                                                        <div class="d-flex items-center">
+                                                                            <i class="input-icon field-icon text-20 mr-10 icofont-wall-clock"></i> 
+                                                                            <div class="text-15">Wake-up call</div>
+                                                                        </div>
+                                                                        <div class="d-flex items-center">
+                                                                            <i class="input-icon field-icon text-20 mr-10 icofont-imac"></i> 
+                                                                            <div class="text-15">Flat Tv</div>
+                                                                        </div>
+                                                                        <div class="d-flex items-center">
+                                                                            <i class="input-icon field-icon text-20 mr-10 icofont-recycle-alt"></i> 
+                                                                            <div class="text-15">Laundry and dry cleaning</div>
+                                                                        </div>
+                                                                        <div class="d-flex items-center">
+                                                                            <i class="input-icon field-icon text-20 mr-10 icofont-tea"></i> 
+                                                                            <div class="text-15">Coffee and tea</div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div>
+                                                            <div class="text-center"><span class="price">$350<span class="unit">/1 nights</span></span></div>
+                                                            <select class="custom-select form-select rounded-4 border-light px-15 h-50 text-14">
+                                                                <option value="0">0</option>
+                                                                <option value="1">1 room &nbsp;&nbsp; ($350)</option>
+                                                                <option value="2">2 rooms &nbsp;&nbsp; ($700)</option>
+                                                                <option value="3">3 rooms &nbsp;&nbsp; ($1.050)</option>
+                                                                <option value="4">4 rooms &nbsp;&nbsp; ($1.400)</option>
+                                                                <option value="5">5 rooms &nbsp;&nbsp; ($1.750)</option>
+                                                                <option value="6">6 rooms &nbsp;&nbsp; ($2.100)</option>
+                                                                <option value="7">7 rooms &nbsp;&nbsp; ($2.450)</option>
+                                                                <option value="8">8 rooms &nbsp;&nbsp; ($2.800)</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="hotel_room_book_status sticky active" style="width: 1110px;">
+                                    <div class="row row_extra_service">
+                                        <div class="col-md-12">
+                                            <div class="form-section-group">
+                                                <label>Extra prices:</label> 
+                                                <div class="row">
+                                                    <div class="col-md-6 extra-item">
+                                                        <div class="extra-price-wrap d-flex align-items-center justify-content-between">
+                                                            <div class="flex-grow-1">
+                                                                <label class="d-flex items-center">
+                                                                    <span class="form-checkbox "><input type="checkbox" true-value="1" false-value="0" class="has-value" style="display: none;"> <span class="form-checkbox__mark"><span class="form-checkbox__icon icon-check"></span></span></span> <span class="text-15 ml-10" style="line-height: 1;">Service VIP </span> <!---->
+                                                                </label>
+                                                            </div>
+                                                            <div class="flex-shrink-0">$200</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6 extra-item">
+                                                        <div class="extra-price-wrap d-flex align-items-center justify-content-between">
+                                                            <div class="flex-grow-1">
+                                                                <label class="d-flex items-center">
+                                                                    <span class="form-checkbox "><input type="checkbox" true-value="1" false-value="0" class="has-value" style="display: none;"> <span class="form-checkbox__mark"><span class="form-checkbox__icon icon-check"></span></span></span> <span class="text-15 ml-10" style="line-height: 1;">Breakfasts</span> <!---->
+                                                                </label>
+                                                            </div>
+                                                            <div class="flex-shrink-0">$100</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row row_total_price">
+                                        <div class="col-md-6" style="border-right: 1px solid rgb(204, 204, 204);">
+                                            <div class="extra-price-wrap d-flex justify-content-between">
+                                                <div class="flex-grow-1"><label>
+                                                    Total Room:
+                                                    </label>
+                                                </div>
+                                                <div class="flex-shrink-0">
+                                                    2
+                                                </div>
+                                            </div>
+                                            <div class="extra-price-wrap d-flex justify-content-between">
+                                                <div class="flex-grow-1">
+                                                    <label>
+                                                        Service fee
+                                                        <!----> 
+                                                        <div class="tooltip -top d-inline-block">
+                                                            <div class="tooltip__text"><i class="input-icon field-icon icofont-info-circle"></i></div>
+                                                            <div class="tooltip__content" style="width: 230px; left: 50%; transform: translateX(-50%);">This helps us run our platform and offer services like 24/7 support on your trip.</div>
+                                                        </div>
+                                                    </label>
+                                                </div>
+                                                <div class="flex-shrink-0">
+                                                    <div class="unit">
+                                                        $100
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="control-book text-right">
+                                                <div class="total-room-price"><span> Total Price:</span> $800</div>
+                                                <!----> <button type="button" name="submit" class="button -dark-1 py-15 px-35 rounded-4 bg-blue-1 text-white cursor-pointer d-inline-block"><span>Book Now</span> <i class="fa fa-spinner fa-spin" style="display: none;"></i></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="end_room_sticky" style="min-height: 246.125px;"></div>
+                                <!---->
+                            </div>
+							<div class="modal fade" tabindex="-1" role="dialog" id="enquiry_form_modal">
+								<div class="modal-dialog modal-dialog-centered">
+									<div class="modal-content enquiry_form_modal_form">
+										<div class="modal-header">
+											<h5 class="modal-title">Enquiry</h5>
+											<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+											<span aria-hidden="true">&times;</span>
+											</button>
+										</div>
+										<div class="modal-body pt-0 pb-0">
+											<input type="hidden" name="service_id" value="26">
+											<input type="hidden" name="service_type" value="hotel">
+											<div class="form-input mb-3">
+												<input type="text" value name="enquiry_name">
+												<label class="lh-1 text-16 text-light-1">Name *</label>
+											</div>
+											<div class="form-input mb-3">
+												<input type="text" value name="enquiry_email">
+												<label class="lh-1 text-16 text-light-1">Email *</label>
+											</div>
+											<div class="form-input mb-3">
+												<input type="text" value name="enquiry_phone">
+												<label class="lh-1 text-16 text-light-1">Phone</label>
+											</div>
+											<div class="form-input mb-3" v-if="!enquiry_is_submit">
+												<textarea name="enquiry_note" rows="4"></textarea>
+												<label class="lh-1 text-16 text-light-1">Note</label>
+											</div>
+											<div class="message_box"></div>
+										</div>
+										<div class="modal-footer">
+											<button type="button" class="button -md -blue-1 bg-blue-1-05 text-blue-1" data-dismiss="modal">Close</button>
+											<button type="button" class="button -md -blue-1 bg-dark-3 text-white btn-submit-enquiry">
+											Send now
+											</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</section>
+					<div class="container">
+						<div class="g-rules border-bottom-light mt-40 pb-50">
+							<h3 class="text-22 fw-500">Hotel Rules - Policies</h3>
+							<div class="description pt-10">
+								<div class="row">
+									<div class="col-lg-4">
+										<div class="key">Check In</div>
+									</div>
+									<div class="col-lg-8">
+										<div class="value"> 12:00AM </div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-lg-4">
+										<div class="key">Check Out</div>
+									</div>
+									<div class="col-lg-8">
+										<div class="value"> 11:00AM </div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-lg-4">
+										<div class="key">Hotel Policies</div>
+									</div>
+									<div class="col-lg-8">
+										<div class="item ">
+											<div class="strong fw-500">Guarantee Policy</div>
+											<div class="context">- A valid credit card will be required upon booking;
+												- For credit card reservations, the same card(s) must be presented upon check in at the respective hotels;
+												- Management reserves the right to cancel any reservations without notice if we are notified of any fraud or illegal activities associated with the full payments received.
+											</div>
+										</div>
+										<div class="item ">
+											<div class="strong fw-500">Children Policy</div>
+											<div class="context">- Child under 5-year old: free of charge.
+												- Child from 5-year old to under 12-year old: surcharge $10/person/room/night.
+												- Child from 12-year old or extra Adult: surcharge $15/person/room/night.
+											</div>
+										</div>
+										<div class="item  d-none ">
+											<div class="strong fw-500">Cancellation/Amendment Policy</div>
+											<div class="context">- If cancellation/amendment is made 72 hours prior to your arrival date, no fee will be charged.
+												- If cancellation/amendment is made within 72 hours, including reservations made within 72 hours of your arrival, 1st night’s room rate and tax will be charged
+												- In case of no-show, 100% room rate and tax will be charged.
+												- Early Bird/Long Stay/Last Min/Package Rates are Non - changeable & Non - refundable
+											</div>
+										</div>
+										<div class="item  d-none ">
+											<div class="strong fw-500">Late check-out policy</div>
+											<div class="context">- Late check-out is subject to room availability
+												- 12:00 to 17:00 check-out: 50% room rate surcharge
+												- After 17:00 check-out: 100% room rate surcharge
+											</div>
+										</div>
+										<div class="btn-show-all text-blue-1 fw-500">
+											<span class="text">Show All</span>
+											<i class="fa fa-caret-down"></i>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="mt-40">
+						<section class="pb-40">
+							<div class="container">
+								<h3 class="text-22 fw-500 mb-10">Where you’ll be</h3>
+								<div class="mb-20">Virginia</div>
+								<div class="g-location">
+									<div class="location-map">
+										<div id="map_content" class="map rounded-4 map-500"></div>
+									</div>
+								</div>
+							</div>
+						</section>
+					</div>
+					<div class="container mt-40 mb-40">
+						<section class="bravo-reviews" id="bravo-reviews">
+							<div class="row y-gap-40 justify-between">
+								<div class="col-xl-3">
+									<h3 class="text-22 fw-500">Guest reviews</h3>
+									<div class="d-flex items-center mt-20">
+										<div class="flex-center bg-blue-1 rounded-4 size-70 text-22 fw-600 text-white">4.3</div>
+										<div class="ml-20">
+											<div class="text-16 text-dark-1 fw-500 lh-14">Very Good</div>
+											<div class="text-15 text-light-1 lh-14 mt-4">
+												3 reviews
+											</div>
+										</div>
+									</div>
+									<div class="review-sumary">
+										<div class="row y-gap-20 pt-20">
+											<div class="item col-12">
+												<div class>
+													<div class="d-flex items-center justify-between">
+														<div class="text-15 fw-500">Excellent</div>
+														<div class="text-15 text-light-1">1</div>
+													</div>
+													<div class="progressBar mt-10">
+														<div class="progressBar__bg bg-blue-2"></div>
+														<div class="progressBar__bar bg-blue-1" style="width: 33%"></div>
+													</div>
+												</div>
+											</div>
+											<div class="item col-12">
+												<div class>
+													<div class="d-flex items-center justify-between">
+														<div class="text-15 fw-500">Very Good</div>
+														<div class="text-15 text-light-1">2</div>
+													</div>
+													<div class="progressBar mt-10">
+														<div class="progressBar__bg bg-blue-2"></div>
+														<div class="progressBar__bar bg-blue-1" style="width: 67%"></div>
+													</div>
+												</div>
+											</div>
+											<div class="item col-12">
+												<div class>
+													<div class="d-flex items-center justify-between">
+														<div class="text-15 fw-500">Average</div>
+														<div class="text-15 text-light-1">0</div>
+													</div>
+													<div class="progressBar mt-10">
+														<div class="progressBar__bg bg-blue-2"></div>
+														<div class="progressBar__bar bg-blue-1" style="width: 0%"></div>
+													</div>
+												</div>
+											</div>
+											<div class="item col-12">
+												<div class>
+													<div class="d-flex items-center justify-between">
+														<div class="text-15 fw-500">Poor</div>
+														<div class="text-15 text-light-1">0</div>
+													</div>
+													<div class="progressBar mt-10">
+														<div class="progressBar__bg bg-blue-2"></div>
+														<div class="progressBar__bar bg-blue-1" style="width: 0%"></div>
+													</div>
+												</div>
+											</div>
+											<div class="item col-12">
+												<div class>
+													<div class="d-flex items-center justify-between">
+														<div class="text-15 fw-500">Terrible</div>
+														<div class="text-15 text-light-1">0</div>
+													</div>
+													<div class="progressBar mt-10">
+														<div class="progressBar__bg bg-blue-2"></div>
+														<div class="progressBar__bar bg-blue-1" style="width: 0%"></div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-xl-8">
+									<div class="review-list">
+										<div class="row y-gap-40">
+											<div class="col-12 review-item">
+												<div class="row x-gap-20 y-gap-20 items-center">
+													<div class="col-auto">
+														<img class="avatar w-60 h-60 rounded-full" src="/images/avatar.png" alt="System Admin 123">
+													</div>
+													<div class="col-auto">
+														<div class="fw-500 lh-15">System Admin 123</div>
+														<div class="text-14 text-light-1 lh-15">05/25/2023 17:36</div>
+													</div>
+												</div>
+												<h5 class="fw-500 text-blue-1 mt-20">Easy way to discover the city</h5>
+												<p class="text-15 text-dark-1 mt-10">Eum eu sumo albucius perfecto, commodo torquatos consequuntur pro ut, id posse splendide ius. Cu nisl putent omittantur usu, mutat atomorum ex pro, ius nibh nonumy id. Nam at eius dissentias disputando, molestie mnesarchum complectitur per te</p>
+												<ul class="review-star d-flex text-blue-1">
+													<li class="me-1"><i class="fa fa-star"></i></li>
+													<li class="me-1"><i class="fa fa-star"></i></li>
+													<li class="me-1"><i class="fa fa-star"></i></li>
+													<li class="me-1"><i class="fa fa-star"></i></li>
+													<li class="me-1"><i class="fa fa-star-o"></i></li>
+												</ul>
+											</div>
+											<div class="col-12 review-item">
+												<div class="row x-gap-20 y-gap-20 items-center">
+													<div class="col-auto">
+														<img class="avatar w-60 h-60 rounded-full" src="/images/avatar.png" alt="samico9255 vaband">
+													</div>
+													<div class="col-auto">
+														<div class="fw-500 lh-15">samico9255 vaband</div>
+														<div class="text-14 text-light-1 lh-15">05/25/2023 17:36</div>
+													</div>
+												</div>
+												<h5 class="fw-500 text-blue-1 mt-20">Beautiful spot with a lovely view</h5>
+												<p class="text-15 text-dark-1 mt-10">Eum eu sumo albucius perfecto, commodo torquatos consequuntur pro ut, id posse splendide ius. Cu nisl putent omittantur usu, mutat atomorum ex pro, ius nibh nonumy id. Nam at eius dissentias disputando, molestie mnesarchum complectitur per te</p>
+												<ul class="review-star d-flex text-blue-1">
+													<li class="me-1"><i class="fa fa-star"></i></li>
+													<li class="me-1"><i class="fa fa-star"></i></li>
+													<li class="me-1"><i class="fa fa-star"></i></li>
+													<li class="me-1"><i class="fa fa-star"></i></li>
+													<li class="me-1"><i class="fa fa-star"></i></li>
+												</ul>
+											</div>
+											<div class="col-12 review-item">
+												<div class="row x-gap-20 y-gap-20 items-center">
+													<div class="col-auto">
+														<img class="avatar w-60 h-60 rounded-full" src="/images/avatar.png" alt=" ">
+													</div>
+													<div class="col-auto">
+														<div class="fw-500 lh-15"> </div>
+														<div class="text-14 text-light-1 lh-15">05/25/2023 17:36</div>
+													</div>
+												</div>
+												<h5 class="fw-500 text-blue-1 mt-20">Easy way to discover the city</h5>
+												<p class="text-15 text-dark-1 mt-10">Eum eu sumo albucius perfecto, commodo torquatos consequuntur pro ut, id posse splendide ius. Cu nisl putent omittantur usu, mutat atomorum ex pro, ius nibh nonumy id. Nam at eius dissentias disputando, molestie mnesarchum complectitur per te</p>
+												<ul class="review-star d-flex text-blue-1">
+													<li class="me-1"><i class="fa fa-star"></i></li>
+													<li class="me-1"><i class="fa fa-star"></i></li>
+													<li class="me-1"><i class="fa fa-star"></i></li>
+													<li class="me-1"><i class="fa fa-star"></i></li>
+													<li class="me-1"><i class="fa fa-star-o"></i></li>
+												</ul>
+											</div>
+										</div>
+									</div>
+									<div class="border-top-light mt-20 mb-20"></div>
+									<div class="review-pag-wrapper">
+										<div class="bravo-pagination"></div>
+										<div class="review-pag-text">
+											Showing 1 - 3 of 3 total
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="border-top-light pt-40 mt-40">
+								<div class="review-message">
+									You must <a href="#login" data-bs-toggle="modal" data-target="#login">log in</a> to write review
+								</div>
+							</div>
+						</section>
+					</div>
+					<div class="container">
+						<div class="border-top-light"></div>
+					</div>
+					<section class="layout-pt-md layout-pb-lg">
+						<div class="container">
+							<div class="row justify-between items-end">
+								<div class="col-auto">
+									<div class="sectionTitle -md">
+										<h2 class="sectionTitle__title">You might also like</h2>
+										<p class=" sectionTitle__text mt-5 sm:mt-0"></p>
+									</div>
+								</div>
+								<div class="col-auto">
+									<a href="/hotel?location_id=7" class="button h-50 px-24 -blue-1 bg-blue-1-05 text-blue-1">
+										See All 
+										<div class="icon-arrow-top-right ml-15"></div>
+									</a>
+								</div>
+							</div>
+							<div class="row y-gap-30 pt-40 sm:pt-20">
+								<div class="col-xl-3 col-lg-3 col-sm-6">
+									<div class="hotelsCard -type-1 item-loop ">
+										<div class="hotelsCard__image">
+											<div class="cardImage ratio ratio-1:1">
+												<a href="/hotel/hotel-stanford-1">
+													<div class="cardImage__content">
+														<img class="img-responsive rounded-4 col-12 js-lazy lazy" data-src="/uploads/gotrip/hotel/7.png" alt="Hotel Stanford">
+													</div>
+												</a>
+												<div class="service-wishlist " data-id="1" data-type="hotel">
+													<div class="cardImage__wishlist">
+														<button class="button -blue-1 bg-white size-30 rounded-full shadow-2">
+														<i class="icon-heart text-12"></i>
+														</button>
+													</div>
+												</div>
+												<div class="cardImage__leftBadge"></div>
+											</div>
+										</div>
+										<div class="hotelsCard__content mt-10">
+											<h4 class="hotelsCard__title text-dark-1 text-18 lh-16 fw-500">
+												<a class="text-dark-1-i" href="/hotel/hotel-stanford-1"> <span>Hotel Stanford</span></a>
+											</h4>
+											<p class="text-light-1 lh-14 text-14 mt-5">Virginia</p>
+											<div class="d-flex items-center mt-20">
+												<div class="flex-center bg-blue-1 rounded-4 size-30 text-12 fw-600 text-white">4.4</div>
+												<div class="text-14 text-dark-1 fw-500 ml-10">Very Good</div>
+												<div class="text-14 text-light-1 ml-10">
+													5 Reviews
+												</div>
+											</div>
+											<div class="mt-5">
+												<div class="fw-500">
+													Starting from
+													<div class="d-inline-flex justify-content-md-end align-baseline">
+														<div class="text-16 text-red-1 line-through mr-5"></div>
+														<div class="text-22 lh-12 fw-600 text-blue-1">$300</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-xl-3 col-lg-3 col-sm-6">
+									<div class="hotelsCard -type-1 item-loop ">
+										<div class="hotelsCard__image">
+											<div class="cardImage ratio ratio-1:1">
+												<a href="/hotel/studio-allston-hotel-1">
+													<div class="cardImage__content">
+														<img class="img-responsive rounded-4 col-12 js-lazy lazy" data-src="/uploads/gotrip/hotel/3.png" alt="Studio Allston Hotel">
+													</div>
+												</a>
+												<div class="service-wishlist " data-id="5" data-type="hotel">
+													<div class="cardImage__wishlist">
+														<button class="button -blue-1 bg-white size-30 rounded-full shadow-2">
+														<i class="icon-heart text-12"></i>
+														</button>
+													</div>
+												</div>
+												<div class="cardImage__leftBadge"></div>
+											</div>
+										</div>
+										<div class="hotelsCard__content mt-10">
+											<h4 class="hotelsCard__title text-dark-1 text-18 lh-16 fw-500">
+												<a class="text-dark-1-i" href="/hotel/studio-allston-hotel-1"> <span>Studio Allston Hotel</span></a>
+											</h4>
+											<p class="text-light-1 lh-14 text-14 mt-5">Virginia</p>
+											<div class="d-flex items-center mt-20">
+												<div class="flex-center bg-blue-1 rounded-4 size-30 text-12 fw-600 text-white">4.8</div>
+												<div class="text-14 text-dark-1 fw-500 ml-10">Excellent</div>
+												<div class="text-14 text-light-1 ml-10">
+													5 Reviews
+												</div>
+											</div>
+											<div class="mt-5">
+												<div class="fw-500">
+													Starting from
+													<div class="d-inline-flex justify-content-md-end align-baseline">
+														<div class="text-16 text-red-1 line-through mr-5"></div>
+														<div class="text-22 lh-12 fw-600 text-blue-1">$500</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-xl-3 col-lg-3 col-sm-6">
+									<div class="hotelsCard -type-1 item-loop ">
+										<div class="hotelsCard__image">
+											<div class="cardImage ratio ratio-1:1">
+												<a href="/hotel/crowne-plaza-hotel-2">
+													<div class="cardImage__content">
+														<img class="img-responsive rounded-4 col-12 js-lazy lazy" data-src="/uploads/gotrip/hotel/8.png" alt="Crowne Plaza Hotel">
+													</div>
+												</a>
+												<div class="service-wishlist " data-id="12" data-type="hotel">
+													<div class="cardImage__wishlist">
+														<button class="button -blue-1 bg-white size-30 rounded-full shadow-2">
+														<i class="icon-heart text-12"></i>
+														</button>
+													</div>
+												</div>
+												<div class="cardImage__leftBadge"></div>
+											</div>
+										</div>
+										<div class="hotelsCard__content mt-10">
+											<h4 class="hotelsCard__title text-dark-1 text-18 lh-16 fw-500">
+												<a class="text-dark-1-i" href="/hotel/crowne-plaza-hotel-2"> <span>Crowne Plaza Hotel</span></a>
+											</h4>
+											<p class="text-light-1 lh-14 text-14 mt-5">Virginia</p>
+											<div class="d-flex items-center mt-20">
+												<div class="flex-center bg-blue-1 rounded-4 size-30 text-12 fw-600 text-white">4.5</div>
+												<div class="text-14 text-dark-1 fw-500 ml-10">Excellent</div>
+												<div class="text-14 text-light-1 ml-10">
+													2 Reviews
+												</div>
+											</div>
+											<div class="mt-5">
+												<div class="fw-500">
+													Starting from
+													<div class="d-inline-flex justify-content-md-end align-baseline">
+														<div class="text-16 text-red-1 line-through mr-5"></div>
+														<div class="text-22 lh-12 fw-600 text-blue-1">$500</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-xl-3 col-lg-3 col-sm-6">
+									<div class="hotelsCard -type-1 item-loop ">
+										<div class="hotelsCard__image">
+											<div class="cardImage ratio ratio-1:1">
+												<a href="/hotel/castello-casole-hotel-3">
+													<div class="cardImage__content">
+														<img class="img-responsive rounded-4 col-12 js-lazy lazy" data-src="/uploads/gotrip/hotel/6.png" alt="Castello Casole Hotel">
+													</div>
+												</a>
+												<div class="service-wishlist " data-id="20" data-type="hotel">
+													<div class="cardImage__wishlist">
+														<button class="button -blue-1 bg-white size-30 rounded-full shadow-2">
+														<i class="icon-heart text-12"></i>
+														</button>
+													</div>
+												</div>
+												<div class="cardImage__leftBadge"></div>
+											</div>
+										</div>
+										<div class="hotelsCard__content mt-10">
+											<h4 class="hotelsCard__title text-dark-1 text-18 lh-16 fw-500">
+												<a class="text-dark-1-i" href="/hotel/castello-casole-hotel-3"> <span>Castello Casole Hotel</span></a>
+											</h4>
+											<p class="text-light-1 lh-14 text-14 mt-5">Virginia</p>
+											<div class="d-flex items-center mt-20">
+												<div class="flex-center bg-blue-1 rounded-4 size-30 text-12 fw-600 text-white">4.0</div>
+												<div class="text-14 text-dark-1 fw-500 ml-10">Very Good</div>
+												<div class="text-14 text-light-1 ml-10">
+													3 Reviews
+												</div>
+											</div>
+											<div class="mt-5">
+												<div class="fw-500">
+													Starting from
+													<div class="d-inline-flex justify-content-md-end align-baseline">
+														<div class="text-16 text-red-1 line-through mr-5"></div>
+														<div class="text-22 lh-12 fw-600 text-blue-1">$651</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</section>
+				</div>
+			</div>
+			<section class="layout-pt-md layout-pb-md mailchimp bg-dark-2 ">
+				<div class="container">
+					<div class="row y-gap-30 justify-between items-center">
+						<div class="col-auto">
+							<div class="row y-gap-20  flex-wrap items-center">
+								<div class="col-auto">
+									<div class="icon-newsletter text-60 sm:text-40 text-white"></div>
+								</div>
+								<div class="col-auto">
+									<h4 class="text-26 text-white fw-600">Your Travel Journey Starts Here</h4>
+									<div class="text-white">Sign up and we&#039;ll send the best deals to you</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-auto">
+							<form action="/newsletter/subscribe" class="subcribe-form bravo-subscribe-form bravo-form single-field -w-410 d-flex x-gap-10 y-gap-20">
+								<input type="hidden" name="_token" value="3S1E3I6GCPexAN9eH84jHnTogBgmUbOrYm4h3NqQ"> 
+								<div>
+									<input class="bg-white h-60 email-input" type="text" name="email" placeholder="Your Email">
+								</div>
+								<div>
+									<button class="button -md h-60 bg-blue-1 text-white">
+									Subscribe <i class="fa fa-spinner fa-pulse fa-fw"></i>
+									</button>
+								</div>
+								<div class="form-mess"></div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</section>
+			<div class="footer -type-1 normal">
+				<div class="container">
+					<div class="footer_one pt-60 pb-60">
+						<div class="row y-gap-40 justify-between xl:justify-start">
+							<div class="col-xl-2 col-lg-3 col-sm-6">
+								<h5 class="text-16 fw-500 mb-30">Contact Us</h5>
+								<div class="mt-30">
+									<div class="text-14 mt-30">Toll Free Customer Care</div>
+									<a href="#" class="text-18 fw-500 text-blue-1 mt-5">+(1) 123 456 7890</a>
+								</div>
+								<div class="mt-35">
+									<div class="text-14 mt-30">Need live support?</div>
+									<a href="#" class="text-18 fw-500 text-blue-1 mt-5"><span class="__cf_email__" data-cfemail="a2cacbe2c5cdd6d0cbd28cc1cdcf">[email&#160;protected]</span></a>
+								</div>
+							</div>
+							<div class="col-xl-2 col-lg-3 col-sm-6">
+								<h5 class="text-16 fw-500 mb-30">Company</h5>
+								<div class="d-flex y-gap-10 flex-column">
+									<a href="#">About Us</a>
+									<a href="#">Careers</a>
+									<a href="#">Blog</a>
+									<a href="#">Press</a>
+									<a href="#">Gift Cards</a>
+									<a href="#">Magazine</a>
+								</div>
+							</div>
+							<div class="col-xl-2 col-lg-3 col-sm-6">
+								<h5 class="text-16 fw-500 mb-30">Support</h5>
+								<div class="d-flex y-gap-10 flex-column">
+									<a href="#">Contact</a>
+									<a href="#">Legal Notice</a>
+									<a href="#">Privacy Policy</a>
+									<a href="#">Terms and Conditions</a>
+									<a href="#">Sitemap</a>
+								</div>
+							</div>
+							<div class="col-xl-2 col-lg-3 col-sm-6">
+								<h5 class="text-16 fw-500 mb-30">Other Services</h5>
+								<div class="d-flex y-gap-10 flex-column">
+									<a href="#">Car hire</a>
+									<a href="#">Activity Finder</a>
+									<a href="#">Tour List</a>
+									<a href="#">Flight finder</a>
+									<a href="#">Cruise Ticket</a>
+									<a href="#">Holiday Rental</a>
+									<a href="#">Travel Agents</a>
+								</div>
+							</div>
+							<div class="col-xl-2 col-lg-3 col-sm-6">
+								<h5 class="text-16 fw-500 mb-30">Mobile</h5>
+								<div class="d-flex items-center px-20 py-10 rounded-4 border-light">
+									<div class="icon-apple text-24"></div>
+									<div class="ml-20">
+										<div class="text-14 text-light-1">Download on the</div>
+										<div class="text-15 lh-1 fw-500">Apple Store</div>
+									</div>
+								</div>
+								<div class="d-flex items-center px-20 py-10 rounded-4 border-light mt-20">
+									<div class="icon-play-market text-24"></div>
+									<div class="ml-20">
+										<div class="text-14 text-light-1">Get in on</div>
+										<div class="text-15 lh-1 fw-500">Google Play</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<section class="footer_middle_area py-20  border-top-light ">
+						<div class="row justify-between items-center y-gap-10">
+							<div class="col-auto">
+								Copyright © 2023 by Go Trip
+							</div>
+							<div class="col-auto">
+								<div class="row y-gap-10 items-center">
+									<div class="col-auto">
+										<div class="d-flex items-center">
+											<div class="menu-footer">
+												<div class="mobile-overlay"></div>
+												<div class="header-menu__content">
+													<div class="menu js-navList">
+														<ul class="menu__nav -is-active">
+															<li class="currency-dropdown menu-item-has-children">
+																<a href="#" class="is_login">
+																<span class="mr-10">USD</span>
+																<i class="icon icon-chevron-sm-down"></i>
+																</a>
+																<ul class="subnav">
+																	<li>
+																		<a href="/hotel/parian-holiday-villas?set_currency=eur" class="is_login dropdown-item">
+																		EUR
+																		</a>
+																	</li>
+																	<li>
+																		<a href="/hotel/parian-holiday-villas?set_currency=jpy" class="is_login dropdown-item">
+																		JPY
+																		</a>
+																	</li>
+																</ul>
+															</li>
+															<li class="language-dropdown menu-item-has-children">
+																<a href="#" class="is_login">
+																<span class="mr-10">
+																<span class="flag-icon flag-icon-gb"></span>
+																English
+																</span>
+																<i class="icon icon-chevron-sm-down"></i>
+																</a>
+																<ul class="subnav">
+																	<li>
+																		<a href="/hotel/parian-holiday-villas?set_lang=ja" class="is_login dropdown-item" style="justify-content: flex-start">
+																		<span class="flag-icon flag-icon-jp"></span>
+																		Japanese
+																		</a>
+																	</li>
+																	<li>
+																		<a href="/hotel/parian-holiday-villas?set_lang=egy" class="is_login dropdown-item" style="justify-content: flex-start">
+																		<span class="flag-icon flag-icon-eg"></span>
+																		Egyptian
+																		</a>
+																	</li>
+																	<li>
+																		<a href="/hotel/parian-holiday-villas?set_lang=es_MX" class="is_login dropdown-item" style="justify-content: flex-start">
+																		<span class="flag-icon flag-icon-mx"></span>
+																		Mexico
+																		</a>
+																	</li>
+																	<li>
+																		<a href="/hotel/parian-holiday-villas?set_lang=tr" class="is_login dropdown-item" style="justify-content: flex-start">
+																		<span class="flag-icon flag-icon-tr"></span>
+																		Türkçe
+																		</a>
+																	</li>
+																	<li>
+																		<a href="/hotel/parian-holiday-villas?set_lang=he" class="is_login dropdown-item" style="justify-content: flex-start">
+																		<span class="flag-icon flag-icon-Israel"></span>
+																		Hebrew
+																		</a>
+																	</li>
+																</ul>
+															</li>
+														</ul>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="col-auto">
+										Go Trip
+									</div>
+								</div>
+							</div>
+						</div>
+					</section>
+				</div>
+			</div>
+			<div class="modal fade login gotrip-login-modal" id="login" tabindex="-1" role="dialog" aria-hidden="true">
+				<div class="modal-dialog modal-dialog-centered" role="document">
+					<div class="modal-content relative">
+						<div class="modal-header border-dashed">
+							<h4 class="modal-title">Log In</h4>
+							<span class="c-pointer" data-bs-dismiss="modal" aria-label="Close">
+							<i class="input-icon field-icon fa">
+							<img src="/images/ico_close.svg" alt="close">
+							</i>
+							</span>
+						</div>
+						<div class="modal-body relative">
+							<form class="bravo-theme-gotrip-login-form y-gap-20" method="POST" action="/login">
+								<input type="hidden" name="redirect" value>
+								<input type="hidden" name="_token" value="3S1E3I6GCPexAN9eH84jHnTogBgmUbOrYm4h3NqQ"> 
+								<div class="col-12">
+									<h4 class="form-title text-22 fw-500">Welcome back</h4>
+									<p class="mt-10">Don&#039;t have an account yet? <a data-bs-toggle="modal" href="#register" class="text-blue-1">Sign up for free</a></p>
+								</div>
+								<div class="col-12">
+									<div class="form-input">
+										<input type="text" name="email" autocomplete="off">
+										<label class="lh-1 text-14 text-light-1">Email</label>
+									</div>
+								</div>
+								<div class="col-12">
+									<div class="form-input">
+										<input type="password" name="password" autocomplete="off">
+										<label class="lh-1 text-14 text-light-1">Password</label>
+									</div>
+								</div>
+								<div class="col-12 d-flex justify-content-between">
+									<div class="d-flex ">
+										<div class="form-checkbox" style="margin-top: 3px">
+											<input type="checkbox" name="remember" id="remember-me" value="1">
+											<div class="form-checkbox__mark">
+												<div class="form-checkbox__icon icon-check"></div>
+											</div>
+										</div>
+										<div class="text-15 lh-15 text-light-1 ml-10">Remember me</div>
+									</div>
+									<a href="/forgot-password">Forgot Password?</a>
+								</div>
+								<div class="error message-error invalid-feedback"></div>
+								<div class="col-12">
+									<button class="button py-20 -dark-1 bg-blue-1 text-white w-100 form-submit" type="submit">
+										Sign In
+										<div class="icon-arrow-top-right ml-15"></div>
+										<span class="spinner-grow spinner-grow-sm icon-loading ml-15 d-none" role="status" aria-hidden="true"></span>
+									</button>
+								</div>
+								<div class="col-12">
+									<div class="text-center px-30">By creating an account, you agree to our Terms of Service and Privacy Statement.</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="modal fade login gotrip-register-modal" id="register" tabindex="-1" role="dialog" aria-hidden="true">
+				<div class="modal-dialog modal-dialog-centered" role="document">
+					<div class="modal-content relative">
+						<div class="modal-header">
+							<h4 class="modal-title">Sign Up</h4>
+							<span class="c-pointer" data-bs-dismiss="modal" aria-label="Close">
+							<i class="input-icon field-icon fa">
+							<img src="/images/ico_close.svg" alt="close">
+							</i>
+							</span>
+						</div>
+						<div class="modal-body">
+							<form action="#" class="form bravo-form-register" method="post">
+								<input type="hidden" name="_token" value="3S1E3I6GCPexAN9eH84jHnTogBgmUbOrYm4h3NqQ"> 
+								<div class="row y-gap-20">
+									<div class="col-12">
+										<h1 class="text-22 fw-500">Sign in or create an account</h1>
+										<p class="mt-10">Already have an account? <a data-bs-toggle="modal" href="#login" class="text-blue-1">Log in</a></p>
+									</div>
+									<div class="col-12">
+										<div class="form-input">
+											<input type="text" name="first_name" autocomplete="off">
+											<label class="lh-1 text-14 text-light-1">First Name</label>
+										</div>
+										<span class="invalid-feedback error error-first_name"></span>
+									</div>
+									<div class="col-12">
+										<div class="form-input">
+											<input type="text" name="last_name" autocomplete="off">
+											<label class="lh-1 text-14 text-light-1">Last Name</label>
+										</div>
+										<span class="invalid-feedback error error-last_name"></span>
+									</div>
+									<div class="col-12">
+										<div class="form-input">
+											<input type="text" name="phone" autocomplete="off">
+											<label class="lh-1 text-14 text-light-1">Phone</label>
+										</div>
+										<span class="invalid-feedback error error-phone"></span>
+									</div>
+									<div class="col-12">
+										<div class="form-input">
+											<input type="email" name="email" autocomplete="off">
+											<label class="lh-1 text-14 text-light-1">Email address</label>
+										</div>
+										<span class="invalid-feedback error error-email"></span>
+									</div>
+									<div class="col-12">
+										<div class="form-input">
+											<input type="password" name="password" autocomplete="off">
+											<label class="lh-1 text-14 text-light-1">Password</label>
+										</div>
+										<span class="invalid-feedback error error-password"></span>
+									</div>
+									<div class="col-12">
+										<div class="d-flex">
+											<div class="form-checkbox" style="margin-top: 3px">
+												<input type="checkbox" name="term" id="register-term">
+												<div class="form-checkbox__mark">
+													<div class="form-checkbox__icon icon-check"></div>
+												</div>
+											</div>
+											<label class="text-15 lh-15 text-light-1 ml-10" for="register-term">I have read and accept the Terms and Privacy Policy?</label>
+										</div>
+										<span class="invalid-feedback error error-term"></span>
+									</div>
+									<div class="error message-error invalid-feedback"></div>
+									<div class="col-12">
+										<button type="submit" class="button py-20 -dark-1 bg-blue-1 text-white w-100">
+											Sign Up 
+											<div class="icon-arrow-top-right ml-15"></div>
+										</button>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+			<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="/libs/lodash.min.js"></script>
+			<script src="/libs/jquery-3.6.3.min.js"></script>
+			<script src="/libs/vue/vue.min.js"></script>
+			<script type="text/javascript" src="/themes/gotrip/libs/bs/js/bootstrap.bundle.min.js"></script>
+			<script src="/libs/bootbox/bootbox.min.js"></script>
+			<script src="/libs/bootstrap4.0/js/bootstrap.min.js"></script>
+			<script type="text/javascript" src="/themes/gotrip/js/vendors.js"></script>
+			<script type="text/javascript" src="/themes/gotrip/js/main.js?_ver=3.2.1"></script>
+			<script src="/libs/carousel-2/owl.carousel.min.js"></script>
+			<script type="text/javascript" src="/libs/daterange/moment.min.js"></script>
+			<script type="text/javascript" src="/libs/daterange/daterangepicker.min.js"></script>
+			<script src="/libs/select2/js/select2.min.js"></script>
+			<script src="/themes/gotrip/dist/frontend/js/gotrip.js?_ver=3.2.1"></script>
+			<script src="/libs/leaflet1.4.0/leaflet.js"></script>
+			<link rel="stylesheet" href="/libs/leaflet1.4.0/leaflet.css">
+			<script src="/module/core/js/map-engine.js?_ver=3.2.1"></script>
+			<script>
+				jQuery(function ($) {
+				                new BravoMapEngine('map_content', {
+				        disableScripts: true,
+				        fitBounds: true,
+				        center: [19.277696, 72.887009],
+				        zoom:12,
+				        ready: function (engineMap) {
+				            engineMap.addMarker([19.277696, 72.887009], {
+				                icon_options: {
+				                    iconUrl:"/images/icons/png/pin.png"
+				                }
+				            });
+				        }
+				    });
+				            })
+			</script>
+			<script>
+				var bravo_booking_data = {"id":26,"person_types":[],"max":0,"open_hours":[],"extra_price":[{"name":"Service VIP ","price":"200","type":"one_time","number":0,"enable":0,"price_html":"$200","price_type":""},{"name":"Breakfasts","price":"100","type":"one_time","number":0,"enable":0,"price_html":"$100","price_type":""}],"minDate":"06\/07\/2023","max_guests":1,"buyer_fees":[{"name":"Service fee","desc":"This helps us run our platform and offer services like 24\/7 support on your trip.","name_ja":"\u30b5\u30fc\u30d3\u30b9\u6599","desc_ja":"\u3053\u308c\u306b\u3088\u308a\u3001\u5f53\u793e\u306e\u30d7\u30e9\u30c3\u30c8\u30d5\u30a9\u30fc\u30e0\u3092\u5b9f\u884c\u3057\u3001\u65c5\u884c\u4e2d\u306b","price":"100","type":"one_time","type_name":"Service fee","type_desc":"This helps us run our platform and offer services like 24\/7 support on your trip.","price_type":""}],"i18n":{"date_required":"Please select check-in and check-out date","rooms":"rooms","room":"room"},"start_date":"","start_date_html":"Please select","end_date":"","deposit":false,"deposit_type":"","deposit_amount":"","deposit_fomular":"default","is_form_enquiry_and_book":true,"enquiry_type":"book"}
+				var bravo_booking_i18n = {
+				no_date_select:'Please select Start and End date',
+				    no_guest_select:'Please select at least one guest',
+				    load_dates_url:'/user/space/availability/loadDates',
+				    name_required:'Name is Required',
+				    email_required:'Email is Required',
+				};
+			</script>
+			<script type="text/javascript" src="/libs/fotorama/fotorama.js"></script>
+			<script type="text/javascript" src="/module/hotel/js/single-hotel.js?_ver=3.2.1"></script>
+		</div>
+	</body>
+</html>
