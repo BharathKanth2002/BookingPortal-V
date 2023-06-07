@@ -1,0 +1,1792 @@
+<!DOCTYPE html>
+<html lang="en" class>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="csrf-token" content="3S1E3I6GCPexAN9eH84jHnTogBgmUbOrYm4h3NqQ">
+		<link rel="icon" type="image/png" href="favicon.png" />
+		<title>Vinfast Bus - BookingPortal</title>
+		<meta name="description" content />
+		<!-- <meta property="og:url" content="https://gotrip.bookingcore.org/car/vinfast-lux-a20-plus-1" />
+		<meta property="og:type" content="article" />
+		<meta property="og:title" content="Vinfast Lux A2.0 Plus" />
+		<meta property="og:description" content />
+		<meta property="og:image" content="https://gotrip.bookingcore.org/uploads/demo/car/car-11.jpg" />
+		<meta name="twitter:card" content="summary_large_image">
+		<meta name="twitter:title" content="Vinfast Lux A2.0 Plus">
+		<meta name="twitter:description" content>
+		<meta name="twitter:image" content="https://gotrip.bookingcore.org/uploads/demo/car/car-11.jpg">
+		<link rel="canonical" href="https://gotrip.bookingcore.org/car/vinfast-lux-a20-plus-1" /> -->
+		<link href="/themes/gotrip/css/vendors.css" rel="stylesheet">
+		<link href="/themes/gotrip/css/main.css" rel="stylesheet">
+		<link href="/libs/icofont/icofont.min.css" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="/libs/daterange/daterangepicker.css">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="/themes/gotrip/dist/frontend/css/app.css?_v=3.2.1">
+		<script>
+			var bookingCore = {
+			    url:'',
+			    url_root:'',
+			    admin_url:'/admin',
+			    booking_decimals:0,
+			    thousand_separator:'.',
+			    decimal_separator:',',
+			    currency_position:'left',
+			    currency_symbol:'$',
+			    currency_rate:'1',
+			    date_format:'MM/DD/YYYY',
+			    map_provider:'osm',
+			    map_gmap_key:'',
+			    map_options:{
+			        map_lat_default:'',
+			        map_lng_default:'',
+			        map_clustering:'on',
+			        map_fit_bounds:'on',
+			    },
+			    routes:{
+			        login:'/login',
+			        register:'/register',
+			        checkout:'/booking/doCheckout'
+			    },
+			    currentUser: 0,
+			    isAdmin : 0,
+			    rtl: false,
+			    markAsRead:'/notify/markAsRead',
+			    markAllAsRead:'/notify/markAllAsRead',
+			    loadNotify : '/notify/notifications',
+			    pusher_api_key : '',
+			    pusher_cluster : '',
+			    language: 'en',
+			    module:{}
+			};
+			                        bookingCore.module.hotel = '/hotel';
+			                            bookingCore.module.car = '/car';
+			                            bookingCore.module.event = '/event';
+			                            bookingCore.module.tour = '/tour';
+			                            bookingCore.module.flight = '/flight';
+			            var i18n = {
+			    warning:"Warning",
+			    success:"Success",
+			    confirm_delete:"Do you want to delete?",
+			    confirm:"Confirm",
+			    cancel:"Cancel",
+			};
+			var daterangepickerLocale = {
+			    "applyLabel": "Apply",
+			    "cancelLabel": "Cancel",
+			    "fromLabel": "From",
+			    "toLabel": "To",
+			    "customRangeLabel": "Custom",
+			    "weekLabel": "W",
+			    "first_day_of_week": 1,
+			    "daysOfWeek": [
+			        "Su",
+			        "Mo",
+			        "Tu",
+			        "We",
+			        "Th",
+			        "Fr",
+			        "Sa"
+			    ],
+			    "monthNames": [
+			        "January",
+			        "February",
+			        "March",
+			        "April",
+			        "May",
+			        "June",
+			        "July",
+			        "August",
+			        "September",
+			        "October",
+			        "November",
+			        "December"
+			    ],
+			};
+		</script>
+		<link href="/custom-css.css" rel="stylesheet">
+	</head>
+	<body class="frontend-page header-normal is_single  ">
+		<div class="bravo_wrap overflow-hidden">
+			<div class="header-margin"></div>
+			<div class="preloader js-preloader ">
+				<div class="preloader__wrap">
+					<div class="preloader__icon">
+						<img class="logo-light" src="/uploads/gotrip/general/preload.svg" alt="Go Trip">
+					</div>
+				</div>
+				<div class="preloader__title">Go Trip</div>
+			</div>
+			<header data-add-bg="bg-dark-1" class="header -fixed bg-dark-3 js-header bravo_header" data-x="header" data-x-toggle="is-menu-opened">
+				<div data-anim="fade" class="header__container px-30 sm:px-20  is-in-view">
+					<div class="row justify-between items-center">
+						<div class="col-auto ">
+							<div class="d-flex items-center gotrip-header-normal">
+								<a href="/" class=" header-logo mr-20" data-x="header-logo" data-x-toggle="is-logo-dark">
+                                    <img class="logo-light" src="uploads/gotrip/general/logo-light.png" alt="BookingPortal">
+                                    <img class="logo-dark" src="uploads/gotrip/general/logo-dark.png" alt="BookingPortal">
+								</a>
+								<div class="header-menu " data-x="mobile-menu" data-x-toggle="is-menu-active">
+									<div class="mobile-overlay"></div>
+									<div class="header-menu__content">
+										<div class="mobile-bg js-mobile-bg"></div>
+										<div class="menu js-navList">
+											<ul class="menu__nav text-white -is-active">
+												<li class="depth-0">
+													<a target href="/"><span class="mr-10">Home</span></a>
+												</li>
+												<li class="depth-0"><a target href="/hotel">Hotel</a></li>
+												<li class="depth-0"><a target href="/flight">Flight</a></li>
+												<li class="depth-0"><a target href="/bus">Bus</a></li>
+												<li class="depth-0"><a target href="/contact">Contact</a></li>
+											</ul>
+										</div>
+										<div class="mobile-footer px-20 py-10 border-top-light js-mobile-footer">
+											<li class="currency-dropdown menu-item-has-children">
+												<a href="#" class="is_login">
+												<span class="mr-10">INR</span>
+												<i class="icon icon-chevron-sm-down"></i>
+												</a>
+												<ul class="subnav">
+													<li>
+														<a href="?set_currency=eur" class="is_login dropdown-item">EUR</a>
+													</li>
+													<li>
+														<a href="?set_currency=jpy" class="is_login dropdown-item">JPY</a>
+													</li>
+												</ul>
+											</li>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-auto">
+							<div class="d-flex items-center">
+								<div class="header-menu menu-right">
+									<div class="mobile-overlay"></div>
+									<div class="header-menu__content">
+										<div class="menu js-navList">
+											<ul class="menu__nav text-white -is-active">
+												<li class="currency-dropdown menu-item-has-children">
+													<a href="#" class="is_login">
+                                                        <span class="mr-10">INR</span>
+                                                        <i class="icon icon-chevron-sm-down"></i>
+													</a>
+													<ul class="subnav">
+														<li>
+															<a href="?set_currency=eur" class="is_login dropdown-item">EUR</a>
+														</li>
+														<li>
+															<a href="?set_currency=jpy" class="is_login dropdown-item">JPY</a>
+														</li>
+													</ul>
+												</li>
+												<div class="d-none xl:d-flex x-gap-20 items-center pl-30 text-white" data-x="header-mobile-icons" data-x-toggle="text-white">
+													<div>
+														<a href="/login" class="d-flex items-center icon-user text-inherit text-22"></a>
+													</div>
+													<div><button class="d-flex items-center icon-menu text-inherit text-20" data-x-click="header, header-logo, header-mobile-icons, mobile-menu"></button></div>
+												</div>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="d-none xl:d-flex x-gap-20 items-center pl-30 text-white" data-x="header-mobile-icons" data-x-toggle="text-white">
+								<div><a href="/login " class="d-flex items-center icon-user text-inherit text-22"></a></div>
+								<div><button class="d-flex items-center icon-menu text-inherit text-20" data-x-click="header, header-logo, header-mobile-icons, mobile-menu"></button></div>
+							</div>
+						</div>
+					</div>
+					<div class="d-none xl:d-flex x-gap-20 items-center pl-30" data-x="header-mobile-icons" data-x-toggle="text-white"></div>
+				</div>
+			</header>
+			<div class="bravo_detail_car bravo_detail">
+				<div class="blog-breadcrumb py-10 bg-light-2">
+					<div class="container">
+						<div class="row y-gap-10 items-center justify-between">
+							<div class="col-auto">
+								<ol class="ul row x-gap-10 y-gap-5 items-center text-14 text-light-1 list-unstyled" itemscope itemtype="https://schema.org/BreadcrumbList">
+									<li class="col-auto" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+										<a href="" itemprop="item"><span itemprop="name">Home</span></a>
+										<meta itemprop="position" content="1" />
+									</li>
+									<li class="col-auto">
+										<div class>></div>
+									</li>
+									<li class="col-auto " itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+										<a href="/bus" itemscope itemtype="https://schema.org/WebPage" itemprop="item" itemid="/bus"><span itemprop="name">Bus</span></a>
+										<meta itemprop="position" content="2" />
+									</li>
+									<li class="col-auto">
+										<div class>></div>
+									</li>
+									<li class="col-auto active" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+										<span itemprop="name" class="text-dark-1">Vinfast Bus</span>
+										<meta itemprop="position" content="4" />
+									</li>
+								</ol>
+							</div>
+						</div>
+					</div>
+				</div>
+				<section class="pt-40">
+					<div class="container">
+						<div class="row y-gap-30">
+							<div class="col-lg-8">
+								<div class="row y-gap-20 justify-between items-end">
+									<div class="col-auto">
+										<h1 class="text-30 sm:text-24 fw-600">Vinfast Bus</h1>
+									</div>
+
+                                        <style>
+.seat-wrapper .seat.selected {
+    border-color: rgb(57, 163, 57);
+    background: rgb(57, 163, 57);
+    color: #fff;
+}
+.seat-wrapper .seat span {
+    background: white;
+}
+
+.seat-plan-inner{
+    margin-top:25px
+}
+.seat-plan-inner .single{
+    position:relative;
+    border:0.5px solid #00000028;
+    min-height:150px;
+    max-width:100%;
+    padding:80px 25px 30px;
+    margin-bottom:55px
+}
+@media (max-width:1199px){
+    .seat-plan-inner .single{
+        padding-top:60px
+    }
+}
+.seat-plan-inner .front{
+    position:absolute;
+    width:60px;
+    height:25px;
+    top:-13px;
+    left:50%;
+    -webkit-transform:translateX(-50%);
+    transform:translateX(-50%);
+    display:-webkit-box;
+    display:-ms-flexbox;
+    display:flex;
+    -webkit-box-align:center;
+    -ms-flex-align:center;
+    align-items:center;
+    -webkit-box-pack:center;
+    -ms-flex-pack:center;
+    justify-content:center;
+    text-transform:uppercase;
+    font-size:10px;
+    font-weight:600;
+    z-index:1;
+    color:#9b9b9b;
+    background:#f1f1f1;
+    letter-spacing:1px
+}
+.seat-plan-inner .rear{
+    position:absolute;
+    width:60px;
+    height:25px;
+    left:50%;
+    -webkit-transform:translateX(-50%);
+    transform:translateX(-50%);
+    bottom:-13px;
+    display:-webkit-box;
+    display:-ms-flexbox;
+    display:flex;
+    -webkit-box-align:center;
+    -ms-flex-align:center;
+    align-items:center;
+    -webkit-box-pack:center;
+    -ms-flex-pack:center;
+    justify-content:center;
+    text-transform:uppercase;
+    font-size:10px;
+    font-weight:600;
+    z-index:23;
+    color:#9b9b9b;
+    background:#f1f1f1;
+    letter-spacing:1px
+}
+.seat-plan-inner .lower{
+    width:50px;
+    height:40px;
+    position:absolute;
+    left:20px;
+    top:20px;
+    color:#777;
+    font-weight:600;
+    text-transform:uppercase
+}
+.seat-plan-inner .driver{
+    position:absolute;
+    right:20px;
+    top:15px
+}
+.seat-wrapper{
+    margin:0;
+    display:-webkit-box;
+    display:-ms-flexbox;
+    display:flex;
+    -ms-flex-wrap:wrap;
+    flex-wrap:wrap;
+    -webkit-box-pack:justify;
+    -ms-flex-pack:justify;
+    justify-content:space-between;
+    margin-bottom:15px
+}
+.seat-wrapper .left-side,.seat-wrapper .right-side{
+    display:-webkit-box;
+    display:-ms-flexbox;
+    display:flex
+}
+.seat-wrapper .seat{
+    height:40px;
+    width:30px;
+    color:#777;
+    border:1px solid #979797;
+    border-top-left-radius:2px;
+    border-bottom-left-radius:2px;
+    margin-right:10px;
+    cursor:pointer;
+    position:relative;
+    font-weight:100;
+    font-size:14px
+}
+@media (max-width:575px){
+    .seat-wrapper .seat{
+        height:45px;
+        width:30px;
+        font-size:14px
+    }
+}
+.seat-wrapper .seat span{
+    position:absolute;
+    left:2px;
+    right:2px;
+    height:4px;
+    border:1px solid rgba(27,39,61,0.25);
+    border-radius:2px;
+    bottom:6px
+}
+.seat-for-reserved{
+    display:-webkit-box;
+    display:-ms-flexbox;
+    display:flex;
+    -ms-flex-wrap:wrap;
+    flex-wrap:wrap;
+    -webkit-box-pack:justify;
+    -ms-flex-pack:justify;
+    justify-content:space-between;
+    margin:0;
+    margin-top:15px
+}
+.seat-for-reserved .seat-condition{
+    padding:0;
+    display:-webkit-box;
+    display:-ms-flexbox;
+    display:flex;
+    -webkit-box-align:center;
+    -ms-flex-align:center;
+    align-items:center;
+    width:50%;
+    padding-bottom:20px
+}
+@media (max-width:575px){
+    .seat-for-reserved .seat-condition{
+        width:100%
+    }
+}
+.seat-for-reserved .seat{
+    width:50px;
+    height:18px;
+    border:1px solid #979797;
+    border-top-left-radius:2px;
+    border-bottom-left-radius:2px;
+    cursor:pointer;
+    position:relative;
+    margin-right:10px
+}
+.seat-for-reserved .seat span{
+    position:absolute;
+    top:2px;
+    bottom:2px;
+    width:4px;
+    border:1px solid rgba(27,39,61,0.25);
+    right:7px;
+    border-radius:2px
+}
+.seat-for-reserved p{
+    display:inline-block;
+    font-size:14px;
+    line-height:1.25
+}
+.seat-for-reserved .selected-by-you .seat{
+    border-color:rgb(57,163,57);
+    background:rgb(57,163,57)
+}
+.seat-for-reserved .selected-by-you .seat span{
+    background:#fff;
+    border-color:#fff
+}
+.seat-for-reserved .selected-by-ladies .seat{
+    border-color:#f763c6;
+    background:#f763c6;
+    color:#fff!important
+}
+.selected-by-ladies .seat{
+    border-color:#f763c6;
+    background:#f763c6;
+    color:#fff!important
+}
+.seat-for-reserved .selected-by-gents .seat{
+    border-color:#554bb9;
+    background:#554bb9;
+    color:#fff!important
+}
+.selected-by-gents .seat{
+    border-color:#554bb9;
+    background:#554bb9;
+    color:#fff!important
+}
+.seat-for-reserved .selected-by-ladies .seat span{
+    background:#fff;
+    border-color:#fff
+}
+.seat-for-reserved .selected-by-others .seat{
+    border-color:#707d88;
+    background:#707d88;
+    color:#fff!important
+}
+.seat-for-reserved .selected-by-others .seat span{
+    background:#fff;
+    border-color:#fff
+}
+.seat-for-reserved .selected-by-gents .seat span{
+    background:#fff;
+    border-color:#fff
+}
+.selected-by-ladies .seat{
+    border-color:#f763c6!important;
+    background:#f763c6!important
+}
+.selected-by-ladies .seat span{
+    background:#fff!important;
+    border-color:#fff!important
+}
+.selected-by-others .seat{
+    border-color:#707d88!important;
+    background:#707d88!important
+}
+.selected-by-others .seat span{
+    background:#fff!important;
+    border-color:#fff!important
+}
+.selected-by-gents .seat{
+    border-color:#554bb9!important;
+    background:#554bb9!important
+}
+.selected-by-gents .seat span{
+    background:#fff!important;
+    border-color:#fff!important
+}
+.seat-overview-wrapper{
+    border:1px solid rgba(27,39,61,0.1);
+    border-radius:5px;
+    padding:20px 15px;
+    position:sticky;
+    top:100px
+}
+@media (min-width:1200px){
+    .seat-overview-wrapper{
+        padding:30px
+    }
+}
+.seat-overview-wrapper .book-bus-btn{
+    height:40px;
+    margin-top:25px
+}
+.seat-wrapper .seat{
+    display:-webkit-box;
+    display:-ms-flexbox;
+    display:flex;
+    -webkit-box-align:center;
+    -ms-flex-align:center;
+    align-items:center;
+    -webkit-box-pack:center;
+    -ms-flex-pack:center;
+    justify-content:center
+}
+                                        </style>
+
+                                        <h6 class="title">Click on Seat to select or deselect</h6>
+                                        <div class="seat-plan-inner" style="width:500px;margin-left: auto;margin-right: auto;">
+                                            <div class="single">
+                                                <span class="front">Front</span>
+                                                <span class="rear">Rear</span>
+                                                <span class="lower">Door</span>
+                                                <span class="driver"><img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iNDBweCIgaGVpZ2h0PSI0MHB4IiB2aWV3Qm94PSIwIDAgNDAgNDAiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiAgICA8IS0tIEdlbmVyYXRvcjogc2tldGNodG9vbCA1Mi40ICg2NzM3OCkgLSBodHRwOi8vd3d3LmJvaGVtaWFuY29kaW5nLmNvbS9za2V0Y2ggLS0+CiAgICA8dGl0bGU+RkRDOTREMUQtMDEwRC00RDJDLUEyMEEtMDc4OEQ4NzRBREZCPC90aXRsZT4KICAgIDxkZXNjPkNyZWF0ZWQgd2l0aCBza2V0Y2h0b29sLjwvZGVzYz4KICAgIDxnIGlkPSJQYWdlLTEiIHN0cm9rZT0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIxIiBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPgogICAgICAgIDxnIGlkPSJOZXctYXNzZXRzXy11cGRhdGVkIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMTAzNy4wMDAwMDAsIC0xMzkzLjAwMDAwMCkiIHN0cm9rZT0iI0I5QjlCOSI+CiAgICAgICAgICAgIDxnIGlkPSJHcm91cC0zNSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTAzNy4wMDAwMDAsIDEzOTMuMDAwMDAwKSI+CiAgICAgICAgICAgICAgICA8Y2lyY2xlIGlkPSJPdmFsLTE1IiBzdHJva2Utd2lkdGg9IjEuMzUiIGN4PSIxOS43NTYwOTc2IiBjeT0iMTkuNzU2MDk3NiIgcj0iMTkuMDgxMDk3NiI+PC9jaXJjbGU+CiAgICAgICAgICAgICAgICA8Y2lyY2xlIGlkPSJPdmFsLTE1IiBzdHJva2Utd2lkdGg9IjEuMzUiIGN4PSIxOS44MjkyNjgzIiBjeT0iMTkuODI5MjY4MyIgcj0iNC4xNTQyNjgyOSI+PC9jaXJjbGU+CiAgICAgICAgICAgICAgICA8cGF0aCBkPSJNNS4wMjk2MDA0NywzMS4xNzM5NTc0IEwxNS44MzgwMTA4LDIwLjk3MjMzNzMiIGlkPSJQYXRoLTEyIiBzdHJva2Utd2lkdGg9IjEuNSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTAuNDMzODA2LCAyNi4wNzMxNDcpIHJvdGF0ZSgxMC4wMDAwMDApIHRyYW5zbGF0ZSgtMTAuNDMzODA2LCAtMjYuMDczMTQ3KSAiPjwvcGF0aD4KICAgICAgICAgICAgICAgIDxwYXRoIGQ9Ik0yNC4zNDU3ODYyLDMxIEwzNC44NTMyMzAxLDIxIiBpZD0iUGF0aC0xMiIgc3Ryb2tlLXdpZHRoPSIxLjUiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDI5LjU5OTUwOCwgMjYuMDAwMDAwKSBzY2FsZSgtMSwgMSkgcm90YXRlKDEwLjAwMDAwMCkgdHJhbnNsYXRlKC0yOS41OTk1MDgsIC0yNi4wMDAwMDApICI+PC9wYXRoPgogICAgICAgICAgICA8L2c+CiAgICAgICAgPC9nPgogICAgPC9nPgo8L3N2Zz4=" alt="icon"></span>
+                                                <div class="seat-wrapper">
+                                                    <div class="left-side">
+                                                        <div>
+                                                            <span class="seat selected" data-seat="1-A1">
+                                                            A1
+                                                            <span></span>
+                                                            </span>
+                                                        </div>
+                                                        <div>
+                                                            <span class="seat selected" data-seat="1-A2">
+                                                            A2
+                                                            <span></span>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="right-side">
+                                                        <div>
+                                                            <span class="seat" data-seat="1-A3">
+                                                            A3
+                                                            <span></span>
+                                                            </span>
+                                                        </div>
+                                                        <div>
+                                                            <span class="seat" data-seat="1-A4">
+                                                            A4
+                                                            <span></span>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="seat-wrapper">
+                                                    <div class="left-side">
+                                                        <div>
+                                                            <span class="seat" data-seat="1-B1">
+                                                            B1
+                                                            <span></span>
+                                                            </span>
+                                                        </div>
+                                                        <div>
+                                                            <span class="seat" data-seat="1-B2">
+                                                            B2
+                                                            <span></span>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="right-side">
+                                                        <div>
+                                                            <span class="seat" data-seat="1-B3">
+                                                            B3
+                                                            <span></span>
+                                                            </span>
+                                                        </div>
+                                                        <div>
+                                                            <span class="seat" data-seat="1-B4">
+                                                            B4
+                                                            <span></span>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="seat-wrapper">
+                                                    <div class="left-side">
+                                                        <div>
+                                                            <span class="seat" data-seat="1-C1">
+                                                            C1
+                                                            <span></span>
+                                                            </span>
+                                                        </div>
+                                                        <div>
+                                                            <span class="seat" data-seat="1-C2">
+                                                            C2
+                                                            <span></span>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="right-side">
+                                                        <div>
+                                                            <span class="seat" data-seat="1-C3">
+                                                            C3
+                                                            <span></span>
+                                                            </span>
+                                                        </div>
+                                                        <div>
+                                                            <span class="seat" data-seat="1-C4">
+                                                            C4
+                                                            <span></span>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="seat-wrapper">
+                                                    <div class="left-side">
+                                                        <div class="selected-by-ladies">
+                                                            <span class="seat" data-seat="1-D1">
+                                                            D1
+                                                            <span></span>
+                                                            </span>
+                                                        </div>
+                                                        <div class="selected-by-ladies">
+                                                            <span class="seat" data-seat="1-D2">
+                                                            D2
+                                                            <span></span>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="right-side">
+                                                        <div>
+                                                            <span class="seat" data-seat="1-D3">
+                                                            D3
+                                                            <span></span>
+                                                            </span>
+                                                        </div>
+                                                        <div>
+                                                            <span class="seat" data-seat="1-D4">
+                                                            D4
+                                                            <span></span>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="seat-wrapper">
+                                                    <div class="left-side">
+                                                        <div>
+                                                            <span class="seat" data-seat="1-E1">
+                                                            E1
+                                                            <span></span>
+                                                            </span>
+                                                        </div>
+                                                        <div>
+                                                            <span class="seat" data-seat="1-E2">
+                                                            E2
+                                                            <span></span>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="right-side">
+                                                        <div>
+                                                            <span class="seat" data-seat="1-E3">
+                                                            E3
+                                                            <span></span>
+                                                            </span>
+                                                        </div>
+                                                        <div>
+                                                            <span class="seat" data-seat="1-E4">
+                                                            E4
+                                                            <span></span>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="seat-wrapper">
+                                                    <div class="left-side">
+                                                        <div>
+                                                            <span class="seat" data-seat="1-F1">
+                                                            F1
+                                                            <span></span>
+                                                            </span>
+                                                        </div>
+                                                        <div>
+                                                            <span class="seat" data-seat="1-F2">
+                                                            F2
+                                                            <span></span>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="right-side">
+                                                        <div>
+                                                            <span class="seat" data-seat="1-F3">
+                                                            F3
+                                                            <span></span>
+                                                            </span>
+                                                        </div>
+                                                        <div>
+                                                            <span class="seat" data-seat="1-F4">
+                                                            F4
+                                                            <span></span>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="seat-wrapper">
+                                                    <div class="left-side">
+                                                        <div>
+                                                            <span class="seat" data-seat="1-G1">
+                                                            G1
+                                                            <span></span>
+                                                            </span>
+                                                        </div>
+                                                        <div>
+                                                            <span class="seat" data-seat="1-G2">
+                                                            G2
+                                                            <span></span>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="right-side">
+                                                        <div class="selected-by-gents">
+                                                            <span class="seat" data-seat="1-G3">
+                                                            G3
+                                                            <span></span>
+                                                            </span>
+                                                        </div>
+                                                        <div>
+                                                            <span class="seat" data-seat="1-G4">
+                                                            G4
+                                                            <span></span>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="seat-wrapper">
+                                                    <div class="left-side">
+                                                        <div>
+                                                            <span class="seat" data-seat="1-H1">
+                                                            H1
+                                                            <span></span>
+                                                            </span>
+                                                        </div>
+                                                        <div>
+                                                            <span class="seat" data-seat="1-H2">
+                                                            H2
+                                                            <span></span>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="right-side">
+                                                        <div>
+                                                            <span class="seat" data-seat="1-H3">
+                                                            H3
+                                                            <span></span>
+                                                            </span>
+                                                        </div>
+                                                        <div>
+                                                            <span class="seat" data-seat="1-H4">
+                                                            H4
+                                                            <span></span>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="seat-wrapper">
+                                                    <div class="left-side">
+                                                        <div>
+                                                            <span class="seat" data-seat="1-I1">
+                                                            I1
+                                                            <span></span>
+                                                            </span>
+                                                        </div>
+                                                        <div>
+                                                            <span class="seat" data-seat="1-I2">
+                                                            I2
+                                                            <span></span>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="right-side">
+                                                        <div>
+                                                            <span class="seat" data-seat="1-I3">
+                                                            I3
+                                                            <span></span>
+                                                            </span>
+                                                        </div>
+                                                        <div>
+                                                            <span class="seat" data-seat="1-I4">
+                                                            I4
+                                                            <span></span>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="seat-wrapper">
+                                                    <div class="left-side">
+                                                        <div>
+                                                            <span class="seat" data-seat="1-J1">
+                                                            J1
+                                                            <span></span>
+                                                            </span>
+                                                        </div>
+                                                        <div>
+                                                            <span class="seat" data-seat="1-J2">
+                                                            J2
+                                                            <span></span>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="right-side">
+                                                        <div class="selected-by-gents">
+                                                            <span class="seat" data-seat="1-J3">
+                                                            J3
+                                                            <span></span>
+                                                            </span>
+                                                        </div>
+                                                        <div>
+                                                            <span class="seat" data-seat="1-J4">
+                                                            J4
+                                                            <span></span>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="seat-for-reserved" style="width:500px;margin-left: auto;margin-right: auto;">
+                                            <div class="seat-condition available-seat">
+                                                <span class="seat"><span></span></span>
+                                                <p>Available Seats</p>
+                                            </div>
+                                            <div class="seat-condition selected-by-you">
+                                                <span class="seat"><span></span></span>
+                                                <p>Selected by You</p>
+                                            </div>
+                                            <div class="seat-condition selected-by-gents">
+                                                <div class="seat"><span></span></div>
+                                                <p>Booked by Gents</p>
+                                            </div>
+                                            <div class="seat-condition selected-by-ladies">
+                                                <div class="seat"><span></span></div>
+                                                <p>Booked by Ladies</p>
+                                            </div>
+                                            <div class="seat-condition selected-by-others">
+                                                <div class="seat"><span></span></div>
+                                                <p>Booked by Others</p>
+                                            </div>
+                                        </div>
+
+								</div>
+							</div>
+							<div class="col-lg-4">
+								<div class="bravo_single_book_wrap d-flex justify-end">
+									<div class="bravo_single_book">
+										<div id="bravo_car_book_app" v-cloak class="px-30 py-30 rounded-4 border-light shadow-4 bg-white w-360 lg:w-full">
+											<div class="row y-gap-15 items-center justify-between">
+												<div class="col-auto">
+													<div class="text-14 text-light-1">
+														<span class="text-14 text-red-1 line-through"></span>
+														<span class="text-20 fw-500 text-dark-1">$50</span>
+													</div>
+												</div>
+												<div class="col-auto">
+													<div class="d-flex items-center">
+														<div class="text-14 text-right mr-10">
+															<div class="lh-15 fw-500">Excellent</div>
+															<div class="lh-15 text-light-1">
+																4 reviews
+															</div>
+														</div>
+														<div class="size-40 flex-center bg-blue-1 rounded-4">
+															<div class="text-14 fw-600 text-white">4.8</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="form-book" :class="{'d-none':enquiry_type!='book'}">
+												<div class="form-content">
+													<div class="row y-gap-20 pt-20">
+														<div class="col-12">
+															<div class="form-group form-date-field form-date-search clearfix px-20 py-10 border-light rounded-4 -right position-relative" data-format="MM/DD/YYYY">
+																<div class="date-wrapper clearfix" @click="openStartDate">
+																	<div class="check-in-wrapper">
+																		<h4 class="text-15 fw-500 ls-2 lh-16">Select Dates</h4>
+																		<div class="render check-in-render" v-html="start_date_html"></div>
+																	</div>
+																</div>
+																<input type="text" class="start_date" ref="start_date" style="height: 1px;visibility: hidden;position: absolute;left: 0;">
+															</div>
+														</div>
+														<div class="col-12">
+															<div class="searchMenu-guests px-20 py-10 border-light rounded-4 js-form-dd">
+																<div data-x-dd-click="searchMenu-guests">
+																	<h4 class="text-15 fw-500 ls-2 lh-16">Pickup Point</h4>
+																	<div class="text-15 text-light-1 ls-2 lh-16">
+                                                                        <input type="hidden" name="location_id" class="js-search-get-id" value="">
+                                                                        <input autocomplete="off" type="text" placeholder="Where are you going?" class="js-search js-dd-focus" value="">
+																	</div>
+																</div>
+                                                                <div class="searchMenu-loc__field shadow-2 js-popup-window" data-x-dd="searchMenu-guests" data-x-dd-toggle="-is-active">
+                                                                    <div class="bg-white px-30 py-30 sm:px-0 sm:py-15 rounded-4">
+                                                                        <div class="y-gap-5 js-results">
+                                                                            <div class="-link d-block col-12 text-left rounded-4 px-20 py-15 js-search-option" data-id="1">
+                                                                                <div class="d-flex align-items-center">
+                                                                                    <div class="icon-location-2 text-light-1 text-20 pt-4"></div>
+                                                                                    <div class="ml-10">
+                                                                                        <div class="text-15 lh-12 fw-500 js-search-option-target"> Paris</div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="-link d-block col-12 text-left rounded-4 px-20 py-15 js-search-option" data-id="2">
+                                                                                <div class="d-flex align-items-center">
+                                                                                    <div class="icon-location-2 text-light-1 text-20 pt-4"></div>
+                                                                                    <div class="ml-10">
+                                                                                        <div class="text-15 lh-12 fw-500 js-search-option-target"> California</div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="-link d-block col-12 text-left rounded-4 px-20 py-15 js-search-option" data-id="3">
+                                                                                <div class="d-flex align-items-center">
+                                                                                    <div class="icon-location-2 text-light-1 text-20 pt-4"></div>
+                                                                                    <div class="ml-10">
+                                                                                        <div class="text-15 lh-12 fw-500 js-search-option-target"> United States</div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="-link d-block col-12 text-left rounded-4 px-20 py-15 js-search-option" data-id="4">
+                                                                                <div class="d-flex align-items-center">
+                                                                                    <div class="icon-location-2 text-light-1 text-20 pt-4"></div>
+                                                                                    <div class="ml-10">
+                                                                                        <div class="text-15 lh-12 fw-500 js-search-option-target"> Los Angeles</div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="-link d-block col-12 text-left rounded-4 px-20 py-15 js-search-option" data-id="5">
+                                                                                <div class="d-flex align-items-center">
+                                                                                    <div class="icon-location-2 text-light-1 text-20 pt-4"></div>
+                                                                                    <div class="ml-10">
+                                                                                        <div class="text-15 lh-12 fw-500 js-search-option-target"> New Jersey</div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="-link d-block col-12 text-left rounded-4 px-20 py-15 js-search-option" data-id="6">
+                                                                                <div class="d-flex align-items-center">
+                                                                                    <div class="icon-location-2 text-light-1 text-20 pt-4"></div>
+                                                                                    <div class="ml-10">
+                                                                                        <div class="text-15 lh-12 fw-500 js-search-option-target"> San Francisco</div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="-link d-block col-12 text-left rounded-4 px-20 py-15 js-search-option" data-id="7">
+                                                                                <div class="d-flex align-items-center">
+                                                                                    <div class="icon-location-2 text-light-1 text-20 pt-4"></div>
+                                                                                    <div class="ml-10">
+                                                                                        <div class="text-15 lh-12 fw-500 js-search-option-target"> Virginia</div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="-link d-block col-12 text-left rounded-4 px-20 py-15 js-search-option" data-id="8">
+                                                                                <div class="d-flex align-items-center">
+                                                                                    <div class="icon-location-2 text-light-1 text-20 pt-4"></div>
+                                                                                    <div class="ml-10">
+                                                                                        <div class="text-15 lh-12 fw-500 js-search-option-target"> Germany</div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="-link d-block col-12 text-left rounded-4 px-20 py-15 js-search-option" data-id="9">
+                                                                                <div class="d-flex align-items-center">
+                                                                                    <div class="icon-location-2 text-light-1 text-20 pt-4"></div>
+                                                                                    <div class="ml-10">
+                                                                                        <div class="text-15 lh-12 fw-500 js-search-option-target"> New York</div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="-link d-block col-12 text-left rounded-4 px-20 py-15 js-search-option" data-id="10">
+                                                                                <div class="d-flex align-items-center">
+                                                                                    <div class="icon-location-2 text-light-1 text-20 pt-4"></div>
+                                                                                    <div class="ml-10">
+                                                                                        <div class="text-15 lh-12 fw-500 js-search-option-target"> London</div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="-link d-block col-12 text-left rounded-4 px-20 py-15 js-search-option" data-id="11">
+                                                                                <div class="d-flex align-items-center">
+                                                                                    <div class="icon-location-2 text-light-1 text-20 pt-4"></div>
+                                                                                    <div class="ml-10">
+                                                                                        <div class="text-15 lh-12 fw-500 js-search-option-target"> Barcelona</div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="-link d-block col-12 text-left rounded-4 px-20 py-15 js-search-option" data-id="12">
+                                                                                <div class="d-flex align-items-center">
+                                                                                    <div class="icon-location-2 text-light-1 text-20 pt-4"></div>
+                                                                                    <div class="ml-10">
+                                                                                        <div class="text-15 lh-12 fw-500 js-search-option-target"> Sydney</div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="-link d-block col-12 text-left rounded-4 px-20 py-15 js-search-option" data-id="13">
+                                                                                <div class="d-flex align-items-center">
+                                                                                    <div class="icon-location-2 text-light-1 text-20 pt-4"></div>
+                                                                                    <div class="ml-10">
+                                                                                        <div class="text-15 lh-12 fw-500 js-search-option-target"> Rome</div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="-link d-block col-12 text-left rounded-4 px-20 py-15 js-search-option" data-id="14">
+                                                                                <div class="d-flex align-items-center">
+                                                                                    <div class="icon-location-2 text-light-1 text-20 pt-4"></div>
+                                                                                    <div class="ml-10">
+                                                                                        <div class="text-15 lh-12 fw-500 js-search-option-target"> Reykjavik</div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+															</div>
+														</div>
+														<div class="col-12">
+															<div class="searchMenu-guests px-20 py-10 border-light rounded-4 js-form-dd">
+																<div data-x-dd-click="searchMenu-guests">
+																	<h4 class="text-15 fw-500 ls-2 lh-16">Dropping Point</h4>
+																	<div class="text-15 text-light-1 ls-2 lh-16">
+                                                                        <input type="hidden" name="location_id" class="js-search-get-id" value="">
+                                                                        <input autocomplete="off" type="text" placeholder="Where are you going?" class="js-search js-dd-focus" value="">
+																	</div>
+																</div>
+                                                                <div class="searchMenu-loc__field shadow-2 js-popup-window" data-x-dd="searchMenu-guests" data-x-dd-toggle="-is-active">
+                                                                    <div class="bg-white px-30 py-30 sm:px-0 sm:py-15 rounded-4">
+                                                                        <div class="y-gap-5 js-results">
+                                                                            <div class="-link d-block col-12 text-left rounded-4 px-20 py-15 js-search-option" data-id="1">
+                                                                                <div class="d-flex align-items-center">
+                                                                                    <div class="icon-location-2 text-light-1 text-20 pt-4"></div>
+                                                                                    <div class="ml-10">
+                                                                                        <div class="text-15 lh-12 fw-500 js-search-option-target"> Paris</div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="-link d-block col-12 text-left rounded-4 px-20 py-15 js-search-option" data-id="2">
+                                                                                <div class="d-flex align-items-center">
+                                                                                    <div class="icon-location-2 text-light-1 text-20 pt-4"></div>
+                                                                                    <div class="ml-10">
+                                                                                        <div class="text-15 lh-12 fw-500 js-search-option-target"> California</div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="-link d-block col-12 text-left rounded-4 px-20 py-15 js-search-option" data-id="3">
+                                                                                <div class="d-flex align-items-center">
+                                                                                    <div class="icon-location-2 text-light-1 text-20 pt-4"></div>
+                                                                                    <div class="ml-10">
+                                                                                        <div class="text-15 lh-12 fw-500 js-search-option-target"> United States</div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="-link d-block col-12 text-left rounded-4 px-20 py-15 js-search-option" data-id="4">
+                                                                                <div class="d-flex align-items-center">
+                                                                                    <div class="icon-location-2 text-light-1 text-20 pt-4"></div>
+                                                                                    <div class="ml-10">
+                                                                                        <div class="text-15 lh-12 fw-500 js-search-option-target"> Los Angeles</div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="-link d-block col-12 text-left rounded-4 px-20 py-15 js-search-option" data-id="5">
+                                                                                <div class="d-flex align-items-center">
+                                                                                    <div class="icon-location-2 text-light-1 text-20 pt-4"></div>
+                                                                                    <div class="ml-10">
+                                                                                        <div class="text-15 lh-12 fw-500 js-search-option-target"> New Jersey</div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="-link d-block col-12 text-left rounded-4 px-20 py-15 js-search-option" data-id="6">
+                                                                                <div class="d-flex align-items-center">
+                                                                                    <div class="icon-location-2 text-light-1 text-20 pt-4"></div>
+                                                                                    <div class="ml-10">
+                                                                                        <div class="text-15 lh-12 fw-500 js-search-option-target"> San Francisco</div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="-link d-block col-12 text-left rounded-4 px-20 py-15 js-search-option" data-id="7">
+                                                                                <div class="d-flex align-items-center">
+                                                                                    <div class="icon-location-2 text-light-1 text-20 pt-4"></div>
+                                                                                    <div class="ml-10">
+                                                                                        <div class="text-15 lh-12 fw-500 js-search-option-target"> Virginia</div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="-link d-block col-12 text-left rounded-4 px-20 py-15 js-search-option" data-id="8">
+                                                                                <div class="d-flex align-items-center">
+                                                                                    <div class="icon-location-2 text-light-1 text-20 pt-4"></div>
+                                                                                    <div class="ml-10">
+                                                                                        <div class="text-15 lh-12 fw-500 js-search-option-target"> Germany</div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="-link d-block col-12 text-left rounded-4 px-20 py-15 js-search-option" data-id="9">
+                                                                                <div class="d-flex align-items-center">
+                                                                                    <div class="icon-location-2 text-light-1 text-20 pt-4"></div>
+                                                                                    <div class="ml-10">
+                                                                                        <div class="text-15 lh-12 fw-500 js-search-option-target"> New York</div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="-link d-block col-12 text-left rounded-4 px-20 py-15 js-search-option" data-id="10">
+                                                                                <div class="d-flex align-items-center">
+                                                                                    <div class="icon-location-2 text-light-1 text-20 pt-4"></div>
+                                                                                    <div class="ml-10">
+                                                                                        <div class="text-15 lh-12 fw-500 js-search-option-target"> London</div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="-link d-block col-12 text-left rounded-4 px-20 py-15 js-search-option" data-id="11">
+                                                                                <div class="d-flex align-items-center">
+                                                                                    <div class="icon-location-2 text-light-1 text-20 pt-4"></div>
+                                                                                    <div class="ml-10">
+                                                                                        <div class="text-15 lh-12 fw-500 js-search-option-target"> Barcelona</div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="-link d-block col-12 text-left rounded-4 px-20 py-15 js-search-option" data-id="12">
+                                                                                <div class="d-flex align-items-center">
+                                                                                    <div class="icon-location-2 text-light-1 text-20 pt-4"></div>
+                                                                                    <div class="ml-10">
+                                                                                        <div class="text-15 lh-12 fw-500 js-search-option-target"> Sydney</div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="-link d-block col-12 text-left rounded-4 px-20 py-15 js-search-option" data-id="13">
+                                                                                <div class="d-flex align-items-center">
+                                                                                    <div class="icon-location-2 text-light-1 text-20 pt-4"></div>
+                                                                                    <div class="ml-10">
+                                                                                        <div class="text-15 lh-12 fw-500 js-search-option-target"> Rome</div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="-link d-block col-12 text-left rounded-4 px-20 py-15 js-search-option" data-id="14">
+                                                                                <div class="d-flex align-items-center">
+                                                                                    <div class="icon-location-2 text-light-1 text-20 pt-4"></div>
+                                                                                    <div class="ml-10">
+                                                                                        <div class="text-15 lh-12 fw-500 js-search-option-target"> Reykjavik</div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+															</div>
+														</div>
+                                                        <div class="col-12">
+                                                            <div class="form-section-group px-20 py-10 border-light rounded-4">
+                                                                <div class="form-group ">
+                                                                    <div class="extra-price-wrap d-flex justify-content-between">
+                                                                        <div class="flex-grow-1"><label class="d-flex items-center"><span class="form-checkbox "><input type="checkbox" true-value="1" false-value="0" class="has-value" style="display: none;"> <span class="form-checkbox__mark"><span class="form-checkbox__icon icon-check"></span></span></span> <span class="text-15 ml-10">Male</span></label></div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group ">
+                                                                    <div class="extra-price-wrap d-flex justify-content-between">
+                                                                        <div class="flex-grow-1"><label class="d-flex items-center"><span class="form-checkbox "><input type="checkbox" true-value="1" false-value="0" class="has-value" style="display: none;"> <span class="form-checkbox__mark"><span class="form-checkbox__icon icon-check"></span></span></span> <span class="text-15 ml-10">Female</span></label></div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+														<div class="col-12" v-if="total_price > 0">
+															<ul class="form-section-total list-unstyled px-20 py-10 border-light rounded-4">
+																<li class="d-flex justify-content-between">
+																	<label class="text-15 fw-500">Total</label>
+																	<span class="price">{{total_price_html}}</span>
+																</li>
+																<li class="d-flex justify-content-between" v-if="is_deposit_ready">
+																	<label for>Pay now</label>
+																	<span class="price">{{pay_now_price_html}}</span>
+																</li>
+															</ul>
+														</div>
+														<div class="col-12" v-if="html">
+															<div v-html="html"></div>
+														</div>
+														<div class="col-12">
+															<div class="submit-group">
+																<a class="button -dark-1 py-15 px-35 h-60 col-12 rounded-4 bg-blue-1 text-white cursor-pointer" @click="doSubmit($event)" :class="{'disabled':onSubmit,'btn-success':(step == 2),'btn-primary':step == 1}" name="submit">
+																<span v-if="step == 1">BOOK NOW</span>
+																<span v-if="step == 2">Book Now</span>
+																<i v-show="onSubmit" class="fa fa-spinner fa-spin"></i>
+																</a>
+																<div class="alert-text mt-10" v-show="message.content" v-html="message.content" :class="{'danger':!message.type,'success':message.type}"></div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="form-send-enquiry" v-show="enquiry_type=='enquiry'">
+												<button class="btn btn-primary" data-toggle="modal" data-target="#enquiry_form_modal">
+												Contact Now
+												</button>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="justify-end mt-30 d-none">
+									<div class="owner-info widget-box px-30 py-15 rounded-4 border-light shadow-4 bg-white w-360 lg:w-full">
+										<div class="media d-flex">
+											<div class="media-left mr-5 pt-1">
+												<a href="https://gotrip.bookingcore.org/profile/6" class="avatar-cover" style="background-image: url('https://gotrip.bookingcore.org/images/avatar.png')">
+												</a>
+											</div>
+											<div class="media-body">
+												<h4 class="media-heading"><a class="author-link" href="https://gotrip.bookingcore.org/profile/6">Faizan Arshad</a>
+													<img data-toggle="tooltip" data-placement="top" src="https://gotrip.bookingcore.org/icon/ico-not-vefified-1.svg" title="Not verified" alt="Verified">
+												</h4>
+												<p>Member Since May 2023</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<div class="container mt-40 mb-40">
+					<div class="border-top-light"></div>
+				</div>
+				<section>
+					<div class="container">
+						<section class="bravo-reviews" id="bravo-reviews">
+							<div class="row y-gap-40 justify-between">
+								<div class="col-xl-3">
+									<h3 class="text-22 fw-500">Guest reviews</h3>
+									<div class="d-flex items-center mt-20">
+										<div class="flex-center bg-blue-1 rounded-4 size-70 text-22 fw-600 text-white">4.8</div>
+										<div class="ml-20">
+											<div class="text-16 text-dark-1 fw-500 lh-14">Excellent</div>
+											<div class="text-15 text-light-1 lh-14 mt-4">
+												4 reviews
+											</div>
+										</div>
+									</div>
+									<div class="review-sumary">
+										<div class="row y-gap-20 pt-20">
+											<div class="item col-12">
+												<div class>
+													<div class="d-flex items-center justify-between">
+														<div class="text-15 fw-500">Excellent</div>
+														<div class="text-15 text-light-1">3</div>
+													</div>
+													<div class="progressBar mt-10">
+														<div class="progressBar__bg bg-blue-2"></div>
+														<div class="progressBar__bar bg-blue-1" style="width: 75%"></div>
+													</div>
+												</div>
+											</div>
+											<div class="item col-12">
+												<div class>
+													<div class="d-flex items-center justify-between">
+														<div class="text-15 fw-500">Very Good</div>
+														<div class="text-15 text-light-1">1</div>
+													</div>
+													<div class="progressBar mt-10">
+														<div class="progressBar__bg bg-blue-2"></div>
+														<div class="progressBar__bar bg-blue-1" style="width: 25%"></div>
+													</div>
+												</div>
+											</div>
+											<div class="item col-12">
+												<div class>
+													<div class="d-flex items-center justify-between">
+														<div class="text-15 fw-500">Average</div>
+														<div class="text-15 text-light-1">0</div>
+													</div>
+													<div class="progressBar mt-10">
+														<div class="progressBar__bg bg-blue-2"></div>
+														<div class="progressBar__bar bg-blue-1" style="width: 0%"></div>
+													</div>
+												</div>
+											</div>
+											<div class="item col-12">
+												<div class>
+													<div class="d-flex items-center justify-between">
+														<div class="text-15 fw-500">Poor</div>
+														<div class="text-15 text-light-1">0</div>
+													</div>
+													<div class="progressBar mt-10">
+														<div class="progressBar__bg bg-blue-2"></div>
+														<div class="progressBar__bar bg-blue-1" style="width: 0%"></div>
+													</div>
+												</div>
+											</div>
+											<div class="item col-12">
+												<div class>
+													<div class="d-flex items-center justify-between">
+														<div class="text-15 fw-500">Terrible</div>
+														<div class="text-15 text-light-1">0</div>
+													</div>
+													<div class="progressBar mt-10">
+														<div class="progressBar__bg bg-blue-2"></div>
+														<div class="progressBar__bar bg-blue-1" style="width: 0%"></div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-xl-8">
+									<div class="review-list">
+										<div class="row y-gap-40">
+											<div class="col-12 review-item">
+												<div class="row x-gap-20 y-gap-20 items-center">
+													<div class="col-auto">
+														<img class="avatar w-60 h-60 rounded-full" src="https://gotrip.bookingcore.org/images/avatar.png" alt=" ">
+													</div>
+													<div class="col-auto">
+														<div class="fw-500 lh-15"> </div>
+														<div class="text-14 text-light-1 lh-15">06/07/2023 13:17</div>
+													</div>
+												</div>
+												<h5 class="fw-500 text-blue-1 mt-20">Easy way to discover the city</h5>
+												<p class="text-15 text-dark-1 mt-10">Eum eu sumo albucius perfecto, commodo torquatos consequuntur pro ut, id posse splendide ius. Cu nisl putent omittantur usu, mutat atomorum ex pro, ius nibh nonumy id. Nam at eius dissentias disputando, molestie mnesarchum complectitur per te</p>
+												<ul class="review-star d-flex text-blue-1">
+													<li class="me-1"><i class="fa fa-star"></i></li>
+													<li class="me-1"><i class="fa fa-star"></i></li>
+													<li class="me-1"><i class="fa fa-star"></i></li>
+													<li class="me-1"><i class="fa fa-star"></i></li>
+													<li class="me-1"><i class="fa fa-star-o"></i></li>
+												</ul>
+											</div>
+											<div class="col-12 review-item">
+												<div class="row x-gap-20 y-gap-20 items-center">
+													<div class="col-auto">
+														<img class="avatar w-60 h-60 rounded-full" src="https://gotrip.bookingcore.org/images/avatar.png" alt=" ">
+													</div>
+													<div class="col-auto">
+														<div class="fw-500 lh-15"> </div>
+														<div class="text-14 text-light-1 lh-15">06/07/2023 13:17</div>
+													</div>
+												</div>
+												<h5 class="fw-500 text-blue-1 mt-20">Easy way to discover the city</h5>
+												<p class="text-15 text-dark-1 mt-10">Eum eu sumo albucius perfecto, commodo torquatos consequuntur pro ut, id posse splendide ius. Cu nisl putent omittantur usu, mutat atomorum ex pro, ius nibh nonumy id. Nam at eius dissentias disputando, molestie mnesarchum complectitur per te</p>
+												<ul class="review-star d-flex text-blue-1">
+													<li class="me-1"><i class="fa fa-star"></i></li>
+													<li class="me-1"><i class="fa fa-star"></i></li>
+													<li class="me-1"><i class="fa fa-star"></i></li>
+													<li class="me-1"><i class="fa fa-star"></i></li>
+													<li class="me-1"><i class="fa fa-star"></i></li>
+												</ul>
+											</div>
+											<div class="col-12 review-item">
+												<div class="row x-gap-20 y-gap-20 items-center">
+													<div class="col-auto">
+														<img class="avatar w-60 h-60 rounded-full" src="https://gotrip.bookingcore.org/images/avatar.png" alt=" ">
+													</div>
+													<div class="col-auto">
+														<div class="fw-500 lh-15"> </div>
+														<div class="text-14 text-light-1 lh-15">06/07/2023 13:17</div>
+													</div>
+												</div>
+												<h5 class="fw-500 text-blue-1 mt-20">Easy way to discover the city</h5>
+												<p class="text-15 text-dark-1 mt-10">Eum eu sumo albucius perfecto, commodo torquatos consequuntur pro ut, id posse splendide ius. Cu nisl putent omittantur usu, mutat atomorum ex pro, ius nibh nonumy id. Nam at eius dissentias disputando, molestie mnesarchum complectitur per te</p>
+												<ul class="review-star d-flex text-blue-1">
+													<li class="me-1"><i class="fa fa-star"></i></li>
+													<li class="me-1"><i class="fa fa-star"></i></li>
+													<li class="me-1"><i class="fa fa-star"></i></li>
+													<li class="me-1"><i class="fa fa-star"></i></li>
+													<li class="me-1"><i class="fa fa-star"></i></li>
+												</ul>
+											</div>
+											<div class="col-12 review-item">
+												<div class="row x-gap-20 y-gap-20 items-center">
+													<div class="col-auto">
+														<img class="avatar w-60 h-60 rounded-full" src="https://gotrip.bookingcore.org/images/avatar.png" alt=" ">
+													</div>
+													<div class="col-auto">
+														<div class="fw-500 lh-15"> </div>
+														<div class="text-14 text-light-1 lh-15">06/07/2023 13:17</div>
+													</div>
+												</div>
+												<h5 class="fw-500 text-blue-1 mt-20">Car was great</h5>
+												<p class="text-15 text-dark-1 mt-10">Eum eu sumo albucius perfecto, commodo torquatos consequuntur pro ut, id posse splendide ius. Cu nisl putent omittantur usu, mutat atomorum ex pro, ius nibh nonumy id. Nam at eius dissentias disputando, molestie mnesarchum complectitur per te</p>
+												<ul class="review-star d-flex text-blue-1">
+													<li class="me-1"><i class="fa fa-star"></i></li>
+													<li class="me-1"><i class="fa fa-star"></i></li>
+													<li class="me-1"><i class="fa fa-star"></i></li>
+													<li class="me-1"><i class="fa fa-star"></i></li>
+													<li class="me-1"><i class="fa fa-star"></i></li>
+												</ul>
+											</div>
+										</div>
+									</div>
+									<div class="border-top-light mt-20 mb-20"></div>
+									<div class="review-pag-wrapper">
+										<div class="bravo-pagination"></div>
+										<div class="review-pag-text">
+											Showing 1 - 4 of 4 total
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="border-top-light pt-40 mt-40">
+								<div class="review-message">
+									You must <a href="#login" data-bs-toggle="modal" data-target="#login">log in</a> to write review
+								</div>
+							</div>
+						</section>
+					</div>
+				</section>
+				<div class="layout-pt-lg"></div>
+			</div>
+			<section class="layout-pt-md layout-pb-md mailchimp bg-dark-2 ">
+				<div class="container">
+					<div class="row y-gap-30 justify-between items-center">
+						<div class="col-auto">
+							<div class="row y-gap-20  flex-wrap items-center">
+								<div class="col-auto">
+									<div class="icon-newsletter text-60 sm:text-40 text-white"></div>
+								</div>
+								<div class="col-auto">
+									<h4 class="text-26 text-white fw-600">Your Travel Journey Starts Here</h4>
+									<div class="text-white">Sign up and we&#039;ll send the best deals to you</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-auto">
+							<form action="https://gotrip.bookingcore.org/newsletter/subscribe" class="subcribe-form bravo-subscribe-form bravo-form single-field -w-410 d-flex x-gap-10 y-gap-20">
+								<input type="hidden" name="_token" value="3S1E3I6GCPexAN9eH84jHnTogBgmUbOrYm4h3NqQ"> 
+								<div>
+									<input class="bg-white h-60 email-input" type="text" name="email" placeholder="Your Email">
+								</div>
+								<div>
+									<button class="button -md h-60 bg-blue-1 text-white">
+									Subscribe <i class="fa fa-spinner fa-pulse fa-fw"></i>
+									</button>
+								</div>
+								<div class="form-mess"></div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</section>
+			<div class="footer -type-1 normal">
+				<div class="container">
+					<div class="footer_one pt-60 pb-60">
+						<div class="row y-gap-40 justify-between xl:justify-start">
+							<div class="col-xl-2 col-lg-3 col-sm-6">
+								<h5 class="text-16 fw-500 mb-30">Contact Us</h5>
+								<div class="mt-30">
+									<div class="text-14 mt-30">Toll Free Customer Care</div>
+									<a href="#" class="text-18 fw-500 text-blue-1 mt-5">+(1) 123 456 7890</a>
+								</div>
+								<div class="mt-35">
+									<div class="text-14 mt-30">Need live support?</div>
+									<a href="#" class="text-18 fw-500 text-blue-1 mt-5"><span class="__cf_email__" data-cfemail="f99190b99e968d8b9089d79a9694">[email&#160;protected]</span></a>
+								</div>
+							</div>
+							<div class="col-xl-2 col-lg-3 col-sm-6">
+								<h5 class="text-16 fw-500 mb-30">Company</h5>
+								<div class="d-flex y-gap-10 flex-column">
+									<a href="#">About Us</a>
+									<a href="#">Careers</a>
+									<a href="#">Blog</a>
+									<a href="#">Press</a>
+									<a href="#">Gift Cards</a>
+									<a href="#">Magazine</a>
+								</div>
+							</div>
+							<div class="col-xl-2 col-lg-3 col-sm-6">
+								<h5 class="text-16 fw-500 mb-30">Support</h5>
+								<div class="d-flex y-gap-10 flex-column">
+									<a href="#">Contact</a>
+									<a href="#">Legal Notice</a>
+									<a href="#">Privacy Policy</a>
+									<a href="#">Terms and Conditions</a>
+									<a href="#">Sitemap</a>
+								</div>
+							</div>
+							<div class="col-xl-2 col-lg-3 col-sm-6">
+								<h5 class="text-16 fw-500 mb-30">Other Services</h5>
+								<div class="d-flex y-gap-10 flex-column">
+									<a href="#">Car hire</a>
+									<a href="#">Activity Finder</a>
+									<a href="#">Tour List</a>
+									<a href="#">Flight finder</a>
+									<a href="#">Cruise Ticket</a>
+									<a href="#">Holiday Rental</a>
+									<a href="#">Travel Agents</a>
+								</div>
+							</div>
+							<div class="col-xl-2 col-lg-3 col-sm-6">
+								<h5 class="text-16 fw-500 mb-30">Mobile</h5>
+								<div class="d-flex items-center px-20 py-10 rounded-4 border-light">
+									<div class="icon-apple text-24"></div>
+									<div class="ml-20">
+										<div class="text-14 text-light-1">Download on the</div>
+										<div class="text-15 lh-1 fw-500">Apple Store</div>
+									</div>
+								</div>
+								<div class="d-flex items-center px-20 py-10 rounded-4 border-light mt-20">
+									<div class="icon-play-market text-24"></div>
+									<div class="ml-20">
+										<div class="text-14 text-light-1">Get in on</div>
+										<div class="text-15 lh-1 fw-500">Google Play</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<section class="footer_middle_area py-20  border-top-light ">
+						<div class="row justify-between items-center y-gap-10">
+							<div class="col-auto">
+								Copyright © 2023 by Go Trip
+							</div>
+							<div class="col-auto">
+								<div class="row y-gap-10 items-center">
+									<div class="col-auto">
+										<div class="d-flex items-center">
+											<div class="menu-footer">
+												<div class="mobile-overlay"></div>
+												<div class="header-menu__content">
+													<div class="menu js-navList">
+														<ul class="menu__nav -is-active">
+															<li class="currency-dropdown menu-item-has-children">
+																<a href="#" class="is_login">
+																<span class="mr-10">USD</span>
+																<i class="icon icon-chevron-sm-down"></i>
+																</a>
+																<ul class="subnav">
+																	<li>
+																		<a href="https://gotrip.bookingcore.org/car/vinfast-lux-a20-plus-1?set_currency=eur" class="is_login dropdown-item">
+																		EUR
+																		</a>
+																	</li>
+																	<li>
+																		<a href="https://gotrip.bookingcore.org/car/vinfast-lux-a20-plus-1?set_currency=jpy" class="is_login dropdown-item">
+																		JPY
+																		</a>
+																	</li>
+																</ul>
+															</li>
+															<li class="language-dropdown menu-item-has-children">
+																<a href="#" class="is_login">
+																<span class="mr-10">
+																<span class="flag-icon flag-icon-gb"></span>
+																English
+																</span>
+																<i class="icon icon-chevron-sm-down"></i>
+																</a>
+																<ul class="subnav">
+																	<li>
+																		<a href="https://gotrip.bookingcore.org/car/vinfast-lux-a20-plus-1?set_lang=ja" class="is_login dropdown-item" style="justify-content: flex-start">
+																		<span class="flag-icon flag-icon-jp"></span>
+																		Japanese
+																		</a>
+																	</li>
+																	<li>
+																		<a href="https://gotrip.bookingcore.org/car/vinfast-lux-a20-plus-1?set_lang=egy" class="is_login dropdown-item" style="justify-content: flex-start">
+																		<span class="flag-icon flag-icon-eg"></span>
+																		Egyptian
+																		</a>
+																	</li>
+																	<li>
+																		<a href="https://gotrip.bookingcore.org/car/vinfast-lux-a20-plus-1?set_lang=es_MX" class="is_login dropdown-item" style="justify-content: flex-start">
+																		<span class="flag-icon flag-icon-mx"></span>
+																		Mexico
+																		</a>
+																	</li>
+																	<li>
+																		<a href="https://gotrip.bookingcore.org/car/vinfast-lux-a20-plus-1?set_lang=tr" class="is_login dropdown-item" style="justify-content: flex-start">
+																		<span class="flag-icon flag-icon-tr"></span>
+																		Türkçe
+																		</a>
+																	</li>
+																	<li>
+																		<a href="https://gotrip.bookingcore.org/car/vinfast-lux-a20-plus-1?set_lang=he" class="is_login dropdown-item" style="justify-content: flex-start">
+																		<span class="flag-icon flag-icon-Israel"></span>
+																		Hebrew
+																		</a>
+																	</li>
+																</ul>
+															</li>
+														</ul>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="col-auto">
+										Go Trip
+									</div>
+								</div>
+							</div>
+						</div>
+					</section>
+				</div>
+			</div>
+			<div class="modal fade login gotrip-login-modal" id="login" tabindex="-1" role="dialog" aria-hidden="true">
+				<div class="modal-dialog modal-dialog-centered" role="document">
+					<div class="modal-content relative">
+						<div class="modal-header border-dashed">
+							<h4 class="modal-title">Log In</h4>
+							<span class="c-pointer" data-bs-dismiss="modal" aria-label="Close">
+							<i class="input-icon field-icon fa">
+							<img src="https://gotrip.bookingcore.org/images/ico_close.svg" alt="close">
+							</i>
+							</span>
+						</div>
+						<div class="modal-body relative">
+							<form class="bravo-theme-gotrip-login-form y-gap-20" method="POST" action="https://gotrip.bookingcore.org/login">
+								<input type="hidden" name="redirect" value>
+								<input type="hidden" name="_token" value="3S1E3I6GCPexAN9eH84jHnTogBgmUbOrYm4h3NqQ"> 
+								<div class="col-12">
+									<h4 class="form-title text-22 fw-500">Welcome back</h4>
+									<p class="mt-10">Don&#039;t have an account yet? <a data-bs-toggle="modal" href="#register" class="text-blue-1">Sign up for free</a></p>
+								</div>
+								<div class="col-12">
+									<div class="form-input">
+										<input type="text" name="email" autocomplete="off">
+										<label class="lh-1 text-14 text-light-1">Email</label>
+									</div>
+								</div>
+								<div class="col-12">
+									<div class="form-input">
+										<input type="password" name="password" autocomplete="off">
+										<label class="lh-1 text-14 text-light-1">Password</label>
+									</div>
+								</div>
+								<div class="col-12 d-flex justify-content-between">
+									<div class="d-flex ">
+										<div class="form-checkbox" style="margin-top: 3px">
+											<input type="checkbox" name="remember" id="remember-me" value="1">
+											<div class="form-checkbox__mark">
+												<div class="form-checkbox__icon icon-check"></div>
+											</div>
+										</div>
+										<div class="text-15 lh-15 text-light-1 ml-10">Remember me</div>
+									</div>
+									<a href="https://gotrip.bookingcore.org/forgot-password">Forgot Password?</a>
+								</div>
+								<div class="error message-error invalid-feedback"></div>
+								<div class="col-12">
+									<button class="button py-20 -dark-1 bg-blue-1 text-white w-100 form-submit" type="submit">
+										Sign In
+										<div class="icon-arrow-top-right ml-15"></div>
+										<span class="spinner-grow spinner-grow-sm icon-loading ml-15 d-none" role="status" aria-hidden="true"></span>
+									</button>
+								</div>
+								<div class="col-12">
+									<div class="text-center px-30">By creating an account, you agree to our Terms of Service and Privacy Statement.</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="modal fade login gotrip-register-modal" id="register" tabindex="-1" role="dialog" aria-hidden="true">
+				<div class="modal-dialog modal-dialog-centered" role="document">
+					<div class="modal-content relative">
+						<div class="modal-header">
+							<h4 class="modal-title">Sign Up</h4>
+							<span class="c-pointer" data-bs-dismiss="modal" aria-label="Close">
+							<i class="input-icon field-icon fa">
+							<img src="https://gotrip.bookingcore.org/images/ico_close.svg" alt="close">
+							</i>
+							</span>
+						</div>
+						<div class="modal-body">
+							<form action="#" class="form bravo-form-register" method="post">
+								<input type="hidden" name="_token" value="3S1E3I6GCPexAN9eH84jHnTogBgmUbOrYm4h3NqQ"> 
+								<div class="row y-gap-20">
+									<div class="col-12">
+										<h1 class="text-22 fw-500">Sign in or create an account</h1>
+										<p class="mt-10">Already have an account? <a data-bs-toggle="modal" href="#login" class="text-blue-1">Log in</a></p>
+									</div>
+									<div class="col-12">
+										<div class="form-input">
+											<input type="text" name="first_name" autocomplete="off">
+											<label class="lh-1 text-14 text-light-1">First Name</label>
+										</div>
+										<span class="invalid-feedback error error-first_name"></span>
+									</div>
+									<div class="col-12">
+										<div class="form-input">
+											<input type="text" name="last_name" autocomplete="off">
+											<label class="lh-1 text-14 text-light-1">Last Name</label>
+										</div>
+										<span class="invalid-feedback error error-last_name"></span>
+									</div>
+									<div class="col-12">
+										<div class="form-input">
+											<input type="text" name="phone" autocomplete="off">
+											<label class="lh-1 text-14 text-light-1">Phone</label>
+										</div>
+										<span class="invalid-feedback error error-phone"></span>
+									</div>
+									<div class="col-12">
+										<div class="form-input">
+											<input type="email" name="email" autocomplete="off">
+											<label class="lh-1 text-14 text-light-1">Email address</label>
+										</div>
+										<span class="invalid-feedback error error-email"></span>
+									</div>
+									<div class="col-12">
+										<div class="form-input">
+											<input type="password" name="password" autocomplete="off">
+											<label class="lh-1 text-14 text-light-1">Password</label>
+										</div>
+										<span class="invalid-feedback error error-password"></span>
+									</div>
+									<div class="col-12">
+										<div class="d-flex">
+											<div class="form-checkbox" style="margin-top: 3px">
+												<input type="checkbox" name="term" id="register-term">
+												<div class="form-checkbox__mark">
+													<div class="form-checkbox__icon icon-check"></div>
+												</div>
+											</div>
+											<label class="text-15 lh-15 text-light-1 ml-10" for="register-term">I have read and accept the Terms and Privacy Policy?</label>
+										</div>
+										<span class="invalid-feedback error error-term"></span>
+									</div>
+									<div class="error message-error invalid-feedback"></div>
+									<div class="col-12">
+										<button type="submit" class="button py-20 -dark-1 bg-blue-1 text-white w-100">
+											Sign Up 
+											<div class="icon-arrow-top-right ml-15"></div>
+										</button>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+			<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="/libs/lodash.min.js"></script>
+			<script src="/libs/jquery-3.6.3.min.js"></script>
+			<script src="/libs/vue/vue.min.js"></script>
+			<script type="text/javascript" src="/themes/gotrip/libs/bs/js/bootstrap.bundle.min.js"></script>
+			<script src="/libs/bootbox/bootbox.min.js"></script>
+			<script src="/libs/bootstrap4.0/js/bootstrap.min.js"></script>
+			<script type="text/javascript" src="/themes/gotrip/js/vendors.js"></script>
+			<script type="text/javascript" src="/themes/gotrip/js/main.js?_ver=3.2.1"></script>
+			<script src="/libs/carousel-2/owl.carousel.min.js"></script>
+			<script type="text/javascript" src="/libs/daterange/moment.min.js"></script>
+			<script type="text/javascript" src="/libs/daterange/daterangepicker.min.js"></script>
+			<script src="/libs/select2/js/select2.min.js"></script>
+			<script src="/themes/gotrip/dist/frontend/js/gotrip.js?_ver=3.2.1"></script>
+			<script src="/libs/leaflet1.4.0/leaflet.js"></script>
+			<link rel="stylesheet" href="/libs/leaflet1.4.0/leaflet.css">
+			<script src="https://gotrip.bookingcore.org/module/core/js/map-engine.js?_ver=3.2.1"></script>
+			<script>
+				jQuery(function ($) {
+				                new BravoMapEngine('map_content', {
+				        disableScripts: true,
+				        fitBounds: true,
+				        center: [21.051244, 105.777988],
+				        zoom:12,
+				        ready: function (engineMap) {
+				            engineMap.addMarker([21.051244, 105.777988], {
+				                icon_options: {
+				                    iconUrl:"https://gotrip.bookingcore.org/images/icons/png/pin.png"
+				                }
+				            });
+				        }
+				    });
+				            })
+			</script>
+			<script>
+				var bravo_booking_data = {"id":25,"extra_price":[{"name":"Child Toddler Seat","price":"100","type":"one_time","number":0,"enable":0,"price_html":"$100","price_type":""},{"name":"Infant Child Seat","price":"100","type":"one_time","number":0,"enable":0,"price_html":"$100","price_type":""},{"name":"GPS Satellite","price":"200","type":"one_time","number":0,"enable":0,"price_html":"$200","price_type":""}],"minDate":"06\/07\/2023","max_number":2,"buyer_fees":[{"name":"Equipment fee","desc":"One-time fee charged by host to cover the cost of cleaning their space.","name_ja":"\u30af\u30ea\u30fc\u30cb\u30f3\u30b0\u4ee3","desc_ja":"\u30b9\u30da\u30fc\u30b9\u3092\u6383\u9664\u3059\u308b\u8cbb\u7528\u3092\u30db\u30b9\u30c8\u304c\u8acb\u6c42\u3059\u308b1\u56de\u9650\u308a\u306e\u6599\u91d1\u3002","price":"100","type":"one_time","type_name":"Equipment fee","type_desc":"One-time fee charged by host to cover the cost of cleaning their space.","price_type":""},{"name":"Facility fee","desc":"This helps us run our platform and offer services like 24\/7 support on your trip.","name_ja":"\u30b5\u30fc\u30d3\u30b9\u6599","desc_ja":"\u3053\u308c\u306b\u3088\u308a\u3001\u5f53\u793e\u306e\u30d7\u30e9\u30c3\u30c8\u30d5\u30a9\u30fc\u30e0\u3092\u5b9f\u884c\u3057\u3001\u65c5\u884c\u4e2d\u306b","price":"200","type":"one_time","type_name":"Facility fee","type_desc":"This helps us run our platform and offer services like 24\/7 support on your trip.","price_type":""}],"start_date":"","start_date_html":"Please select date!","end_date":"","deposit":false,"deposit_type":"","deposit_amount":"","deposit_fomular":"default","is_form_enquiry_and_book":true,"enquiry_type":"book"}
+				var bravo_booking_i18n = {
+				no_date_select:'Please select Start and End date',
+				    no_guest_select:'Please select at least one number',
+				    load_dates_url:'https://gotrip.bookingcore.org/user/car/availability/loadDates',
+				    name_required:'Name is Required',
+				    email_required:'Email is Required',
+				};
+			</script>
+			<script type="text/javascript" src="/libs/ion_rangeslider/js/ion.rangeSlider.min.js"></script>
+			<script type="text/javascript" src="https://gotrip.bookingcore.org/module/car/js/single-car.js?_ver=3.2.1"></script>
+		</div>
+	</body>
+</html>

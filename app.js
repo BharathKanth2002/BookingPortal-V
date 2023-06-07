@@ -131,7 +131,7 @@ app.config(function($routeProvider) {
             templateUrl: 'api/hotel.html'
         })
         .when('/flight', {
-
+            templateUrl: 'api/flight.html'
         })
         .otherwise({
             redirectTo: '/'
