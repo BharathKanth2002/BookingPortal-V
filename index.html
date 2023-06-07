@@ -3,10 +3,10 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<!-- <link rel="icon" type="image/png" href="uploads/demo/general/favicon.png" /> -->
+		<!-- <link rel="icon" type="image/png" href="/favicon.png" /> -->
 		<title>Search for hotel - Go Trip</title>
 		<!-- <meta name="description" content />
-		<meta property="og:url" content="hotel" />
+		<meta property="og:url" content="/hotel" />
 		<meta property="og:type" content="article" />
 		<meta property="og:title" content="Search for hotel" />
 		<meta property="og:description" content />
@@ -15,20 +15,20 @@
 		<meta name="twitter:title" content="Search for hotel">
 		<meta name="twitter:description" content>
 		<meta name="twitter:image" content>
-		<link rel="canonical" href="hotel" /> -->
-		<link href="themes/gotrip/css/vendors.css" rel="stylesheet">
-		<link href="themes/gotrip/css/main.css" rel="stylesheet">
-		<link href="libs/icofont/icofont.min.css" rel="stylesheet">
-		<link rel="stylesheet" type="text/css" href="libs/daterange/daterangepicker.css">
+		<link rel="canonical" href="/hotel" /> -->
+		<link href="/themes/gotrip/css/vendors.css" rel="stylesheet">
+		<link href="/themes/gotrip/css/main.css" rel="stylesheet">
+		<link href="/libs/icofont/icofont.min.css" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="/libs/daterange/daterangepicker.css">
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-		<link rel="stylesheet" href="themes/gotrip/dist/frontend/css/app.css?_v=3.2.1">
+		<link rel="stylesheet" href="/themes/gotrip/dist/frontend/css/app.css?_v=3.2.1">
 		<script>
 			var bookingCore = {
-			    url:'https://gotrip.bookingcore.org',
-			    url_root:'https://gotrip.bookingcore.org',
-			    admin_url:'admin',
+			    url:'/',
+			    url_root:'/',
+			    admin_url:'/admin',
 			    booking_decimals:0,
 			    thousand_separator:'.',
 			    decimal_separator:',',
@@ -45,27 +45,22 @@
 			        map_fit_bounds:'on',
 			    },
 			    routes:{
-			        login:'login',
-			        register:'register',
-			        checkout:'booking/doCheckout'
+			        login:'/login',
+			        register:'/register',
+			        checkout:'/booking/doCheckout'
 			    },
 			    currentUser: 0,
 			    isAdmin : 0,
 			    rtl: false,
-			    markAsRead:'notify/markAsRead',
-			    markAllAsRead:'notify/markAllAsRead',
-			    loadNotify : 'notify/notifications',
+			    markAsRead:'/notify/markAsRead',
+			    markAllAsRead:'/notify/markAllAsRead',
+			    loadNotify : '/notify/notifications',
 			    pusher_api_key : '',
 			    pusher_cluster : '',
 			    language: 'en',
 			    module:{}
 			};
-			                        bookingCore.module.hotel = 'hotel';
-			                            bookingCore.module.car = 'car';
-			                            bookingCore.module.event = 'event';
-			                            bookingCore.module.tour = 'tour';
-			                            bookingCore.module.flight = 'flight';
-			            var i18n = {
+            var i18n = {
 			    warning:"Warning",
 			    success:"Success",
 			    confirm_delete:"Do you want to delete?",
@@ -105,27 +100,26 @@
 			    ],
 			};
 		</script>
-		<link href="themes/gotrip/dist/frontend/module/hotel/css/hotel.css?_ver=3.2.1" rel="stylesheet">
-		<link rel="stylesheet" type="text/css" href="libs/ion_rangeslider/css/ion.rangeSlider.min.css" />
-		<link href="custom-css.css" rel="stylesheet">
-
-        <link href="themes/gotrip/css/custom.css" rel="stylesheet">
+		<link href="/themes/gotrip/dist/frontend/module/hotel/css/hotel.css?_ver=3.2.1" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="/libs/ion_rangeslider/css/ion.rangeSlider.min.css" />
+		<link href="/custom-css.css" rel="stylesheet">
 
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-route.min.js"></script>
         <script src="app.js"></script>
+
 	</head>
 	<body class="frontend-page header-normal   ">
 		<div class="bravo_wrap overflow-hidden">
 			<div class="header-margin"></div>
-			<header data-add-bg="bg-dark-1" class="header -fixed bg-dark-3 js-header bravo_header" data-x="header" data-x-toggle="is-menu-opened" ng-controller="HeaderController">
+			<header ng-controller="HeaderController" data-add-bg="bg-dark-1" class="header -fixed bg-dark-3 js-header bravo_header" data-x="header" data-x-toggle="is-menu-opened">
 				<div data-anim="fade" class="header__container px-30 sm:px-20  is-in-view">
 					<div class="row justify-between items-center">
 						<div class="col-auto ">
 							<div class="d-flex items-center gotrip-header-normal">
 								<a href="/" class=" header-logo mr-20" data-x="header-logo" data-x-toggle="is-logo-dark">
-                                    <img class="logo-light" src="{{ logoItems.light }}" alt="{{ SiteTitle }}">
-                                    <img class="logo-dark" src="{{ logoItems.dark }}" alt="{{ SiteTitle }}">
+                                    <img class="logo-light" ng-src="{{ logoItems.light }}" ng-alt="{{ SiteTitle }}">
+                                    <img class="logo-dark" ng-src="{{ logoItems.dark }}" ng-alt="{{ SiteTitle }}">                                    
 								</a>
 								<div class="header-menu " data-x="mobile-menu" data-x-toggle="is-menu-active">
 									<div class="mobile-overlay"></div>
@@ -142,7 +136,6 @@
                                                         </li>
                                                     </ul>
                                                 </li>
-
 											</ul>
 										</div>
 										<div class="mobile-footer px-20 py-10 border-top-light js-mobile-footer">
@@ -166,18 +159,15 @@
 										<div class="menu js-navList">
 											<ul class="menu__nav text-white -is-active">
 												<li class="currency-dropdown menu-item-has-children">
-                                                    <select name="currency" ng-model="currency" class="text-white mr-10">
+                                                    <select name="currency" ng-model="currency">
                                                         <option value="INR">INR</option>
                                                         <option value="EUR">EUR</option>
                                                         <option value="JPY">JPY</option>
-                                                    </select>    
+                                                    </select>
 												</li>
-												<div class="d-flex items-center ml-20 is-menu-opened-hide md:d-none">
-													<a data-bs-toggle="modal" href="#login" class="border-white -outline-white text-white button px-30 fw-400 text-14  h-50 ml-20">Sign In / Register</a>
-												</div>
 												<div class="d-none xl:d-flex x-gap-20 items-center pl-30 text-white" data-x="header-mobile-icons" data-x-toggle="text-white">
 													<div>
-														<a href="login" class="d-flex items-center icon-user text-inherit text-22"></a>
+														<a href="/login" class="d-flex items-center icon-user text-inherit text-22"></a>
 													</div>
 													<div><button class="d-flex items-center icon-menu text-inherit text-20" data-x-click="header, header-logo, header-mobile-icons, mobile-menu"></button></div>
 												</div>
@@ -187,7 +177,7 @@
 								</div>
 							</div>
 							<div class="d-none xl:d-flex x-gap-20 items-center pl-30 text-white" data-x="header-mobile-icons" data-x-toggle="text-white">
-								<div><a href="login" class="d-flex items-center icon-user text-inherit text-22"></a></div>
+								<div><a href=" /login " class="d-flex items-center icon-user text-inherit text-22"></a></div>
 								<div><button class="d-flex items-center icon-menu text-inherit text-20" data-x-click="header, header-logo, header-mobile-icons, mobile-menu"></button></div>
 							</div>
 						</div>
@@ -195,7 +185,246 @@
 					<div class="d-none xl:d-flex x-gap-20 items-center pl-30" data-x="header-mobile-icons" data-x-toggle="text-white"></div>
 				</div>
 			</header>
-			<ng-view></ng-view>
+            <div class="bravo_search bravo_search_hotel">
+                <section class="pt-40 pb-40 bg-light-2 ">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="text-center">
+                                    <h1 class="text-30 fw-600">Search for hotel</h1>
+                                </div>
+                                <form action="" class="gotrip_form_search bravo_form form  form-search-all-service mainSearch bg-white px-10 py-10 lg:px-20 lg:pt-5 lg:pb-20 rounded-4 mt-30" method="get">
+                                    <div class="field-items">
+                                        <div class="row w-100 m-0">
+                                            <div class="col-lg-4 align-self-center px-30 lg:py-20 lg:px-0">
+                                                <div class="searchMenu-loc js-form-dd js-liverSearch item">
+                                                    <span class="clear-loc absolute bottom-0 text-12"><i class="icon-close"></i></span>
+                                                    <div data-x-dd-click="searchMenu-loc">
+                                                        <h4 class="text-15 fw-500 ls-2 lh-16">Location</h4>
+                                                        <div class="text-15 text-light-1 ls-2 lh-16">
+                                                            <input type="hidden" name="location_id" class="js-search-get-id" value>
+                                                            <input autocomplete="off" type="text" placeholder="Where are you going?" class="js-search js-dd-focus" value />
+                                                        </div>
+                                                    </div>
+                                                    <div class="searchMenu-loc__field shadow-2 js-popup-window" data-x-dd="searchMenu-loc" data-x-dd-toggle="-is-active">
+                                                        <div class="bg-white px-30 py-30 sm:px-0 sm:py-15 rounded-4">
+                                                            <div class="y-gap-5 js-results">
+                                                                <div class="-link d-block col-12 text-left rounded-4 px-20 py-15 js-search-option" data-id="1">
+                                                                    <div class="d-flex align-items-center">
+                                                                        <div class="icon-location-2 text-light-1 text-20 pt-4"></div>
+                                                                        <div class="ml-10">
+                                                                            <div class="text-15 lh-12 fw-500 js-search-option-target"> Paris</div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="-link d-block col-12 text-left rounded-4 px-20 py-15 js-search-option" data-id="2">
+                                                                    <div class="d-flex align-items-center">
+                                                                        <div class="icon-location-2 text-light-1 text-20 pt-4"></div>
+                                                                        <div class="ml-10">
+                                                                            <div class="text-15 lh-12 fw-500 js-search-option-target"> California</div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="-link d-block col-12 text-left rounded-4 px-20 py-15 js-search-option" data-id="3">
+                                                                    <div class="d-flex align-items-center">
+                                                                        <div class="icon-location-2 text-light-1 text-20 pt-4"></div>
+                                                                        <div class="ml-10">
+                                                                            <div class="text-15 lh-12 fw-500 js-search-option-target"> United States</div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="-link d-block col-12 text-left rounded-4 px-20 py-15 js-search-option" data-id="4">
+                                                                    <div class="d-flex align-items-center">
+                                                                        <div class="icon-location-2 text-light-1 text-20 pt-4"></div>
+                                                                        <div class="ml-10">
+                                                                            <div class="text-15 lh-12 fw-500 js-search-option-target"> Los Angeles</div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="-link d-block col-12 text-left rounded-4 px-20 py-15 js-search-option" data-id="5">
+                                                                    <div class="d-flex align-items-center">
+                                                                        <div class="icon-location-2 text-light-1 text-20 pt-4"></div>
+                                                                        <div class="ml-10">
+                                                                            <div class="text-15 lh-12 fw-500 js-search-option-target"> New Jersey</div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="-link d-block col-12 text-left rounded-4 px-20 py-15 js-search-option" data-id="6">
+                                                                    <div class="d-flex align-items-center">
+                                                                        <div class="icon-location-2 text-light-1 text-20 pt-4"></div>
+                                                                        <div class="ml-10">
+                                                                            <div class="text-15 lh-12 fw-500 js-search-option-target"> San Francisco</div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="-link d-block col-12 text-left rounded-4 px-20 py-15 js-search-option" data-id="7">
+                                                                    <div class="d-flex align-items-center">
+                                                                        <div class="icon-location-2 text-light-1 text-20 pt-4"></div>
+                                                                        <div class="ml-10">
+                                                                            <div class="text-15 lh-12 fw-500 js-search-option-target"> Virginia</div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="-link d-block col-12 text-left rounded-4 px-20 py-15 js-search-option" data-id="8">
+                                                                    <div class="d-flex align-items-center">
+                                                                        <div class="icon-location-2 text-light-1 text-20 pt-4"></div>
+                                                                        <div class="ml-10">
+                                                                            <div class="text-15 lh-12 fw-500 js-search-option-target"> Germany</div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="-link d-block col-12 text-left rounded-4 px-20 py-15 js-search-option" data-id="9">
+                                                                    <div class="d-flex align-items-center">
+                                                                        <div class="icon-location-2 text-light-1 text-20 pt-4"></div>
+                                                                        <div class="ml-10">
+                                                                            <div class="text-15 lh-12 fw-500 js-search-option-target"> New York</div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="-link d-block col-12 text-left rounded-4 px-20 py-15 js-search-option" data-id="10">
+                                                                    <div class="d-flex align-items-center">
+                                                                        <div class="icon-location-2 text-light-1 text-20 pt-4"></div>
+                                                                        <div class="ml-10">
+                                                                            <div class="text-15 lh-12 fw-500 js-search-option-target"> London</div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="-link d-block col-12 text-left rounded-4 px-20 py-15 js-search-option" data-id="11">
+                                                                    <div class="d-flex align-items-center">
+                                                                        <div class="icon-location-2 text-light-1 text-20 pt-4"></div>
+                                                                        <div class="ml-10">
+                                                                            <div class="text-15 lh-12 fw-500 js-search-option-target"> Barcelona</div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="-link d-block col-12 text-left rounded-4 px-20 py-15 js-search-option" data-id="12">
+                                                                    <div class="d-flex align-items-center">
+                                                                        <div class="icon-location-2 text-light-1 text-20 pt-4"></div>
+                                                                        <div class="ml-10">
+                                                                            <div class="text-15 lh-12 fw-500 js-search-option-target"> Sydney</div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="-link d-block col-12 text-left rounded-4 px-20 py-15 js-search-option" data-id="13">
+                                                                    <div class="d-flex align-items-center">
+                                                                        <div class="icon-location-2 text-light-1 text-20 pt-4"></div>
+                                                                        <div class="ml-10">
+                                                                            <div class="text-15 lh-12 fw-500 js-search-option-target"> Rome</div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="-link d-block col-12 text-left rounded-4 px-20 py-15 js-search-option" data-id="14">
+                                                                    <div class="d-flex align-items-center">
+                                                                        <div class="icon-location-2 text-light-1 text-20 pt-4"></div>
+                                                                        <div class="ml-10">
+                                                                            <div class="text-15 lh-12 fw-500 js-search-option-target"> Reykjavik</div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4 align-self-center px-30 lg:py-20 lg:px-0">
+                                                <div class="searchMenu-date form-date-search-hotel position-relative item">
+                                                    <div class="date-wrapper" data-x-dd-click="searchMenu-date">
+                                                        <h4 class="text-15 fw-500 ls-2 lh-16">Check In - Out</h4>
+                                                        <div class="text-14 text-light-1 ls-2 lh-16 check-in-out-render">
+                                                            <span class="js-first-date render check-in-render">06/07/2023</span>
+                                                            -
+                                                            <span class="js-last-date render check-out-render">06/08/2023</span>
+                                                        </div>
+                                                    </div>
+                                                    <input type="hidden" class="check-in-input" value="06/07/2023" name="start">
+                                                    <input type="hidden" class="check-out-input" value="06/08/2023" name="end">
+                                                    <input type="text" class="check-in-out absolute invisible" name="date" value="2023-06-07 - 2023-06-08">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4 align-self-center px-30 lg:py-20 lg:px-0">
+                                                <div class="searchMenu-guests form-select-guests js-form-dd item">
+                                                    <div data-x-dd-click="searchMenu-guests">
+                                                        <h4 class="text-15 fw-500 ls-2 lh-16">Guests</h4>
+                                                        <div class="text-15 text-light-1 ls-2 lh-16">
+                                                            <div class="render">
+                                                                <span class="adults">
+                                                                <span class="one ">1 Adult</span>
+                                                                <span class=" d-none  multi" data-html=":count Adults">1 Adults</span>
+                                                                </span>
+                                                                -
+                                                                <span class="children">
+                                                                <span class="one " data-html=":count Child">0 Child</span>
+                                                                <span class="multi  d-none " data-html=":count Children">0 Children</span>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="searchMenu-guests__field select-guests-dropdown shadow-2" data-x-dd="searchMenu-guests" data-x-dd-toggle="-is-active">
+                                                        <div class="bg-white px-30 py-30 rounded-4">
+                                                            <div class="row y-gap-10 justify-between items-center">
+                                                                <div class="col-auto">
+                                                                    <div class="text-15 fw-500">Rooms</div>
+                                                                </div>
+                                                                <div class="col-auto">
+                                                                    <div class="d-flex items-center">
+                                                                        <span class="button -outline-blue-1 text-blue-1 size-38 rounded-4 btn-minus" data-input="room"><i class="icon-minus text-12"></i></span>
+                                                                        <span class="flex-center size-20 ml-15 mr-15 count-display">
+                                                                        <input type="number" name="room" value="1" min="1">
+                                                                        </span>
+                                                                        <span class="button -outline-blue-1 text-blue-1 size-38 rounded-4 btn-add" data-input="room"><i class="icon-plus text-12"></i></span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="border-top-light mt-24 mb-24"></div>
+                                                            <div class="row y-gap-10 justify-between items-center">
+                                                                <div class="col-auto">
+                                                                    <div class="text-15 fw-500">Adults</div>
+                                                                </div>
+                                                                <div class="col-auto">
+                                                                    <div class="d-flex items-center">
+                                                                        <span class="button -outline-blue-1 text-blue-1 size-38 rounded-4 btn-minus" data-input="adults"><i class="icon-minus text-12"></i></span>
+                                                                        <span class="flex-center size-20 ml-15 mr-15 count-display">
+                                                                        <input type="number" name="adults" value="1" min="1">
+                                                                        </span>
+                                                                        <span class="button -outline-blue-1 text-blue-1 size-38 rounded-4 btn-add" data-input="adults"><i class="icon-plus text-12"></i></span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="border-top-light mt-24 mb-24"></div>
+                                                            <div class="row y-gap-10 justify-between items-center">
+                                                                <div class="col-auto">
+                                                                    <div class="text-15 fw-500">Children</div>
+                                                                </div>
+                                                                <div class="col-auto">
+                                                                    <div class="d-flex items-center">
+                                                                        <span class="button -outline-blue-1 text-blue-1 size-38 rounded-4 btn-minus" data-input="children"><i class="icon-minus text-12"></i></span>
+                                                                        <span class="flex-center size-20 ml-15 mr-15 count-display">
+                                                                        <input type="number" name="children" value="0" min="0">
+                                                                        </span>
+                                                                        <span class="button -outline-blue-1 text-blue-1 size-38 rounded-4 btn-add" data-input="children"><i class="icon-plus text-12"></i></span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="button-item">
+                                        <button class="mainSearch__submit button  -dark-1 py-15 col-12 bg-blue-1 text-white w-100 rounded-4" type="submit">
+                                        <i class="icon-search text-20 mr-10"></i>
+                                        <span class="text-search">Search</span>
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <ng-view></ng-view>
+
 			<section class="layout-pt-md layout-pb-md mailchimp bg-dark-2 ">
 				<div class="container">
 					<div class="row y-gap-30 justify-between items-center">
@@ -211,8 +440,8 @@
 							</div>
 						</div>
 						<div class="col-auto">
-							<form action="newsletter/subscribe" class="subcribe-form bravo-subscribe-form bravo-form single-field -w-410 d-flex x-gap-10 y-gap-20">
-								<input type="hidden" name="_token" value="7jzKMer0l4KL2rL68KY9Jvi7cinb2ObKs68N8vpD"> 
+							<form action="https://gotrip.bookingcore.org/newsletter/subscribe" class="subcribe-form bravo-subscribe-form bravo-form single-field -w-410 d-flex x-gap-10 y-gap-20">
+								<input type="hidden" name="_token" value="wN8rCiPpcHSl3Wz0VA4pBEnqX0gnam3Dm7pRhZVH"> 
 								<div>
 									<input class="bg-white h-60 email-input" type="text" name="email" placeholder="Your Email">
 								</div>
@@ -239,7 +468,7 @@
 								</div>
 								<div class="mt-35">
 									<div class="text-14 mt-30">Need live support?</div>
-									<a href="#" class="text-18 fw-500 text-blue-1 mt-5"><span class="__cf_email__" data-cfemail="2d45446d4a42595f445d034e4240">[email&#160;protected]</span></a>
+									<a href="#" class="text-18 fw-500 text-blue-1 mt-5"><span class="__cf_email__" data-cfemail="d4bcbd94b3bba0a6bda4fab7bbb9">[email&#160;protected]</span></a>
 								</div>
 							</div>
 							<div class="col-xl-2 col-lg-3 col-sm-6">
@@ -315,12 +544,12 @@
 																</a>
 																<ul class="subnav">
 																	<li>
-																		<a href="hotel?set_currency=eur" class="is_login dropdown-item">
+																		<a href="https://gotrip.bookingcore.org/hotel?set_currency=eur" class="is_login dropdown-item">
 																		EUR
 																		</a>
 																	</li>
 																	<li>
-																		<a href="hotel?set_currency=jpy" class="is_login dropdown-item">
+																		<a href="https://gotrip.bookingcore.org/hotel?set_currency=jpy" class="is_login dropdown-item">
 																		JPY
 																		</a>
 																	</li>
@@ -336,31 +565,31 @@
 																</a>
 																<ul class="subnav">
 																	<li>
-																		<a href="hotel?set_lang=ja" class="is_login dropdown-item" style="justify-content: flex-start">
+																		<a href="https://gotrip.bookingcore.org/hotel?set_lang=ja" class="is_login dropdown-item" style="justify-content: flex-start">
 																		<span class="flag-icon flag-icon-jp"></span>
 																		Japanese
 																		</a>
 																	</li>
 																	<li>
-																		<a href="hotel?set_lang=egy" class="is_login dropdown-item" style="justify-content: flex-start">
+																		<a href="https://gotrip.bookingcore.org/hotel?set_lang=egy" class="is_login dropdown-item" style="justify-content: flex-start">
 																		<span class="flag-icon flag-icon-eg"></span>
 																		Egyptian
 																		</a>
 																	</li>
 																	<li>
-																		<a href="hotel?set_lang=es_MX" class="is_login dropdown-item" style="justify-content: flex-start">
+																		<a href="https://gotrip.bookingcore.org/hotel?set_lang=es_MX" class="is_login dropdown-item" style="justify-content: flex-start">
 																		<span class="flag-icon flag-icon-mx"></span>
 																		Mexico
 																		</a>
 																	</li>
 																	<li>
-																		<a href="hotel?set_lang=tr" class="is_login dropdown-item" style="justify-content: flex-start">
+																		<a href="https://gotrip.bookingcore.org/hotel?set_lang=tr" class="is_login dropdown-item" style="justify-content: flex-start">
 																		<span class="flag-icon flag-icon-tr"></span>
 																		Türkçe
 																		</a>
 																	</li>
 																	<li>
-																		<a href="hotel?set_lang=he" class="is_login dropdown-item" style="justify-content: flex-start">
+																		<a href="https://gotrip.bookingcore.org/hotel?set_lang=he" class="is_login dropdown-item" style="justify-content: flex-start">
 																		<span class="flag-icon flag-icon-Israel"></span>
 																		Hebrew
 																		</a>
@@ -389,14 +618,14 @@
 							<h4 class="modal-title">Log In</h4>
 							<span class="c-pointer" data-bs-dismiss="modal" aria-label="Close">
 							<i class="input-icon field-icon fa">
-							<img src="images/ico_close.svg" alt="close">
+							<img src="https://gotrip.bookingcore.org/images/ico_close.svg" alt="close">
 							</i>
 							</span>
 						</div>
 						<div class="modal-body relative">
-							<form class="bravo-theme-gotrip-login-form y-gap-20" method="POST" action="login">
+							<form class="bravo-theme-gotrip-login-form y-gap-20" method="POST" action="https://gotrip.bookingcore.org/login">
 								<input type="hidden" name="redirect" value>
-								<input type="hidden" name="_token" value="7jzKMer0l4KL2rL68KY9Jvi7cinb2ObKs68N8vpD"> 
+								<input type="hidden" name="_token" value="wN8rCiPpcHSl3Wz0VA4pBEnqX0gnam3Dm7pRhZVH"> 
 								<div class="col-12">
 									<h4 class="form-title text-22 fw-500">Welcome back</h4>
 									<p class="mt-10">Don&#039;t have an account yet? <a data-bs-toggle="modal" href="#register" class="text-blue-1">Sign up for free</a></p>
@@ -423,7 +652,7 @@
 										</div>
 										<div class="text-15 lh-15 text-light-1 ml-10">Remember me</div>
 									</div>
-									<a href="forgot-password">Forgot Password?</a>
+									<a href="https://gotrip.bookingcore.org/forgot-password">Forgot Password?</a>
 								</div>
 								<div class="error message-error invalid-feedback"></div>
 								<div class="col-12">
@@ -448,13 +677,13 @@
 							<h4 class="modal-title">Sign Up</h4>
 							<span class="c-pointer" data-bs-dismiss="modal" aria-label="Close">
 							<i class="input-icon field-icon fa">
-							<img src="images/ico_close.svg" alt="close">
+							<img src="https://gotrip.bookingcore.org/images/ico_close.svg" alt="close">
 							</i>
 							</span>
 						</div>
 						<div class="modal-body">
 							<form action="#" class="form bravo-form-register" method="post">
-								<input type="hidden" name="_token" value="7jzKMer0l4KL2rL68KY9Jvi7cinb2ObKs68N8vpD"> 
+								<input type="hidden" name="_token" value="wN8rCiPpcHSl3Wz0VA4pBEnqX0gnam3Dm7pRhZVH"> 
 								<div class="row y-gap-20">
 									<div class="col-12">
 										<h1 class="text-22 fw-500">Sign in or create an account</h1>
@@ -520,24 +749,22 @@
 					</div>
 				</div>
 			</div>
-
-            <script src="libs/jquery-3.6.3.min.js"></script>
-			<script src="libs/vue/vue.min.js"></script>
-			<script type="text/javascript" src="themes/gotrip/libs/bs/js/bootstrap.bundle.min.js"></script>
-			<script src="libs/bootbox/bootbox.min.js"></script>
-			<script src="libs/bootstrap4.0/js/bootstrap.min.js"></script>
-			<script type="text/javascript" src="themes/gotrip/js/vendors.js"></script>
-			<script type="text/javascript" src="themes/gotrip/js/main.js?_ver=3.2.1"></script>
-			<script src="libs/leaflet1.4.0/leaflet.js"></script>
-			<link rel="stylesheet" href="libs/leaflet1.4.0/leaflet.css">
-			<script src="module/core/js/map-engine.js?_ver=3.2.1"></script>
-			<script src="libs/carousel-2/owl.carousel.min.js"></script>
-			<script type="text/javascript" src="libs/daterange/moment.min.js"></script>
-			<script type="text/javascript" src="libs/daterange/daterangepicker.min.js"></script>
-			<script src="libs/select2/js/select2.min.js"></script>
-			<script src="themes/gotrip/dist/frontend/js/gotrip.js?_ver=3.2.1"></script>
-			<script type="text/javascript" src="libs/ion_rangeslider/js/ion.rangeSlider.min.js"></script>
-			<script type="text/javascript" src="module/hotel/js/hotel.js?_ver=3.2.1"></script>
+			<script src="/libs/lodash.min.js"></script>
+			<script src="/libs/jquery-3.6.3.min.js"></script>
+			<script type="text/javascript" src="/themes/gotrip/libs/bs/js/bootstrap.bundle.min.js"></script>
+			<script src="/libs/bootbox/bootbox.min.js"></script>
+			<script src="/libs/bootstrap4.0/js/bootstrap.min.js"></script>
+			<script type="text/javascript" src="/themes/gotrip/js/vendors.js"></script>
+			<script type="text/javascript" src="/themes/gotrip/js/main.js?_ver=3.2.1"></script>
+			<script src="/libs/leaflet1.4.0/leaflet.js"></script>
+			<link rel="stylesheet" href="/libs/leaflet1.4.0/leaflet.css">
+			<script src="/module/core/js/map-engine.js?_ver=3.2.1"></script>
+			<script src="/libs/carousel-2/owl.carousel.min.js"></script>
+			<script type="text/javascript" src="/libs/daterange/moment.min.js"></script>
+			<script type="text/javascript" src="/libs/daterange/daterangepicker.min.js"></script>
+			<script src="/libs/select2/js/select2.min.js"></script>
+			<script src="/themes/gotrip/dist/frontend/js/gotrip.js?_ver=3.2.1"></script>
+			<script type="text/javascript" src="/libs/ion_rangeslider/js/ion.rangeSlider.min.js"></script>
 		</div>
 	</body>
 </html>
