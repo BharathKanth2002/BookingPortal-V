@@ -1,252 +1,257 @@
-[
-    {
-        "url":"https://gotrip.bookingcore.org/hotel/dylan-hotel-1",
-        "image":"https://gotrip.bookingcore.org/uploads/gotrip/hotel/3.png",
-        "featured":false,
-        "name":"Dylan Hotel",
-        "star":2,
-        "place":"Sydney",
-        "facilities":[
-            "Wake-up call",
-            "Flat Tv",
-            "Laundry and dry cleaning",
-            "Internet – Wifi",
-            "Coffee and tea"
-        ],
-        "type":[
-            "Apartments",
-            "Hotels",
-            "Homestays",
-            "Villas"
-        ],
-        "rating":"Excellent",
-        "reviews":2,
-        "rating_score":4.5,
-        "price":550
-    },
-    {
-        "url":"https://gotrip.bookingcore.org/hotel/dylan-hotel-1",
-        "image":"https://gotrip.bookingcore.org/uploads/gotrip/hotel/3.png",
-        "featured":true,
-        "name":"Dylan Hotel",
-        "star":5,
-        "place":"Sydney",
-        "facilities":[
-            "Wake-up call",
-            "Flat Tv",
-            "Laundry and dry cleaning",
-            "Internet – Wifi",
-            "Coffee and tea"
-        ],
-        "type":[
-            "Apartments",
-            "Hotels",
-            "Homestays",
-            "Villas"
-        ],
-        "rating":"Excellent",
-        "reviews":2,
-        "rating_score":4.5,
-        "price":550
-    },
-    {
-        "url":"https://gotrip.bookingcore.org/hotel/dylan-hotel-1",
-        "image":"https://gotrip.bookingcore.org/uploads/gotrip/hotel/3.png",
-        "featured":true,
-        "name":"Dylan Hotel",
-        "star":5,
-        "place":"Sydney",
-        "facilities":[
-            "Wake-up call",
-            "Flat Tv",
-            "Laundry and dry cleaning",
-            "Internet – Wifi",
-            "Coffee and tea"
-        ],
-        "type":[
-            "Apartments",
-            "Hotels",
-            "Homestays",
-            "Villas"
-        ],
-        "rating":"Excellent",
-        "reviews":2,
-        "rating_score":4.5,
-        "price":550
-    },
-    {
-        "url":"https://gotrip.bookingcore.org/hotel/dylan-hotel-1",
-        "image":"https://gotrip.bookingcore.org/uploads/gotrip/hotel/3.png",
-        "featured":true,
-        "name":"Dylan Hotel",
-        "star":5,
-        "place":"Sydney",
-        "facilities":[
-            "Wake-up call",
-            "Flat Tv",
-            "Laundry and dry cleaning",
-            "Internet – Wifi",
-            "Coffee and tea"
-        ],
-        "type":[
-            "Apartments",
-            "Hotels",
-            "Homestays",
-            "Villas"
-        ],
-        "rating":"Excellent",
-        "reviews":2,
-        "rating_score":4.5,
-        "price":550
-    },
-    {
-        "url":"https://gotrip.bookingcore.org/hotel/dylan-hotel-1",
-        "image":"https://gotrip.bookingcore.org/uploads/gotrip/hotel/3.png",
-        "featured":true,
-        "name":"Dylan Hotel",
-        "star":5,
-        "place":"Sydney",
-        "facilities":[
-            "Wake-up call",
-            "Flat Tv",
-            "Laundry and dry cleaning",
-            "Internet – Wifi",
-            "Coffee and tea"
-        ],
-        "type":[
-            "Apartments",
-            "Hotels",
-            "Homestays",
-            "Villas"
-        ],
-        "rating":"Excellent",
-        "reviews":2,
-        "rating_score":4.5,
-        "price":550
-    },    
-    {
-        "url":"https://gotrip.bookingcore.org/hotel/dylan-hotel-1",
-        "image":"https://gotrip.bookingcore.org/uploads/gotrip/hotel/3.png",
-        "featured":true,
-        "name":"Dylan Hotel",
-        "star":5,
-        "place":"Sydney",
-        "facilities":[
-            "Wake-up call",
-            "Flat Tv",
-            "Laundry and dry cleaning",
-            "Internet – Wifi",
-            "Coffee and tea"
-        ],
-        "type":[
-            "Apartments",
-            "Hotels",
-            "Homestays",
-            "Villas"
-        ],
-        "rating":"Excellent",
-        "reviews":2,
-        "rating_score":4.5,
-        "price":550
-    },
-    {
-        "url":"https://gotrip.bookingcore.org/hotel/dylan-hotel-1",
-        "image":"https://gotrip.bookingcore.org/uploads/gotrip/hotel/3.png",
-        "featured":true,
-        "name":"Dylan Hotel",
-        "star":5,
-        "place":"Sydney",
-        "facilities":[
-            "Wake-up call",
-            "Flat Tv",
-            "Laundry and dry cleaning",
-            "Internet – Wifi",
-            "Coffee and tea"
-        ],
-        "type":[
-            "Apartments",
-            "Hotels",
-            "Homestays",
-            "Villas"
-        ],
-        "rating":"Excellent",
-        "reviews":2,
-        "rating_score":4.5,
-        "price":550
-    },
-    {
-        "url":"https://gotrip.bookingcore.org/hotel/dylan-hotel-1",
-        "image":"https://gotrip.bookingcore.org/uploads/gotrip/hotel/3.png",
-        "featured":true,
-        "name":"Dylan Hotel",
-        "star":5,
-        "place":"Sydney",
-        "facilities":[
-            "Wake-up call",
-            "Flat Tv",
-            "Laundry and dry cleaning",
-            "Internet – Wifi",
-            "Coffee and tea"
-        ],
-        "type":[
-            "Apartments",
-            "Hotels",
-            "Homestays",
-            "Villas"
-        ],
-        "rating":"Excellent",
-        "reviews":2,
-        "rating_score":4.5,
-        "price":550
-    },
-    {
-        "url":"https://gotrip.bookingcore.org/hotel/dylan-hotel-1",
-        "image":"https://gotrip.bookingcore.org/uploads/gotrip/hotel/3.png",
-        "featured":true,
-        "name":"Dylan Hotel",
-        "star":5,
-        "place":"Sydney",
-        "facilities":[
-            "Wake-up call",
-            "Flat Tv",
-            "Laundry and dry cleaning",
-            "Internet – Wifi",
-            "Coffee and tea"
-        ],
-        "type":[
-            "Apartments",
-            "Hotels",
-            "Homestays",
-            "Villas"
-        ],
-        "rating":"Excellent",
-        "reviews":2,
-        "rating_score":4.5,
-        "price":550
-    },
-    {
-        "url":"https://gotrip.bookingcore.org/hotel/dylan-hotel-1",
-        "image":"https://gotrip.bookingcore.org/uploads/gotrip/hotel/3.png",
-        "featured":true,
-        "name":"Dylan Hotel",
-        "star":5,
-        "place":"Sydney",
-        "facilities":[
-            "Wake-up call",
-            "Flat Tv",
-            "Laundry and dry cleaning",
-            "Internet – Wifi",
-            "Coffee and tea"
-        ],
-        "type":[
-            "Apartments",
-            "Hotels",
-            "Homestays",
-            "Villas"
-        ],
-        "rating":"Excellent",
-        "reviews":2,
-        "rating_score":4.5,
-        "price":550
-    }
-]
+{
+    "hotels" : [
+        {
+            "url":"https://gotrip.bookingcore.org/hotel/dylan-hotel-1",
+            "image":"https://gotrip.bookingcore.org/uploads/gotrip/hotel/3.png",
+            "featured":false,
+            "name":"Dylan Hotel",
+            "star":2,
+            "place":"Sydney",
+            "facilities":[
+                "Wake-up call",
+                "Flat Tv",
+                "Laundry and dry cleaning",
+                "Internet – Wifi",
+                "Coffee and tea"
+            ],
+            "type":[
+                "Apartments",
+                "Hotels",
+                "Homestays",
+                "Villas"
+            ],
+            "rating":"Excellent",
+            "reviews":2,
+            "rating_score":4.5,
+            "price":550
+        },
+        {
+            "url":"https://gotrip.bookingcore.org/hotel/dylan-hotel-1",
+            "image":"https://gotrip.bookingcore.org/uploads/gotrip/hotel/3.png",
+            "featured":true,
+            "name":"Dylan Hotel",
+            "star":5,
+            "place":"Sydney",
+            "facilities":[
+                "Wake-up call",
+                "Flat Tv",
+                "Laundry and dry cleaning",
+                "Internet – Wifi",
+                "Coffee and tea"
+            ],
+            "type":[
+                "Apartments",
+                "Hotels",
+                "Homestays",
+                "Villas"
+            ],
+            "rating":"Excellent",
+            "reviews":2,
+            "rating_score":4.5,
+            "price":550
+        },
+        {
+            "url":"https://gotrip.bookingcore.org/hotel/dylan-hotel-1",
+            "image":"https://gotrip.bookingcore.org/uploads/gotrip/hotel/3.png",
+            "featured":true,
+            "name":"Dylan Hotel",
+            "star":5,
+            "place":"Sydney",
+            "facilities":[
+                "Wake-up call",
+                "Flat Tv",
+                "Laundry and dry cleaning",
+                "Internet – Wifi",
+                "Coffee and tea"
+            ],
+            "type":[
+                "Apartments",
+                "Hotels",
+                "Homestays",
+                "Villas"
+            ],
+            "rating":"Excellent",
+            "reviews":2,
+            "rating_score":4.5,
+            "price":550
+        },
+        {
+            "url":"https://gotrip.bookingcore.org/hotel/dylan-hotel-1",
+            "image":"https://gotrip.bookingcore.org/uploads/gotrip/hotel/3.png",
+            "featured":true,
+            "name":"Dylan Hotel",
+            "star":5,
+            "place":"Sydney",
+            "facilities":[
+                "Wake-up call",
+                "Flat Tv",
+                "Laundry and dry cleaning",
+                "Internet – Wifi",
+                "Coffee and tea"
+            ],
+            "type":[
+                "Apartments",
+                "Hotels",
+                "Homestays",
+                "Villas"
+            ],
+            "rating":"Excellent",
+            "reviews":2,
+            "rating_score":4.5,
+            "price":550
+        },
+        {
+            "url":"https://gotrip.bookingcore.org/hotel/dylan-hotel-1",
+            "image":"https://gotrip.bookingcore.org/uploads/gotrip/hotel/3.png",
+            "featured":true,
+            "name":"Dylan Hotel",
+            "star":5,
+            "place":"Sydney",
+            "facilities":[
+                "Wake-up call",
+                "Flat Tv",
+                "Laundry and dry cleaning",
+                "Internet – Wifi",
+                "Coffee and tea"
+            ],
+            "type":[
+                "Apartments",
+                "Hotels",
+                "Homestays",
+                "Villas"
+            ],
+            "rating":"Excellent",
+            "reviews":2,
+            "rating_score":4.5,
+            "price":550
+        },    
+        {
+            "url":"https://gotrip.bookingcore.org/hotel/dylan-hotel-1",
+            "image":"https://gotrip.bookingcore.org/uploads/gotrip/hotel/3.png",
+            "featured":true,
+            "name":"Dylan Hotel",
+            "star":5,
+            "place":"Sydney",
+            "facilities":[
+                "Wake-up call",
+                "Flat Tv",
+                "Laundry and dry cleaning",
+                "Internet – Wifi",
+                "Coffee and tea"
+            ],
+            "type":[
+                "Apartments",
+                "Hotels",
+                "Homestays",
+                "Villas"
+            ],
+            "rating":"Excellent",
+            "reviews":2,
+            "rating_score":4.5,
+            "price":550
+        },
+        {
+            "url":"https://gotrip.bookingcore.org/hotel/dylan-hotel-1",
+            "image":"https://gotrip.bookingcore.org/uploads/gotrip/hotel/3.png",
+            "featured":true,
+            "name":"Dylan Hotel",
+            "star":5,
+            "place":"Sydney",
+            "facilities":[
+                "Wake-up call",
+                "Flat Tv",
+                "Laundry and dry cleaning",
+                "Internet – Wifi",
+                "Coffee and tea"
+            ],
+            "type":[
+                "Apartments",
+                "Hotels",
+                "Homestays",
+                "Villas"
+            ],
+            "rating":"Excellent",
+            "reviews":2,
+            "rating_score":4.5,
+            "price":550
+        },
+        {
+            "url":"https://gotrip.bookingcore.org/hotel/dylan-hotel-1",
+            "image":"https://gotrip.bookingcore.org/uploads/gotrip/hotel/3.png",
+            "featured":true,
+            "name":"Dylan Hotel",
+            "star":5,
+            "place":"Sydney",
+            "facilities":[
+                "Wake-up call",
+                "Flat Tv",
+                "Laundry and dry cleaning",
+                "Internet – Wifi",
+                "Coffee and tea"
+            ],
+            "type":[
+                "Apartments",
+                "Hotels",
+                "Homestays",
+                "Villas"
+            ],
+            "rating":"Excellent",
+            "reviews":2,
+            "rating_score":4.5,
+            "price":550
+        },
+        {
+            "url":"https://gotrip.bookingcore.org/hotel/dylan-hotel-1",
+            "image":"https://gotrip.bookingcore.org/uploads/gotrip/hotel/3.png",
+            "featured":true,
+            "name":"Dylan Hotel",
+            "star":5,
+            "place":"Sydney",
+            "facilities":[
+                "Wake-up call",
+                "Flat Tv",
+                "Laundry and dry cleaning",
+                "Internet – Wifi",
+                "Coffee and tea"
+            ],
+            "type":[
+                "Apartments",
+                "Hotels",
+                "Homestays",
+                "Villas"
+            ],
+            "rating":"Excellent",
+            "reviews":2,
+            "rating_score":4.5,
+            "price":550
+        },
+        {
+            "url":"https://gotrip.bookingcore.org/hotel/dylan-hotel-1",
+            "image":"https://gotrip.bookingcore.org/uploads/gotrip/hotel/3.png",
+            "featured":true,
+            "name":"Dylan Hotel",
+            "star":5,
+            "place":"Sydney",
+            "facilities":[
+                "Wake-up call",
+                "Flat Tv",
+                "Laundry and dry cleaning",
+                "Internet – Wifi",
+                "Coffee and tea"
+            ],
+            "type":[
+                "Apartments",
+                "Hotels",
+                "Homestays",
+                "Villas"
+            ],
+            "rating":"Excellent",
+            "reviews":2,
+            "rating_score":4.5,
+            "price":550
+        }
+    ],
+    "total" : 10,
+    "page" : 1,
+    "totalpages" : 2
+}

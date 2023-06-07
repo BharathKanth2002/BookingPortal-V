@@ -4,7 +4,7 @@
 			<div class="row">
 				<div class="col-xl-3 col-lg-4">
 					<div class="bravo_filter sidebar">
-						<form action="" class="bravo_form_filter lg:d-none" data-x="filterPopup" data-x-toggle="-is-active">
+						<form ng-submit="HotelSearchForm()" class="bravo_form_filter lg:d-none" data-x="filterPopup" data-x-toggle="-is-active">
 							<aside class="sidebar y-gap-40 p-4 p-lg-0">
 								<div data-x-click="filterPopup" class="-icon-close is_mobile pb-0">
 									<i class="icon-close"></i>
@@ -20,13 +20,13 @@
                                                     <div class="input-group-prepend">
                                                         <span class="input-group-text" id="basic-addon1">Rs.</span>
                                                     </div>
-                                                    <input type="text" class="form-control" placeholder="Min" name="price_range_min">
+                                                    <input type="text" class="form-control" placeholder="Min" name="price_range_min" ng-model="HotelSearchFormData.price_range_min">
                                                     <div class="input-group-prepend">
                                                         <span class="input-group-text" id="basic-addon1">Rs.</span>
                                                     </div>
-                                                    <input type="text" class="form-control" placeholder="Max" name="price_range_max">
+                                                    <input type="text" class="form-control" placeholder="Max" name="price_range_max" ng-model="HotelSearchFormData.price_range_max">
                                                 </div>
-												<button type="submit" class="flex-center bg-blue-1 rounded-4 px-3 py-1 mt-3 text-12 fw-600 text-white btn-apply-price-range mt-20">APPLY</button>
+												<button type="submit" ng-click="HotelSearchForm()" class="flex-center bg-blue-1 rounded-4 px-3 py-1 mt-3 text-12 fw-600 text-white btn-apply-price-range mt-20" ng-click="HotelSearchForm()">APPLY</button>
 											</div>
 										</div>
 									</div>
@@ -40,7 +40,7 @@
 											<div class="col-auto">
 												<div class="d-flex items-center">
 													<div class="form-checkbox ">
-														<input type="checkbox" name="star_rate[]" value="5" class="has-value">
+														<input type="checkbox" name="star_rate[]" value="5" class="has-value" ng-change="HotelSearchForm()" ng-model="HotelSearchFormData.star_rate[5]">
 														<div class="form-checkbox__mark">
 															<div class="form-checkbox__icon icon-check"></div>
 														</div>
@@ -59,7 +59,7 @@
 											<div class="col-auto">
 												<div class="d-flex items-center">
 													<div class="form-checkbox ">
-														<input type="checkbox" name="star_rate[]" value="4" class="has-value">
+														<input type="checkbox" name="star_rate[]" value="4" class="has-value" ng-change="HotelSearchForm()" ng-model="HotelSearchFormData.star_rate[4]">
 														<div class="form-checkbox__mark">
 															<div class="form-checkbox__icon icon-check"></div>
 														</div>
@@ -77,7 +77,7 @@
 											<div class="col-auto">
 												<div class="d-flex items-center">
 													<div class="form-checkbox ">
-														<input type="checkbox" name="star_rate[]" value="3" class="has-value">
+														<input type="checkbox" name="star_rate[]" value="3" class="has-value" ng-change="HotelSearchForm()" ng-model="HotelSearchFormData.star_rate[3]">
 														<div class="form-checkbox__mark">
 															<div class="form-checkbox__icon icon-check"></div>
 														</div>
@@ -94,7 +94,7 @@
 											<div class="col-auto">
 												<div class="d-flex items-center">
 													<div class="form-checkbox ">
-														<input type="checkbox" name="star_rate[]" value="2" class="has-value">
+														<input type="checkbox" name="star_rate[]" value="2" class="has-value" ng-change="HotelSearchForm()" ng-model="HotelSearchFormData.star_rate[2]">
 														<div class="form-checkbox__mark">
 															<div class="form-checkbox__icon icon-check"></div>
 														</div>
@@ -110,7 +110,7 @@
 											<div class="col-auto">
 												<div class="d-flex items-center">
 													<div class="form-checkbox ">
-														<input type="checkbox" name="star_rate[]" value="1" class="has-value">
+														<input type="checkbox" name="star_rate[]" value="1" class="has-value" ng-change="HotelSearchForm()" ng-model="HotelSearchFormData.star_rate[1]">
 														<div class="form-checkbox__mark">
 															<div class="form-checkbox__icon icon-check"></div>
 														</div>
@@ -132,7 +132,7 @@
 											<div class="col-auto">
 												<div class="d-flex items-center">
 													<div class="form-checkbox ">
-														<input type="checkbox" name="review_score[]" value="5" class="has-value">
+														<input type="checkbox" name="review_score[]" value="5" class="has-value" ng-change="HotelSearchForm()" ng-model="HotelSearchFormData.review_score[5]">
 														<div class="form-checkbox__mark">
 															<div class="form-checkbox__icon icon-check"></div>
 														</div>
@@ -151,7 +151,7 @@
 											<div class="col-auto">
 												<div class="d-flex items-center">
 													<div class="form-checkbox ">
-														<input type="checkbox" name="review_score[]" value="4" class="has-value">
+														<input type="checkbox" name="review_score[]" value="4" class="has-value" ng-change="HotelSearchForm()" ng-model="HotelSearchFormData.review_score[4]">
 														<div class="form-checkbox__mark">
 															<div class="form-checkbox__icon icon-check"></div>
 														</div>
@@ -169,7 +169,7 @@
 											<div class="col-auto">
 												<div class="d-flex items-center">
 													<div class="form-checkbox ">
-														<input type="checkbox" name="review_score[]" value="3" class="has-value">
+														<input type="checkbox" name="review_score[]" value="3" class="has-value" ng-change="HotelSearchForm()" ng-model="HotelSearchFormData.review_score[3]">
 														<div class="form-checkbox__mark">
 															<div class="form-checkbox__icon icon-check"></div>
 														</div>
@@ -186,7 +186,7 @@
 											<div class="col-auto">
 												<div class="d-flex items-center">
 													<div class="form-checkbox ">
-														<input type="checkbox" name="review_score[]" value="2" class="has-value">
+														<input type="checkbox" name="review_score[]" value="2" class="has-value" ng-change="HotelSearchForm()" ng-model="HotelSearchFormData.review_score[2]">
 														<div class="form-checkbox__mark">
 															<div class="form-checkbox__icon icon-check"></div>
 														</div>
@@ -202,7 +202,7 @@
 											<div class="col-auto">
 												<div class="d-flex items-center">
 													<div class="form-checkbox ">
-														<input type="checkbox" name="review_score[]" value="1" class="has-value">
+														<input type="checkbox" name="review_score[]" value="1" class="has-value" ng-change="HotelSearchForm()" ng-model="HotelSearchFormData.review_score[1]">
 														<div class="form-checkbox__mark">
 															<div class="form-checkbox__icon icon-check"></div>
 														</div>
@@ -220,81 +220,15 @@
 										<h5 class="text-18 fw-500 mb-10"> Facilities </h5>
 									</div>
 									<div class="item-content sidebar-checkbox">
-										<div class="row y-gap-10 items-center justify-between ">
+										<div class="row y-gap-10 items-center justify-between" ng-repeat="term in facilities">
 											<div class="d-flex items-center">
 												<div class="form-checkbox ">
-													<input type="checkbox" name="terms[]" value="42" class="has-value">
+													<input type="checkbox" name="terms[]" value="{{term.id}}" class="has-value" ng-change="HotelSearchForm()" ng-model="HotelSearchFormData.terms[term.id]">
 													<div class="form-checkbox__mark">
 														<div class="form-checkbox__icon icon-check"></div>
 													</div>
 												</div>
-												<div class="text-15 ml-10">Wake-up call</div>
-											</div>
-										</div>
-										<div class="row y-gap-10 items-center justify-between ">
-											<div class="d-flex items-center">
-												<div class="form-checkbox ">
-													<input type="checkbox" name="terms[]" value="43" class="has-value">
-													<div class="form-checkbox__mark">
-														<div class="form-checkbox__icon icon-check"></div>
-													</div>
-												</div>
-												<div class="text-15 ml-10">Car hire</div>
-											</div>
-										</div>
-										<div class="row y-gap-10 items-center justify-between ">
-											<div class="d-flex items-center">
-												<div class="form-checkbox ">
-													<input type="checkbox" name="terms[]" value="44" class="has-value">
-													<div class="form-checkbox__mark">
-														<div class="form-checkbox__icon icon-check"></div>
-													</div>
-												</div>
-												<div class="text-15 ml-10">Bicycle hire</div>
-											</div>
-										</div>
-										<div class="row y-gap-10 items-center justify-between ">
-											<div class="d-flex items-center">
-												<div class="form-checkbox ">
-													<input type="checkbox" name="terms[]" value="45" class="has-value">
-													<div class="form-checkbox__mark">
-														<div class="form-checkbox__icon icon-check"></div>
-													</div>
-												</div>
-												<div class="text-15 ml-10">Flat Tv</div>
-											</div>
-										</div>
-										<div class="row y-gap-10 items-center justify-between ">
-											<div class="d-flex items-center">
-												<div class="form-checkbox ">
-													<input type="checkbox" name="terms[]" value="46" class="has-value">
-													<div class="form-checkbox__mark">
-														<div class="form-checkbox__icon icon-check"></div>
-													</div>
-												</div>
-												<div class="text-15 ml-10">Laundry and dry cleaning</div>
-											</div>
-										</div>
-										<div class="row y-gap-10 items-center justify-between ">
-											<div class="d-flex items-center">
-												<div class="form-checkbox ">
-													<input type="checkbox" name="terms[]" value="47" class="has-value">
-													<div class="form-checkbox__mark">
-														<div class="form-checkbox__icon icon-check"></div>
-													</div>
-												</div>
-												<div class="text-15 ml-10">Internet – Wifi</div>
-											</div>
-										</div>
-										<div class="row y-gap-10 items-center justify-between ">
-											<div class="d-flex items-center">
-												<div class="form-checkbox ">
-													<input type="checkbox" name="terms[]" value="48" class="has-value">
-													<div class="form-checkbox__mark">
-														<div class="form-checkbox__icon icon-check"></div>
-													</div>
-												</div>
-												<div class="text-15 ml-10">Coffee and tea</div>
+												<div class="text-15 ml-10">{{term.name}}</div>
 											</div>
 										</div>
 									</div>
@@ -304,83 +238,17 @@
 										<h5 class="text-18 fw-500 mb-10"> Hotel Service </h5>
 									</div>
 									<div class="item-content sidebar-checkbox">
-										<div class="row y-gap-10 items-center justify-between ">
+                                        <div class="row y-gap-10 items-center justify-between" ng-repeat="sterm in services">
 											<div class="d-flex items-center">
 												<div class="form-checkbox ">
-													<input type="checkbox" name="terms[]" value="49" class="has-value">
+													<input type="checkbox" name="terms[]" value="{{sterm.id}}" ng-model="HotelSearchFormData.service[sterm.id]" class="has-value" ng-change="HotelSearchForm()">
 													<div class="form-checkbox__mark">
 														<div class="form-checkbox__icon icon-check"></div>
 													</div>
 												</div>
-												<div class="text-15 ml-10">Havana Lobby bar</div>
+												<div class="text-15 ml-10">{{sterm.name}}</div>
 											</div>
-										</div>
-										<div class="row y-gap-10 items-center justify-between ">
-											<div class="d-flex items-center">
-												<div class="form-checkbox ">
-													<input type="checkbox" name="terms[]" value="50" class="has-value">
-													<div class="form-checkbox__mark">
-														<div class="form-checkbox__icon icon-check"></div>
-													</div>
-												</div>
-												<div class="text-15 ml-10">Fiesta Restaurant</div>
-											</div>
-										</div>
-										<div class="row y-gap-10 items-center justify-between ">
-											<div class="d-flex items-center">
-												<div class="form-checkbox ">
-													<input type="checkbox" name="terms[]" value="51" class="has-value">
-													<div class="form-checkbox__mark">
-														<div class="form-checkbox__icon icon-check"></div>
-													</div>
-												</div>
-												<div class="text-15 ml-10">Hotel transport services</div>
-											</div>
-										</div>
-										<div class="row y-gap-10 items-center justify-between ">
-											<div class="d-flex items-center">
-												<div class="form-checkbox ">
-													<input type="checkbox" name="terms[]" value="52" class="has-value">
-													<div class="form-checkbox__mark">
-														<div class="form-checkbox__icon icon-check"></div>
-													</div>
-												</div>
-												<div class="text-15 ml-10">Free luggage deposit</div>
-											</div>
-										</div>
-										<div class="row y-gap-10 items-center justify-between ">
-											<div class="d-flex items-center">
-												<div class="form-checkbox ">
-													<input type="checkbox" name="terms[]" value="53" class="has-value">
-													<div class="form-checkbox__mark">
-														<div class="form-checkbox__icon icon-check"></div>
-													</div>
-												</div>
-												<div class="text-15 ml-10">Laundry Services</div>
-											</div>
-										</div>
-										<div class="row y-gap-10 items-center justify-between ">
-											<div class="d-flex items-center">
-												<div class="form-checkbox ">
-													<input type="checkbox" name="terms[]" value="54" class="has-value">
-													<div class="form-checkbox__mark">
-														<div class="form-checkbox__icon icon-check"></div>
-													</div>
-												</div>
-												<div class="text-15 ml-10">Pets welcome</div>
-											</div>
-										</div>
-										<div class="row y-gap-10 items-center justify-between ">
-											<div class="d-flex items-center">
-												<div class="form-checkbox ">
-													<input type="checkbox" name="terms[]" value="55" class="has-value">
-													<div class="form-checkbox__mark">
-														<div class="form-checkbox__icon icon-check"></div>
-													</div>
-												</div>
-												<div class="text-15 ml-10">Tickets</div>
-											</div>
-										</div>
+                                        </div>
 									</div>
 								</div>
 							</aside>
@@ -436,7 +304,7 @@
 											<div class="col-md-auto">
 												<div class="cardImage ratio ratio-1:1 w-250 md:w-1/1 rounded-4">
 													<div class="cardImage__content">
-														<a href="{{hotel.url}}"><img class="rounded-4 col-12 js-lazy lazy loaded" alt="{{hotel.name}}" data-ll-status="loaded" src="{{hotel.image}}"></a>
+														<a href="{{hotel.url}}"><img class="rounded-4 col-12 js-lazy lazy loaded" alt="{{hotel.name}}" data-ll-status="loaded" ng-src="{{hotel.image}}"></a>
 													</div>
 													<div class="service-wishlist " data-id="9" data-type="hotel">
 														<div class="cardImage__wishlist">
@@ -507,30 +375,29 @@
 						<div class="bravo-pagination">
 							<div class="border-top-light mt-30 pt-30 custom-pagination">
 								<div class="row x-gap-10 y-gap-20 justify-between md:justify-center">
-									<div class="col-auto md:order-1 disabled p-item">
+									<div ng-class="{'col-auto md:order-1 p-item':true, 'disabled':CurrentPage <= 1 }">
 										<span class="button -blue-1 size-40 rounded-full border-light p-link">
 										<i class="icon-chevron-left text-12"></i>
 										</span>
 									</div>
 									<div class="col-md-auto md:order-3">
 										<div class="row x-gap-20 y-gap-20 items-center md:d-none">
-											<div class="col-auto active p-item">
-												<div class="size-40 flex-center rounded-full p-link">1</div>
+
+											<div ng-repeat="page in numbersOfPages" ng-class="{ 'col-auto p-item': true, 'active': page === CurrentPage }">
+												<div class="size-40 flex-center rounded-full p-link" ng-click="changePage(page)">{{page}}</div>
 											</div>
-											<div class="col-auto p-item">
-												<a href="?price_range=300%3B747&amp;star_rate%5B0%5D=5&amp;star_rate%5B1%5D=4&amp;star_rate%5B2%5D=3&amp;review_score%5B0%5D=5&amp;review_score%5B1%5D=4&amp;terms%5B0%5D=33&amp;terms%5B1%5D=42&amp;terms%5B2%5D=43&amp;terms%5B3%5D=49&amp;terms%5B4%5D=50&amp;page=2" class="size-40 flex-center rounded-full p-link">2</a>
-											</div>
+
 										</div>
 									</div>
-									<div class="col-auto md:order-2 p-item">
-										<a href="?price_range=300%3B747&amp;star_rate%5B0%5D=5&amp;star_rate%5B1%5D=4&amp;star_rate%5B2%5D=3&amp;review_score%5B0%5D=5&amp;review_score%5B1%5D=4&amp;terms%5B0%5D=33&amp;terms%5B1%5D=42&amp;terms%5B2%5D=43&amp;terms%5B3%5D=49&amp;terms%5B4%5D=50&amp;page=2" class="button -blue-1 size-40 rounded-full border-light">
-										<i class="icon-chevron-right text-12"></i>
+									<div ng-class="{'col-auto md:order-1 p-item':true, 'disabled':Ttotalpages >= CurrentPage }">
+										<a class="button -blue-1 size-40 rounded-full border-light">
+                                            <i class="icon-chevron-right text-12"></i>
 										</a>
 									</div>
 								</div>
 							</div>
 							<div class="text-center mt-30 md:mt-10">
-								<div class="text-14 text-light-1">Showing 1 - 9 of 10 Hotels</div>
+								<div class="text-14 text-light-1">Showing 1 - 9 of {{Totalhotels}} Hotels</div>
 							</div>
 						</div>
 					</div>
@@ -539,3 +406,8 @@
 		</div>
 	</section>
 </div>
+<style>
+.bravo-pagination .disabled span {
+    display: none;
+}
+</style>

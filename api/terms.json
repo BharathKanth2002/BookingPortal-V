@@ -1,0 +1,62 @@
+{
+    "facilities" : [
+        {
+            "id":42,
+            "name":"Wake-up call"
+        },
+        {
+            "id":43,
+            "name":"Car hire"
+        },
+        {
+            "id":44,
+            "name":"Bicycle hire"
+        },
+        {
+            "id":45,
+            "name":"Flat Tv"
+        },
+        {
+            "id":46,
+            "name":"Laundry and dry cleaning"
+        },
+        {
+            "id":47,
+            "name":"Internet – Wifi"
+        },
+        {
+            "id":48,
+            "name":"Coffee and tea"
+        }
+    ],
+    "services" : [
+        {
+            "id":49,
+            "name":"Havana Lobby bar"
+        },
+        {
+            "id":50,
+            "name":"Fiesta Restaurant"
+        },
+        {
+            "id":51,
+            "name":"Hotel transport services"
+        },
+        {
+            "id":52,
+            "name":"Free luggage deposit"
+        },
+        {
+            "id":53,
+            "name":"Laundry Services"
+        },
+        {
+            "id":54,
+            "name":"Pets welcome"
+        },
+        {
+            "id":55,
+            "name":"Tickets"
+        }
+    ]
+}

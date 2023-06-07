@@ -41,15 +41,87 @@ app.controller('HotelController', function($scope, $http) {
     };
 
     var url = 'api/hotel.json?' + generateUrl($scope.terms) + '&' + generateUrl($scope.review_score) + '&' + generateUrl($scope.star_rate) + '&page=' + $scope.page + '&orderby=' + $scope.orderby + '&location=' + $scope.location + '&date=' + $scope.date + '&room=' + $scope.room + '&adults=' + $scope.adults + '&children=' + $scope.children;
-      
+
     $http.get(url)
         .then(function(response) {
-          $scope.hotels = response.data;
-          $scope.Totalhotels = $scope.hotels.length;
+            $scope.hotels = response.data.hotels;
+            $scope.Totalhotels = response.data.total;
+            $scope.Ttotalpages = response.data.totalpages;
+            $scope.CurrentPage = response.data.page;
+
+            $scope.numbersOfPages = [];
+
+            // Populate the numbers array with values from 1 to 10
+            for (var i = 1; i <= $scope.Ttotalpages; i++) {
+                $scope.numbersOfPages.push(i);
+            }            
         })
         .catch(function(error) {
           console.log('Error retrieving hotels:', error);
         });
+    
+
+        
+    $scope.HotelSearchFormData = {};
+    $scope.HotelSearchFormData.location = "2";
+    // $scope.HotelSearchFormData.checkin = "06/07/2023";
+    // $scope.HotelSearchFormData.checkout = "06/08/2023";
+    $scope.HotelSearchFormData.adults = 1;
+    $scope.HotelSearchFormData.children = 0;
+    $scope.HotelSearchFormData.room = 1;
+
+    $scope.HotelSearchFormData.price_range_min = "";
+    $scope.HotelSearchFormData.price_range_max = "";
+    $scope.HotelSearchFormData.price_range_max = "";
+    $scope.HotelSearchForm = function() {
+        // Access the form data here
+        console.log($scope.HotelSearchFormData);
+        
+        var url = 'api/hotel.json?page=' + $scope.CurrentPage + '&' + generateUrl($scope.HotelSearchFormData) + '&' + generateUrl($scope.terms) + '&' + generateUrl($scope.review_score) + '&' + generateUrl($scope.star_rate) + '&page=' + $scope.page + '&orderby=' + $scope.orderby + '&location=' + $scope.location + '&date=' + $scope.date + '&room=' + $scope.room + '&adults=' + $scope.adults + '&children=' + $scope.children;
+
+        $http.get(url)
+            .then(function(response) {
+                $scope.hotels = response.data.hotels;
+                $scope.Totalhotels = response.data.total;
+                $scope.Ttotalpages = response.data.totalpages;
+                $scope.CurrentPage = response.data.page;
+    
+                $scope.numbersOfPages = [];
+    
+                // Populate the numbers array with values from 1 to 10
+                for (var i = 1; i <= $scope.Ttotalpages; i++) {
+                    $scope.numbersOfPages.push(i);
+                }
+            })
+            .catch(function(error) {
+                console.log('Error retrieving hotels:', error);
+            });
+        // You can perform further actions with the data, such as sending it to a server
+    };
+
+    $scope.changePage = function(data) {
+        // Access the form data here
+        $scope.HotelSearchForm();
+        console.log(data);
+    };
+
+
+    $http.get('api/location.json')
+    .then(function(response) {
+        $scope.locationsList = response.data.locations;
+    })
+    .catch(function(error) {
+      console.log('Error retrieving hotels:', error);
+    });
+
+    $http.get('api/terms.json')
+    .then(function(response) {
+        $scope.facilities = response.data.facilities;
+        $scope.services = response.data.services;
+    })
+    .catch(function(error) {
+      console.log('Error retrieving hotels:', error);
+    });
 });
 
   
@@ -57,6 +129,9 @@ app.config(function($routeProvider) {
     $routeProvider
         .when('/hotel', {
             templateUrl: 'api/hotel.html'
+        })
+        .when('/flight', {
+
         })
         .otherwise({
             redirectTo: '/'
