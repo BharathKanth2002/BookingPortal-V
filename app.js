@@ -1,7 +1,7 @@
 var app = angular.module('BookingPortal', ['ngRoute']);
 
 app.controller('HeaderController', function ($scope, $http) {
-    $http.get('https://venkatesh-kcet.github.io/BookingPortal-V/api/header.json').then(function (response) {
+    $http.get('api/header.json').then(function (response) {
         $scope.menuItems = response.data.menu;
         $scope.logoItems = response.data.logo;
         $scope.SiteTitle = response.data.SiteTitle;
@@ -40,7 +40,7 @@ app.controller('HotelController', function($scope, $http) {
         return urlParams.join('&')
     };
 
-    var url = 'https://venkatesh-kcet.github.io/BookingPortal-V/api/hotel.json?' + generateUrl($scope.terms) + '&' + generateUrl($scope.review_score) + '&' + generateUrl($scope.star_rate) + '&page=' + $scope.page + '&orderby=' + $scope.orderby + '&location=' + $scope.location + '&date=' + $scope.date + '&room=' + $scope.room + '&adults=' + $scope.adults + '&children=' + $scope.children;
+    var url = '/api/hotel.json?' + generateUrl($scope.terms) + '&' + generateUrl($scope.review_score) + '&' + generateUrl($scope.star_rate) + '&page=' + $scope.page + '&orderby=' + $scope.orderby + '&location=' + $scope.location + '&date=' + $scope.date + '&room=' + $scope.room + '&adults=' + $scope.adults + '&children=' + $scope.children;
 
     $http.get(url)
         .then(function(response) {
@@ -77,7 +77,7 @@ app.controller('HotelController', function($scope, $http) {
         // Access the form data here
         console.log($scope.HotelSearchFormData);
         
-        var url = 'https://venkatesh-kcet.github.io/BookingPortal-V/api/hotel.json?page=' + $scope.CurrentPage + '&' + generateUrl($scope.HotelSearchFormData) + '&' + generateUrl($scope.terms) + '&' + generateUrl($scope.review_score) + '&' + generateUrl($scope.star_rate) + '&page=' + $scope.page + '&orderby=' + $scope.orderby + '&location=' + $scope.location + '&date=' + $scope.date + '&room=' + $scope.room + '&adults=' + $scope.adults + '&children=' + $scope.children;
+        var url = 'api/hotel.json?page=' + $scope.CurrentPage + '&' + generateUrl($scope.HotelSearchFormData) + '&' + generateUrl($scope.terms) + '&' + generateUrl($scope.review_score) + '&' + generateUrl($scope.star_rate) + '&page=' + $scope.page + '&orderby=' + $scope.orderby + '&location=' + $scope.location + '&date=' + $scope.date + '&room=' + $scope.room + '&adults=' + $scope.adults + '&children=' + $scope.children;
 
         $http.get(url)
             .then(function(response) {
@@ -106,7 +106,7 @@ app.controller('HotelController', function($scope, $http) {
     };
 
 
-    $http.get('https://venkatesh-kcet.github.io/BookingPortal-V/api/location.json')
+    $http.get('api/location.json')
     .then(function(response) {
         $scope.locationsList = response.data.locations;
     })
@@ -114,7 +114,7 @@ app.controller('HotelController', function($scope, $http) {
       console.log('Error retrieving hotels:', error);
     });
 
-    $http.get('https://venkatesh-kcet.github.io/BookingPortal-V/api/terms.json')
+    $http.get('api/terms.json')
     .then(function(response) {
         $scope.facilities = response.data.facilities;
         $scope.services = response.data.services;
@@ -128,10 +128,10 @@ app.controller('HotelController', function($scope, $http) {
 app.config(function($routeProvider) {
     $routeProvider
         .when('/hotel', {
-            templateUrl: 'https://venkatesh-kcet.github.io/BookingPortal-V/api/hotel.html'
+            templateUrl: 'api/hotel.html'
         })
         .when('/flight', {
-            templateUrl: 'https://venkatesh-kcet.github.io/BookingPortal-V/api/flight.html'
+            templateUrl: 'api/flight.html'
         })
         .otherwise({
             redirectTo: '/'
