@@ -76,7 +76,7 @@ const Util = (($) => {
     // We escape IDs in case of special selectors (selector = '#myId:something')
     // $.escapeSelector does not exist in jQuery < 3
     selector = typeof $.escapeSelector === 'function' ? $.escapeSelector(selector).substr(1)
-      : selector.replace(/(:|\.|\[|\]|,|=|@)/g, '\\$1')
+      : selector.replace(/(:|\.|\[|\]|,|=|@)/g, '\\₹1')
 
     return selector
   }

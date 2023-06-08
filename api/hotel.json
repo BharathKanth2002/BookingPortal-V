@@ -2,7 +2,7 @@
     "hotels" : [
         {
             "url":"/hotel-detail.html",
-            "image":"https://gotrip.bookingcore.org/uploads/gotrip/hotel/3.png",
+            "image":"/uploads/gotrip/hotel/3.png",
             "featured":false,
             "name":"Dylan Hotel",
             "star":2,
@@ -27,7 +27,7 @@
         },
         {
             "url":"/hotel-detail.html",
-            "image":"https://gotrip.bookingcore.org/uploads/gotrip/hotel/3.png",
+            "image":"/uploads/gotrip/hotel/3.png",
             "featured":true,
             "name":"Dylan Hotel",
             "star":5,
@@ -52,7 +52,7 @@
         },
         {
             "url":"/hotel-detail.html",
-            "image":"https://gotrip.bookingcore.org/uploads/gotrip/hotel/3.png",
+            "image":"/uploads/gotrip/hotel/3.png",
             "featured":true,
             "name":"Dylan Hotel",
             "star":5,
@@ -77,7 +77,7 @@
         },
         {
             "url":"/hotel-detail.html",
-            "image":"https://gotrip.bookingcore.org/uploads/gotrip/hotel/3.png",
+            "image":"/uploads/gotrip/hotel/3.png",
             "featured":true,
             "name":"Dylan Hotel",
             "star":5,
@@ -102,7 +102,7 @@
         },
         {
             "url":"/hotel-detail.html",
-            "image":"https://gotrip.bookingcore.org/uploads/gotrip/hotel/3.png",
+            "image":"/uploads/gotrip/hotel/3.png",
             "featured":true,
             "name":"Dylan Hotel",
             "star":5,
@@ -127,7 +127,7 @@
         },    
         {
             "url":"/hotel-detail.html",
-            "image":"https://gotrip.bookingcore.org/uploads/gotrip/hotel/3.png",
+            "image":"/uploads/gotrip/hotel/3.png",
             "featured":true,
             "name":"Dylan Hotel",
             "star":5,
@@ -152,7 +152,7 @@
         },
         {
             "url":"/hotel-detail.html",
-            "image":"https://gotrip.bookingcore.org/uploads/gotrip/hotel/3.png",
+            "image":"/uploads/gotrip/hotel/3.png",
             "featured":true,
             "name":"Dylan Hotel",
             "star":5,
@@ -177,7 +177,7 @@
         },
         {
             "url":"/hotel-detail.html",
-            "image":"https://gotrip.bookingcore.org/uploads/gotrip/hotel/3.png",
+            "image":"/uploads/gotrip/hotel/3.png",
             "featured":true,
             "name":"Dylan Hotel",
             "star":5,
@@ -202,7 +202,7 @@
         },
         {
             "url":"/hotel-detail.html",
-            "image":"https://gotrip.bookingcore.org/uploads/gotrip/hotel/3.png",
+            "image":"/uploads/gotrip/hotel/3.png",
             "featured":true,
             "name":"Dylan Hotel",
             "star":5,
@@ -227,7 +227,7 @@
         },
         {
             "url":"/hotel-detail.html",
-            "image":"https://gotrip.bookingcore.org/uploads/gotrip/hotel/3.png",
+            "image":"/uploads/gotrip/hotel/3.png",
             "featured":true,
             "name":"Dylan Hotel",
             "star":5,
