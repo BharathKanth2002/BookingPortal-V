@@ -1,13 +1,13 @@
 {
     "SiteTitle":"BookingPortal",
     "logo": {
-      "light":"logo-light.png",
-      "dark":"logo-dark.png"
+      "light":"./images/logo.jpg",
+      "dark":"./images/logo.jpg"
     },
     "menu": [
       {
         "name": "Home",
-        "url": "/"
+        "url": "/home.html"
       },
       {
         "name": "Hotel",
@@ -15,7 +15,7 @@
       },
       {
         "name": "Flight",
-        "url": "#"
+        "url": "flight.html"
       },
       {
         "name": "Bus",
