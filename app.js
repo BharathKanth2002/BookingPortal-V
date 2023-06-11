@@ -127,6 +127,9 @@ app.controller('HotelController', function($scope, $http) {
   
 app.config(function($routeProvider) {
     $routeProvider
+        .when('/', {
+            redirectTo: '/home'
+        })
         .when('/hotel', {
             templateUrl: 'api/hotel.html'
         })
