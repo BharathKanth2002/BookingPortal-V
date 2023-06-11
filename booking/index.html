@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="csrf-token" content="CSdxoIY9TzBumilU1HGAvjw6e5GqrnpwM5f5yZZH">
-		<link rel="icon" type="image/png" href="https://gotrip.bookingcore.org/uploads/demo/general/favicon.png" />
+		<link rel="icon" type="image/png" href="/uploads/demo/general/favicon.png" />
 		<title>Booking Details - Go Trip</title>
 		<meta name="description" content />
 		<link href="/themes/gotrip/css/vendors.css" rel="stylesheet">
@@ -17,9 +17,9 @@
 		<link rel="stylesheet" href="/themes/gotrip/dist/frontend/css/app.css?_v=3.2.1">
 		<script>
 			var bookingCore = {
-			    url:'https://gotrip.bookingcore.org',
-			    url_root:'https://gotrip.bookingcore.org',
-			    admin_url:'https://gotrip.bookingcore.org/admin',
+			    url:'',
+			    url_root:'',
+			    admin_url:'/admin',
 			    booking_decimals:0,
 			    thousand_separator:'.',
 			    decimal_separator:',',
@@ -54,10 +54,10 @@
 			        bookingCore.media = {
 			    groups:{"default":{"ext":["jpg","jpeg","png","gif","bmp","docx"],"mime":["image\/png","image\/jpeg","image\/gif","image\/bmp","application\/vnd.openxmlformats-officedocument.wordprocessingml.document"],"max_size":20000000,"max_width":4000,"max_height":4000},"image":{"ext":["jpg","jpeg","png","gif","bmp"],"mime":["image\/png","image\/jpeg","image\/gif","image\/bmp"],"max_size":20000000,"max_width":4000,"max_height":4000}},
 			}
-			                        bookingCore.module.hotel = 'https://gotrip.bookingcore.org/hotel';
-			                            bookingCore.module.car = 'https://gotrip.bookingcore.org/car';
-			                            bookingCore.module.event = 'https://gotrip.bookingcore.org/event';
-			                            bookingCore.module.tour = 'https://gotrip.bookingcore.org/tour';
+			                        bookingCore.module.hotel = '/hotel';
+			                            bookingCore.module.car = '/car';
+			                            bookingCore.module.event = '/event';
+			                            bookingCore.module.tour = '/tour';
 			            var i18n = {
 			    warning:"Warning",
 			    success:"Success",
@@ -99,7 +99,7 @@
 			};
 		</script>
 		<link href="/module/booking/css/checkout.css?_ver=3.2.1" rel="stylesheet">
-		<link href="https://gotrip.bookingcore.org/custom-css" rel="stylesheet">
+		<link href="/custom-css" rel="stylesheet">
 	</head>
 	<body class="frontend-page header-normal   ">
 		<header data-add-bg="bg-dark-1" class="header -fixed bg-dark-3 js-header bravo_header" data-x="header" data-x-toggle="is-menu-opened">
@@ -193,7 +193,7 @@
 					<div class="row booking-success-notice">
 						<div class="col-lg-8 col-md-8">
 							<div class="d-flex align-items-center">
-								<img src="https://gotrip.bookingcore.org/images/ico_success.svg" alt="Payment Success">
+								<img src="/images/ico_success.svg" alt="Payment Success">
 								<div class="notice-success">
 									<p class="line1"><span>System,</span>
 										your booking was submitted successfully!
@@ -271,7 +271,7 @@
 							<div class="d-flex justify-content-center pt-sm-4 pt-md-0">
 								<div class="col-auto"></div>
 								<div class="col-auto">
-									<a href="https://gotrip.bookingcore.org/user/booking-history" class="button h-60 px-24 -dark-1 bg-blue-1 text-white">
+									<a href="/user/booking-history" class="button h-60 px-24 -dark-1 bg-blue-1 text-white">
 										Booking History
 										<div class="icon-arrow-top-right ml-15"></div>
 									</a>
@@ -285,13 +285,10 @@
 									<div class="review-section">
 										<div class="service-info">
 											<div>
-												<h3 class="service-name"><a href="https://gotrip.bookingcore.org/hotel/dylan-hotel-9">Dylan Hotel</a></h3>
+												<h3 class="service-name"><a href="/hotel/dylan-hotel-9">Dylan Hotel</a></h3>
 												<p class="address"><i class="fa fa-map-marker"></i>
 													Regal Cinemas Battery
 												</p>
-											</div>
-											<div>
-												<img src="https://gotrip.bookingcore.org/uploads/gotrip/hotel/7.png" class="img-responsive" alt="Dylan Hotel">
 											</div>
 										</div>
 									</div>
@@ -435,7 +432,7 @@
 							</div>
 						</div>
 						<div class="col-auto">
-							<form action="https://gotrip.bookingcore.org/newsletter/subscribe" class="subcribe-form bravo-subscribe-form bravo-form single-field -w-410 d-flex x-gap-10 y-gap-20">
+							<form action="/newsletter/subscribe" class="subcribe-form bravo-subscribe-form bravo-form single-field -w-410 d-flex x-gap-10 y-gap-20">
 								<input type="hidden" name="_token" value="CSdxoIY9TzBumilU1HGAvjw6e5GqrnpwM5f5yZZH"> 
 								<div>
 									<input class="bg-white h-60 email-input" type="text" name="email" placeholder="Your Email">
@@ -551,7 +548,7 @@
 							<h4 class="modal-title">Log In</h4>
 							<span class="c-pointer" data-bs-dismiss="modal" aria-label="Close">
 							<i class="input-icon field-icon fa">
-							<img src="https://gotrip.bookingcore.org/images/ico_close.svg" alt="close">
+							<img src="/images/ico_close.svg" alt="close">
 							</i>
 							</span>
 						</div>
@@ -585,7 +582,7 @@
 										</div>
 										<div class="text-15 lh-15 text-light-1 ml-10">Remember me</div>
 									</div>
-									<a href="https://gotrip.bookingcore.org/forgot-password">Forgot Password?</a>
+									<a href="/forgot-password">Forgot Password?</a>
 								</div>
 								<div class="error message-error invalid-feedback"></div>
 								<div class="col-12">
@@ -610,7 +607,7 @@
 							<h4 class="modal-title">Sign Up</h4>
 							<span class="c-pointer" data-bs-dismiss="modal" aria-label="Close">
 							<i class="input-icon field-icon fa">
-							<img src="https://gotrip.bookingcore.org/images/ico_close.svg" alt="close">
+							<img src="/images/ico_close.svg" alt="close">
 							</i>
 							</span>
 						</div>
