@@ -1,0 +1,1298 @@
+<!DOCTYPE html>
+<html lang="en" class>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="csrf-token" content="CSdxoIY9TzBumilU1HGAvjw6e5GqrnpwM5f5yZZH">
+		<link rel="icon" type="image/png" href="/uploads/demo/general/favicon.png" />
+		<title>Checkout - Go Trip</title>
+		<meta name="description" content />
+		<link href="/themes/gotrip/css/vendors.css" rel="stylesheet">
+		<link href="/themes/gotrip/css/main.css" rel="stylesheet">
+		<link href="/libs/icofont/icofont.min.css" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="/libs/daterange/daterangepicker.css">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="/themes/gotrip/dist/frontend/css/app.css?_v=3.2.1">
+		<script>
+			var bookingCore = {
+			    url:'https://gotrip.bookingcore.org',
+			    url_root:'https://gotrip.bookingcore.org',
+			    admin_url:'/admin',
+			    booking_decimals:0,
+			    thousand_separator:'.',
+			    decimal_separator:',',
+			    currency_position:'left',
+			    currency_symbol:'$',
+			    currency_rate:'1',
+			    date_format:'MM/DD/YYYY',
+			    map_provider:'osm',
+			    map_gmap_key:'',
+			    map_options:{
+			        map_lat_default:'',
+			        map_lng_default:'',
+			        map_clustering:'on',
+			        map_fit_bounds:'on',
+			    },
+			    routes:{
+			        login:'/login',
+			        register:'/register',
+			        checkout:'/booking/doCheckout'
+			    },
+			    currentUser: 11,
+			    isAdmin : 1,
+			    rtl: false,
+			    markAsRead:'/notify/markAsRead',
+			    markAllAsRead:'/notify/markAllAsRead',
+			    loadNotify : '/notify/notifications',
+			    pusher_api_key : '',
+			    pusher_cluster : '',
+			    language: 'en',
+			    module:{}
+			};
+			        bookingCore.media = {
+			    groups:{"default":{"ext":["jpg","jpeg","png","gif","bmp","docx"],"mime":["image\/png","image\/jpeg","image\/gif","image\/bmp","application\/vnd.openxmlformats-officedocument.wordprocessingml.document"],"max_size":20000000,"max_width":4000,"max_height":4000},"image":{"ext":["jpg","jpeg","png","gif","bmp"],"mime":["image\/png","image\/jpeg","image\/gif","image\/bmp"],"max_size":20000000,"max_width":4000,"max_height":4000}},
+			}
+			                        bookingCore.module.hotel = '/hotel';
+			                            bookingCore.module.car = '/car';
+			                            bookingCore.module.event = '/event';
+			                            bookingCore.module.tour = '/tour';
+			            var i18n = {
+			    warning:"Warning",
+			    success:"Success",
+			    confirm_delete:"Do you want to delete?",
+			    confirm:"Confirm",
+			    cancel:"Cancel",
+			};
+			var daterangepickerLocale = {
+			    "applyLabel": "Apply",
+			    "cancelLabel": "Cancel",
+			    "fromLabel": "From",
+			    "toLabel": "To",
+			    "customRangeLabel": "Custom",
+			    "weekLabel": "W",
+			    "first_day_of_week": 1,
+			    "daysOfWeek": [
+			        "Su",
+			        "Mo",
+			        "Tu",
+			        "We",
+			        "Th",
+			        "Fr",
+			        "Sa"
+			    ],
+			    "monthNames": [
+			        "January",
+			        "February",
+			        "March",
+			        "April",
+			        "May",
+			        "June",
+			        "July",
+			        "August",
+			        "September",
+			        "October",
+			        "November",
+			        "December"
+			    ],
+			};
+		</script>
+		<link href="/module/booking/css/checkout.css?_ver=3.2.1" rel="stylesheet">
+		<link href="/custom-css" rel="stylesheet">
+	</head>
+	<body class="frontend-page header-normal   ">
+		<div class="bravo_wrap overflow-hidden">
+            <header data-add-bg="bg-dark-1" class="header -fixed bg-dark-3 js-header bravo_header" data-x="header" data-x-toggle="is-menu-opened">
+				<div data-anim="fade" class="header__container px-30 sm:px-20  is-in-view">
+					<div class="row justify-between items-center">
+						<div class="col-auto ">
+							<div class="d-flex items-center gotrip-header-normal">
+								<a href="/" class=" header-logo mr-20" data-x="header-logo" data-x-toggle="is-logo-dark">
+                                    <img class="logo-light" src="./images/logo.jpg" alt="BookingPortal">
+                                    <img class="logo-dark" src="./images/logo.jpg" alt="BookingPortal">
+								</a>
+								<div class="header-menu " data-x="mobile-menu" data-x-toggle="is-menu-active">
+									<div class="mobile-overlay"></div>
+									<div class="header-menu__content">
+										<div class="mobile-bg js-mobile-bg"></div>
+										<div class="menu js-navList">
+											<ul class="menu__nav text-white -is-active">
+												<li class="depth-0">
+													<a target href="/home.html"><span class="mr-10">Home</span></a>
+												</li>
+												<li class="depth-0"><a target href="/index.html#!/hotel">Hotel</a></li>
+												<li class="depth-0"><a target href="/flight.html">Flight</a></li>
+												<li class="depth-0"><a target href="/bus">Bus</a></li>
+												<li class="depth-0"><a target href="/contact">Contact</a></li>
+											</ul>
+										</div>
+										<div class="mobile-footer px-20 py-10 border-top-light js-mobile-footer">
+											<li class="currency-dropdown menu-item-has-children">
+												<a href="#" class="is_login">
+												<span class="mr-10">INR</span>
+												<i class="icon icon-chevron-sm-down"></i>
+												</a>
+												<ul class="subnav">
+													<li>
+														<a href="?set_currency=eur" class="is_login dropdown-item">EUR</a>
+													</li>
+													<li>
+														<a href="?set_currency=jpy" class="is_login dropdown-item">JPY</a>
+													</li>
+												</ul>
+											</li>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-auto">
+							<div class="d-flex items-center">
+								<div class="header-menu menu-right">
+									<div class="mobile-overlay"></div>
+									<div class="header-menu__content">
+										<div class="menu js-navList">
+											<ul class="menu__nav text-white -is-active">
+												<li class="currency-dropdown menu-item-has-children">
+													<a href="#" class="is_login">
+                                                        <span class="mr-10">INR</span>
+                                                        <i class="icon icon-chevron-sm-down"></i>
+													</a>
+													<ul class="subnav">
+														<li>
+															<a href="?set_currency=eur" class="is_login dropdown-item">EUR</a>
+														</li>
+														<li>
+															<a href="?set_currency=jpy" class="is_login dropdown-item">JPY</a>
+														</li>
+													</ul>
+												</li>
+												<div class="d-none xl:d-flex x-gap-20 items-center pl-30 text-white" data-x="header-mobile-icons" data-x-toggle="text-white">
+													<div>
+														<a href="/login" class="d-flex items-center icon-user text-inherit text-22"></a>
+													</div>
+													<div><button class="d-flex items-center icon-menu text-inherit text-20" data-x-click="header, header-logo, header-mobile-icons, mobile-menu"></button></div>
+												</div>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="d-none xl:d-flex x-gap-20 items-center pl-30 text-white" data-x="header-mobile-icons" data-x-toggle="text-white">
+								<div><a href="/login " class="d-flex items-center icon-user text-inherit text-22"></a></div>
+								<div><button class="d-flex items-center icon-menu text-inherit text-20" data-x-click="header, header-logo, header-mobile-icons, mobile-menu"></button></div>
+							</div>
+						</div>
+					</div>
+					<div class="d-none xl:d-flex x-gap-20 items-center pl-30" data-x="header-mobile-icons" data-x-toggle="text-white"></div>
+				</div>
+			</header>
+
+			<div class="bravo-booking-page padding-content pt-40 pb-40">
+				<div class="container">
+					<div id="bravo-checkout-page">
+						<div class="row">
+							<div class="col-xl-7 col-lg-8">
+								<h2 class="text-22 fw-500">Let us know who you are</h2>
+								<div class="booking-form ">
+									<div class="form-checkout" id="form-checkout">
+										<input type="hidden" name="code" value="cb83903d75077af1461705c79f1615d0">
+										<div class="form-section">
+											<div class="row x-gap-20 y-gap-20 pt-20">
+												<div class="col-md-6">
+													<div class="form-input ">
+														<input type="text" class="form-control" value="System" name="first_name">
+														<label class="lh-1 text-16 text-light-1">First Name <span class="required">*</span></label>
+													</div>
+												</div>
+												<div class="col-md-6">
+													<div class="form-input ">
+														<input type="text" class="form-control" value="Admin 123" name="last_name">
+														<label class="lh-1 text-16 text-light-1">Last Name <span class="required">*</span></label>
+													</div>
+												</div>
+												<div class="col-md-6 field-email">
+													<div class="form-input ">
+														<input type="email" class="form-control" value="admin@gotrip.test" name="email">
+														<label class="lh-1 text-16 text-light-1">Email <span class="required">*</span></label>
+													</div>
+												</div>
+												<div class="col-md-6">
+													<div class="form-input ">
+														<input type="text" class="form-control" value="112 666 888" name="phone">
+														<label class="lh-1 text-16 text-light-1">Phone <span class="required">*</span></label>
+													</div>
+												</div>
+												<div class="col-md-6 field-address-line-1">
+													<div class="form-input ">
+														<input type="text" class="form-control" value name="address_line_1">
+														<label class="lh-1 text-16 text-light-1">Address line 1 </label>
+													</div>
+												</div>
+												<div class="col-md-6 field-address-line-2">
+													<div class="form-input ">
+														<input type="text" class="form-control" value name="address_line_2">
+														<label class="lh-1 text-16 text-light-1">Address line 2 </label>
+													</div>
+												</div>
+												<div class="col-md-6 field-city">
+													<div class="form-input ">
+														<input type="text" class="form-control" value="New York" name="city">
+														<label class="lh-1 text-16 text-light-1">City </label>
+													</div>
+												</div>
+												<div class="col-md-6 field-state">
+													<div class="form-input ">
+														<input type="text" class="form-control" value name="state">
+														<label class="lh-1 text-16 text-light-1">State/Province/Region </label>
+													</div>
+												</div>
+												<div class="col-md-6 field-zip-code">
+													<div class="form-input ">
+														<input type="text" class="form-control" value name="zip_code">
+														<label class="lh-1 text-16 text-light-1">ZIP code/Postal code </label>
+													</div>
+												</div>
+												<div class="col-md-6 field-country">
+													<div class="form-input ">
+														<select name="country" class="form-control">
+															<option value>-- Select --</option>
+															<option value="AF">Afghanistan</option>
+															<option value="AX">Aland Islands</option>
+															<option value="AL">Albania</option>
+															<option value="DZ">Algeria</option>
+															<option value="AS">American Samoa</option>
+															<option value="AD">Andorra</option>
+															<option value="AO">Angola</option>
+															<option value="AI">Anguilla</option>
+															<option value="AQ">Antarctica</option>
+															<option value="AG">Antigua And Barbuda</option>
+															<option value="AR">Argentina</option>
+															<option value="AM">Armenia</option>
+															<option value="AW">Aruba</option>
+															<option value="AU">Australia</option>
+															<option value="AT">Austria</option>
+															<option value="AZ">Azerbaijan</option>
+															<option value="BS">Bahamas</option>
+															<option value="BH">Bahrain</option>
+															<option value="BD">Bangladesh</option>
+															<option value="BB">Barbados</option>
+															<option value="BY">Belarus</option>
+															<option value="BE">Belgium</option>
+															<option value="BZ">Belize</option>
+															<option value="BJ">Benin</option>
+															<option value="BM">Bermuda</option>
+															<option value="BT">Bhutan</option>
+															<option value="BO">Bolivia</option>
+															<option value="BA">Bosnia And Herzegovina</option>
+															<option value="BW">Botswana</option>
+															<option value="BV">Bouvet Island</option>
+															<option value="BR">Brazil</option>
+															<option value="IO">British Indian Ocean Territory</option>
+															<option value="BN">Brunei Darussalam</option>
+															<option value="BG">Bulgaria</option>
+															<option value="BF">Burkina Faso</option>
+															<option value="BI">Burundi</option>
+															<option value="KH">Cambodia</option>
+															<option value="CM">Cameroon</option>
+															<option value="CA">Canada</option>
+															<option value="CV">Cape Verde</option>
+															<option value="KY">Cayman Islands</option>
+															<option value="CF">Central African Republic</option>
+															<option value="TD">Chad</option>
+															<option value="CL">Chile</option>
+															<option value="CN">China</option>
+															<option value="CX">Christmas Island</option>
+															<option value="CC">Cocos (Keeling) Islands</option>
+															<option value="CO">Colombia</option>
+															<option value="KM">Comoros</option>
+															<option value="CG">Congo</option>
+															<option value="CD">Congo, Democratic Republic</option>
+															<option value="CK">Cook Islands</option>
+															<option value="CR">Costa Rica</option>
+															<option value="CI">Cote D&#039;Ivoire</option>
+															<option value="HR">Croatia</option>
+															<option value="CU">Cuba</option>
+															<option value="CY">Cyprus</option>
+															<option value="CZ">Czech Republic</option>
+															<option value="DK">Denmark</option>
+															<option value="DJ">Djibouti</option>
+															<option value="DM">Dominica</option>
+															<option value="DO">Dominican Republic</option>
+															<option value="EC">Ecuador</option>
+															<option value="EG">Egypt</option>
+															<option value="SV">El Salvador</option>
+															<option value="GQ">Equatorial Guinea</option>
+															<option value="ER">Eritrea</option>
+															<option value="EE">Estonia</option>
+															<option value="ET">Ethiopia</option>
+															<option value="FK">Falkland Islands (Malvinas)</option>
+															<option value="FO">Faroe Islands</option>
+															<option value="FJ">Fiji</option>
+															<option value="FI">Finland</option>
+															<option value="FR">France</option>
+															<option value="GF">French Guiana</option>
+															<option value="PF">French Polynesia</option>
+															<option value="TF">French Southern Territories</option>
+															<option value="GA">Gabon</option>
+															<option value="GM">Gambia</option>
+															<option value="GE">Georgia</option>
+															<option value="DE">Germany</option>
+															<option value="GH">Ghana</option>
+															<option value="GI">Gibraltar</option>
+															<option value="GR">Greece</option>
+															<option value="GL">Greenland</option>
+															<option value="GD">Grenada</option>
+															<option value="GP">Guadeloupe</option>
+															<option value="GU">Guam</option>
+															<option value="GT">Guatemala</option>
+															<option value="GG">Guernsey</option>
+															<option value="GN">Guinea</option>
+															<option value="GW">Guinea-Bissau</option>
+															<option value="GY">Guyana</option>
+															<option value="HT">Haiti</option>
+															<option value="HM">Heard Island &amp; Mcdonald Islands</option>
+															<option value="VA">Holy See (Vatican City State)</option>
+															<option value="HN">Honduras</option>
+															<option value="HK">Hong Kong</option>
+															<option value="HU">Hungary</option>
+															<option value="IS">Iceland</option>
+															<option value="IN">India</option>
+															<option value="ID">Indonesia</option>
+															<option value="IR">Iran, Islamic Republic Of</option>
+															<option value="IQ">Iraq</option>
+															<option value="IE">Ireland</option>
+															<option value="IM">Isle Of Man</option>
+															<option value="IL">Israel</option>
+															<option value="IT">Italy</option>
+															<option value="JM">Jamaica</option>
+															<option value="JP">Japan</option>
+															<option value="JE">Jersey</option>
+															<option value="JO">Jordan</option>
+															<option value="KZ">Kazakhstan</option>
+															<option value="KE">Kenya</option>
+															<option value="KI">Kiribati</option>
+															<option value="KR">Korea</option>
+															<option value="KW">Kuwait</option>
+															<option value="KG">Kyrgyzstan</option>
+															<option value="LA">Lao People&#039;s Democratic Republic</option>
+															<option value="LV">Latvia</option>
+															<option value="LB">Lebanon</option>
+															<option value="LS">Lesotho</option>
+															<option value="LR">Liberia</option>
+															<option value="LY">Libyan Arab Jamahiriya</option>
+															<option value="LI">Liechtenstein</option>
+															<option value="LT">Lithuania</option>
+															<option value="LU">Luxembourg</option>
+															<option value="MO">Macao</option>
+															<option value="MK">Macedonia</option>
+															<option value="MG">Madagascar</option>
+															<option value="MW">Malawi</option>
+															<option value="MY">Malaysia</option>
+															<option value="MV">Maldives</option>
+															<option value="ML">Mali</option>
+															<option value="MT">Malta</option>
+															<option value="MH">Marshall Islands</option>
+															<option value="MQ">Martinique</option>
+															<option value="MR">Mauritania</option>
+															<option value="MU">Mauritius</option>
+															<option value="YT">Mayotte</option>
+															<option value="MX">Mexico</option>
+															<option value="FM">Micronesia, Federated States Of</option>
+															<option value="MD">Moldova</option>
+															<option value="MC">Monaco</option>
+															<option value="MN">Mongolia</option>
+															<option value="ME">Montenegro</option>
+															<option value="MS">Montserrat</option>
+															<option value="MA">Morocco</option>
+															<option value="MZ">Mozambique</option>
+															<option value="MM">Myanmar</option>
+															<option value="NA">Namibia</option>
+															<option value="NR">Nauru</option>
+															<option value="NP">Nepal</option>
+															<option value="NL">Netherlands</option>
+															<option value="AN">Netherlands Antilles</option>
+															<option value="NC">New Caledonia</option>
+															<option value="NZ">New Zealand</option>
+															<option value="NI">Nicaragua</option>
+															<option value="NE">Niger</option>
+															<option value="NG">Nigeria</option>
+															<option value="NU">Niue</option>
+															<option value="NF">Norfolk Island</option>
+															<option value="MP">Northern Mariana Islands</option>
+															<option value="NO">Norway</option>
+															<option value="OM">Oman</option>
+															<option value="PK">Pakistan</option>
+															<option value="PW">Palau</option>
+															<option value="PS">Palestinian Territory, Occupied</option>
+															<option value="PA">Panama</option>
+															<option value="PG">Papua New Guinea</option>
+															<option value="PY">Paraguay</option>
+															<option value="PE">Peru</option>
+															<option value="PH">Philippines</option>
+															<option value="PN">Pitcairn</option>
+															<option value="PL">Poland</option>
+															<option value="PT">Portugal</option>
+															<option value="PR">Puerto Rico</option>
+															<option value="QA">Qatar</option>
+															<option value="RE">Reunion</option>
+															<option value="RO">Romania</option>
+															<option value="RU">Russian Federation</option>
+															<option value="RW">Rwanda</option>
+															<option value="BL">Saint Barthelemy</option>
+															<option value="SH">Saint Helena</option>
+															<option value="KN">Saint Kitts And Nevis</option>
+															<option value="LC">Saint Lucia</option>
+															<option value="MF">Saint Martin</option>
+															<option value="PM">Saint Pierre And Miquelon</option>
+															<option value="VC">Saint Vincent And Grenadines</option>
+															<option value="WS">Samoa</option>
+															<option value="SM">San Marino</option>
+															<option value="ST">Sao Tome And Principe</option>
+															<option value="SA">Saudi Arabia</option>
+															<option value="SN">Senegal</option>
+															<option value="RS">Serbia</option>
+															<option value="SC">Seychelles</option>
+															<option value="SL">Sierra Leone</option>
+															<option value="SG">Singapore</option>
+															<option value="SK">Slovakia</option>
+															<option value="SI">Slovenia</option>
+															<option value="SB">Solomon Islands</option>
+															<option value="SO">Somalia</option>
+															<option value="ZA">South Africa</option>
+															<option value="GS">South Georgia And Sandwich Isl.</option>
+															<option value="ES">Spain</option>
+															<option value="LK">Sri Lanka</option>
+															<option value="SD">Sudan</option>
+															<option value="SR">Suriname</option>
+															<option value="SJ">Svalbard And Jan Mayen</option>
+															<option value="SZ">Swaziland</option>
+															<option value="SE">Sweden</option>
+															<option value="CH">Switzerland</option>
+															<option value="SY">Syrian Arab Republic</option>
+															<option value="TW">Taiwan</option>
+															<option value="TJ">Tajikistan</option>
+															<option value="TZ">Tanzania</option>
+															<option value="TH">Thailand</option>
+															<option value="TL">Timor-Leste</option>
+															<option value="TG">Togo</option>
+															<option value="TK">Tokelau</option>
+															<option value="TO">Tonga</option>
+															<option value="TT">Trinidad And Tobago</option>
+															<option value="TN">Tunisia</option>
+															<option value="TR">Turkey</option>
+															<option value="TM">Turkmenistan</option>
+															<option value="TC">Turks And Caicos Islands</option>
+															<option value="TV">Tuvalu</option>
+															<option value="UG">Uganda</option>
+															<option value="UA">Ukraine</option>
+															<option value="AE">United Arab Emirates</option>
+															<option value="GB">United Kingdom</option>
+															<option selected value="US">United States</option>
+															<option value="UM">United States Outlying Islands</option>
+															<option value="UY">Uruguay</option>
+															<option value="UZ">Uzbekistan</option>
+															<option value="VU">Vanuatu</option>
+															<option value="VE">Venezuela</option>
+															<option value="VN">Viet Nam</option>
+															<option value="VG">Virgin Islands, British</option>
+															<option value="VI">Virgin Islands, U.S.</option>
+															<option value="WF">Wallis And Futuna</option>
+															<option value="EH">Western Sahara</option>
+															<option value="YE">Yemen</option>
+															<option value="ZM">Zambia</option>
+															<option value="ZW">Zimbabwe</option>
+														</select>
+														<label class="lh-1 text-16 text-light-1">Country <span class="required">*</span> </label>
+													</div>
+												</div>
+												<div class="col-md-12">
+													<div class="form-input">
+														<textarea name="customer_notes" cols="30" rows="6" class="form-control"></textarea>
+														<label class="lh-1 text-16 text-light-1">Special Requirements </label>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="form-section mt-40">
+											<h3 class="text-22 fw-500 mb-20">How do you want to pay?</h3>
+											<div class="accordion -simple row y-gap-20 pt-30 js-accordion">
+												<div class="col-12 accordion__item px-20">
+													<div class=" border-light rounded-4 py-20">
+														<div class="accordion__button d-flex items-center">
+															<button class="button text-dark-1 shrink-0  px-20 " type="button">
+															<label class="d-flex items-center" data-toggle="collapse" data-target="#gateway_offline_payment">
+															<input type="radio" name="payment_gateway" value="offline_payment">
+															<span class="shrink-0 ml-20">Offline Payment</span>
+															</label>
+															</button>
+														</div>
+														<div id="gateway_offline_payment" class="accordion__content" aria-labelledby="headingOne" data-parent="#accordionExample">
+															<div class="pt-20 pl-60">
+																<div class="gateway_name">
+																	Offline Payment
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="html_before_actions"></div>
+										<p class="alert-text mt10" v-show=" message.content" v-html="message.content" :class="{'danger':!message.type,'success':message.type}"></p>
+										<div class="row y-gap-20 items-center justify-between mb-40">
+											<div class="col-auto">
+												<div class="d-flex items-center">
+													<div class="form-checkbox ">
+														<input type="checkbox" name="term_conditions">
+														<div class="form-checkbox__mark">
+															<div class="form-checkbox__icon icon-check"></div>
+														</div>
+													</div>
+													<div class="text-14 lh-10 text-light-1 ml-10">I have read and accept the <a target="_blank" href>terms and conditions</a></div>
+												</div>
+											</div>
+											<div class="col-auto">
+												<button class="button h-60 px-24 -dark-1 bg-blue-1 text-white" @click="doCheckout">
+													Book Now
+													<div class="icon-arrow-top-right ml-15"></div>
+													<i class="fa fa-spin fa-spinner" v-show="onSubmit"></i>
+												</button>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-xl-5 col-lg-4">
+								<div class="ml-80 lg:ml-40 md:ml-0">
+									<div class="booking-review">
+										<h4 class="booking-review-title">Your Booking</h4>
+										<div class="booking-review-content">
+											<div class="review-section">
+												<div class="service-info">
+													<div>
+														<h3 class="service-name"><a href="/hotel/dylan-hotel-9">Dylan Hotel</a></h3>
+														<p class="address"><i class="fa fa-map-marker"></i>
+															Regal Cinemas Battery
+														</p>
+													</div>
+													<div>
+														<img src="/uploads/gotrip/hotel/7.png" class="img-responsive" alt="Dylan Hotel">
+													</div>
+												</div>
+											</div>
+											<div class="review-section">
+												<ul class="review-list">
+													<li>
+														<div class="label">Check in:</div>
+														<div class="val">
+															06/11/2023
+														</div>
+													</li>
+													<li>
+														<div class="label">Check out:</div>
+														<div class="val">
+															06/12/2023
+														</div>
+													</li>
+													<li>
+														<div class="label">Nights:</div>
+														<div class="val">
+															1
+														</div>
+													</li>
+													<li>
+														<div class="label">Adults:</div>
+														<div class="val">
+															2
+														</div>
+													</li>
+												</ul>
+											</div>
+											<div class="review-section total-review">
+												<ul class="review-list">
+													<li class="flex-wrap">
+														<div class="label">Room Kerama Islands * 3</div>
+														<div class="val">
+															$1.050
+														</div>
+													</li>
+													<li class="flex-wrap">
+														<div class="flex-grow-0 flex-shrink-0 w-100">
+															<p class="text-center">
+																<a data-toggle="modal" data-target="#detailBookingDatecb83903d75077af1461705c79f1615d0" aria-expanded="false" aria-controls="detailBookingDatecb83903d75077af1461705c79f1615d0">
+																Detail <i class="icofont-list"></i>
+																</a>
+															</p>
+														</div>
+													</li>
+													<li>
+														<div class="label">
+															Service fee
+															<i class="icofont-info-circle" data-toggle="tooltip" data-placement="top" title="This helps us run our platform and offer services like 24/7 support on your trip."></i>
+														</div>
+														<div class="val">
+															$100
+														</div>
+													</li>
+													<li class="d-flex flex-column border-0 mb-0">
+														<div class="text-20 fw-500 mb-15">Do you have a promo code?</div>
+														<div class="section-coupon-form">
+															<div class="form-input ">
+																<input type="text" name="coupon_code" value>
+																<label class="lh-1 text-16 text-light-1">Enter promo code</label>
+															</div>
+															<button class="button -outline-blue-1 text-blue-1 px-30 py-15 mt-20 bravo_apply_coupon">
+															Apply
+															<i class="fa fa-spin fa-spinner d-none"></i>
+															</button>
+															<ul class="p-0 mb-3 list-coupons"></ul>
+															<div class="message alert-text mt-2"></div>
+														</div>
+													</li>
+													<li class="final-total d-block">
+														<div class="d-flex justify-content-between">
+															<div class="label">Total:</div>
+															<div class="val">$1.150</div>
+														</div>
+													</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+									<div class="modal fade" id="detailBookingDatecb83903d75077af1461705c79f1615d0" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true" style="background-color: #00000060">
+										<div class="modal-dialog modal-dialog-centered" role="document">
+											<div class="modal-content">
+												<div class="modal-header">
+													<h5 class="modal-title text-center">Detail</h5>
+													<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+													<span aria-hidden="true">&times;</span>
+													</button>
+												</div>
+												<div class="modal-body">
+													<ul class="review-list list-unstyled">
+														<li class="mb-3 pb-1 border-bottom">
+															<h6 class="label text-center font-weight-bold mb-1">Room Kerama Islands * 3</h6>
+															<div>
+																<div class="table-responsive">
+																	<table class="table table-striped table-inverse mb-1">
+																		<tbody>
+																			<tr>
+																				<td>11/06/2023 <i class="fa fa-long-arrow-right"></i> 11/06/2023</td>
+																				<td class="text-right">$1.050*1</td>
+																			</tr>
+																		</tbody>
+																	</table>
+																</div>
+															</div>
+															<div class="d-flex justify-content-between font-weight-bold px-2">
+																<span>Total:</span>
+																<span>$1.050</span>
+															</div>
+														</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<section class="layout-pt-md layout-pb-md mailchimp bg-dark-2 ">
+				<div class="container">
+					<div class="row y-gap-30 justify-between items-center">
+						<div class="col-auto">
+							<div class="row y-gap-20  flex-wrap items-center">
+								<div class="col-auto">
+									<div class="icon-newsletter text-60 sm:text-40 text-white"></div>
+								</div>
+								<div class="col-auto">
+									<h4 class="text-26 text-white fw-600">Your Travel Journey Starts Here</h4>
+									<div class="text-white">Sign up and we&#039;ll send the best deals to you</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-auto">
+							<form action="/newsletter/subscribe" class="subcribe-form bravo-subscribe-form bravo-form single-field -w-410 d-flex x-gap-10 y-gap-20">
+								<input type="hidden" name="_token" value="CSdxoIY9TzBumilU1HGAvjw6e5GqrnpwM5f5yZZH"> 
+								<div>
+									<input class="bg-white h-60 email-input" type="text" name="email" placeholder="Your Email">
+								</div>
+								<div>
+									<button class="button -md h-60 bg-blue-1 text-white">
+									Subscribe <i class="fa fa-spinner fa-pulse fa-fw"></i>
+									</button>
+								</div>
+								<div class="form-mess"></div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</section>
+			<div class="footer -type-1 normal">
+				<div class="container">
+					<div class="footer_one pt-60 pb-60">
+						<div class="row y-gap-40 justify-between xl:justify-start">
+							<div class="col-xl-2 col-lg-3 col-sm-6">
+								<h5 class="text-16 fw-500 mb-30">Contact Us</h5>
+								<div class="mt-30">
+									<div class="text-14 mt-30">Toll Free Customer Care</div>
+									<a href="#" class="text-18 fw-500 text-blue-1 mt-5">+(1) 123 456 7890</a>
+								</div>
+								<div class="mt-35">
+									<div class="text-14 mt-30">Need live support?</div>
+									<a href="#" class="text-18 fw-500 text-blue-1 mt-5"><span class="__cf_email__" data-cfemail="650d0c25020a11170c154b060a08">[email&#160;protected]</span></a>
+								</div>
+							</div>
+							<div class="col-xl-2 col-lg-3 col-sm-6">
+								<h5 class="text-16 fw-500 mb-30">Company</h5>
+								<div class="d-flex y-gap-10 flex-column">
+									<a href="#">About Us</a>
+									<a href="#">Careers</a>
+									<a href="#">Blog</a>
+									<a href="#">Press</a>
+									<a href="#">Gift Cards</a>
+									<a href="#">Magazine</a>
+								</div>
+							</div>
+							<div class="col-xl-2 col-lg-3 col-sm-6">
+								<h5 class="text-16 fw-500 mb-30">Support</h5>
+								<div class="d-flex y-gap-10 flex-column">
+									<a href="#">Contact</a>
+									<a href="#">Legal Notice</a>
+									<a href="#">Privacy Policy</a>
+									<a href="#">Terms and Conditions</a>
+									<a href="#">Sitemap</a>
+								</div>
+							</div>
+							<div class="col-xl-2 col-lg-3 col-sm-6">
+								<h5 class="text-16 fw-500 mb-30">Other Services</h5>
+								<div class="d-flex y-gap-10 flex-column">
+									<a href="#">Car hire</a>
+									<a href="#">Activity Finder</a>
+									<a href="#">Tour List</a>
+									<a href="#">Flight finder</a>
+									<a href="#">Cruise Ticket</a>
+									<a href="#">Holiday Rental</a>
+									<a href="#">Travel Agents</a>
+								</div>
+							</div>
+							<div class="col-xl-2 col-lg-3 col-sm-6">
+								<h5 class="text-16 fw-500 mb-30">Mobile</h5>
+								<div class="d-flex items-center px-20 py-10 rounded-4 border-light">
+									<div class="icon-apple text-24"></div>
+									<div class="ml-20">
+										<div class="text-14 text-light-1">Download on the</div>
+										<div class="text-15 lh-1 fw-500">Apple Store</div>
+									</div>
+								</div>
+								<div class="d-flex items-center px-20 py-10 rounded-4 border-light mt-20">
+									<div class="icon-play-market text-24"></div>
+									<div class="ml-20">
+										<div class="text-14 text-light-1">Get in on</div>
+										<div class="text-15 lh-1 fw-500">Google Play</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<section class="footer_middle_area py-20  border-top-light ">
+						<div class="row justify-between items-center y-gap-10">
+							<div class="col-auto">
+								Copyright © 2023 by Go Trip
+							</div>
+							<div class="col-auto">
+								<div class="row y-gap-10 items-center">
+									<div class="col-auto">
+										<div class="d-flex items-center">
+											<div class="menu-footer">
+												<div class="mobile-overlay"></div>
+												<div class="header-menu__content">
+													<div class="menu js-navList">
+														<ul class="menu__nav -is-active">
+															<li class="currency-dropdown menu-item-has-children">
+																<a href="#" class="is_login">
+																<span class="mr-10">USD</span>
+																<i class="icon icon-chevron-sm-down"></i>
+																</a>
+																<ul class="subnav">
+																	<li>
+																		<a href="/booking/cb83903d75077af1461705c79f1615d0/checkout?set_currency=eur" class="is_login dropdown-item">
+																		EUR
+																		</a>
+																	</li>
+																	<li>
+																		<a href="/booking/cb83903d75077af1461705c79f1615d0/checkout?set_currency=jpy" class="is_login dropdown-item">
+																		JPY
+																		</a>
+																	</li>
+																</ul>
+															</li>
+															<li class="language-dropdown menu-item-has-children">
+																<a href="#" class="is_login">
+																<span class="mr-10">
+																<span class="flag-icon flag-icon-gb"></span>
+																English
+																</span>
+																<i class="icon icon-chevron-sm-down"></i>
+																</a>
+																<ul class="subnav">
+																	<li>
+																		<a href="/booking/cb83903d75077af1461705c79f1615d0/checkout?set_lang=ja" class="is_login dropdown-item" style="justify-content: flex-start">
+																		<span class="flag-icon flag-icon-jp"></span>
+																		Japanese
+																		</a>
+																	</li>
+																	<li>
+																		<a href="/booking/cb83903d75077af1461705c79f1615d0/checkout?set_lang=egy" class="is_login dropdown-item" style="justify-content: flex-start">
+																		<span class="flag-icon flag-icon-eg"></span>
+																		Egyptian
+																		</a>
+																	</li>
+																	<li>
+																		<a href="/booking/cb83903d75077af1461705c79f1615d0/checkout?set_lang=es_MX" class="is_login dropdown-item" style="justify-content: flex-start">
+																		<span class="flag-icon flag-icon-mx"></span>
+																		Mexico
+																		</a>
+																	</li>
+																	<li>
+																		<a href="/booking/cb83903d75077af1461705c79f1615d0/checkout?set_lang=tr" class="is_login dropdown-item" style="justify-content: flex-start">
+																		<span class="flag-icon flag-icon-tr"></span>
+																		Türkçe
+																		</a>
+																	</li>
+																	<li>
+																		<a href="/booking/cb83903d75077af1461705c79f1615d0/checkout?set_lang=he" class="is_login dropdown-item" style="justify-content: flex-start">
+																		<span class="flag-icon flag-icon-Israel"></span>
+																		Hebrew
+																		</a>
+																	</li>
+																</ul>
+															</li>
+														</ul>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="col-auto">
+										Go Trip
+									</div>
+								</div>
+							</div>
+						</div>
+					</section>
+				</div>
+			</div>
+			<div class="modal fade login gotrip-login-modal" id="login" tabindex="-1" role="dialog" aria-hidden="true">
+				<div class="modal-dialog modal-dialog-centered" role="document">
+					<div class="modal-content relative">
+						<div class="modal-header border-dashed">
+							<h4 class="modal-title">Log In</h4>
+							<span class="c-pointer" data-bs-dismiss="modal" aria-label="Close">
+							<i class="input-icon field-icon fa">
+							<img src="/images/ico_close.svg" alt="close">
+							</i>
+							</span>
+						</div>
+						<div class="modal-body relative">
+							<form class="bravo-theme-gotrip-login-form y-gap-20" method="POST" action="/login">
+								<input type="hidden" name="redirect" value>
+								<input type="hidden" name="_token" value="CSdxoIY9TzBumilU1HGAvjw6e5GqrnpwM5f5yZZH"> 
+								<div class="col-12">
+									<h4 class="form-title text-22 fw-500">Welcome back</h4>
+									<p class="mt-10">Don&#039;t have an account yet? <a data-bs-toggle="modal" href="#register" class="text-blue-1">Sign up for free</a></p>
+								</div>
+								<div class="col-12">
+									<div class="form-input">
+										<input type="text" name="email" autocomplete="off">
+										<label class="lh-1 text-14 text-light-1">Email</label>
+									</div>
+								</div>
+								<div class="col-12">
+									<div class="form-input">
+										<input type="password" name="password" autocomplete="off">
+										<label class="lh-1 text-14 text-light-1">Password</label>
+									</div>
+								</div>
+								<div class="col-12 d-flex justify-content-between">
+									<div class="d-flex ">
+										<div class="form-checkbox" style="margin-top: 3px">
+											<input type="checkbox" name="remember" id="remember-me" value="1">
+											<div class="form-checkbox__mark">
+												<div class="form-checkbox__icon icon-check"></div>
+											</div>
+										</div>
+										<div class="text-15 lh-15 text-light-1 ml-10">Remember me</div>
+									</div>
+									<a href="/forgot-password">Forgot Password?</a>
+								</div>
+								<div class="error message-error invalid-feedback"></div>
+								<div class="col-12">
+									<button class="button py-20 -dark-1 bg-blue-1 text-white w-100 form-submit" type="submit">
+										Sign In
+										<div class="icon-arrow-top-right ml-15"></div>
+										<span class="spinner-grow spinner-grow-sm icon-loading ml-15 d-none" role="status" aria-hidden="true"></span>
+									</button>
+								</div>
+								<div class="col-12">
+									<div class="text-center px-30">By creating an account, you agree to our Terms of Service and Privacy Statement.</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="modal fade login gotrip-register-modal" id="register" tabindex="-1" role="dialog" aria-hidden="true">
+				<div class="modal-dialog modal-dialog-centered" role="document">
+					<div class="modal-content relative">
+						<div class="modal-header">
+							<h4 class="modal-title">Sign Up</h4>
+							<span class="c-pointer" data-bs-dismiss="modal" aria-label="Close">
+							<i class="input-icon field-icon fa">
+							<img src="/images/ico_close.svg" alt="close">
+							</i>
+							</span>
+						</div>
+						<div class="modal-body">
+							<form action="#" class="form bravo-form-register" method="post">
+								<input type="hidden" name="_token" value="CSdxoIY9TzBumilU1HGAvjw6e5GqrnpwM5f5yZZH"> 
+								<div class="row y-gap-20">
+									<div class="col-12">
+										<h1 class="text-22 fw-500">Sign in or create an account</h1>
+										<p class="mt-10">Already have an account? <a data-bs-toggle="modal" href="#login" class="text-blue-1">Log in</a></p>
+									</div>
+									<div class="col-12">
+										<div class="form-input">
+											<input type="text" name="first_name" autocomplete="off">
+											<label class="lh-1 text-14 text-light-1">First Name</label>
+										</div>
+										<span class="invalid-feedback error error-first_name"></span>
+									</div>
+									<div class="col-12">
+										<div class="form-input">
+											<input type="text" name="last_name" autocomplete="off">
+											<label class="lh-1 text-14 text-light-1">Last Name</label>
+										</div>
+										<span class="invalid-feedback error error-last_name"></span>
+									</div>
+									<div class="col-12">
+										<div class="form-input">
+											<input type="text" name="phone" autocomplete="off">
+											<label class="lh-1 text-14 text-light-1">Phone</label>
+										</div>
+										<span class="invalid-feedback error error-phone"></span>
+									</div>
+									<div class="col-12">
+										<div class="form-input">
+											<input type="email" name="email" autocomplete="off">
+											<label class="lh-1 text-14 text-light-1">Email address</label>
+										</div>
+										<span class="invalid-feedback error error-email"></span>
+									</div>
+									<div class="col-12">
+										<div class="form-input">
+											<input type="password" name="password" autocomplete="off">
+											<label class="lh-1 text-14 text-light-1">Password</label>
+										</div>
+										<span class="invalid-feedback error error-password"></span>
+									</div>
+									<div class="col-12">
+										<div class="d-flex">
+											<div class="form-checkbox" style="margin-top: 3px">
+												<input type="checkbox" name="term" id="register-term">
+												<div class="form-checkbox__mark">
+													<div class="form-checkbox__icon icon-check"></div>
+												</div>
+											</div>
+											<label class="text-15 lh-15 text-light-1 ml-10" for="register-term">I have read and accept the Terms and Privacy Policy?</label>
+										</div>
+										<span class="invalid-feedback error error-term"></span>
+									</div>
+									<div class="error message-error invalid-feedback"></div>
+									<div class="col-12">
+										<button type="submit" class="button py-20 -dark-1 bg-blue-1 text-white w-100">
+											Sign Up 
+											<div class="icon-arrow-top-right ml-15"></div>
+										</button>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="cdn-browser-modal" class="modal fade">
+				<div class="modal-dialog modal-xl">
+					<div class="modal-content">
+						<div id="cdn-browser" class="cdn-browser d-flex flex-column" v-cloak :class="{is_loading:isLoading}">
+							<div class="files-nav flex-shrink-0">
+								<div class="d-flex justify-content-between">
+									<div class="col-left d-flex align-items-center">
+										<div class="filter-item">
+											<input type="text" placeholder="Search file name...." class="form-control" v-model="filter.s" @keyup.enter="filter.page = 1;reloadLists()">
+										</div>
+										<div class="filter-item">
+											<button class="btn btn-default" @click="reloadAll()">
+											<i class="fa fa-search"></i> Search</button>
+										</div>
+										<div class="filter-item">
+											<small><i>Total: {{total}} files</i></small>
+										</div>
+									</div>
+									<div class="div">
+										<div class="btn-group" role="group" aria-label="Basic example">
+											<button type="button" @click="setViewType('grid')" class="btn" :class="viewType == 'grid' ? 'btn-secondary' : 'btn-outline-secondary'"><i class="fa fa-th"></i></button>
+											<button type="button" @click="setViewType('list')" class="btn" :class="viewType != 'grid' ? 'btn-secondary' : 'btn-outline-secondary'"><i class="fa fa-bars"></i></button>
+										</div>
+									</div>
+									<div class="col-right">
+										<i class="fa-spin fa fa-spinner icon-loading active" v-show="isLoading"></i>
+										<button class="btn btn-primary mr-2" @click="addFolder">
+										<span><i class="fa fa-folder"></i> Add Folder</span>
+										</button>
+										<button class="btn btn-success btn-pick-files">
+										<span><i class="fa fa-upload"></i> Upload</span>
+										<input multiple :accept="accept_type" type="file" name="files[]" ref="files">
+										</button>
+									</div>
+								</div>
+							</div>
+							<div class="upload-new" v-show="showUploader" display="none">
+								<input type="file" name="filepond[]" class="my-pond">
+							</div>
+							<div class="files-list">
+								<nav aria-label="breadcrumb">
+									<ol class="breadcrumb">
+										<li class="breadcrumb-item"><a @click="toFolderRoot" href="#">Home</a></li>
+										<li v-for="(item,index) in breadcrumbs" class="breadcrumb-item active" aria-current="page"><a @click.prevent="showFolder(item,index)" href="#">{{ item.name }}</a></li>
+									</ol>
+								</nav>
+								<div class="border-top border-left mb-3 px-3" v-if="viewType == 'list'">
+									<div class="row font-weight-bold " style="font-size: 16px">
+										<div class="col-sm-6 py-2 border-bottom border-right">Name</div>
+										<div class="col-sm-2 py-2 border-bottom border-right">Type</div>
+										<div class="col-sm-2 py-2 border-bottom border-right">Created At</div>
+										<div class="col-sm-2 py-2 border-bottom border-right">Size</div>
+									</div>
+									<folder-item @deleted="deletedFolder" @toggle-edit="toggleEditFolder" @dblclick="showFolder(folder)" @update="updateFolder" :view-type="viewType" v-for="(folder,index) in folders" :index="index" :key="'folder-'+index" :folder="folder"></folder-item>
+									<file-item v-for="(file,index) in files" :key="index" :view-type="viewType" :selected="selected" :file="file" v-on:select-file="selectFile"></file-item>
+								</div>
+								<div class="files-wraps " v-if="viewType == 'grid'" :class="'view-'+viewType">
+									<folder-item @deleted="deletedFolder" @toggle-edit="toggleEditFolder" @dblclick="showFolder(folder)" @update="updateFolder" v-for="(folder,index) in folders" :index="index" :key="'folder-'+index" :folder="folder"></folder-item>
+									<file-item v-for="(file,index) in files" :key="index" :view-type="viewType" :selected="selected" :file="file" v-on:select-file="selectFile"></file-item>
+								</div>
+								<p class="no-files-text text-center" v-show="!total && apiFinished" style="display: none">No file found</p>
+								<div class="text-center" v-if="totalPage > 1">
+									<nav aria-label="Page navigation example">
+										<ul class="pagination">
+											<li class="page-item" :class="{disabled:filter.page <= 1}">
+												<a class="page-link" v-if="filter.page <=1">Previous</a>
+												<a class="page-link" href="#" v-if="filter.page > 1" v-on:click="changePage(filter.page-1,$event)">Previous</a>
+											</li>
+											<li class="page-item" v-if="p >= (filter.page-3) && p <= (filter.page+3)" :class="{active: p == filter.page}" v-for="p in totalPage" @click="changePage(p,$event)">
+												<a class="page-link" href="#">{{p}}</a>
+											</li>
+											<li class="page-item" :class="{disabled:filter.page >= totalPage}">
+												<a v-if="filter.page >= totalPage" class="page-link">Next</a>
+												<a href="#" class="page-link" v-if="filter.page < totalPage" v-on:click="changePage(filter.page+1,$event)">Next</a>
+											</li>
+										</ul>
+									</nav>
+								</div>
+							</div>
+							<div class="browser-actions d-flex justify-content-between flex-shrink-0" v-if="selected.length">
+								<div class="col-left" v-show="selected.length">
+									<div class="control-remove" v-if="selected && selected.length">
+										<button class="btn btn-danger" @click="removeFiles">Delete file</button>
+									</div>
+									<div class="control-info" v-if="selected && selected.length">
+										<div class="count-selected">{{selected.length}} file selected</div>
+										<div class="clear-selected" @click="selected=[]"><i>unselect</i></div>
+									</div>
+								</div>
+								<div class="col-right" v-show="selected.length">
+									<button class="btn btn-primary" :class="{disabled:!selected.length}" @click="sendFiles">Use file</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type="text/x-template" id="file-item-template">
+				<div :class="viewType == 'grid'  ? 'file-item' : 'file-list-item'" >
+				    <div class="row hover:bg-f5f5f5 cursor-pointer" v-if="viewType == 'list'" @click="selectFile(file)" :class="{'active':selected.indexOf(file.id) !== -1}">
+				        <div class="col-sm-6 py-1 border-right border-bottom">
+				            <span v-html="getFileThumb(file)" class="mr-2 item-preview"></span> {{ file.file_name }}</div>
+				        <div class="col-sm-2 py-1  border-right border-bottom">{{file.file_extension}}</div>
+				        <div class="col-sm-2 py-1  border-right border-bottom">{{file.created_at}}</div>
+				        <div class="col-sm-1 py-1 border-bottom">{{humanFileSize(file.file_size)}}</div>
+				        <div class="col-sm-1 py-1  border-right border-bottom d-flex justify-content-end">
+				            <a :href="file.full_size" target="_blank" title="View file"><i class=" fa fa-eye"></i></a>
+				        </div>
+				    </div>
+				    <div v-if="viewType == 'grid'" class="inner" :class="{active:selected.indexOf(file.id) !== -1 }" @click="selectFile(file)" :title="file.file_name">
+				        <div class="file-thumb" v-if="viewType=='grid'" v-html="getFileThumb(file)">
+				            </div>
+				            <div class="file-name">{{file.file_name}}</div>
+				            <span class="file-checked-status" v-show="selected.indexOf(file.id) !== -1">
+				            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M186.301 339.893L96 249.461l-32 30.507L186.301 402 448 140.506 416 110z"/></svg>
+				        </span>
+				    </div>
+				</div>
+			</script>
+			<script type="text/x-template" id="folder-item-template">
+				<div :class="viewType == 'grid'  ? 'file-item folder-item' : 'folder-item'" @dblclick="$emit('dblclick',folder,index)">
+				    <div class="row hover:bg-f5f5f5 cursor-pointer" v-if="viewType == 'list'">
+				        <div class="col-sm-6 py-1 border-right border-bottom">
+				            <div class="d-flex justify-content-between">
+				                <div class="d-flex flex-grow-1 align-items-center">
+				                    <div>
+				                        <img src="/icon/folder.png" width="20px" height="auto" class="mr-2 flex-shrink-0" alt="">
+				                    </div>
+				                    <div class="text-center font-weight-medium" v-if="!folder.onEdit">{{folder.name}}</div>
+				                    <div class="" v-if="folder.onEdit">
+				                        <input ref="input" type="text" @blur="saveName" class="form-control" v-model="folder_name" >
+				                    </div>
+				                </div>
+				                <div>
+				                    <a href="#" class="btn-edit btn-sm position-absolute" @click.prevent="openEdit"><i class="fa fa-edit"></i></a>
+				                </div>
+				            </div>
+				        </div>
+				        <div class="col-sm-2 py-1 border-right border-bottom">Folder</div>
+				        <div class="col-sm-2 py-1 border-right border-bottom">{{ folder.created_at }}</div>
+				        <div class="col-sm-2 py-1 border-right border-bottom d-flex justify-content-end">
+				            <a href="#" class="btn-sm text-danger" title="Delete this folder" @click.prevent="deleteFolder"><i class="fa fa-trash"></i></a>
+				        </div>
+				    </div>
+				    <div v-if="viewType == 'grid'" class="inner d-flex flex-column  position-relative">
+				        <div class="file-thumb flex-grow-1 d-flex align-items-center justify-content-center" style="background: #7b7d7e">
+				            <i class="fa fa-folder-o" style="font-size: 90px;color:white"></i>
+				        </div>
+				        <div class="text-center font-weight-medium p-2" v-if="!folder.onEdit">{{folder.name}}</div>
+				        <div class="" v-if="folder.onEdit">
+				            <input ref="input" type="text" @blur="saveName" class="form-control" v-model="folder_name" >
+				        </div>
+				        <a href="#" class="btn-edit btn btn-sm btn-warning position-absolute top-0 right-0 m-2" @click.prevent="openEdit"><i class="fa fa-edit"></i></a>
+				    </div>
+				</div>
+			</script>
+			<script src="/libs/lodash.min.js"></script>
+			<script src="/libs/jquery-3.6.3.min.js"></script>
+			<script src="/libs/vue/vue.min.js"></script>
+			<script type="text/javascript" src="/themes/gotrip/libs/bs/js/bootstrap.bundle.min.js"></script>
+			<script src="/libs/bootbox/bootbox.min.js"></script>
+			<script src="/libs/bootstrap4.0/js/bootstrap.min.js"></script>
+			<script type="text/javascript" src="/themes/gotrip/js/vendors.js"></script>
+			<script type="text/javascript" src="/themes/gotrip/js/main.js?_ver=3.2.1"></script>
+			<script src="/libs/leaflet1.4.0/leaflet.js"></script>
+			<link rel="stylesheet" href="/libs/leaflet1.4.0/leaflet.css">
+			<script src="/module/core/js/map-engine.js?_ver=3.2.1"></script>
+			<script src="/module/media/js/browser.js?_ver=3.2.1"></script>
+			<script src="/libs/carousel-2/owl.carousel.min.js"></script>
+			<script type="text/javascript" src="/libs/daterange/moment.min.js"></script>
+			<script type="text/javascript" src="/libs/daterange/daterangepicker.min.js"></script>
+			<script src="/libs/select2/js/select2.min.js"></script>
+			<script src="/themes/gotrip/dist/frontend/js/gotrip.js?_ver=3.2.1"></script>
+			<script src="/module/booking/js/checkout.js"></script>
+			<script type="text/javascript">
+				jQuery(function () {
+				    $.ajax({
+				        'url': bookingCore.url + '/booking/cb83903d75077af1461705c79f1615d0/check-status',
+				        'cache': false,
+				        'type': 'GET',
+				        success: function (data) {
+				            if (data.redirect !== undefined && data.redirect) {
+				                window.location.href = data.redirect
+				            }
+				        }
+				    });
+				})
+				
+				$('.deposit_amount').on('change', function(){
+				    checkPaynow();
+				});
+				
+				$('input[type=radio][name=how_to_pay]').on('change', function(){
+				    checkPaynow();
+				});
+				
+				function checkPaynow(){
+				    var credit_input = $('.deposit_amount').val();
+				    var how_to_pay = $("input[name=how_to_pay]:checked").val();
+				    var convert_to_money = credit_input * 1;
+				
+				    if(how_to_pay == 'full'){
+				        var pay_now_need_pay = parseFloat(1150) - convert_to_money;
+				    }else{
+				        var pay_now_need_pay = parseFloat(1150) - convert_to_money;
+				    }
+				
+				    if(pay_now_need_pay < 0){
+				        pay_now_need_pay = 0;
+				    }
+				    $('.convert_pay_now').html(bravo_format_money(pay_now_need_pay));
+				    $('.convert_deposit_amount').html(bravo_format_money(convert_to_money));
+				}
+				
+				
+				jQuery(function () {
+				    $(".bravo_apply_coupon").click(function () {
+				        var parent = $(this).closest('.section-coupon-form');
+				        parent.find(".group-form .fa-spin").removeClass("d-none");
+				        parent.find(".message").html('');
+				        $.ajax({
+				            'url': bookingCore.url + '/booking/cb83903d75077af1461705c79f1615d0/apply-coupon',
+				            'data': parent.find('input,textarea,select').serialize(),
+				            'cache': false,
+				            'method':"post",
+				            success: function (res) {
+				                parent.find(".group-form .fa-spin").addClass("d-none");
+				                if (res.reload !== undefined) {
+				                    window.location.reload();
+				                }
+				                if(res.message && res.status === 1)
+				                {
+				                    parent.find('.message').html('<div class="alert alert-success">' + res.message+ '</div>');
+				                }
+				                if(res.message && res.status === 0)
+				                {
+				                    parent.find('.message').html('<div class="alert alert-danger">' + res.message+ '</div>');
+				                }
+				            }
+				        });
+				    });
+				    $(".bravo_remove_coupon").click(function (e) {
+				        e.preventDefault();
+				        var parent = $(this).closest('.section-coupon-form');
+				        var parentItem = $(this).closest('.item');
+				        parentItem.find(".fa-spin").removeClass("d-none");
+				        $.ajax({
+				            'url': bookingCore.url + '/booking/cb83903d75077af1461705c79f1615d0/remove-coupon',
+				            'data': {
+				                coupon_code:$(this).attr('data-code')
+				            },
+				            'cache': false,
+				            'method':"post",
+				            success: function (res) {
+				                parentItem.find(".fa-spin").addClass("d-none");
+				                if (res.reload !== undefined) {
+				                    window.location.reload();
+				                }
+				                if(res.message && res.status === 0)
+				                {
+				                    parent.find('.message').html('<div class="alert alert-danger">' + res.message+ '</div>');
+				                }
+				            }
+				        });
+				    });
+				})
+			</script>
+		</div>
+	</body>
+</html>
