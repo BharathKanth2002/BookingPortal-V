@@ -14,8 +14,8 @@
       href="./uploads/demo/general/favicon.png"
     />
     <title>Booking Portal</title>
-    <meta name="description" content />
-    <meta property="og:url" content="https://gotrip.bookingcore.org" />
+    <!-- <meta name="description" content />
+    <meta property="og:url" content="" />
     <meta property="og:type" content="article" />
     <meta property="og:title" content="Home 1" />
     <meta property="og:description" content />
@@ -24,14 +24,14 @@
     <meta name="twitter:title" content="Home 1" />
     <meta name="twitter:description" content />
     <meta name="twitter:image" content />
-    <link rel="canonical" href="https://gotrip.bookingcore.org" />
-    <link href="./themes/gotrip/css/vendors.css" rel="stylesheet" />
-    <link href="./themes/gotrip/css/main.css" rel="stylesheet" />
-    <link href="./libs/icofont/icofont.min.css" rel="stylesheet" />
+    <link rel="canonical" href="." /> -->
+    <link href="/themes/gotrip/css/vendors.css" rel="stylesheet" />
+    <link href="/themes/gotrip/css/main.css" rel="stylesheet" />
+    <link href="/libs/icofont/icofont.min.css" rel="stylesheet" />
     <link
       rel="stylesheet"
       type="text/css"
-      href="./libs/daterange/daterangepicker.css"
+      href="/libs/daterange/daterangepicker.css"
     />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -42,13 +42,13 @@
     />
     <link
       rel="stylesheet"
-      href="./themes/gotrip/dist/frontend/css/app.css?_v=3.2.1"
+      href="/themes/gotrip/dist/frontend/css/app.css?_v=3.2.1"
     />
     <script>
       var bookingCore = {
-        url: "https://gotrip.bookingcore.org",
-        url_root: "https://gotrip.bookingcore.org",
-        admin_url: "https://gotrip.bookingcore.org/admin",
+        url: "",
+        url_root: "",
+        admin_url: "/admin",
         booking_decimals: 0,
         thousand_separator: ".",
         decimal_separator: ",",
@@ -65,26 +65,26 @@
           map_fit_bounds: "on",
         },
         routes: {
-          login: "https://gotrip.bookingcore.org/login",
-          register: "https://gotrip.bookingcore.org/register",
-          checkout: "https://gotrip.bookingcore.org/booking/doCheckout",
+          login: "/login",
+          register: "/register",
+          checkout: "/booking/doCheckout",
         },
         currentUser: 0,
         isAdmin: 0,
         rtl: false,
-        markAsRead: "https://gotrip.bookingcore.org/notify/markAsRead",
-        markAllAsRead: "https://gotrip.bookingcore.org/notify/markAllAsRead",
-        loadNotify: "https://gotrip.bookingcore.org/notify/notifications",
+        markAsRead: "/notify/markAsRead",
+        markAllAsRead: "/notify/markAllAsRead",
+        loadNotify: "/notify/notifications",
         pusher_api_key: "",
         pusher_cluster: "",
         language: "en",
         module: {},
       };
-      bookingCore.module.hotel = "https://gotrip.bookingcore.org/hotel";
-      bookingCore.module.car = "https://gotrip.bookingcore.org/car";
-      bookingCore.module.event = "https://gotrip.bookingcore.org/event";
-      bookingCore.module.tour = "https://gotrip.bookingcore.org/tour";
-      bookingCore.module.flight = "https://gotrip.bookingcore.org/flight";
+      bookingCore.module.hotel = "/hotel";
+      bookingCore.module.car = "/car";
+      bookingCore.module.event = "/event";
+      bookingCore.module.tour = "/tour";
+      bookingCore.module.flight = "/flight";
       var i18n = {
         warning: "Warning",
         success: "Success",
@@ -118,16 +118,16 @@
       };
     </script>
 
-    <link href="https://gotrip.bookingcore.org/custom-css" rel="stylesheet" />
+    <link href="/custom-css.css" rel="stylesheet" />
   </head>
   <body class="frontend-page header-transparent">
     <div class="bravo_wrap overflow-hidden">
       <div class="preloader js-preloader">
-        <div class="preloader__wrap">
-          <!-- <div class="preloader__icon"> -->
-          <!-- <img class="logo-light" src="https://gotrip.bookingcore.org/uploads/gotrip/general/preload.svg" alt="BookingPortal"> -->
-          <!-- </div> -->
-        </div>
+        <!-- <div class="preloader__wrap"> -->
+        <!-- <div class="preloader__icon"> -->
+        <!-- <img class="logo-light" src="./uploads/gotrip/general/preload.svg" alt="BookingPortal"> -->
+        <!-- </div> -->
+        <!-- </div> -->
         <!-- <div class="preloader__title">BookingPortal</div> -->
       </div>
       <header
@@ -144,7 +144,7 @@
             <div class="col-auto">
               <div class="d-flex items-center gotrip-header-normal">
                 <a
-                  href="https://gotrip.bookingcore.org"
+                  href=""
                   class="header-logo mr-20"
                   data-x="header-logo"
                   data-x-toggle="is-logo-dark"
@@ -571,12 +571,12 @@
                         </a>
                         <!-- <ul class="subnav">
             <li>
-            <a href="https://gotrip.bookingcore.org/flight?set_currency=eur" class="is_login dropdown-item">
+            <a href="./flight?set_currency=eur" class="is_login dropdown-item">
             EUR
             </a>
             </li>
             <li>
-            <a href="https://gotrip.bookingcore.org/flight?set_currency=jpy" class="is_login dropdown-item">
+            <a href="./flight?set_currency=jpy" class="is_login dropdown-item">
             JPY
             </a>
             </li>
@@ -593,7 +593,7 @@
                         <ul class="subnav">
                           <li>
                             <a
-                              href="https://gotrip.bookingcore.org/flight?set_lang=ja"
+                              href="./flight?set_lang=ja"
                               class="is_login dropdown-item"
                               style="justify-content: flex-start"
                             >
@@ -603,7 +603,7 @@
                           </li>
                           <li>
                             <a
-                              href="https://gotrip.bookingcore.org/flight?set_lang=egy"
+                              href="./flight?set_lang=egy"
                               class="is_login dropdown-item"
                               style="justify-content: flex-start"
                             >
@@ -613,7 +613,7 @@
                           </li>
                           <li>
                             <a
-                              href="https://gotrip.bookingcore.org/flight?set_lang=es_MX"
+                              href="./flight?set_lang=es_MX"
                               class="is_login dropdown-item"
                               style="justify-content: flex-start"
                             >
@@ -623,7 +623,7 @@
                           </li>
                           <li>
                             <a
-                              href="https://gotrip.bookingcore.org/flight?set_lang=tr"
+                              href="./flight?set_lang=tr"
                               class="is_login dropdown-item"
                               style="justify-content: flex-start"
                             >
@@ -633,7 +633,7 @@
                           </li>
                           <li>
                             <a
-                              href="https://gotrip.bookingcore.org/flight?set_lang=he"
+                              href="./flight?set_lang=he"
                               class="is_login dropdown-item"
                               style="justify-content: flex-start"
                             >
@@ -683,31 +683,31 @@
                           </a>
                           <!-- <ul class="subnav">
         <li>
-        <a href="https://gotrip.bookingcore.org/flight?set_lang=ja" class="is_login dropdown-item" style="justify-content: flex-start">
+        <a href="./flight?set_lang=ja" class="is_login dropdown-item" style="justify-content: flex-start">
         <span class="flag-icon flag-icon-jp"></span>
         Japanese
         </a>
         </li>
         <li>
-        <a href="https://gotrip.bookingcore.org/flight?set_lang=egy" class="is_login dropdown-item" style="justify-content: flex-start">
+        <a href="./flight?set_lang=egy" class="is_login dropdown-item" style="justify-content: flex-start">
         <span class="flag-icon flag-icon-eg"></span>
         Egyptian
         </a>
         </li>
         <li>
-        <a href="https://gotrip.bookingcore.org/flight?set_lang=es_MX" class="is_login dropdown-item" style="justify-content: flex-start">
+        <a href="./flight?set_lang=es_MX" class="is_login dropdown-item" style="justify-content: flex-start">
         <span class="flag-icon flag-icon-mx"></span>
         Mexico
         </a>
         </li>
         <li>
-        <a href="https://gotrip.bookingcore.org/flight?set_lang=tr" class="is_login dropdown-item" style="justify-content: flex-start">
+        <a href="./flight?set_lang=tr" class="is_login dropdown-item" style="justify-content: flex-start">
         <span class="flag-icon flag-icon-tr"></span>
         Türkçe
         </a>
         </li>
         <li>
-        <a href="https://gotrip.bookingcore.org/flight?set_lang=he" class="is_login dropdown-item" style="justify-content: flex-start">
+        <a href="./flight?set_lang=he" class="is_login dropdown-item" style="justify-content: flex-start">
         <span class="flag-icon flag-icon-Israel"></span>
         Hebrew
         </a>
@@ -715,7 +715,7 @@
         </ul> -->
                         </li>
                         <!-- <div class="d-flex items-center ml-20 is-menu-opened-hide md:d-none">
-        <a href="https://gotrip.bookingcore.org/page/become-an-expert" class="-white bg-white text-dark-1 button px-30 fw-400 text-14  h-50">Become An Expert</a>
+        <a href="./page/become-an-expert" class="-white bg-white text-dark-1 button px-30 fw-400 text-14  h-50">Become An Expert</a>
         <a data-bs-toggle="modal" href="#login" class="border-white -outline-white text-white button px-30 fw-400 text-14  h-50 ml-20">Sign In / Register</a>
         </div> -->
                         <div
@@ -725,7 +725,7 @@
                         >
                           <div>
                             <a
-                              href="https://gotrip.bookingcore.org/login"
+                              href="./login"
                               class="d-flex items-center icon-user text-inherit text-22"
                             ></a>
                           </div>
@@ -748,7 +748,7 @@
               >
                 <div>
                   <a
-                    href=" https://gotrip.bookingcore.org/login "
+                    href=" ./login "
                     class="d-flex items-center icon-user text-inherit text-22"
                   ></a>
                 </div>
@@ -840,6 +840,7 @@ Event
                       </button>
                     </div>
                   </div>
+
                   <div class="tabs__content mt-30 md:mt-20 js-tabs-content">
                     <div class="tabs__pane -tab-item-hotel is-tab-el-active">
                       <form
@@ -2129,11 +2130,28 @@ Event
                       </form>
                     </div>
                     <div class="tabs__pane -tab-item-flight">
+                      <!-- <div class="row" style="color: aliceblue; flex: 1">
+                        <div class="col" style="flex: 2;"></div>
+                          <div class="col" style="flex: 2">
+                            <input type="radio" name="one_way" id="one_way" checked/>
+                          </div>
+                          <div class="col" style="flex: 11">One Way</div>
+                        
+                        <div class="col" style="flex: 1">
+                            <input type="radio" name="round_trip" id="round_trip" onclick="to_round_trip_tray()" />
+                          </div>
+                          <div class="col" style="flex: 11">Round Trip</div>
+                          <div class="col" style="flex:30"></div>
+                        
+                        
+                      </div>
+                       -->
                       <form
                         action="/flight.html"
                         class="gotrip_form_search bravo_form form px-10 py-10 lg:px-20 lg:pt-5 lg:pb-20 rounded-100 form-search-all-service mainSearch -w-900 bg-white"
                         method="get"
                       >
+                      <div class="one_way_tray" style="display: block;">
                         <div class="field-items">
                           <div class="row w-100 m-0">
                             <div
@@ -3003,6 +3021,879 @@ Event
                             </div>
                           </div>
                         </div>
+                        
+                      </div>
+                      <div class="round_trip_tray" style="display: none;">
+                        <div class="field-items">
+                          <div class="row w-100 m-0">
+                            <div
+                              class="col-lg-3 align-self-center px-30 lg:py-20 lg:px-0"
+                            >
+                              <div
+                                class="searchMenu-loc js-form-dd js-liverSearch item"
+                              >
+                                <span
+                                  class="clear-loc absolute bottom-0 text-12"
+                                  ><i class="icon-close"></i
+                                ></span>
+                                <div data-x-dd-click="searchMenu-loc">
+                                  <h4 class="text-15 fw-500 ls-2 lh-16">
+                                    From where
+                                  </h4>
+                                  <div class="text-15 text-light-1 ls-2 lh-16">
+                                    <input
+                                      type="hidden"
+                                      name="from_where"
+                                      class="js-search-get-id"
+                                      value
+                                    />
+                                    <input
+                                      autocomplete="off"
+                                      type="text"
+                                      placeholder="Where are you going?"
+                                      class="js-search js-dd-focus"
+                                      value
+                                    />
+                                  </div>
+                                </div>
+                                <div
+                                  class="searchMenu-loc__field shadow-2 js-popup-window"
+                                  data-x-dd="searchMenu-loc"
+                                  data-x-dd-toggle="-is-active"
+                                >
+                                  <div
+                                    class="bg-white px-30 py-30 sm:px-0 sm:py-15 rounded-4"
+                                  >
+                                    <div class="y-gap-5 js-results">
+                                      <div
+                                        class="-link d-block col-12 text-left rounded-4 px-20 py-15 js-search-option"
+                                        data-id="11"
+                                      >
+                                        <div class="d-flex align-items-center">
+                                          <div
+                                            class="icon-location-2 text-light-1 text-20 pt-4"
+                                          ></div>
+                                          <div class="ml-10">
+                                            <div
+                                              class="text-15 lh-12 fw-500 js-search-option-target"
+                                            >
+                                              Barcelona
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div
+                                        class="-link d-block col-12 text-left rounded-4 px-20 py-15 js-search-option"
+                                        data-id="2"
+                                      >
+                                        <div class="d-flex align-items-center">
+                                          <div
+                                            class="icon-location-2 text-light-1 text-20 pt-4"
+                                          ></div>
+                                          <div class="ml-10">
+                                            <div
+                                              class="text-15 lh-12 fw-500 js-search-option-target"
+                                            >
+                                              California
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div
+                                        class="-link d-block col-12 text-left rounded-4 px-20 py-15 js-search-option"
+                                        data-id="8"
+                                      >
+                                        <div class="d-flex align-items-center">
+                                          <div
+                                            class="icon-location-2 text-light-1 text-20 pt-4"
+                                          ></div>
+                                          <div class="ml-10">
+                                            <div
+                                              class="text-15 lh-12 fw-500 js-search-option-target"
+                                            >
+                                              Germany
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div
+                                        class="-link d-block col-12 text-left rounded-4 px-20 py-15 js-search-option"
+                                        data-id="10"
+                                      >
+                                        <div class="d-flex align-items-center">
+                                          <div
+                                            class="icon-location-2 text-light-1 text-20 pt-4"
+                                          ></div>
+                                          <div class="ml-10">
+                                            <div
+                                              class="text-15 lh-12 fw-500 js-search-option-target"
+                                            >
+                                              London
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div
+                                        class="-link d-block col-12 text-left rounded-4 px-20 py-15 js-search-option"
+                                        data-id="4"
+                                      >
+                                        <div class="d-flex align-items-center">
+                                          <div
+                                            class="icon-location-2 text-light-1 text-20 pt-4"
+                                          ></div>
+                                          <div class="ml-10">
+                                            <div
+                                              class="text-15 lh-12 fw-500 js-search-option-target"
+                                            >
+                                              Los Angeles
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div
+                                        class="-link d-block col-12 text-left rounded-4 px-20 py-15 js-search-option"
+                                        data-id="5"
+                                      >
+                                        <div class="d-flex align-items-center">
+                                          <div
+                                            class="icon-location-2 text-light-1 text-20 pt-4"
+                                          ></div>
+                                          <div class="ml-10">
+                                            <div
+                                              class="text-15 lh-12 fw-500 js-search-option-target"
+                                            >
+                                              New Jersey
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div
+                                        class="-link d-block col-12 text-left rounded-4 px-20 py-15 js-search-option"
+                                        data-id="9"
+                                      >
+                                        <div class="d-flex align-items-center">
+                                          <div
+                                            class="icon-location-2 text-light-1 text-20 pt-4"
+                                          ></div>
+                                          <div class="ml-10">
+                                            <div
+                                              class="text-15 lh-12 fw-500 js-search-option-target"
+                                            >
+                                              New York
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div
+                                        class="-link d-block col-12 text-left rounded-4 px-20 py-15 js-search-option"
+                                        data-id="1"
+                                      >
+                                        <div class="d-flex align-items-center">
+                                          <div
+                                            class="icon-location-2 text-light-1 text-20 pt-4"
+                                          ></div>
+                                          <div class="ml-10">
+                                            <div
+                                              class="text-15 lh-12 fw-500 js-search-option-target"
+                                            >
+                                              Paris
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div
+                                        class="-link d-block col-12 text-left rounded-4 px-20 py-15 js-search-option"
+                                        data-id="14"
+                                      >
+                                        <div class="d-flex align-items-center">
+                                          <div
+                                            class="icon-location-2 text-light-1 text-20 pt-4"
+                                          ></div>
+                                          <div class="ml-10">
+                                            <div
+                                              class="text-15 lh-12 fw-500 js-search-option-target"
+                                            >
+                                              Reykjavik
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div
+                                        class="-link d-block col-12 text-left rounded-4 px-20 py-15 js-search-option"
+                                        data-id="13"
+                                      >
+                                        <div class="d-flex align-items-center">
+                                          <div
+                                            class="icon-location-2 text-light-1 text-20 pt-4"
+                                          ></div>
+                                          <div class="ml-10">
+                                            <div
+                                              class="text-15 lh-12 fw-500 js-search-option-target"
+                                            >
+                                              Rome
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div
+                                        class="-link d-block col-12 text-left rounded-4 px-20 py-15 js-search-option"
+                                        data-id="6"
+                                      >
+                                        <div class="d-flex align-items-center">
+                                          <div
+                                            class="icon-location-2 text-light-1 text-20 pt-4"
+                                          ></div>
+                                          <div class="ml-10">
+                                            <div
+                                              class="text-15 lh-12 fw-500 js-search-option-target"
+                                            >
+                                              San Francisco
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div
+                                        class="-link d-block col-12 text-left rounded-4 px-20 py-15 js-search-option"
+                                        data-id="12"
+                                      >
+                                        <div class="d-flex align-items-center">
+                                          <div
+                                            class="icon-location-2 text-light-1 text-20 pt-4"
+                                          ></div>
+                                          <div class="ml-10">
+                                            <div
+                                              class="text-15 lh-12 fw-500 js-search-option-target"
+                                            >
+                                              Sydney
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div
+                                        class="-link d-block col-12 text-left rounded-4 px-20 py-15 js-search-option"
+                                        data-id="3"
+                                      >
+                                        <div class="d-flex align-items-center">
+                                          <div
+                                            class="icon-location-2 text-light-1 text-20 pt-4"
+                                          ></div>
+                                          <div class="ml-10">
+                                            <div
+                                              class="text-15 lh-12 fw-500 js-search-option-target"
+                                            >
+                                              United States
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div
+                                        class="-link d-block col-12 text-left rounded-4 px-20 py-15 js-search-option"
+                                        data-id="7"
+                                      >
+                                        <div class="d-flex align-items-center">
+                                          <div
+                                            class="icon-location-2 text-light-1 text-20 pt-4"
+                                          ></div>
+                                          <div class="ml-10">
+                                            <div
+                                              class="text-15 lh-12 fw-500 js-search-option-target"
+                                            >
+                                              Virginia
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div
+                              class="col-lg-3 align-self-center px-30 lg:py-20 lg:px-0"
+                            >
+                              <div
+                                class="searchMenu-loc js-form-dd js-liverSearch item"
+                              >
+                                <span
+                                  class="clear-loc absolute bottom-0 text-12"
+                                  ><i class="icon-close"></i
+                                ></span>
+                                <div data-x-dd-click="searchMenu-loc">
+                                  <h4 class="text-15 fw-500 ls-2 lh-16">
+                                    To where
+                                  </h4>
+                                  <div class="text-15 text-light-1 ls-2 lh-16">
+                                    <input
+                                      type="hidden"
+                                      name="to_where"
+                                      class="js-search-get-id"
+                                      value
+                                    />
+                                    <input
+                                      autocomplete="off"
+                                      type="text"
+                                      placeholder="Where are you going?"
+                                      class="js-search js-dd-focus"
+                                      value
+                                    />
+                                  </div>
+                                </div>
+                                <div
+                                  class="searchMenu-loc__field shadow-2 js-popup-window"
+                                  data-x-dd="searchMenu-loc"
+                                  data-x-dd-toggle="-is-active"
+                                >
+                                  <div
+                                    class="bg-white px-30 py-30 sm:px-0 sm:py-15 rounded-4"
+                                  >
+                                    <div class="y-gap-5 js-results">
+                                      <div
+                                        class="-link d-block col-12 text-left rounded-4 px-20 py-15 js-search-option"
+                                        data-id="11"
+                                      >
+                                        <div class="d-flex align-items-center">
+                                          <div
+                                            class="icon-location-2 text-light-1 text-20 pt-4"
+                                          ></div>
+                                          <div class="ml-10">
+                                            <div
+                                              class="text-15 lh-12 fw-500 js-search-option-target"
+                                            >
+                                              Barcelona
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div
+                                        class="-link d-block col-12 text-left rounded-4 px-20 py-15 js-search-option"
+                                        data-id="2"
+                                      >
+                                        <div class="d-flex align-items-center">
+                                          <div
+                                            class="icon-location-2 text-light-1 text-20 pt-4"
+                                          ></div>
+                                          <div class="ml-10">
+                                            <div
+                                              class="text-15 lh-12 fw-500 js-search-option-target"
+                                            >
+                                              California
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div
+                                        class="-link d-block col-12 text-left rounded-4 px-20 py-15 js-search-option"
+                                        data-id="8"
+                                      >
+                                        <div class="d-flex align-items-center">
+                                          <div
+                                            class="icon-location-2 text-light-1 text-20 pt-4"
+                                          ></div>
+                                          <div class="ml-10">
+                                            <div
+                                              class="text-15 lh-12 fw-500 js-search-option-target"
+                                            >
+                                              Germany
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div
+                                        class="-link d-block col-12 text-left rounded-4 px-20 py-15 js-search-option"
+                                        data-id="10"
+                                      >
+                                        <div class="d-flex align-items-center">
+                                          <div
+                                            class="icon-location-2 text-light-1 text-20 pt-4"
+                                          ></div>
+                                          <div class="ml-10">
+                                            <div
+                                              class="text-15 lh-12 fw-500 js-search-option-target"
+                                            >
+                                              London
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div
+                                        class="-link d-block col-12 text-left rounded-4 px-20 py-15 js-search-option"
+                                        data-id="4"
+                                      >
+                                        <div class="d-flex align-items-center">
+                                          <div
+                                            class="icon-location-2 text-light-1 text-20 pt-4"
+                                          ></div>
+                                          <div class="ml-10">
+                                            <div
+                                              class="text-15 lh-12 fw-500 js-search-option-target"
+                                            >
+                                              Los Angeles
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div
+                                        class="-link d-block col-12 text-left rounded-4 px-20 py-15 js-search-option"
+                                        data-id="5"
+                                      >
+                                        <div class="d-flex align-items-center">
+                                          <div
+                                            class="icon-location-2 text-light-1 text-20 pt-4"
+                                          ></div>
+                                          <div class="ml-10">
+                                            <div
+                                              class="text-15 lh-12 fw-500 js-search-option-target"
+                                            >
+                                              New Jersey
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div
+                                        class="-link d-block col-12 text-left rounded-4 px-20 py-15 js-search-option"
+                                        data-id="9"
+                                      >
+                                        <div class="d-flex align-items-center">
+                                          <div
+                                            class="icon-location-2 text-light-1 text-20 pt-4"
+                                          ></div>
+                                          <div class="ml-10">
+                                            <div
+                                              class="text-15 lh-12 fw-500 js-search-option-target"
+                                            >
+                                              New York
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div
+                                        class="-link d-block col-12 text-left rounded-4 px-20 py-15 js-search-option"
+                                        data-id="1"
+                                      >
+                                        <div class="d-flex align-items-center">
+                                          <div
+                                            class="icon-location-2 text-light-1 text-20 pt-4"
+                                          ></div>
+                                          <div class="ml-10">
+                                            <div
+                                              class="text-15 lh-12 fw-500 js-search-option-target"
+                                            >
+                                              Paris
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div
+                                        class="-link d-block col-12 text-left rounded-4 px-20 py-15 js-search-option"
+                                        data-id="14"
+                                      >
+                                        <div class="d-flex align-items-center">
+                                          <div
+                                            class="icon-location-2 text-light-1 text-20 pt-4"
+                                          ></div>
+                                          <div class="ml-10">
+                                            <div
+                                              class="text-15 lh-12 fw-500 js-search-option-target"
+                                            >
+                                              Reykjavik
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div
+                                        class="-link d-block col-12 text-left rounded-4 px-20 py-15 js-search-option"
+                                        data-id="13"
+                                      >
+                                        <div class="d-flex align-items-center">
+                                          <div
+                                            class="icon-location-2 text-light-1 text-20 pt-4"
+                                          ></div>
+                                          <div class="ml-10">
+                                            <div
+                                              class="text-15 lh-12 fw-500 js-search-option-target"
+                                            >
+                                              Rome
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div
+                                        class="-link d-block col-12 text-left rounded-4 px-20 py-15 js-search-option"
+                                        data-id="6"
+                                      >
+                                        <div class="d-flex align-items-center">
+                                          <div
+                                            class="icon-location-2 text-light-1 text-20 pt-4"
+                                          ></div>
+                                          <div class="ml-10">
+                                            <div
+                                              class="text-15 lh-12 fw-500 js-search-option-target"
+                                            >
+                                              San Francisco
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div
+                                        class="-link d-block col-12 text-left rounded-4 px-20 py-15 js-search-option"
+                                        data-id="12"
+                                      >
+                                        <div class="d-flex align-items-center">
+                                          <div
+                                            class="icon-location-2 text-light-1 text-20 pt-4"
+                                          ></div>
+                                          <div class="ml-10">
+                                            <div
+                                              class="text-15 lh-12 fw-500 js-search-option-target"
+                                            >
+                                              Sydney
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div
+                                        class="-link d-block col-12 text-left rounded-4 px-20 py-15 js-search-option"
+                                        data-id="3"
+                                      >
+                                        <div class="d-flex align-items-center">
+                                          <div
+                                            class="icon-location-2 text-light-1 text-20 pt-4"
+                                          ></div>
+                                          <div class="ml-10">
+                                            <div
+                                              class="text-15 lh-12 fw-500 js-search-option-target"
+                                            >
+                                              United States
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div
+                                        class="-link d-block col-12 text-left rounded-4 px-20 py-15 js-search-option"
+                                        data-id="7"
+                                      >
+                                        <div class="d-flex align-items-center">
+                                          <div
+                                            class="icon-location-2 text-light-1 text-20 pt-4"
+                                          ></div>
+                                          <div class="ml-10">
+                                            <div
+                                              class="text-15 lh-12 fw-500 js-search-option-target"
+                                            >
+                                              Virginia
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div
+                              class="col-lg-3 align-self-center px-30 lg:py-20 lg:px-0"
+                            >
+                              <div
+                                class="searchMenu-date form-date-search-hotel position-relative item"
+                              >
+                                <div
+                                  class="date-wrapper"
+                                  data-x-dd-click="searchMenu-date"
+                                >
+                                  <h4 class="text-15 fw-500 ls-2 lh-16">
+                                    Depart
+                                  </h4>
+                                  <div
+                                    class="text-14 text-light-1 ls-2 lh-16 check-in-out-render"
+                                  >
+                                    <span
+                                      class="js-first-date render check-in-render"
+                                      >06/09/2023</span
+                                    >
+                                    -
+                                    <span
+                                      class="js-last-date render check-out-render"
+                                      >06/10/2023</span
+                                    >
+                                  </div>
+                                </div>
+                                <input
+                                  type="hidden"
+                                  class="check-in-input"
+                                  value="06/09/2023"
+                                  name="start"
+                                />
+                                <input
+                                  type="hidden"
+                                  class="check-out-input"
+                                  value="06/10/2023"
+                                  name="end"
+                                />
+                                <input
+                                  type="text"
+                                  class="check-in-out absolute invisible"
+                                  name="date"
+                                  value="2023-06-09 - 2023-06-10"
+                                />
+                              </div>
+                            </div>
+                            <div
+                              class="col-lg-3 align-self-center px-30 lg:py-20 lg:px-0"
+                            >
+                              <div
+                                class="searchMenu-guests js-form-dd form-select-seat-type item"
+                              >
+                                <div
+                                  data-x-dd-click="searchMenu-guests"
+                                  class="overflow-hidden seat-input"
+                                >
+                                  <h4 class="text-15 fw-500 ls-2 lh-16">
+                                    Travelers
+                                  </h4>
+                                  <div class="text-15 text-light-1 ls-2 lh-16">
+                                    <div class="render text-13">
+                                      <span class id="seat_type_vip_render">
+                                        <span class="one">0 Vip</span>
+                                        <span
+                                          class="d-none multi"
+                                          data-html=":count Vip"
+                                          >0Vip</span
+                                        >
+                                      </span>
+                                      <span class id="seat_type_eco_render">
+                                        <span class="one">0 Economy</span>
+                                        <span
+                                          class="d-none multi"
+                                          data-html=":count Economy"
+                                          >0Economy</span
+                                        >
+                                      </span>
+                                      <span class id="seat_type_premium_render">
+                                        <span class="one">0 Premium</span>
+                                        <span
+                                          class="d-none multi"
+                                          data-html=":count Premium"
+                                          >0Premium</span
+                                        >
+                                      </span>
+                                      <span
+                                        class
+                                        id="seat_type_business_render"
+                                      >
+                                        <span class="one">0 Business</span>
+                                        <span
+                                          class="d-none multi"
+                                          data-html=":count Business"
+                                          >0Business</span
+                                        >
+                                      </span>
+                                      <span
+                                        class
+                                        id="seat_type_fist_class_render"
+                                      >
+                                        <span class="one">0 First Class</span>
+                                        <span
+                                          class="d-none multi"
+                                          data-html=":count First Class"
+                                          >0First Class</span
+                                        >
+                                      </span>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div
+                                  class="searchMenu-guests__field select-seat-type-dropdown shadow-2"
+                                  data-x-dd="searchMenu-guests"
+                                  data-x-dd-toggle="-is-active"
+                                >
+                                  <div class="bg-white px-30 py-30 rounded-4">
+                                    <div
+                                      class="row y-gap-10 justify-between items-center"
+                                    >
+                                      <div class="col-auto">
+                                        <div class="text-15 fw-500">
+                                          Adults Vip
+                                        </div>
+                                      </div>
+                                      <div class="col-auto">
+                                        <div class="d-flex items-center">
+                                          <span
+                                            class="button -outline-blue-1 text-blue-1 size-38 rounded-4 btn-minus"
+                                            data-input="seat_type_vip"
+                                            data-input-attr="id"
+                                            ><i class="icon-minus text-12"></i
+                                          ></span>
+                                          <span
+                                            class="flex-center size-20 ml-15 mr-15 count-display"
+                                          >
+                                            <input
+                                              id="seat_type_vip"
+                                              type="number"
+                                              name="seat_type[vip]"
+                                              value="0"
+                                              min="0"
+                                            />
+                                          </span>
+                                          <span
+                                            class="button -outline-blue-1 text-blue-1 size-38 rounded-4 btn-add"
+                                            data-input="seat_type_vip"
+                                            data-input-attr="id"
+                                            ><i class="icon-plus text-12"></i
+                                          ></span>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div
+                                      class="row y-gap-10 justify-between items-center"
+                                    >
+                                      <div class="col-auto">
+                                        <div class="text-15 fw-500">
+                                          Adults Economy
+                                        </div>
+                                      </div>
+                                      <div class="col-auto">
+                                        <div class="d-flex items-center">
+                                          <span
+                                            class="button -outline-blue-1 text-blue-1 size-38 rounded-4 btn-minus"
+                                            data-input="seat_type_eco"
+                                            data-input-attr="id"
+                                            ><i class="icon-minus text-12"></i
+                                          ></span>
+                                          <span
+                                            class="flex-center size-20 ml-15 mr-15 count-display"
+                                          >
+                                            <input
+                                              id="seat_type_eco"
+                                              type="number"
+                                              name="seat_type[eco]"
+                                              value="0"
+                                              min="0"
+                                            />
+                                          </span>
+                                          <span
+                                            class="button -outline-blue-1 text-blue-1 size-38 rounded-4 btn-add"
+                                            data-input="seat_type_eco"
+                                            data-input-attr="id"
+                                            ><i class="icon-plus text-12"></i
+                                          ></span>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div
+                                      class="row y-gap-10 justify-between items-center"
+                                    >
+                                      <div class="col-auto">
+                                        <div class="text-15 fw-500">
+                                          Adults Premium
+                                        </div>
+                                      </div>
+                                      <div class="col-auto">
+                                        <div class="d-flex items-center">
+                                          <span
+                                            class="button -outline-blue-1 text-blue-1 size-38 rounded-4 btn-minus"
+                                            data-input="seat_type_premium"
+                                            data-input-attr="id"
+                                            ><i class="icon-minus text-12"></i
+                                          ></span>
+                                          <span
+                                            class="flex-center size-20 ml-15 mr-15 count-display"
+                                          >
+                                            <input
+                                              id="seat_type_premium"
+                                              type="number"
+                                              name="seat_type[premium]"
+                                              value="0"
+                                              min="0"
+                                            />
+                                          </span>
+                                          <span
+                                            class="button -outline-blue-1 text-blue-1 size-38 rounded-4 btn-add"
+                                            data-input="seat_type_premium"
+                                            data-input-attr="id"
+                                            ><i class="icon-plus text-12"></i
+                                          ></span>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div
+                                      class="row y-gap-10 justify-between items-center"
+                                    >
+                                      <div class="col-auto">
+                                        <div class="text-15 fw-500">
+                                          Adults Business
+                                        </div>
+                                      </div>
+                                      <div class="col-auto">
+                                        <div class="d-flex items-center">
+                                          <span
+                                            class="button -outline-blue-1 text-blue-1 size-38 rounded-4 btn-minus"
+                                            data-input="seat_type_business"
+                                            data-input-attr="id"
+                                            ><i class="icon-minus text-12"></i
+                                          ></span>
+                                          <span
+                                            class="flex-center size-20 ml-15 mr-15 count-display"
+                                          >
+                                            <input
+                                              id="seat_type_business"
+                                              type="number"
+                                              name="seat_type[business]"
+                                              value="0"
+                                              min="0"
+                                            />
+                                          </span>
+                                          <span
+                                            class="button -outline-blue-1 text-blue-1 size-38 rounded-4 btn-add"
+                                            data-input="seat_type_business"
+                                            data-input-attr="id"
+                                            ><i class="icon-plus text-12"></i
+                                          ></span>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div
+                                      class="row y-gap-10 justify-between items-center"
+                                    >
+                                      <div class="col-auto">
+                                        <div class="text-15 fw-500">
+                                          Adults First Class
+                                        </div>
+                                      </div>
+                                      <div class="col-auto">
+                                        <div class="d-flex items-center">
+                                          <span
+                                            class="button -outline-blue-1 text-blue-1 size-38 rounded-4 btn-minus"
+                                            data-input="seat_type_fist_class"
+                                            data-input-attr="id"
+                                            ><i class="icon-minus text-12"></i
+                                          ></span>
+                                          <span
+                                            class="flex-center size-20 ml-15 mr-15 count-display"
+                                          >
+                                            <input
+                                              id="seat_type_fist_class"
+                                              type="number"
+                                              name="seat_type[fist_class]"
+                                              value="0"
+                                              min="0"
+                                            />
+                                          </span>
+                                          <span
+                                            class="button -outline-blue-1 text-blue-1 size-38 rounded-4 btn-add"
+                                            data-input="seat_type_fist_class"
+                                            data-input-attr="id"
+                                            ><i class="icon-plus text-12"></i
+                                          ></span>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                         <div class="button-item">
                           <button
                             class="mainSearch__submit button -dark-1 py-15 h-60 col-12 rounded-100 bg-blue-1 text-white w-100"
@@ -3012,6 +3903,7 @@ Event
                             <span class="text-search">Search</span>
                           </button>
                         </div>
+                        
                       </form>
                     </div>
                   </div>
@@ -3048,7 +3940,7 @@ Event
                     <div class="citiesCard__image ratio ratio-3:4">
                       <img
                         src="#"
-                        data-src="https://gotrip.bookingcore.org/uploads/demo/location/location-3.jpg"
+                        data-src="./uploads/demo/location/location-3.jpg"
                         alt="Virginia"
                         class="js-lazy"
                       />
@@ -3060,21 +3952,21 @@ Event
                       <div class="citiesCard__top">
                         <div class="text-14 text-white">
                           <a
-                            href="https://gotrip.bookingcore.org/hotel?location_id=7"
+                            href="./hotel?location_id=7"
                             target="_blank"
                             class="d-inline-block me-2"
                           >
                             16 Hotels
                           </a>
                           <a
-                            href="https://gotrip.bookingcore.org/car?location_id=7"
+                            href="./car?location_id=7"
                             target="_blank"
                             class="d-inline-block me-2"
                           >
                             2 Cars
                           </a>
                           <a
-                            href="https://gotrip.bookingcore.org/tour?location_id=7"
+                            href="./tour?location_id=7"
                             target="_blank"
                             class="d-inline-block me-2"
                           >
@@ -3095,7 +3987,7 @@ Event
                     <div class="citiesCard__image ratio ratio-3:4">
                       <img
                         src="#"
-                        data-src="https://gotrip.bookingcore.org/uploads/demo/location/location-4.jpg"
+                        data-src="./uploads/demo/location/location-4.jpg"
                         alt="United States"
                         class="js-lazy"
                       />
@@ -3107,21 +3999,21 @@ Event
                       <div class="citiesCard__top">
                         <div class="text-14 text-white">
                           <a
-                            href="https://gotrip.bookingcore.org/car?location_id=3"
+                            href="./car?location_id=3"
                             target="_blank"
                             class="d-inline-block me-2"
                           >
                             4 Cars
                           </a>
                           <a
-                            href="https://gotrip.bookingcore.org/event?location_id=3"
+                            href="./event?location_id=3"
                             target="_blank"
                             class="d-inline-block me-2"
                           >
                             4 Events
                           </a>
                           <a
-                            href="https://gotrip.bookingcore.org/tour?location_id=3"
+                            href="./tour?location_id=3"
                             target="_blank"
                             class="d-inline-block me-2"
                           >
@@ -3142,7 +4034,7 @@ Event
                     <div class="citiesCard__image ratio ratio-3:4">
                       <img
                         src="#"
-                        data-src="https://gotrip.bookingcore.org/uploads/gotrip/location/4.png"
+                        data-src="./uploads/gotrip/location/4.png"
                         alt="Sydney"
                         class="js-lazy"
                       />
@@ -3154,14 +4046,14 @@ Event
                       <div class="citiesCard__top">
                         <div class="text-14 text-white">
                           <a
-                            href="https://gotrip.bookingcore.org/hotel?location_id=12"
+                            href="./hotel?location_id=12"
                             target="_blank"
                             class="d-inline-block me-2"
                           >
                             13 Hotels
                           </a>
                           <a
-                            href="https://gotrip.bookingcore.org/event?location_id=12"
+                            href="./event?location_id=12"
                             target="_blank"
                             class="d-inline-block me-2"
                           >
@@ -3182,7 +4074,7 @@ Event
                     <div class="citiesCard__image ratio ratio-3:4">
                       <img
                         src="#"
-                        data-src="https://gotrip.bookingcore.org/uploads/demo/location/location-2.jpg"
+                        data-src="./uploads/demo/location/location-2.jpg"
                         alt="San Francisco"
                         class="js-lazy"
                       />
@@ -3194,21 +4086,21 @@ Event
                       <div class="citiesCard__top">
                         <div class="text-14 text-white">
                           <a
-                            href="https://gotrip.bookingcore.org/hotel?location_id=6"
+                            href="./hotel?location_id=6"
                             target="_blank"
                             class="d-inline-block me-2"
                           >
                             9 Hotels
                           </a>
                           <a
-                            href="https://gotrip.bookingcore.org/car?location_id=6"
+                            href="./car?location_id=6"
                             target="_blank"
                             class="d-inline-block me-2"
                           >
                             2 Cars
                           </a>
                           <a
-                            href="https://gotrip.bookingcore.org/tour?location_id=6"
+                            href="./tour?location_id=6"
                             target="_blank"
                             class="d-inline-block me-2"
                           >
@@ -3229,7 +4121,7 @@ Event
                     <div class="citiesCard__image ratio ratio-3:4">
                       <img
                         src="#"
-                        data-src="https://gotrip.bookingcore.org/uploads/gotrip/location/5.png"
+                        data-src="./uploads/gotrip/location/5.png"
                         alt="Rome"
                         class="js-lazy"
                       />
@@ -3241,14 +4133,14 @@ Event
                       <div class="citiesCard__top">
                         <div class="text-14 text-white">
                           <a
-                            href="https://gotrip.bookingcore.org/hotel?location_id=13"
+                            href="./hotel?location_id=13"
                             target="_blank"
                             class="d-inline-block me-2"
                           >
                             8 Hotels
                           </a>
                           <a
-                            href="https://gotrip.bookingcore.org/tour?location_id=13"
+                            href="./tour?location_id=13"
                             target="_blank"
                             class="d-inline-block me-2"
                           >
@@ -3269,7 +4161,7 @@ Event
                     <div class="citiesCard__image ratio ratio-3:4">
                       <img
                         src="#"
-                        data-src="https://gotrip.bookingcore.org/uploads/gotrip/location/6.png"
+                        data-src="./uploads/gotrip/location/6.png"
                         alt="Reykjavik"
                         class="js-lazy"
                       />
@@ -3281,21 +4173,21 @@ Event
                       <div class="citiesCard__top">
                         <div class="text-14 text-white">
                           <a
-                            href="https://gotrip.bookingcore.org/hotel?location_id=14"
+                            href="./hotel?location_id=14"
                             target="_blank"
                             class="d-inline-block me-2"
                           >
                             7 Hotels
                           </a>
                           <a
-                            href="https://gotrip.bookingcore.org/event?location_id=14"
+                            href="./event?location_id=14"
                             target="_blank"
                             class="d-inline-block me-2"
                           >
                             2 Events
                           </a>
                           <a
-                            href="https://gotrip.bookingcore.org/tour?location_id=14"
+                            href="./tour?location_id=14"
                             target="_blank"
                             class="d-inline-block me-2"
                           >
@@ -3316,7 +4208,7 @@ Event
                     <div class="citiesCard__image ratio ratio-3:4">
                       <img
                         src="#"
-                        data-src="https://gotrip.bookingcore.org/uploads/demo/location/location-3.jpg"
+                        data-src="./uploads/demo/location/location-3.jpg"
                         alt="Paris"
                         class="js-lazy"
                       />
@@ -3328,21 +4220,21 @@ Event
                       <div class="citiesCard__top">
                         <div class="text-14 text-white">
                           <a
-                            href="https://gotrip.bookingcore.org/car?location_id=1"
+                            href="./car?location_id=1"
                             target="_blank"
                             class="d-inline-block me-2"
                           >
                             14 Cars
                           </a>
                           <a
-                            href="https://gotrip.bookingcore.org/event?location_id=1"
+                            href="./event?location_id=1"
                             target="_blank"
                             class="d-inline-block me-2"
                           >
                             2 Events
                           </a>
                           <a
-                            href="https://gotrip.bookingcore.org/tour?location_id=1"
+                            href="./tour?location_id=1"
                             target="_blank"
                             class="d-inline-block me-2"
                           >
@@ -3363,7 +4255,7 @@ Event
                     <div class="citiesCard__image ratio ratio-3:4">
                       <img
                         src="#"
-                        data-src="https://gotrip.bookingcore.org/uploads/gotrip/location/1.png"
+                        data-src="./uploads/gotrip/location/1.png"
                         alt="New York"
                         class="js-lazy"
                       />
@@ -3375,14 +4267,14 @@ Event
                       <div class="citiesCard__top">
                         <div class="text-14 text-white">
                           <a
-                            href="https://gotrip.bookingcore.org/hotel?location_id=9"
+                            href="./hotel?location_id=9"
                             target="_blank"
                             class="d-inline-block me-2"
                           >
                             12 Hotels
                           </a>
                           <a
-                            href="https://gotrip.bookingcore.org/tour?location_id=9"
+                            href="./tour?location_id=9"
                             target="_blank"
                             class="d-inline-block me-2"
                           >
@@ -3403,7 +4295,7 @@ Event
                     <div class="citiesCard__image ratio ratio-3:4">
                       <img
                         src="#"
-                        data-src="https://gotrip.bookingcore.org/uploads/demo/location/location-1.jpg"
+                        data-src="./uploads/demo/location/location-1.jpg"
                         alt="New Jersey"
                         class="js-lazy"
                       />
@@ -3415,21 +4307,21 @@ Event
                       <div class="citiesCard__top">
                         <div class="text-14 text-white">
                           <a
-                            href="https://gotrip.bookingcore.org/car?location_id=5"
+                            href="./car?location_id=5"
                             target="_blank"
                             class="d-inline-block me-2"
                           >
                             2 Cars
                           </a>
                           <a
-                            href="https://gotrip.bookingcore.org/event?location_id=5"
+                            href="./event?location_id=5"
                             target="_blank"
                             class="d-inline-block me-2"
                           >
                             4 Events
                           </a>
                           <a
-                            href="https://gotrip.bookingcore.org/tour?location_id=5"
+                            href="./tour?location_id=5"
                             target="_blank"
                             class="d-inline-block me-2"
                           >
@@ -3450,7 +4342,7 @@ Event
                     <div class="citiesCard__image ratio ratio-3:4">
                       <img
                         src="#"
-                        data-src="https://gotrip.bookingcore.org/uploads/demo/location/location-5.jpg"
+                        data-src="./uploads/demo/location/location-5.jpg"
                         alt="Los Angeles"
                         class="js-lazy"
                       />
@@ -3462,14 +4354,14 @@ Event
                       <div class="citiesCard__top">
                         <div class="text-14 text-white">
                           <a
-                            href="https://gotrip.bookingcore.org/event?location_id=4"
+                            href="./event?location_id=4"
                             target="_blank"
                             class="d-inline-block me-2"
                           >
                             2 Events
                           </a>
                           <a
-                            href="https://gotrip.bookingcore.org/tour?location_id=4"
+                            href="./tour?location_id=4"
                             target="_blank"
                             class="d-inline-block me-2"
                           >
@@ -3511,7 +4403,7 @@ Event
                     <img
                       class="img-ratio js-lazy"
                       src="#"
-                      data-src="https://gotrip.bookingcore.org/uploads/gotrip/general/offer-1.png"
+                      data-src="./uploads/gotrip/general/offer-1.png"
                       alt="image"
                     />
                   </div>
@@ -3535,7 +4427,7 @@ Event
                     <img
                       class="img-ratio js-lazy"
                       src="#"
-                      data-src="https://gotrip.bookingcore.org/uploads/gotrip/general/offer-2.png"
+                      data-src="./uploads/gotrip/general/offer-2.png"
                       alt="image"
                     />
                   </div>
@@ -3588,12 +4480,12 @@ Event
                     <div class="hotelsCard__image">
                       <div class="cardImage ratio ratio-1:1">
                         <a
-                          href="https://gotrip.bookingcore.org/hotel/crowne-plaza-hotel-6"
+                          href="./hotel/crowne-plaza-hotel-6"
                         >
                           <div class="cardImage__content">
                             <img
                               class="img-responsive rounded-4 col-12 js-lazy lazy"
-                              data-src="https://gotrip.bookingcore.org/uploads/gotrip/hotel/1.png"
+                              data-src="./uploads/gotrip/hotel/1.png"
                               alt="Crowne Plaza Hotel"
                             />
                           </div>
@@ -3620,7 +4512,7 @@ Event
                       >
                         <a
                           class="text-dark-1-i"
-                          href="https://gotrip.bookingcore.org/hotel/crowne-plaza-hotel-6"
+                          href="./hotel/crowne-plaza-hotel-6"
                         >
                           <span>Crowne Plaza Hotel</span></a
                         >
@@ -3660,12 +4552,12 @@ Event
                     <div class="hotelsCard__image">
                       <div class="cardImage ratio ratio-1:1">
                         <a
-                          href="https://gotrip.bookingcore.org/hotel/parian-holiday-villas-5"
+                          href="./hotel/parian-holiday-villas-5"
                         >
                           <div class="cardImage__content">
                             <img
                               class="img-responsive rounded-4 col-12 js-lazy lazy"
-                              data-src="https://gotrip.bookingcore.org/uploads/gotrip/hotel/1.png"
+                              data-src="./uploads/gotrip/hotel/1.png"
                               alt="Parian Holiday Villas"
                             />
                           </div>
@@ -3692,7 +4584,7 @@ Event
                       >
                         <a
                           class="text-dark-1-i"
-                          href="https://gotrip.bookingcore.org/hotel/parian-holiday-villas-5"
+                          href="./hotel/parian-holiday-villas-5"
                         >
                           <span>Parian Holiday Villas</span></a
                         >
@@ -3732,12 +4624,12 @@ Event
                     <div class="hotelsCard__image">
                       <div class="cardImage ratio ratio-1:1">
                         <a
-                          href="https://gotrip.bookingcore.org/hotel/castello-casole-hotel-12"
+                          href="./hotel/castello-casole-hotel-12"
                         >
                           <div class="cardImage__content">
                             <img
                               class="img-responsive rounded-4 col-12 js-lazy lazy"
-                              data-src="https://gotrip.bookingcore.org/uploads/gotrip/hotel/4.png"
+                              data-src="./uploads/gotrip/hotel/4.png"
                               alt="Castello Casole Hotel"
                             />
                           </div>
@@ -3764,7 +4656,7 @@ Event
                       >
                         <a
                           class="text-dark-1-i"
-                          href="https://gotrip.bookingcore.org/hotel/castello-casole-hotel-12"
+                          href="./hotel/castello-casole-hotel-12"
                         >
                           <span>Castello Casole Hotel</span></a
                         >
@@ -3806,12 +4698,12 @@ Event
                     <div class="hotelsCard__image">
                       <div class="cardImage ratio ratio-1:1">
                         <a
-                          href="https://gotrip.bookingcore.org/hotel/castello-casole-hotel-11"
+                          href="./hotel/castello-casole-hotel-11"
                         >
                           <div class="cardImage__content">
                             <img
                               class="img-responsive rounded-4 col-12 js-lazy lazy"
-                              data-src="https://gotrip.bookingcore.org/uploads/gotrip/hotel/4.png"
+                              data-src="./uploads/gotrip/hotel/4.png"
                               alt="Castello Casole Hotel"
                             />
                           </div>
@@ -3838,7 +4730,7 @@ Event
                       >
                         <a
                           class="text-dark-1-i"
-                          href="https://gotrip.bookingcore.org/hotel/castello-casole-hotel-11"
+                          href="./hotel/castello-casole-hotel-11"
                         >
                           <span>Castello Casole Hotel</span></a
                         >
@@ -3878,12 +4770,12 @@ Event
                     <div class="hotelsCard__image">
                       <div class="cardImage ratio ratio-1:1">
                         <a
-                          href="https://gotrip.bookingcore.org/hotel/hotel-stanford-8"
+                          href="./hotel/hotel-stanford-8"
                         >
                           <div class="cardImage__content">
                             <img
                               class="img-responsive rounded-4 col-12 js-lazy lazy"
-                              data-src="https://gotrip.bookingcore.org/uploads/gotrip/hotel/7.png"
+                              data-src="./uploads/gotrip/hotel/7.png"
                               alt="Hotel Stanford"
                             />
                           </div>
@@ -3910,7 +4802,7 @@ Event
                       >
                         <a
                           class="text-dark-1-i"
-                          href="https://gotrip.bookingcore.org/hotel/hotel-stanford-8"
+                          href="./hotel/hotel-stanford-8"
                         >
                           <span>Hotel Stanford</span></a
                         >
@@ -3950,12 +4842,12 @@ Event
                     <div class="hotelsCard__image">
                       <div class="cardImage ratio ratio-1:1">
                         <a
-                          href="https://gotrip.bookingcore.org/hotel/studio-allston-hotel-7"
+                          href="./hotel/studio-allston-hotel-7"
                         >
                           <div class="cardImage__content">
                             <img
                               class="img-responsive rounded-4 col-12 js-lazy lazy"
-                              data-src="https://gotrip.bookingcore.org/uploads/gotrip/hotel/3.png"
+                              data-src="./uploads/gotrip/hotel/3.png"
                               alt="Studio Allston Hotel"
                             />
                           </div>
@@ -3982,7 +4874,7 @@ Event
                       >
                         <a
                           class="text-dark-1-i"
-                          href="https://gotrip.bookingcore.org/hotel/studio-allston-hotel-7"
+                          href="./hotel/studio-allston-hotel-7"
                         >
                           <span>Studio Allston Hotel</span></a
                         >
@@ -4022,12 +4914,12 @@ Event
                     <div class="hotelsCard__image">
                       <div class="cardImage ratio ratio-1:1">
                         <a
-                          href="https://gotrip.bookingcore.org/hotel/envision-hotel-boston-5"
+                          href="./hotel/envision-hotel-boston-5"
                         >
                           <div class="cardImage__content">
                             <img
                               class="img-responsive rounded-4 col-12 js-lazy lazy"
-                              data-src="https://gotrip.bookingcore.org/uploads/gotrip/hotel/2.png"
+                              data-src="./uploads/gotrip/hotel/2.png"
                               alt="EnVision Hotel Boston"
                             />
                           </div>
@@ -4054,7 +4946,7 @@ Event
                       >
                         <a
                           class="text-dark-1-i"
-                          href="https://gotrip.bookingcore.org/hotel/envision-hotel-boston-5"
+                          href="./hotel/envision-hotel-boston-5"
                         >
                           <span>EnVision Hotel Boston</span></a
                         >
@@ -4094,12 +4986,12 @@ Event
                     <div class="hotelsCard__image">
                       <div class="cardImage ratio ratio-1:1">
                         <a
-                          href="https://gotrip.bookingcore.org/hotel/hotel-wbf-hommachi-5"
+                          href="./hotel/hotel-wbf-hommachi-5"
                         >
                           <div class="cardImage__content">
                             <img
                               class="img-responsive rounded-4 col-12 js-lazy lazy"
-                              data-src="https://gotrip.bookingcore.org/uploads/gotrip/hotel/2.png"
+                              data-src="./uploads/gotrip/hotel/2.png"
                               alt="Hotel WBF Hommachi"
                             />
                           </div>
@@ -4126,7 +5018,7 @@ Event
                       >
                         <a
                           class="text-dark-1-i"
-                          href="https://gotrip.bookingcore.org/hotel/hotel-wbf-hommachi-5"
+                          href="./hotel/hotel-wbf-hommachi-5"
                         >
                           <span>Hotel WBF Hommachi</span></a
                         >
@@ -4206,7 +5098,7 @@ Event
                 <div class="featureIcon -type-1">
                   <div class="d-flex justify-center">
                     <img
-                      src="https://gotrip.bookingcore.org/uploads/gotrip/general/feature-item-2.png"
+                      src="./uploads/gotrip/general/feature-item-2.png"
                       alt="Easy &amp; Quick Booking"
                     />
                   </div>
@@ -4222,7 +5114,7 @@ Event
                 <div class="featureIcon -type-1">
                   <div class="d-flex justify-center">
                     <img
-                      src="https://gotrip.bookingcore.org/uploads/gotrip/general/feature-item-3.png"
+                      src="./uploads/gotrip/general/feature-item-3.png"
                       alt="Customer Care 24/7"
                     />
                   </div>
@@ -4276,7 +5168,7 @@ Event
                         <div class="col-auto">
                           <img
                             src="#"
-                            data-src="https://gotrip.bookingcore.org/uploads/gotrip/general/avatar-1.png"
+                            data-src="./uploads/gotrip/general/avatar-1.png"
                             alt="Annette Black"
                             class="js-lazy"
                             style="border-radius: 50%"
@@ -4300,7 +5192,7 @@ Event
                         <div class="col-auto">
                           <img
                             src="#"
-                            data-src="https://gotrip.bookingcore.org/uploads/gotrip/general/avatar-1.png"
+                            data-src="./uploads/gotrip/general/avatar-1.png"
                             alt="Annette Black"
                             class="js-lazy"
                             style="border-radius: 50%"
@@ -4324,7 +5216,7 @@ Event
                         <div class="col-auto">
                           <img
                             src="#"
-                            data-src="https://gotrip.bookingcore.org/uploads/gotrip/general/avatar-1.png"
+                            data-src="./uploads/gotrip/general/avatar-1.png"
                             alt="Annette Black"
                             class="js-lazy"
                             style="border-radius: 50%"
@@ -4382,14 +5274,14 @@ Event
               >
                 <div class="item-news">
                   <a
-                    href="https://gotrip.bookingcore.org/news/10-european-ski-destinations-you-should-visit-this-winter"
+                    href="./news/10-european-ski-destinations-you-should-visit-this-winter"
                     class="blogCard -type-1 d-block"
                   >
                     <div class="blogCard__image">
                       <div class="ratio ratio-4:3 rounded-4 rounded-8">
                         <img
                           class="img-ratio js-lazy lazy"
-                          data-src="https://gotrip.bookingcore.org/uploads/gotrip/news/news-1.png"
+                          data-src="./uploads/gotrip/news/news-1.png"
                           alt="10 European ski destinations you should visit this winter"
                         />
                       </div>
@@ -4412,14 +5304,14 @@ Event
               >
                 <div class="item-news">
                   <a
-                    href="https://gotrip.bookingcore.org/news/booking-travel-during-corona-good-advice-in-an-uncertain-time"
+                    href="./news/booking-travel-during-corona-good-advice-in-an-uncertain-time"
                     class="blogCard -type-1 d-block"
                   >
                     <div class="blogCard__image">
                       <div class="ratio ratio-4:3 rounded-4 rounded-8">
                         <img
                           class="img-ratio js-lazy lazy"
-                          data-src="https://gotrip.bookingcore.org/uploads/gotrip/news/news-2.png"
+                          data-src="./uploads/gotrip/news/news-2.png"
                           alt="Booking travel during Corona: good advice in an uncertain time"
                         />
                       </div>
@@ -4442,14 +5334,14 @@ Event
               >
                 <div class="item-news">
                   <a
-                    href="https://gotrip.bookingcore.org/news/where-can-i-go-5-amazing-countries-that-are-open-right-now"
+                    href="./news/where-can-i-go-5-amazing-countries-that-are-open-right-now"
                     class="blogCard -type-1 d-block"
                   >
                     <div class="blogCard__image">
                       <div class="ratio ratio-4:3 rounded-4 rounded-8">
                         <img
                           class="img-ratio js-lazy lazy"
-                          data-src="https://gotrip.bookingcore.org/uploads/gotrip/news/news-3.png"
+                          data-src="/uploads/gotrip/news/news-3.png"
                           alt="Where can I go? 5 amazing countries that are open right now"
                         />
                       </div>
@@ -4488,22 +5380,13 @@ Event
                     <div class="d-block">
                       <div class="text-15 fw-500">Reykjavik</div>
                       <div class="text-14 text-light-1">
-                        <a
-                          href="https://gotrip.bookingcore.org/hotel?location_id=14"
-                          target="_blank"
-                        >
+                        <a href="/hotel?location_id=14" target="_blank">
                           <span class="me-2">7 Hotels</span>
                         </a>
-                        <a
-                          href="https://gotrip.bookingcore.org/event?location_id=14"
-                          target="_blank"
-                        >
+                        <a href="/event?location_id=14" target="_blank">
                           <span class="me-2">2 Events</span>
                         </a>
-                        <a
-                          href="https://gotrip.bookingcore.org/tour?location_id=14"
-                          target="_blank"
-                        >
+                        <a href="/tour?location_id=14" target="_blank">
                           <span class="me-2">3 Tours</span>
                         </a>
                       </div>
@@ -4513,16 +5396,10 @@ Event
                     <div class="d-block">
                       <div class="text-15 fw-500">Rome</div>
                       <div class="text-14 text-light-1">
-                        <a
-                          href="https://gotrip.bookingcore.org/hotel?location_id=13"
-                          target="_blank"
-                        >
+                        <a href="/hotel?location_id=13" target="_blank">
                           <span class="me-2">8 Hotels</span>
                         </a>
-                        <a
-                          href="https://gotrip.bookingcore.org/tour?location_id=13"
-                          target="_blank"
-                        >
+                        <a href="/tour?location_id=13" target="_blank">
                           <span class="me-2">1 Tour</span>
                         </a>
                       </div>
@@ -4532,16 +5409,10 @@ Event
                     <div class="d-block">
                       <div class="text-15 fw-500">Sydney</div>
                       <div class="text-14 text-light-1">
-                        <a
-                          href="https://gotrip.bookingcore.org/hotel?location_id=12"
-                          target="_blank"
-                        >
+                        <a href="/hotel?location_id=12" target="_blank">
                           <span class="me-2">13 Hotels</span>
                         </a>
-                        <a
-                          href="https://gotrip.bookingcore.org/event?location_id=12"
-                          target="_blank"
-                        >
+                        <a href="/event?location_id=12" target="_blank">
                           <span class="me-2">3 Events</span>
                         </a>
                       </div>
@@ -4551,22 +5422,13 @@ Event
                     <div class="d-block">
                       <div class="text-15 fw-500">Barcelona</div>
                       <div class="text-14 text-light-1">
-                        <a
-                          href="https://gotrip.bookingcore.org/hotel?location_id=11"
-                          target="_blank"
-                        >
+                        <a href="/hotel?location_id=11" target="_blank">
                           <span class="me-2">7 Hotels</span>
                         </a>
-                        <a
-                          href="https://gotrip.bookingcore.org/event?location_id=11"
-                          target="_blank"
-                        >
+                        <a href="/event?location_id=11" target="_blank">
                           <span class="me-2">1 Event</span>
                         </a>
-                        <a
-                          href="https://gotrip.bookingcore.org/tour?location_id=11"
-                          target="_blank"
-                        >
+                        <a href="/tour?location_id=11" target="_blank">
                           <span class="me-2">1 Tour</span>
                         </a>
                       </div>
@@ -4576,22 +5438,13 @@ Event
                     <div class="d-block">
                       <div class="text-15 fw-500">London</div>
                       <div class="text-14 text-light-1">
-                        <a
-                          href="https://gotrip.bookingcore.org/hotel?location_id=10"
-                          target="_blank"
-                        >
+                        <a href="/hotel?location_id=10" target="_blank">
                           <span class="me-2">6 Hotels</span>
                         </a>
-                        <a
-                          href="https://gotrip.bookingcore.org/event?location_id=10"
-                          target="_blank"
-                        >
+                        <a href="/event?location_id=10" target="_blank">
                           <span class="me-2">2 Events</span>
                         </a>
-                        <a
-                          href="https://gotrip.bookingcore.org/tour?location_id=10"
-                          target="_blank"
-                        >
+                        <a href="/tour?location_id=10" target="_blank">
                           <span class="me-2">4 Tours</span>
                         </a>
                       </div>
@@ -4601,16 +5454,10 @@ Event
                     <div class="d-block">
                       <div class="text-15 fw-500">New York</div>
                       <div class="text-14 text-light-1">
-                        <a
-                          href="https://gotrip.bookingcore.org/hotel?location_id=9"
-                          target="_blank"
-                        >
+                        <a href="/hotel?location_id=9" target="_blank">
                           <span class="me-2">12 Hotels</span>
                         </a>
-                        <a
-                          href="https://gotrip.bookingcore.org/tour?location_id=9"
-                          target="_blank"
-                        >
+                        <a href="/tour?location_id=9" target="_blank">
                           <span class="me-2">3 Tours</span>
                         </a>
                       </div>
@@ -4620,28 +5467,16 @@ Event
                     <div class="d-block">
                       <div class="text-15 fw-500">Germany</div>
                       <div class="text-14 text-light-1">
-                        <a
-                          href="https://gotrip.bookingcore.org/hotel?location_id=8"
-                          target="_blank"
-                        >
+                        <a href="/hotel?location_id=8" target="_blank">
                           <span class="me-2">8 Hotels</span>
                         </a>
-                        <a
-                          href="https://gotrip.bookingcore.org/car?location_id=8"
-                          target="_blank"
-                        >
+                        <a href="/car?location_id=8" target="_blank">
                           <span class="me-2">2 Cars</span>
                         </a>
-                        <a
-                          href="https://gotrip.bookingcore.org/event?location_id=8"
-                          target="_blank"
-                        >
+                        <a href="/event?location_id=8" target="_blank">
                           <span class="me-2">2 Events</span>
                         </a>
-                        <a
-                          href="https://gotrip.bookingcore.org/tour?location_id=8"
-                          target="_blank"
-                        >
+                        <a href="/tour?location_id=8" target="_blank">
                           <span class="me-2">5 Tours</span>
                         </a>
                       </div>
@@ -4651,22 +5486,13 @@ Event
                     <div class="d-block">
                       <div class="text-15 fw-500">Virginia</div>
                       <div class="text-14 text-light-1">
-                        <a
-                          href="https://gotrip.bookingcore.org/hotel?location_id=7"
-                          target="_blank"
-                        >
+                        <a href="/hotel?location_id=7" target="_blank">
                           <span class="me-2">16 Hotels</span>
                         </a>
-                        <a
-                          href="https://gotrip.bookingcore.org/car?location_id=7"
-                          target="_blank"
-                        >
+                        <a href="/car?location_id=7" target="_blank">
                           <span class="me-2">2 Cars</span>
                         </a>
-                        <a
-                          href="https://gotrip.bookingcore.org/tour?location_id=7"
-                          target="_blank"
-                        >
+                        <a href="/tour?location_id=7" target="_blank">
                           <span class="me-2">3 Tours</span>
                         </a>
                       </div>
@@ -4676,22 +5502,13 @@ Event
                     <div class="d-block">
                       <div class="text-15 fw-500">San Francisco</div>
                       <div class="text-14 text-light-1">
-                        <a
-                          href="https://gotrip.bookingcore.org/hotel?location_id=6"
-                          target="_blank"
-                        >
+                        <a href="/hotel?location_id=6" target="_blank">
                           <span class="me-2">9 Hotels</span>
                         </a>
-                        <a
-                          href="https://gotrip.bookingcore.org/car?location_id=6"
-                          target="_blank"
-                        >
+                        <a href="/car?location_id=6" target="_blank">
                           <span class="me-2">2 Cars</span>
                         </a>
-                        <a
-                          href="https://gotrip.bookingcore.org/tour?location_id=6"
-                          target="_blank"
-                        >
+                        <a href="/tour?location_id=6" target="_blank">
                           <span class="me-2">2 Tours</span>
                         </a>
                       </div>
@@ -4701,22 +5518,13 @@ Event
                     <div class="d-block">
                       <div class="text-15 fw-500">New Jersey</div>
                       <div class="text-14 text-light-1">
-                        <a
-                          href="https://gotrip.bookingcore.org/car?location_id=5"
-                          target="_blank"
-                        >
+                        <a href="/car?location_id=5" target="_blank">
                           <span class="me-2">2 Cars</span>
                         </a>
-                        <a
-                          href="https://gotrip.bookingcore.org/event?location_id=5"
-                          target="_blank"
-                        >
+                        <a href="/event?location_id=5" target="_blank">
                           <span class="me-2">4 Events</span>
                         </a>
-                        <a
-                          href="https://gotrip.bookingcore.org/tour?location_id=5"
-                          target="_blank"
-                        >
+                        <a href="/tour?location_id=5" target="_blank">
                           <span class="me-2">3 Tours</span>
                         </a>
                       </div>
@@ -4726,16 +5534,10 @@ Event
                     <div class="d-block">
                       <div class="text-15 fw-500">Los Angeles</div>
                       <div class="text-14 text-light-1">
-                        <a
-                          href="https://gotrip.bookingcore.org/event?location_id=4"
-                          target="_blank"
-                        >
+                        <a href="/event?location_id=4" target="_blank">
                           <span class="me-2">2 Events</span>
                         </a>
-                        <a
-                          href="https://gotrip.bookingcore.org/tour?location_id=4"
-                          target="_blank"
-                        >
+                        <a href="/tour?location_id=4" target="_blank">
                           <span class="me-2">3 Tours</span>
                         </a>
                       </div>
@@ -4745,22 +5547,13 @@ Event
                     <div class="d-block">
                       <div class="text-15 fw-500">United States</div>
                       <div class="text-14 text-light-1">
-                        <a
-                          href="https://gotrip.bookingcore.org/car?location_id=3"
-                          target="_blank"
-                        >
+                        <a href="/car?location_id=3" target="_blank">
                           <span class="me-2">4 Cars</span>
                         </a>
-                        <a
-                          href="https://gotrip.bookingcore.org/event?location_id=3"
-                          target="_blank"
-                        >
+                        <a href="/event?location_id=3" target="_blank">
                           <span class="me-2">4 Events</span>
                         </a>
-                        <a
-                          href="https://gotrip.bookingcore.org/tour?location_id=3"
-                          target="_blank"
-                        >
+                        <a href="/tour?location_id=3" target="_blank">
                           <span class="me-2">2 Tours</span>
                         </a>
                       </div>
@@ -4770,16 +5563,10 @@ Event
                     <div class="d-block">
                       <div class="text-15 fw-500">California</div>
                       <div class="text-14 text-light-1">
-                        <a
-                          href="https://gotrip.bookingcore.org/event?location_id=2"
-                          target="_blank"
-                        >
+                        <a href="/event?location_id=2" target="_blank">
                           <span class="me-2">2 Events</span>
                         </a>
-                        <a
-                          href="https://gotrip.bookingcore.org/tour?location_id=2"
-                          target="_blank"
-                        >
+                        <a href="/tour?location_id=2" target="_blank">
                           <span class="me-2">2 Tours</span>
                         </a>
                       </div>
@@ -4789,22 +5576,13 @@ Event
                     <div class="d-block">
                       <div class="text-15 fw-500">Paris</div>
                       <div class="text-14 text-light-1">
-                        <a
-                          href="https://gotrip.bookingcore.org/car?location_id=1"
-                          target="_blank"
-                        >
+                        <a href="/car?location_id=1" target="_blank">
                           <span class="me-2">14 Cars</span>
                         </a>
-                        <a
-                          href="https://gotrip.bookingcore.org/event?location_id=1"
-                          target="_blank"
-                        >
+                        <a href="/event?location_id=1" target="_blank">
                           <span class="me-2">2 Events</span>
                         </a>
-                        <a
-                          href="https://gotrip.bookingcore.org/tour?location_id=1"
-                          target="_blank"
-                        >
+                        <a href="/tour?location_id=1" target="_blank">
                           <span class="me-2">1 Tour</span>
                         </a>
                       </div>
@@ -4866,208 +5644,98 @@ Event
         </div>
       </section>
       <div class="footer -type-1 normal">
-        <div class="container">
-          <div class="footer_one pt-60 pb-60">
-            <div class="row y-gap-40 justify-between xl:justify-start">
-              <div class="col-xl-2 col-lg-3 col-sm-6">
-                <h5 class="text-16 fw-500 mb-30">Contact Us</h5>
-                <div class="mt-30">
-                  <div class="text-14 mt-30">Toll Free Customer Care</div>
-                  <a href="#" class="text-18 fw-500 text-blue-1 mt-5"
-                    >+(1) 123 456 7890</a
-                  >
-                </div>
-                <div class="mt-35">
-                  <div class="text-14 mt-30">Need live support?</div>
-                  <a href="#" class="text-18 fw-500 text-blue-1 mt-5"
-                    ><span
-                      class="__cf_email__"
-                      data-cfemail="2b43426b4c445f59425b05484446"
-                      >[email&#160;protected]</span
-                    ></a
-                  >
-                </div>
-              </div>
-              <div class="col-xl-2 col-lg-3 col-sm-6">
-                <h5 class="text-16 fw-500 mb-30">Company</h5>
-                <div class="d-flex y-gap-10 flex-column">
-                  <a href="#">About Us</a>
-                  <a href="#">Careers</a>
-                  <a href="#">Blog</a>
-                  <a href="#">Press</a>
-                  <a href="#">Gift Cards</a>
-                  <a href="#">Magazine</a>
-                </div>
-              </div>
-              <div class="col-xl-2 col-lg-3 col-sm-6">
-                <h5 class="text-16 fw-500 mb-30">Support</h5>
-                <div class="d-flex y-gap-10 flex-column">
-                  <a href="#">Contact</a>
-                  <a href="#">Legal Notice</a>
-                  <a href="#">Privacy Policy</a>
-                  <a href="#">Terms and Conditions</a>
-                  <a href="#">Sitemap</a>
-                </div>
-              </div>
-              <div class="col-xl-2 col-lg-3 col-sm-6">
-                <h5 class="text-16 fw-500 mb-30">Other Services</h5>
-                <div class="d-flex y-gap-10 flex-column">
-                  <a href="#">Car hire</a>
-                  <a href="#">Activity Finder</a>
-                  <a href="#">Tour List</a>
-                  <a href="#">Flight finder</a>
-                  <a href="#">Cruise Ticket</a>
-                  <a href="#">Holiday Rental</a>
-                  <a href="#">Travel Agents</a>
-                </div>
-              </div>
-              <div class="col-xl-2 col-lg-3 col-sm-6">
-                <h5 class="text-16 fw-500 mb-30">Mobile</h5>
-                <div
-                  class="d-flex items-center px-20 py-10 rounded-4 border-light"
-                >
-                  <div class="icon-apple text-24"></div>
-                  <div class="ml-20">
-                    <div class="text-14 text-light-1">Download on the</div>
-                    <div class="text-15 lh-1 fw-500">Apple Store</div>
-                  </div>
-                </div>
-                <div
-                  class="d-flex items-center px-20 py-10 rounded-4 border-light mt-20"
-                >
-                  <div class="icon-play-market text-24"></div>
-                  <div class="ml-20">
-                    <div class="text-14 text-light-1">Get in on</div>
-                    <div class="text-15 lh-1 fw-500">Google Play</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <section class="footer_middle_area py-20 border-top-light">
-            <div class="row justify-between items-center y-gap-10">
-              <div class="col-auto">Copyright © 2023 by BookingPortal</div>
-              <div class="col-auto">
-                <div class="row y-gap-10 items-center">
-                  <div class="col-auto">
-                    <div class="d-flex items-center">
-                      <div class="menu-footer">
-                        <div class="mobile-overlay"></div>
-                        <div class="header-menu__content">
-                          <div class="menu js-navList">
-                            <ul class="menu__nav -is-active">
-                              <li
-                                class="currency-dropdown menu-item-has-children"
-                              >
-                                <a href="#" class="is_login">
-                                  <span class="mr-10">USD</span>
-                                  <i class="icon icon-chevron-sm-down"></i>
-                                </a>
-                                <ul class="subnav">
-                                  <li>
-                                    <a
-                                      href="https://gotrip.bookingcore.org?set_currency=eur"
-                                      class="is_login dropdown-item"
-                                    >
-                                      EUR
-                                    </a>
-                                  </li>
-                                  <li>
-                                    <a
-                                      href="https://gotrip.bookingcore.org?set_currency=jpy"
-                                      class="is_login dropdown-item"
-                                    >
-                                      JPY
-                                    </a>
-                                  </li>
-                                </ul>
-                              </li>
-                              <li
-                                class="language-dropdown menu-item-has-children"
-                              >
-                                <a href="#" class="is_login">
-                                  <span class="mr-10">
-                                    <span class="flag-icon flag-icon-gb"></span>
-                                    English
-                                  </span>
-                                  <i class="icon icon-chevron-sm-down"></i>
-                                </a>
-                                <ul class="subnav">
-                                  <li>
-                                    <a
-                                      href="https://gotrip.bookingcore.org?set_lang=ja"
-                                      class="is_login dropdown-item"
-                                      style="justify-content: flex-start"
-                                    >
-                                      <span
-                                        class="flag-icon flag-icon-jp"
-                                      ></span>
-                                      Japanese
-                                    </a>
-                                  </li>
-                                  <li>
-                                    <a
-                                      href="https://gotrip.bookingcore.org?set_lang=egy"
-                                      class="is_login dropdown-item"
-                                      style="justify-content: flex-start"
-                                    >
-                                      <span
-                                        class="flag-icon flag-icon-eg"
-                                      ></span>
-                                      Egyptian
-                                    </a>
-                                  </li>
-                                  <li>
-                                    <a
-                                      href="https://gotrip.bookingcore.org?set_lang=es_MX"
-                                      class="is_login dropdown-item"
-                                      style="justify-content: flex-start"
-                                    >
-                                      <span
-                                        class="flag-icon flag-icon-mx"
-                                      ></span>
-                                      Mexico
-                                    </a>
-                                  </li>
-                                  <li>
-                                    <a
-                                      href="https://gotrip.bookingcore.org?set_lang=tr"
-                                      class="is_login dropdown-item"
-                                      style="justify-content: flex-start"
-                                    >
-                                      <span
-                                        class="flag-icon flag-icon-tr"
-                                      ></span>
-                                      Türkçe
-                                    </a>
-                                  </li>
-                                  <li>
-                                    <a
-                                      href="https://gotrip.bookingcore.org?set_lang=he"
-                                      class="is_login dropdown-item"
-                                      style="justify-content: flex-start"
-                                    >
-                                      <span
-                                        class="flag-icon flag-icon-Israel"
-                                      ></span>
-                                      Hebrew
-                                    </a>
-                                  </li>
-                                </ul>
-                              </li>
-                            </ul>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-auto">BookingPortal</div>
-                </div>
-              </div>
-            </div>
-          </section>
-        </div>
-      </div>
+				<div class="container">
+					<div class="footer_one pt-60 pb-60">
+						<div class="row y-gap-40 justify-between xl:justify-start">
+							<div class="col-xl-2 col-lg-3 col-sm-6">
+								<h5 class="text-16 fw-500 mb-30">Contact Us</h5>
+								<div class="mt-35">
+									<div class="text-14 mt-30">Need live support?</div>
+									<a href="#" class="text-18 fw-500 text-blue-1 mt-5">admin@mail.com</a>
+								</div>
+							</div>
+							<div class="col-xl-2 col-lg-3 col-sm-6">
+								<h5 class="text-16 fw-500 mb-30">Company</h5>
+								<div class="d-flex y-gap-10 flex-column">
+									<a href="#">About Us</a>
+									<a href="#">Blog</a>
+									<a href="#">Press</a>
+								</div>
+							</div>
+							<div class="col-xl-2 col-lg-3 col-sm-6">
+								<h5 class="text-16 fw-500 mb-30">Support</h5>
+								<div class="d-flex y-gap-10 flex-column">
+									<a href="#">Contact</a>
+									<a href="#">Legal Notice</a>
+									<a href="#">Privacy Policy</a>
+									<a href="#">Terms and Conditions</a>
+									<a href="#">Sitemap</a>
+								</div>
+							</div>
+							<div class="col-xl-2 col-lg-3 col-sm-6">
+								<h5 class="text-16 fw-500 mb-30">Other Services</h5>
+								<div class="d-flex y-gap-10 flex-column">
+									<a href="#">Car hire</a>
+									<a href="#">Flight finder</a>
+									<a href="#">Cruise Ticket</a>
+									<a href="#">Travel Agents</a>
+								</div>
+							</div>
+							<div class="col-xl-2 col-lg-3 col-sm-6">
+								<h5 class="text-16 fw-500 mb-30">Mobile</h5>
+								<div class="d-flex items-center px-20 py-10 rounded-4 border-light mt-20">
+									<div class="icon-play-market text-24"></div>
+									<div class="ml-20">
+										<div class="text-14 text-light-1">Get in on</div>
+										<div class="text-15 lh-1 fw-500">Google Play</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<section class="footer_middle_area py-20  border-top-light ">
+						<div class="row justify-between items-center y-gap-10">
+							<div class="col-auto">
+								Copyright © 2023 by BookingPortal
+							</div>
+							<div class="col-auto">
+								<div class="row y-gap-10 items-center">
+									<div class="col-auto">
+										<div class="d-flex items-center">
+											<div class="menu-footer">
+												<div class="mobile-overlay"></div>
+												<div class="header-menu__content">
+													<div class="menu js-navList">
+														<ul class="menu__nav -is-active">
+															<li class="currency-dropdown menu-item-has-children">
+																<a href="#" class="is_login">
+																<span class="mr-10">INR</span>
+																<i class="icon icon-chevron-sm-down"></i>
+																</a>
+																<ul class="subnav">
+																	<li>
+																		<a href="?set_currency=eur" class="is_login dropdown-item">EUR</a>
+																	</li>
+																	<li>
+																		<a href="?set_currency=jpy" class="is_login dropdown-item">JPY</a>
+																	</li>
+																</ul>
+															</li>
+														</ul>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="col-auto">
+										BookingPortal
+									</div>
+								</div>
+							</div>
+						</div>
+					</section>
+				</div>
+			</div>
       <div
         class="modal fade login gotrip-login-modal"
         id="login"
@@ -5086,7 +5754,7 @@ Event
               >
                 <i class="input-icon field-icon fa">
                   <img
-                    src="https://gotrip.bookingcore.org/images/ico_close.svg"
+                    src="./images/ico_close.svg"
                     alt="close"
                   />
                 </i>
@@ -5096,7 +5764,7 @@ Event
               <form
                 class="/flight.html"
                 method="POST"
-                action="https://gotrip.bookingcore.org/login"
+                action="./login"
               >
                 <input type="hidden" name="redirect" value />
                 <input
@@ -5145,7 +5813,7 @@ Event
                       Remember me
                     </div>
                   </div>
-                  <a href="https://gotrip.bookingcore.org/forgot-password"
+                  <a href="./forgot-password"
                     >Forgot Password?</a
                   >
                 </div>
@@ -5193,7 +5861,7 @@ Event
               >
                 <i class="input-icon field-icon fa">
                   <img
-                    src="https://gotrip.bookingcore.org/images/ico_close.svg"
+                    src="./images/ico_close.svg"
                     alt="close"
                   />
                 </i>
@@ -5306,40 +5974,48 @@ Event
         data-cfasync="false"
         src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"
       ></script>
-      <script src="https://gotrip.bookingcore.org/libs/lodash.min.js"></script>
-      <script src="https://gotrip.bookingcore.org/libs/jquery-3.6.3.min.js"></script>
-      <script src="https://gotrip.bookingcore.org/libs/vue/vue.min.js"></script>
+      <script src="/libs/lodash.min.js"></script>
+      <script src="/libs/jquery-3.6.3.min.js"></script>
+      <script src="/libs/vue/vue.min.js"></script>
       <script
         type="text/javascript"
-        src="https://gotrip.bookingcore.org/themes/gotrip/libs/bs/js/bootstrap.bundle.min.js"
+        src="/themes/gotrip/libs/bs/js/bootstrap.bundle.min.js"
       ></script>
-      <script src="https://gotrip.bookingcore.org/libs/bootbox/bootbox.min.js"></script>
-      <script src="https://gotrip.bookingcore.org/libs/bootstrap4.0/js/bootstrap.min.js"></script>
+      <script src="/libs/bootbox/bootbox.min.js"></script>
+      <script src="/libs/bootstrap4.0/js/bootstrap.min.js"></script>
       <script
         type="text/javascript"
         src="https://gotrip.bookingcore.org/themes/gotrip/js/vendors.js"
       ></script>
       <script
         type="text/javascript"
-        src="https://gotrip.bookingcore.org/themes/gotrip/js/main.js?_ver=3.2.1"
+        src="./themes/gotrip/js/main.js?_ver=3.2.1"
       ></script>
-      <script src="https://gotrip.bookingcore.org/libs/leaflet1.4.0/leaflet.js"></script>
-      <link
-        rel="stylesheet"
-        href="https://gotrip.bookingcore.org/libs/leaflet1.4.0/leaflet.css"
-      />
-      <script src="https://gotrip.bookingcore.org/module/core/js/map-engine.js?_ver=3.2.1"></script>
-      <script src="https://gotrip.bookingcore.org/libs/carousel-2/owl.carousel.min.js"></script>
+      <script src="./libs/leaflet1.4.0/leaflet.js"></script>
+      <link rel="stylesheet" href="./libs/leaflet1.4.0/leaflet.css" />
+      <script src="./module/core/js/map-engine.js?_ver=3.2.1"></script>
+      <script src="./libs/carousel-2/owl.carousel.min.js"></script>
       <script
         type="text/javascript"
-        src="https://gotrip.bookingcore.org/libs/daterange/moment.min.js"
+        src="./libs/daterange/moment.min.js"
       ></script>
       <script
         type="text/javascript"
-        src="https://gotrip.bookingcore.org/libs/daterange/daterangepicker.min.js"
+        src="./libs/daterange/daterangepicker.min.js"
       ></script>
-      <script src="https://gotrip.bookingcore.org/libs/select2/js/select2.min.js"></script>
-      <script src="https://gotrip.bookingcore.org/themes/gotrip/dist/frontend/js/gotrip.js?_ver=3.2.1"></script>
+      <script src="./libs/select2/js/select2.min.js"></script>
+      <script src="./themes/gotrip/dist/frontend/js/gotrip.js?_ver=3.2.1"></script>
     </div>
   </body>
+  <script>
+    function to_round_trip_tray(){
+      temp = document.getElementById("one_way_tray");
+      temp_r = document.getElementById("round_trip_tray");
+      temp_r.display = "block";
+
+      document.getElementById("one_way").checked = false;
+      temp.style.display = "none";
+      alert("Hello");
+    }
+  </script>
 </html>
