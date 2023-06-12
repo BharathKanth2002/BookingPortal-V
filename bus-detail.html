@@ -116,8 +116,8 @@
 						<div class="col-auto ">
 							<div class="d-flex items-center gotrip-header-normal">
 								<a href="/" class=" header-logo mr-20" data-x="header-logo" data-x-toggle="is-logo-dark">
-                                    <img class="logo-light" src="logo-light.png" alt="BookingPortal">
-                                    <img class="logo-dark" src="logo-dark.png" alt="BookingPortal">
+                                    <img class="logo-light" src="https://bookingportal-v.pages.dev/images/logo.jpg" alt="BookingPortal">
+                                    <img class="logo-dark" src="https://bookingportal-v.pages.dev/images/logo.jpg" alt="BookingPortal">
 								</a>
 								<div class="header-menu " data-x="mobile-menu" data-x-toggle="is-menu-active">
 									<div class="mobile-overlay"></div>
@@ -128,7 +128,7 @@
 												<li class="depth-0">
 													<a target href="/"><span class="mr-10">Home</span></a>
 												</li>
-												<li class="depth-0"><a target href="/index.html#!/hotel">Hotel</a></li>
+												<li class="depth-0"><a target href="/home.html">Hotel</a></li>
 												<li class="depth-0"><a target href="/flight">Flight</a></li>
 												<li class="depth-0"><a target href="/bus">Bus</a></li>
 												<li class="depth-0"><a target href="/contact">Contact</a></li>
@@ -202,7 +202,7 @@
 							<div class="col-auto">
 								<ol class="ul row x-gap-10 y-gap-5 items-center text-14 text-light-1 list-unstyled" itemscope itemtype="https://schema.org/BreadcrumbList">
 									<li class="col-auto" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-										<a href="" itemprop="item"><span itemprop="name">Home</span></a>
+										<a href="/home.html" itemprop="item"><span itemprop="name">Home</span></a>
 										<meta itemprop="position" content="1" />
 									</li>
 									<li class="col-auto">
@@ -1184,8 +1184,7 @@
 														<div class="col-12">
 															<div class="submit-group">
 																<a class="button -dark-1 py-15 px-35 h-60 col-12 rounded-4 bg-blue-1 text-white cursor-pointer" @click="doSubmit($event)" :class="{'disabled':onSubmit,'btn-success':(step == 2),'btn-primary':step == 1}" name="submit">
-																<span v-if="step == 1">BOOK NOW</span>
-																<span v-if="step == 2">Book Now</span>
+																<span>BOOK NOW</span>
 																<i v-show="onSubmit" class="fa fa-spinner fa-spin"></i>
 																</a>
 																<div class="alert-text mt-10" v-show="message.content" v-html="message.content" :class="{'danger':!message.type,'success':message.type}"></div>
